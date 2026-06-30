@@ -16,30 +16,30 @@ Cybersecurity Handbook is a long-term documentation project that consolidates pr
 ## Preview
 
 <p align="center">
-<img src="assets/images/homepage.png" width="48%">
-<img src="assets/images/graph-view.png" width="48%">
+  <img src="assets/images/homepage.png" alt="Homepage" width="48%">
+  <img src="assets/images/interactive-graph.png" alt="Interactive Graph" width="48%">
 </p>
 
 <p align="center">
-<img src="assets/images/catgeories.png" width="48%">
-<img src="assets/images/read-mode.png" width="48%">
+  <img src="assets/images/categories.png" alt="Categories" width="48%">
+  <img src="assets/images/reader-mode.png" alt="Reader Mode" width="48%">
 </p>
 
 ---
 
 ### 🕸️ Interactive Knowledge Graph
 
-![Graph View](assets/images/graph-view.png)
+![Interactive Graph](assets/images/interactive-graph.png)
 
 ---
 ### 📚 Categories
 
-![Categories](assets/images/catgeories.png)
+![Categories](assets/images/categories.png)
 
 ---
 ### 📖 Reader Mode
 
-![Reader Mode](assets/images/read-mode.png)
+![Reader Mode](assets/images/reader-mode.png)
 
 ---
 
