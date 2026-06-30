@@ -11,9 +11,40 @@
 
 Cybersecurity Handbook is a long-term documentation project that consolidates practical cybersecurity knowledge into a structured, searchable reference. It combines conceptual explanations, hands-on notes, command references, diagrams, and lab documentation across multiple cybersecurity domains.
 
-Rather than collecting isolated commands or tool usage, the handbook focuses on explaining **how technologies work internally, why security issues exist, and how those concepts apply in real-world environments.**
+---
 
-The project serves both as a personal knowledge base and as a freely accessible learning resource for students, practitioners, and professionals.
+## Preview
+
+### 🏠 Homepage
+
+![Homepage](assets/images/homepage.png)
+
+---
+
+### 🕸️ Interactive Knowledge Graph
+
+![Graph View](assets/images/graph-view.png)
+
+---
+### 📚 Categories
+
+![Categories](assets/images/catgeories.png)
+
+---
+### 📖 Reader Mode
+
+![Reader Mode](assets/images/read-mode.png)
+
+---
+
+## Highlights
+
+- 📚 400+ Cybersecurity Notes
+- 🌐 Interactive Knowledge Graph
+- 🔍 Full-text Search
+- 🧠 First-Principles Learning
+- 📖 Built with Obsidian + Quartz
+- 🚀 Continuously Updated
 
 ---
 
