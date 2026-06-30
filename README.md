@@ -15,9 +15,15 @@ Cybersecurity Handbook is a long-term documentation project that consolidates pr
 
 ## Preview
 
-### 🏠 Homepage
+<p align="center">
+<img src="assets/images/homepage.png" width="48%">
+<img src="assets/images/graph-view.png" width="48%">
+</p>
 
-![Homepage](assets/images/homepage.png)
+<p align="center">
+<img src="assets/images/catgeories.png" width="48%">
+<img src="assets/images/read-mode.png" width="48%">
+</p>
 
 ---
 
