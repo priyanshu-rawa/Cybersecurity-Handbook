@@ -24,7 +24,7 @@ Cybersecurity Handbook is a long-term documentation project that consolidates pr
 </p>
 
 <p align="center">
-  <img src="assets/images/categories.png" alt="Categories" width="48%">
+  <img src="assets/images/catgeories.png" alt="Catgeories" width="48%">
   <img src="assets/images/read-mode.png" alt="Reader Mode" width="48%">
 </p>
 
@@ -37,7 +37,7 @@ Cybersecurity Handbook is a long-term documentation project that consolidates pr
 ---
 ### 📚 Categories
 
-![Categories](assets/images/categories.png)
+![Categories](assets/images/catgeories.png)
 
 ---
 ### 📖 Reader Mode
