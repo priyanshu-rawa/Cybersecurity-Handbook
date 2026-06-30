@@ -9,7 +9,7 @@
 
 An open-source cybersecurity knowledge base focused on understanding systems from first principles.
 
-This is my first open-source cybersecurity project on GitHub and a long-term effort to document everything I learn while studying cybersecurity.
+Cybersecurity Handbook is my first open-source cybersecurity project on GitHub, created as a long-term effort to document and deepen my understanding of cybersecurity through structured, first-principles learning and a long-term effort to document everything I learn while studying cybersecurity.
 
 Instead of collecting random notes, my goal is to build a structured knowledge base that explains concepts from first principles through practical examples, diagrams, hands-on labs, and real-world scenarios.
 
