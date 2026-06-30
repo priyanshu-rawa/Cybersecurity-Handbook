@@ -7,7 +7,10 @@
 
 [![Issues](https://img.shields.io/github/issues/priyanshu-rawa/Cybersecurity-Handbook?style=for-the-badge)](https://github.com/priyanshu-rawa/Cybersecurity-Handbook/issues)
 
-> An open-source cybersecurity knowledge base focused on understanding systems from first principles.
+An open-source cybersecurity knowledge base focused on understanding systems from first principles.
+This is my first open-source cybersecurity project on GitHub and a long-term effort to document everything I learn while studying cybersecurity.
+
+Instead of collecting random notes, my goal is to build a structured knowledge base that explains concepts from first principles through practical examples, diagrams, hands-on labs, and real-world scenarios.
 
 Cybersecurity Handbook is a long-term documentation project that consolidates practical cybersecurity knowledge into a structured, searchable reference. It combines conceptual explanations, hands-on notes, command references, diagrams, and lab documentation across multiple cybersecurity domains.
 
@@ -17,19 +20,19 @@ Cybersecurity Handbook is a long-term documentation project that consolidates pr
 
 <p align="center">
   <img src="assets/images/homepage.png" alt="Homepage" width="48%">
-  <img src="assets/images/interactive-graph.png" alt="Interactive Graph" width="48%">
+  <img src="assets/images/graph-view.png" alt="Interactive Graph" width="48%">
 </p>
 
 <p align="center">
   <img src="assets/images/categories.png" alt="Categories" width="48%">
-  <img src="assets/images/reader-mode.png" alt="Reader Mode" width="48%">
+  <img src="assets/images/read-mode.png" alt="Reader Mode" width="48%">
 </p>
 
 ---
 
 ### 🕸️ Interactive Knowledge Graph
 
-![Interactive Graph](assets/images/interactive-graph.png)
+![Interactive Graph](assets/images/graph-view.png)
 
 ---
 ### 📚 Categories
@@ -39,7 +42,7 @@ Cybersecurity Handbook is a long-term documentation project that consolidates pr
 ---
 ### 📖 Reader Mode
 
-![Reader Mode](assets/images/reader-mode.png)
+![Reader Mode](assets/images/read-mode.png)
 
 ---
 
