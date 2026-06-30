@@ -8,6 +8,7 @@
 [![Issues](https://img.shields.io/github/issues/priyanshu-rawa/Cybersecurity-Handbook?style=for-the-badge)](https://github.com/priyanshu-rawa/Cybersecurity-Handbook/issues)
 
 An open-source cybersecurity knowledge base focused on understanding systems from first principles.
+
 This is my first open-source cybersecurity project on GitHub and a long-term effort to document everything I learn while studying cybersecurity.
 
 Instead of collecting random notes, my goal is to build a structured knowledge base that explains concepts from first principles through practical examples, diagrams, hands-on labs, and real-world scenarios.
