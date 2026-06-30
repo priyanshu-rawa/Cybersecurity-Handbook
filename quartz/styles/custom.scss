@@ -1,0 +1,83 @@
+@use "./variables.scss" as *;
+
+// put your custom CSS here!
+/* ---------- Global Page Fade ---------- */
+
+body {
+  animation: fadePage .45s ease;
+}
+
+@keyframes fadePage {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ---------- Smooth Scroll ---------- */
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* ---------- Links ---------- */
+
+a {
+  transition: color .2s ease, transform .2s ease;
+}
+
+a:hover {
+  transform: translateY(-2px);
+}
+
+/* ---------- Sidebar ---------- */
+
+.explorer {
+  transition: all .25s ease;
+}
+
+/* ---------- Cards ---------- */
+
+article {
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+
+article:hover {
+  transform: translateY(-4px);
+}
+
+/* ---------- Images ---------- */
+
+img {
+  border-radius: 14px;
+  transition: transform .25s ease;
+}
+
+img:hover {
+  transform: scale(1.02);
+}
+
+/* ---------- Code ---------- */
+
+pre {
+  border-radius: 14px;
+}
+
+/* ---------- Tables ---------- */
+
+table {
+  border-radius: 14px;
+  overflow: hidden;
+}
+
+/* ---------- Selection ---------- */
+
+::selection {
+  background: #89b4fa;
+  color: #fff;
+}
