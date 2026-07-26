@@ -10,15 +10,4 @@ NOTE: <mark style="background: #FFB86CA6;">Cybersecurity Mastery is the only ful
 | **[[04 Emerging Tech and Future Trends]]**     | Venture into the future of technology, examining AI and machine learning, quantum computing, AR, VR, and more. This category focuses on the potential of new technologies to transform industries and lifestyles, highlighting upcoming innovations.                         |
 | **[[05 Tech Career Advancement & Lifestyle]]** | Navigate your tech career path and lifestyle with insights into personal branding, the digital nomad life, financial management for tech professionals, and work-life balance strategies. This category fosters professional growth and life enhancement through technology. |
 
-# A Note From Addie
 
-![[Pasted image 20240514203216.png]]
-## Let's Connect
-
-| **Contact Type**      | **Details**                                                                        |
-| --------------------- | ---------------------------------------------------------------------------------- |
-| **Website**           | [addielamarr.com](https://www.addielamarr.com)                                     |
-| **Instagram**         | [instagram.com/addielamarr](https://www.instagram.com/addielamarr/)                |
-| **LinkedIn**          | [linkedin.com/in/addie-clark](https://www.linkedin.com/in/addie-clark/)            |
-| **Twitter**           | [twitter.com/addielamarr](https://twitter.com/addielamarr)                         |
-| **Weekly Newsletter** | [Subscribe to Addie's Newsletter](https://addies-newsletter.beehiiv.com/subscribe) |
