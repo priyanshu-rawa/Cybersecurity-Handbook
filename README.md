@@ -1,12 +1,9 @@
 [![License](https://img.shields.io/github/license/priyanshu-rawa/Cybersecurity-Handbook?style=for-the-badge)](LICENSE)
-
-[![Stars](https://img.shields.io/github/stars/priyanshu-rawa/Cybersecurity-Handbook?style=for-the-badge)](https://github.com/priyanshu-rawa/Cybersecurity-Handbook/stargazers)
-
-[![Forks](https://img.shields.io/github/forks/priyanshu-rawa/Cybersecurity-Handbook?style=for-the-badge)](https://github.com/priyanshu-rawa/Cybersecurity-Handbook/network)
-
-[![Issues](https://img.shields.io/github/issues/priyanshu-rawa/Cybersecurity-Handbook?style=for-the-badge)](https://github.com/priyanshu-rawa/Cybersecurity-Handbook/issues)
-
-[![Latest Release](https://img.shields.io/github/v/release/priyanshu-rawa/Cybersecurity-Handbook)](https://github.com/priyanshu-rawa/Cybersecurity-Handbook/releases/latest)
+[![Stars](https://img.shields.io/github/stars/priyanshu-rawa/Cybersecurity-Handbook?style=for-the-badge)](...)
+[![Forks](https://img.shields.io/github/forks/priyanshu-rawa/Cybersecurity-Handbook?style=for-the-badge)](...)
+[![Issues](https://img.shields.io/github/issues/priyanshu-rawa/Cybersecurity-Handbook?style=for-the-badge)](...)
+[![Latest Release](https://img.shields.io/github/v/release/priyanshu-rawa/Cybersecurity-Handbook)](...)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen?style=for-the-badge)](CONTRIBUTING.md)
 
 # Cybersecurity Handbook
 An open-source cybersecurity knowledge base focused on understanding systems from first principles.
