@@ -1,4 +1,3 @@
-# Cybersecurity Handbook
 [![License](https://img.shields.io/github/license/priyanshu-rawa/Cybersecurity-Handbook?style=for-the-badge)](LICENSE)
 
 [![Stars](https://img.shields.io/github/stars/priyanshu-rawa/Cybersecurity-Handbook?style=for-the-badge)](https://github.com/priyanshu-rawa/Cybersecurity-Handbook/stargazers)
@@ -7,6 +6,7 @@
 
 [![Issues](https://img.shields.io/github/issues/priyanshu-rawa/Cybersecurity-Handbook?style=for-the-badge)](https://github.com/priyanshu-rawa/Cybersecurity-Handbook/issues)
 
+# Cybersecurity Handbook
 An open-source cybersecurity knowledge base focused on understanding systems from first principles.
 
 Cybersecurity Handbook is my first open-source cybersecurity project on GitHub, created as a long-term effort to document and deepen my understanding of cybersecurity through structured, first-principles learning and a long-term effort to document everything I learn while studying cybersecurity.
