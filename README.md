@@ -6,6 +6,8 @@
 
 [![Issues](https://img.shields.io/github/issues/priyanshu-rawa/Cybersecurity-Handbook?style=for-the-badge)](https://github.com/priyanshu-rawa/Cybersecurity-Handbook/issues)
 
+[![Latest Release](https://img.shields.io/github/v/release/priyanshu-rawa/Cybersecurity-Handbook)](https://github.com/priyanshu-rawa/Cybersecurity-Handbook/releases/latest)
+
 # Cybersecurity Handbook
 An open-source cybersecurity knowledge base focused on understanding systems from first principles.
 
