@@ -5,7 +5,7 @@
 [![Live Demo](https://img.shields.io/badge/Live_Demo-View_Site-4D6BFE?style=for-the-badge&logo=vercel)](https://your-quartz-site.vercel.app)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen?style=for-the-badge&logo=github)](CONTRIBUTING.md)
 
-# 🛡️ Cybersecurity Handbook
+# 📘  Cybersecurity Handbook
 
 > **An interactive, open-source knowledge base for cybersecurity professionals, students, and enthusiasts.** Built with Quartz, designed for clarity, and maintained by the community.
 
@@ -13,8 +13,8 @@
 
 ## 📖 Table of Contents
 
-- [🚀 Why This Exists](#-why-this-exists)
-- [✨ Key Features](#-key-features)
+- [💡 Why This Exists](#-why-this-exists)
+- [🎨 Key Features](#-key-features)
 - [🛠️ Quick Start](#️-quick-start)
 - [🖼️ Preview](#️-preview)
 - [📚 What's Inside](#-whats-inside)
@@ -52,7 +52,7 @@ Whether you're preparing for your first security certification, defending a corp
 
 ---
 
-## 🛠️ Quick Start
+## ⚡ Quick Start
 
 Get the handbook running locally in under 2 minutes.
 
@@ -103,7 +103,7 @@ npm run quartz:serve
 
 ---
 
-## 🖼️ Preview
+## 👀 Preview
 
 ### 🏠 Homepage
 
@@ -119,7 +119,7 @@ npm run quartz:serve
 
 ---
 
-## 📚 What's Inside
+## 📖  What's Inside
 
 ### 🧠 Operating Systems
 
@@ -138,7 +138,7 @@ npm run quartz:serve
 | Penetration Testing | Methodologies, Tools, Reporting |
 | Post-Exploitation | Persistence, Lateral Movement, Privilege Escalation |
 
-### 🛡️ Defensive Security
+### 🔐 Defensive Security
 
 | Category | Topics |
 |----------|--------|
@@ -161,7 +161,7 @@ npm run quartz:serve
 | Languages | Python, Bash, PowerShell |
 | Automation | Scripting, CI/CD, Git |
 
-### 🔐 Cryptography
+### 🔑 Cryptography
 
 | Category | Topics |
 |----------|--------|
@@ -171,7 +171,7 @@ npm run quartz:serve
 
 ---
 
-## 🧠 Philosophy
+##  Philosophy
 
 Cybersecurity is fundamentally built on understanding systems.
 
@@ -185,7 +185,7 @@ Each topic aims to answer not only *what* something does, but also *how* it work
 
 ---
 
-## 🗺️ Roadmap
+## 📈  Roadmap
 
 Planned improvements include:
 
@@ -204,7 +204,7 @@ Planned improvements include:
 
 ---
 
-## 🤝 Contributing
+## 🌱 Contributing
 
 We welcome contributions of all kinds! Whether you're fixing a typo, adding a new topic, or improving the visual design, your help makes this handbook better for everyone.
 
@@ -236,7 +236,7 @@ We welcome contributions of all kinds! Whether you're fixing a typo, adding a ne
 
 ---
 
-## 💖 Support & Sponsorship
+## ☕ Support & Sponsorship
 
 Maintaining a comprehensive cybersecurity knowledge base takes time, effort, and infrastructure costs. If this handbook has helped you, please consider supporting its continued development.
 
@@ -245,7 +245,7 @@ Maintaining a comprehensive cybersecurity knowledge base takes time, effort, and
 - **🎯 Recognition:** Your logo and link featured prominently on the GitHub repo and live site.
 - **💰 Direct Impact:** Your funds help cover hosting, domain, and tooling costs.
 - **👥 Community Growth:** Support an open resource that educates thousands of cybersecurity students and professionals.
-- **🚀 Talent Pipeline:** Show your company's commitment to open-source security education.
+- ** 🎯 Talent Pipeline:** Show your company's commitment to open-source security education.
 
 ### Sponsor Tiers
 
@@ -256,7 +256,7 @@ Maintaining a comprehensive cybersecurity knowledge base takes time, effort, and
 | **Gold** | Premium placement on the live site, acknowledgment in project updates. |
 | **Platinum** | All Gold benefits + direct consulting/recruiting access to maintainers. |
 
-> **👉 [Sponsor the project](https://github.com/sponsors/priyanshu-rawa)** or reach out at `cybersec-handbook@example.com` for custom sponsorship arrangements.
+> **👉 [Sponsor the project](https://github.com/sponsors/priyanshu-rawa)**  
 
 ---
 
