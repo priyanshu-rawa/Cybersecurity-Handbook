@@ -120,7 +120,7 @@ Automation
 Scripting
 APIs
 
-[!QUESTION] 🔐 Cryptography
+🔐 Cryptography
 Classical Cryptography
 Modern Cryptography
 PKI
