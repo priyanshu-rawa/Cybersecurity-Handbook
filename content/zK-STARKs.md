@@ -64,6 +64,11 @@ aliases:
 
 ---
 
+## 📚 New Content
+
+- [[Privilege-Escalation-Handbook]]
+
+
 ## External Links:
 
 - [StarkWare Resources on zK-STARKs](https://starkware.co/)
