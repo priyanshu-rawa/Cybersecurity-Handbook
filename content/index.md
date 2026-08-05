@@ -196,9 +196,6 @@ This handbook serves as both a personal knowledge repository and a freely access
 
 Learn deeply. Build deliberately. Document everything. Share knowledge.
 ---
-## 📚 New Content
-
-- [[Privilege-Escalation-Handbook]]
 
 
 > **Always Learning. Always Documenting. Always Improving.**
