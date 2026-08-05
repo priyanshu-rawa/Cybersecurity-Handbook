@@ -1,71 +1,181 @@
-[![License](https://img.shields.io/github/license/priyanshu-rawa/Cybersecurity-Handbook?style=for-the-badge)](LICENSE)
-[![Stars](https://img.shields.io/github/stars/priyanshu-rawa/Cybersecurity-Handbook?style=for-the-badge)](...)
-[![Forks](https://img.shields.io/github/forks/priyanshu-rawa/Cybersecurity-Handbook?style=for-the-badge)](...)
-[![Issues](https://img.shields.io/github/issues/priyanshu-rawa/Cybersecurity-Handbook?style=for-the-badge)](...)
-[![Latest Release](https://img.shields.io/github/v/release/priyanshu-rawa/Cybersecurity-Handbook)](...)
-[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen?style=for-the-badge)](CONTRIBUTING.md)
+[![License](https://img.shields.io/github/license/priyanshu-rawa/Cybersecurity-Handbook?style=for-the-badge&logo=opensourceinitiative)](LICENSE)
+[![Stars](https://img.shields.io/github/stars/priyanshu-rawa/Cybersecurity-Handbook?style=for-the-badge&logo=github)](https://github.com/priyanshu-rawa/Cybersecurity-Handbook/stargazers)
+[![Forks](https://img.shields.io/github/forks/priyanshu-rawa/Cybersecurity-Handbook?style=for-the-badge&logo=github)](https://github.com/priyanshu-rawa/Cybersecurity-Handbook/network/members)
+[![Issues](https://img.shields.io/github/issues/priyanshu-rawa/Cybersecurity-Handbook?style=for-the-badge&logo=github)](https://github.com/priyanshu-rawa/Cybersecurity-Handbook/issues)
+[![Live Demo](https://img.shields.io/badge/Live_Demo-View_Site-4D6BFE?style=for-the-badge&logo=vercel)](https://your-quartz-site.vercel.app)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen?style=for-the-badge&logo=github)](CONTRIBUTING.md)
 
-# Cybersecurity Handbook
-An open-source cybersecurity knowledge base focused on understanding systems from first principles.
+# 🛡️ Cybersecurity Handbook
 
-Cybersecurity Handbook is my first open-source cybersecurity project on GitHub, created as a long-term effort to document and deepen my understanding of cybersecurity through structured, first-principles learning and a long-term effort to document everything I learn while studying cybersecurity.
-
-Instead of collecting random notes, my goal is to build a structured knowledge base that explains concepts from first principles through practical examples, diagrams, hands-on labs, and real-world scenarios.
-
-Cybersecurity Handbook is a long-term documentation project that consolidates practical cybersecurity knowledge into a structured, searchable reference. It combines conceptual explanations, hands-on notes, command references, diagrams, and lab documentation across multiple cybersecurity domains.
+> **An interactive, open-source knowledge base for cybersecurity professionals, students, and enthusiasts.** Built with Quartz, designed for clarity, and maintained by the community.
 
 ---
 
-## Preview
+## 📖 Table of Contents
 
-<p align="center">
-  <img src="assets/images/homepage.png" alt="Homepage" width="48%">
-  <img src="assets/images/graph-view.png" alt="Interactive Graph" width="48%">
-</p>
-
-<p align="center">
-  <img src="assets/images/catgeories.png" alt="Catgeories" width="48%">
-  <img src="assets/images/read-mode.png" alt="Reader Mode" width="48%">
-</p>
+- [🚀 Why This Exists](#-why-this-exists)
+- [✨ Key Features](#-key-features)
+- [🛠️ Quick Start](#️-quick-start)
+- [🖼️ Preview](#️-preview)
+- [📚 What's Inside](#-whats-inside)
+- [🧠 Philosophy](#-philosophy)
+- [🗺️ Roadmap](#-roadmap)
+- [🤝 Contributing](#-contributing)
+- [💖 Support & Sponsorship](#-support--sponsorship)
+- [📄 License](#-license)
 
 ---
+
+## 🚀 Why This Exists
+
+The world of cybersecurity moves fast. New vulnerabilities, tools, and best practices emerge daily. Yet, most resources are scattered across forums, blogs, and paid courses — inaccessible to many who need them most.
+
+**This handbook is different.**
+
+- **📖 Open & Free:** No paywalls, no ads. Just knowledge.
+- **🌐 Interactive:** Powered by Quartz, it's a living document with search, graphs, and deep linking.
+- **👥 Community-Driven:** Built by cybersecurity professionals for the next generation.
+- **🔍 Practical & Current:** Covers real-world threats, tools, and defense strategies.
+
+Whether you're preparing for your first security certification, defending a corporate network, or just curious about how the digital world stays safe, this handbook is for you.
+
+---
+
+## ✨ Key Features
+
+- 📚 **400+ Comprehensive Notes** — From OSINT to cryptography to cloud security
+- 🌐 **Interactive Knowledge Graph** — See how topics connect visually
+- 🔍 **Full-Text Search** — Find exactly what you need, instantly
+- 🌓 **Dark/Light Mode** — Read comfortably in any environment
+- 📱 **Mobile-Friendly** — Access from any device, anywhere
+- 🧠 **First-Principles Learning** — Understand *why*, not just *how*
+
+---
+
+## 🛠️ Quick Start
+
+Get the handbook running locally in under 2 minutes.
+
+### Prerequisites
+
+- **Node.js** (v18 or later)
+- **npm** or **yarn**
+
+### Installation & Run
+
+#### **Linux/macOS (bash/zsh)**
+
+```bash
+# Clone the repository
+git clone https://github.com/priyanshu-rawa/Cybersecurity-Handbook.git
+cd Cybersecurity-Handbook
+
+# Install dependencies
+npm install
+
+# Start the development server
+npm run quartz:dev
+```
+
+#### **Windows (PowerShell)**
+
+```powershell
+# Clone the repository
+git clone https://github.com/priyanshu-rawa/Cybersecurity-Handbook.git
+cd Cybersecurity-Handbook
+
+# Install dependencies
+npm install
+
+# Start the development server
+npm run quartz:dev
+```
+
+### Build for Production
+
+```bash
+# Build static site
+npm run quartz:build
+
+# Preview the build locally
+npm run quartz:serve
+```
+
+---
+
+## 🖼️ Preview
+
+### 🏠 Homepage
+
+![Homepage](assets/images/homepage.png)
 
 ### 🕸️ Interactive Knowledge Graph
 
 ![Interactive Graph](assets/images/graph-view.png)
 
----
 ### 📚 Categories
 
-![Categories](assets/images/catgeories.png)
+![Categories](assets/images/categories.png)
 
----
 ### 📖 Reader Mode
 
 ![Reader Mode](assets/images/read-mode.png)
 
 ---
 
-## Highlights
+## 📚 What's Inside
 
-- 📚 400+ Cybersecurity Notes
-- 🌐 Interactive Knowledge Graph
-- 🔍 Full-text Search
-- 🧠 First-Principles Learning
-- 📖 Built with Obsidian + Quartz
-- 🚀 Continuously Updated
+### 🧠 Operating Systems
+
+| Category | Topics |
+|----------|--------|
+| Linux | Linux Internals, Commands, Security |
+| Windows | Windows Internals, Active Directory, Security |
+| Networking | TCP/IP, DNS, HTTP/HTTPS, VPN, Firewalls |
+
+### ⚔️ Offensive Security
+
+| Category | Topics |
+|----------|--------|
+| Web Security | OWASP Top 10, SQL Injection, XSS |
+| Vulnerability Assessment | Scanning, Enumeration, Exploitation |
+| Penetration Testing | Methodologies, Tools, Reporting |
+| Post-Exploitation | Persistence, Lateral Movement, Privilege Escalation |
+
+### 🛡️ Defensive Security
+
+| Category | Topics |
+|----------|--------|
+| Security Operations (SOC) | Monitoring, Incident Response |
+| Detection Engineering | SIEM, Log Analysis, Threat Hunting |
+| Digital Forensics | Memory Forensics, Network Forensics, Malware Analysis |
+
+### ☁️ Cloud & Infrastructure
+
+| Category | Topics |
+|----------|--------|
+| Cloud Security | AWS, Azure, GCP, Zero Trust |
+| Container Security | Docker, Kubernetes, DevSecOps |
+| IAM | Identity Management, Federation, MFA |
+
+### 💻 Programming & Automation
+
+| Category | Topics |
+|----------|--------|
+| Languages | Python, Bash, PowerShell |
+| Automation | Scripting, CI/CD, Git |
+
+### 🔐 Cryptography
+
+| Category | Topics |
+|----------|--------|
+| Encryption | Symmetric, Asymmetric, AES, RSA |
+| Hashing | SHA-256, MD5, Hash Functions |
+| PKI | Digital Signatures, TLS, Certificates |
 
 ---
 
-## 📖 Table of Contents
-- [🎯 Why This Handbook?](#-why-this-handbook)
-- [🚀 Quick Start](#-quick-start)
-- [📚 What’s Inside](#-whats-inside)
-- [🤝 Contributing](#-contributing)
-- [📄 License](#-license)
-
-
-# Philosophy
+## 🧠 Philosophy
 
 Cybersecurity is fundamentally built on understanding systems.
 
@@ -79,187 +189,109 @@ Each topic aims to answer not only *what* something does, but also *how* it work
 
 ---
 
-# What You'll Find
-
-The handbook combines theory with practical learning through:
-
-- First-principles explanations
-- Architecture and workflow diagrams
-- Practical command references
-- Hands-on laboratory notes
-- Security concepts explained from the ground up
-- Real-world examples and attack scenarios
-- Defensive techniques and mitigation strategies
-- Cross-referenced documentation for related topics
-
-Every section is designed to remain useful as both a learning resource and a long-term technical reference.
-
----
-
-# Coverage
-
-Current and planned topics include:
-
-### Operating Systems
-
-- Linux
-- Windows
-- Active Directory
-- Windows Internals
-- Linux Internals
-
-### Networking
-
-- TCP/IP
-- Routing & Switching
-- DNS
-- HTTP/HTTPS
-- VPN
-- Firewalls
-- Network Architecture
-
-### Offensive Security
-
-- Web Security
-- Vulnerability Assessment
-- Penetration Testing
-- Privilege Escalation
-- Enumeration
-- Exploitation
-- Post Exploitation
-
-### Defensive Security
-
-- Security Operations (SOC)
-- Threat Detection
-- Incident Response
-- Detection Engineering
-- Log Analysis
-- SIEM
-- Digital Forensics
-
-### Malware & Reverse Engineering
-
-- Malware Analysis
-- Static Analysis
-- Dynamic Analysis
-- Reverse Engineering
-- Windows APIs
-
-### Cloud & Infrastructure
-
-- Docker
-- Kubernetes
-- Cloud Security
-- Identity & Access Management
-- Zero Trust
-
-### Programming & Automation
-
-- Python
-- Bash
-- PowerShell
-- Git
-- Automation Scripts
-
-### Cryptography
-
-- Symmetric Encryption
-- Asymmetric Encryption
-- Hash Functions
-- PKI
-- Digital Signatures
-- TLS
-
----
-
-# Project Goals
-
-This repository is intended to become a comprehensive cybersecurity reference that emphasizes:
-
-- Technical accuracy
-- Clear explanations
-- Practical applicability
-- Long-term maintainability
-- Consistent documentation
-- Beginner accessibility without sacrificing technical depth
-
-The objective is not simply to document tools, but to build an interconnected knowledge base that explains the reasoning behind modern cybersecurity practices.
-
----
-
-# Technology Stack
-
-- **Obsidian** — Knowledge management
-- **Quartz v5** — Static site generator
-- **TypeScript**
-- **SCSS**
-- **GitHub Pages**
-
----
-
-# Repository Structure
-
-```text
-content/
-├── Linux
-├── Windows
-├── Networking
-├── Cryptography
-├── Active Directory
-├── Web Security
-├── Malware Analysis
-├── Reverse Engineering
-├── Cloud Security
-└── ...
-
-quartz/
-quartz.config.yaml
-public/
-```
-
----
-
-# Roadmap
+## 🗺️ Roadmap
 
 Planned improvements include:
 
-- Expanded Linux internals documentation
-- Windows internals series
-- Networking deep dives
-- Active Directory attack and defense labs
-- SOC investigation playbooks
-- Detection engineering content
-- Malware analysis workflows
-- Reverse engineering notes
-- Cloud security documentation
-- Interactive diagrams
-- Architecture illustrations
-- Practical lab environments
+- [ ] Expanded Linux internals documentation
+- [ ] Windows internals series
+- [ ] Networking deep dives
+- [ ] Active Directory attack and defense labs
+- [ ] SOC investigation playbooks
+- [ ] Detection engineering content
+- [ ] Malware analysis workflows
+- [ ] Reverse engineering notes
+- [ ] Cloud security documentation
+- [ ] Interactive diagrams
+- [ ] Architecture illustrations
+- [ ] Practical lab environments
 
 ---
 
-# Contributing
+## 🤝 Contributing
 
-Constructive feedback, corrections, and suggestions are always appreciated.
+We welcome contributions of all kinds! Whether you're fixing a typo, adding a new topic, or improving the visual design, your help makes this handbook better for everyone.
 
-If you identify inaccurate information, discover outdated content, or have ideas that improve the quality of the documentation, feel free to open an Issue or submit a Pull Request.
+### How to Contribute
+
+1. **Fork** the repository
+2. **Create a feature branch**:
+   ```bash
+   git checkout -b feature/your-feature-name
+   ```
+3. **Make your changes** and commit:
+   ```bash
+   git commit -m "Add: New section on ransomware defense strategies"
+   ```
+4. **Push to your fork**:
+   ```bash
+   git push origin feature/your-feature-name
+   ```
+5. **Open a Pull Request** against the `main` branch
+
+### Contribution Guidelines
+
+- **Content**: Write in clear, accessible English. Include practical examples.
+- **Formatting**: Use proper markdown headings (`##`, `###`). Keep code blocks with language specifiers.
+- **Images**: Store in `assets/images/`. Use descriptive filenames.
+- **Style**: Follow the existing visual tone. No markdown errors.
+
+> 📖 **Full guidelines** are available in [CONTRIBUTING.md](CONTRIBUTING.md).
 
 ---
 
-# License
+## 💖 Support & Sponsorship
 
-Released under the MIT License.
+Maintaining a comprehensive cybersecurity knowledge base takes time, effort, and infrastructure costs. If this handbook has helped you, please consider supporting its continued development.
+
+### Why Sponsor?
+
+- **🎯 Recognition:** Your logo and link featured prominently on the GitHub repo and live site.
+- **💰 Direct Impact:** Your funds help cover hosting, domain, and tooling costs.
+- **👥 Community Growth:** Support an open resource that educates thousands of cybersecurity students and professionals.
+- **🚀 Talent Pipeline:** Show your company's commitment to open-source security education.
+
+### Sponsor Tiers
+
+| Tier | Benefits |
+|------|----------|
+| **Bronze** | Name listed in README as a supporter. |
+| **Silver** | Logo and link in README, plus social media shoutout. |
+| **Gold** | Premium placement on the live site, acknowledgment in project updates. |
+| **Platinum** | All Gold benefits + direct consulting/recruiting access to maintainers. |
+
+> **👉 [Sponsor the project](https://github.com/sponsors/priyanshu-rawa)** or reach out at `cybersec-handbook@example.com` for custom sponsorship arrangements.
+
+---
+
+## 📄 License
+
+This project is licensed under the **MIT License** — see the [LICENSE](LICENSE) file for details.
+
+You are free to use, modify, distribute, and even commercialize this work, as long as you retain the copyright notice. We encourage you to contribute back improvements!
+
+---
+
+## ⭐ Star, Fork, Share
+
+If you find this handbook useful:
+
+- ⭐ **Star** the repo to show your appreciation.
+- 🍴 **Fork** it to customize or contribute.
+- 📢 **Share** it with your network — on Twitter, LinkedIn, or your favorite cybersecurity community.
+
+Every star and share helps someone discover this resource.
 
 ---
 
 <div align="center">
 
-**Cybersecurity Handbook**
+**🛡️ Cybersecurity Handbook**
 
 *A continuously evolving cybersecurity knowledge base built through documentation, experimentation, and practical learning.*
 
 **Always Learning · Always Documenting · Always Improving**
 
 </div>
+
 **If this helped you, drop a ⭐ – it motivates us to keep building.**
