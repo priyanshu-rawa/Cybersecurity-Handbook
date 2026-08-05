@@ -292,4 +292,4 @@ Every star and share helps someone discover this resource.
 
 </div>
 
-**If this helped you, drop a ⭐ – it motivates us to keep building.**
+**If this helped you, drop a ⭐ – it motivates me to keep building.**
