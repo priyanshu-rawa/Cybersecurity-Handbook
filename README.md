@@ -6,7 +6,6 @@
 [![Visitors](https://api.visitorbadge.io/api/visitors?path=priyanshu-rawa%2FCybersecurity-Handbook&label=Visitors&countColor=%23263759)](https://visitorbadge.io/status?path=priyanshu-rawa%2FCybersecurity-Handbook)
 
 
-
 # 📘  Cybersecurity Handbook
 
 
