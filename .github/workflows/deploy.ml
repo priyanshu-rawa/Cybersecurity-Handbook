@@ -21,15 +21,20 @@ jobs:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
+          
       - uses: actions/setup-node@v4
         with:
           node-version: 20
+          
       - name: Install dependencies
         run: npm install
+        
       - name: Install Quartz plugins
         run: npx quartz plugin install
+        
       - name: Build Quartz site
         run: npx quartz build
+        
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
