@@ -3,7 +3,7 @@ A continuously evolving cybersecurity knowledge base focused on practical unders
 ---
 
 <p align="center">
-  <strong style="font-size: 2.5rem; color: #4D6BFE;">🔐 Cybersecurity Handbook</strong><br>
+  <strong style="font-size: 2.5rem; color: #4D6BFE;">📘 Cybersecurity Handbook</strong><br>
   <em style="font-size: 1.2rem; color: #8b949e;">From Fundamentals to Advanced Security</em>
 </p>
 
