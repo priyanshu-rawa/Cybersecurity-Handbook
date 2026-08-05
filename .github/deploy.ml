@@ -26,8 +26,6 @@ jobs:
           node-version: 20
       - name: Install dependencies
         run: npm install
-      - name: Install Quartz plugins
-        run: npx quartz plugin install
       - name: Build Quartz site
         run: npx quartz build
       - name: Upload artifact
