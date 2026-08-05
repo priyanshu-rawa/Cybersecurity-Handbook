@@ -16,9 +16,9 @@ configuration:
     fontOrigin: googleFonts
     cdnCaching: true
     typography:
-      header: Sora
+      header: Space Grotesk
       body: Inter
-      code: JetBrains Mono
+      code: IBM Plex Mono
     colors:
       lightMode:
         light: "#f8f5fa"
