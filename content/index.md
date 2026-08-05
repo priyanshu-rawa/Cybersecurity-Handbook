@@ -3,7 +3,7 @@ A continuously evolving cybersecurity knowledge base focused on practical unders
 ---
 
 <p align="center">
-  <img src="assets/images/banner.svg" alt="Cybersecurity Handbook Banner" width="100%">
+
 </p>
 
 # 🔐 Cybersecurity Handbook
