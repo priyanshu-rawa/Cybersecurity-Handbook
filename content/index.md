@@ -194,7 +194,7 @@ This setup ensures the handbook is fast, searchable, and easy to maintain over t
 
 ## 👨‍💻 About the Author
 
-I'm **Priyanshu Rawat**, a cybersecurity enthusiast with a passion for digging deep into how systems work. I believe that the best way to learn is to document everything – and this handbook is the result of that philosophy.
+"I'm **Priyanshu Rawat**, a self-taught security learner sharing what I discover. I believe that the best way to learn is to document everything – and this handbook is the result of that philosophy.
 
 I'm particularly interested in:
 
