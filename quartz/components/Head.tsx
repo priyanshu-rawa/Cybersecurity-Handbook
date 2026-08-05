@@ -4,7 +4,7 @@ import { CSSResourceToStyleElement, JSResourceToScriptElement } from "../util/re
 import { googleFontHref, googleFontSubsetHref } from "../util/theme"
 import { QuartzComponent, QuartzComponentConstructor, QuartzComponentProps } from "./types"
 import { unescapeHTML } from "../util/escape"
-import { CustomOgImagesEmitterName } from "../../.../.quartz/plugins"
+import { CustomOgImagesEmitterName } from "../../.quartz/plugins"
 export default (() => {
   const Head: QuartzComponent = ({
     cfg,
