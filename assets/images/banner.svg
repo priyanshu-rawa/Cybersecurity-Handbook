@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 300">
+  <rect width="1200" height="300" fill="#0d1117"/>
+  
+  <!-- Lock icon -->
+  <g transform="translate(100, 80)">
+    <rect x="20" y="40" width="60" height="50" rx="10" fill="#4D6BFE"/>
+    <path d="M30 40V25C30 15 40 8 50 8C60 8 70 15 70 25V40" stroke="#fff" stroke-width="4" fill="none"/>
+    <circle cx="50" cy="65" r="8" fill="#fff"/>
+    <rect x="47" y="65" width="6" height="12" fill="#fff"/>
+  </g>
+  
+  <!-- Title -->
+  <text x="200" y="120" font-family="Space Grotesk, sans-serif" font-size="48" font-weight="700" fill="#ffffff">
+    Cybersecurity Handbook
+  </text>
+  
+  <text x="200" y="165" font-family="Inter, sans-serif" font-size="20" fill="#8b949e">
+    From Fundamentals to Advanced Security
+  </text>
+  
+  <text x="200" y="200" font-family="Inter, sans-serif" font-size="14" fill="#58a6ff">
+    Built with Obsidian + Quartz
+  </text>
+  
+  <!-- Decorative dots -->
+  <circle cx="900" cy="60" r="4" fill="#4D6BFE" opacity="0.5"/>
+  <circle cx="920" cy="80" r="6" fill="#4D6BFE" opacity="0.3"/>
+  <circle cx="940" cy="100" r="3" fill="#4D6BFE" opacity="0.7"/>
+  <circle cx="960" cy="60" r="8" fill="#4D6BFE" opacity="0.2"/>
+  <circle cx="980" cy="90" r="5" fill="#4D6BFE" opacity="0.4"/>
+  <circle cx="1000" cy="70" r="7" fill="#4D6BFE" opacity="0.3"/>
+  
+  <!-- Bottom line -->
+  <line x1="200" y1="230" x2="600" y2="230" stroke="#4D6BFE" stroke-width="2" opacity="0.5"/>
+</svg>
