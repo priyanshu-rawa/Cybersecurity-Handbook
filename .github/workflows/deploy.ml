@@ -24,9 +24,11 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 20
-      - name: Install Dependencies
-        run: npm ci
-      - name: Build Quartz
+      - name: Install dependencies
+        run: npm install
+      - name: Install Quartz plugins
+        run: npx quartz plugin install
+      - name: Build Quartz site
         run: npx quartz build
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
