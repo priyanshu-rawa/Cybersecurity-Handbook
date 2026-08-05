@@ -113,10 +113,6 @@ npm run quartz:serve
 
 ![Interactive Graph](assets/images/graph-view.png)
 
-### 📚 Categories
-
-![Categories](assets/images/categories.png)
-
 ### 📖 Reader Mode
 
 ![Reader Mode](assets/images/read-mode.png)
