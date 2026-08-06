@@ -1,10 +1,21 @@
-[![License](https://img.shields.io/github/license/priyanshu-rawa/Cybersecurity-Handbook?style=for-the-badge&logo=opensourceinitiative)](LICENSE)
-[![Stars](https://img.shields.io/github/stars/priyanshu-rawa/Cybersecurity-Handbook?style=for-the-badge)](https://github.com/priyanshu-rawa/Cybersecurity-Handbook/stargazers)
-[![Forks](https://img.shields.io/github/forks/priyanshu-rawa/Cybersecurity-Handbook?style=for-the-badge)](https://github.com/priyanshu-rawa/Cybersecurity-Handbook/network/members)
-[![Issues](https://img.shields.io/github/issues/priyanshu-rawa/Cybersecurity-Handbook?style=for-the-badge)](https://github.com/priyanshu-rawa/Cybersecurity-Handbook/issues)
-[![Live Demo](https://img.shields.io/badge/Live_Demo-View_Site-4D6BFE?style=for-the-badge&logo=vercel)](https://cybersecurity-handbook.vercel.app)
-[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen?style=for-the-badge&logo=github)](CONTRIBUTING.md)
-[![Visitors](https://api.visitorbadge.io/api/visitors?path=priyanshu-rawa%2FCybersecurity-Handbook&label=Visitors&countColor=%23263759)](https://visitorbadge.io/status?path=priyanshu-rawa%2FCybersecurity-Handbook)
+
+# 📘  Cybersecurity Handbook
+
+
+> **An interactive, open-source knowledge base for cybersecurity professionals, students, and enthusiasts.** Built with Quartz, designed for clarity, and maintained by the community.
+
+---
+
+Focus on what matters. No distractions, just learning.
+
+## 📊 Quick Stats
+
+| | | | | |
+|---|---|---|---|---|
+| ![Stars](https://img.shields.io/github/stars/priyanshu-rawa/Cybersecurity-Handbook?style=flat-square&logo=github) | ![Forks](https://img.shields.io/github/forks/priyanshu-rawa/Cybersecurity-Handbook?style=flat-square&logo=github) | ![License](https://img.shields.io/github/license/priyanshu-rawa/Cybersecurity-Handbook?style=flat-square) | ![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen?style=flat-square) | ![Live Demo](https://img.shields.io/badge/Live_Demo-View_Site-4D6BFE?style=flat-square&logo=vercel) |
+| **22** | **0** | **MIT** | ✅ Welcome | [Visit Site](https://cybersecurity-handbook.vercel.app) |
+
+---
 
 ## 👀 Preview
 ## 🖼️ What It Looks Like
@@ -81,15 +92,6 @@
 *Fully responsive — access from any device, anywhere.*
 
 
-Focus on what matters. No distractions, just learning.
-
-
-# 📘  Cybersecurity Handbook
-
-
-> **An interactive, open-source knowledge base for cybersecurity professionals, students, and enthusiasts.** Built with Quartz, designed for clarity, and maintained by the community.
-
----
 
 ## 📚 Table of Contents
 
