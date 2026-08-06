@@ -10,24 +10,24 @@
 ## 🖥️ What It Looks Like
 
 <p align="center">
-  <img src="assets/images/homepage.png" alt="Homepage" width="32%">
+  <img src="assets/images/Homepage.png" alt="Homepage" width="32%">
   <img src="assets/images/graph-view.png" alt="Interactive Graph" width="32%">
   <img src="assets/images/reader-mode.png" alt="Reader Mode" width="32%">
 </p>
 
 <p align="center">
-  <strong>📖 Interactive Knowledge Graph</strong> &nbsp;&nbsp;|&nbsp;&nbsp;
-  <strong>🌓 Dark/Light Mode</strong> &nbsp;&nbsp;|&nbsp;&nbsp;
-  <strong>🔍 Full-Text Search</strong>
+  <strong>📖 Clean Homepage</strong> &nbsp;&nbsp;|&nbsp;&nbsp;
+  <strong>🌐 Interactive Graph</strong> &nbsp;&nbsp;|&nbsp;&nbsp;
+  <strong>📖 Reader Mode</strong>
 </p>
 
 ---
 
 ### 🏠 Homepage
 
-![Homepage](assets/images/homepage.png)
+![Homepage](assets/images/Homepage.png)
 
-The clean, distraction-free homepage — designed for reading.
+*The clean, distraction-free homepage — designed for reading.*
 
 ---
 
@@ -35,13 +35,40 @@ The clean, distraction-free homepage — designed for reading.
 
 ![Interactive Graph](assets/images/graph-view.png)
 
-See how topics connect. Every note is linked to related concepts.
+*See how topics connect. Every note is linked to related concepts.*
 
 ---
 
 ### 📖 Reader Mode
 
 ![Reader Mode](assets/images/reader-mode.png)
+
+*Focus on what matters. No distractions, just learning.*
+
+---
+
+### 🌓 Dark Mode (Catppuccin Mocha)
+
+![Dark Mode](assets/images/catppuccin-dark-mode.png)
+
+*Easy on the eyes — perfect for late-night reading sessions.*
+
+---
+
+### 📂 Explorer View
+
+![Explorer View](assets/images/explorer-view.png)
+
+*Browse through 400+ notes organized by category.*
+
+---
+
+### 📱 Mobile View
+
+![Mobile View](assets/images/Phone-view.jpeg)
+
+*Fully responsive — access from any device, anywhere.*
+
 
 Focus on what matters. No distractions, just learning.
 
