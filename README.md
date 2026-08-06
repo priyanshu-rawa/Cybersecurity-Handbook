@@ -8,7 +8,7 @@
 
 Focus on what matters. No distractions, just learning.
 
-## 📊 Quick Stats
+---
 
 | | | | | |
 |---|---|---|---|---|
@@ -18,6 +18,7 @@ Focus on what matters. No distractions, just learning.
 ---
 
 ## 👀 Preview
+
 ## 🖼️ What It Looks Like
 
 <p align="center">
