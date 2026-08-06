@@ -480,7 +480,7 @@ The best way to support this project is to share it with others who might find i
 ### 🌱 Join the Community
 
 - 🐙 **Star on GitHub**: https://github.com/priyanshu-rawa/Cybersecurity-Handbook
-- 📖 **Visit the live site**: https://cybersecurity-handbook.vercel.app
+- 📖 **Visit the live site**: https://cybersecurity-handbook-lake.vercel.app
 - 💬 **Start a discussion**: Open an issue or start a conversation
 
 ---
