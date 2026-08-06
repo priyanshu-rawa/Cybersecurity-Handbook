@@ -1,10 +1,10 @@
 @use "./variables.scss" as *;
 
 /* ============================================
-   🔥 AGGRESSIVE HR REMOVAL – FORCES EVERYTHING
+   💀 NUCLEAR HR REMOVAL – KILLS EVERYTHING
    ============================================ */
 
-/* Remove all horizontal rules everywhere */
+/* Kill ALL horizontal rules in EVERY way possible */
 hr,
 hr *,
 hr::before,
@@ -19,15 +19,30 @@ hr::after {
   padding: 0 !important;
   background: none !important;
   box-shadow: none !important;
+  position: absolute !important;
+  pointer-events: none !important;
+  clip: rect(0, 0, 0, 0) !important;
+  overflow: hidden !important;
 }
 
-/* Also target any element that might be adding separators */
-.separator,
-.divider,
+/* Kill all thematic breaks and separators */
+.thematic-break,
+.markdown-hr,
 .section-divider,
 .article-separator,
-.thematic-break,
-.markdown-hr {
+.separator,
+.divider,
+.border-line,
+.hr-line {
+  display: none !important;
+}
+
+/* Kill any element that might look like a line */
+[class*="hr"],
+[class*="divider"],
+[class*="separator"],
+[class*="break"],
+[data-thematic-break] {
   display: none !important;
 }
 
