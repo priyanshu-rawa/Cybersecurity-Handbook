@@ -13,7 +13,7 @@ description: A community-driven cybersecurity knowledge base built from first pr
   /* Premium custom header styling */
   .premium-header {
     text-align: center;
-    padding: 2.5rem 2rem 2rem;
+    padding: 2.5rem 2rem;
     margin-bottom: 2.5rem;
     background: linear-gradient(145deg, #1a1a2e, #0f0f1f);
     border-radius: 20px;
