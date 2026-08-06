@@ -1,21 +1,4 @@
----
-A continuously evolving cybersecurity knowledge base focused on practical understanding, technical accuracy, and first-principles learning.
----
-
-<p align="center">
-  <strong style="font-size: 2.5rem; color: #4D6BFE;">📘 Cybersecurity Handbook</strong><br>
-  <em style="font-size: 1.2rem; color: #8b949e;">From Fundamentals to Advanced Security</em>
-</p>
-
-<p align="center">
-  <!-- Badges -->
-  <a href="https://github.com/priyanshu-rawa/Cybersecurity-Handbook/stargazers"><img src="https://img.shields.io/github/stars/priyanshu-rawa/Cybersecurity-Handbook?style=for-the-badge&logo=github" alt="Stars"></a>
-  <a href="https://github.com/priyanshu-rawa/Cybersecurity-Handbook/network/members"><img src="https://img.shields.io/github/forks/priyanshu-rawa/Cybersecurity-Handbook?style=for-the-badge&logo=github" alt="Forks"></a>
-  <a href="https://github.com/priyanshu-rawa/Cybersecurity-Handbook/blob/main/LICENSE"><img src="https://img.shields.io/github/license/priyanshu-rawa/Cybersecurity-Handbook?style=for-the-badge" alt="License"></a>
-  <a href="https://cybersecurity-handbook.vercel.app"><img src="https://img.shields.io/badge/Live_Demo-View_Site-4D6BFE?style=for-the-badge&logo=vercel" alt="Live Demo"></a>
-</p>
-
----
+> A continuously evolving cybersecurity knowledge base focused on practical understanding, technical accuracy, and first-principles learning.
 
 ## 📖 Overview
 
@@ -194,7 +177,7 @@ This setup ensures the handbook is fast, searchable, and easy to maintain over t
 
 ## 👨‍💻 About the Author
 
-"I'm **Priyanshu Rawat**, a self-taught security learner sharing what I discover. I believe that the best way to learn is to document everything – and this handbook is the result of that philosophy.
+I'm **Priyanshu Rawat**, a self-taught security learner sharing what I discover. I believe that the best way to learn is to document everything – and this handbook is the result of that philosophy.
 
 I'm particularly interested in:
 
@@ -223,9 +206,9 @@ This handbook is my attempt to build a comprehensive, accessible, and practical 
 
 <div align="center">
 
-## 📘 Cybersecurity Handbook
+**📘 Cybersecurity Handbook**
 
-**Created and maintained by [Priyanshu Rawat](https://github.com/priyanshu-rawa)**
+Created and maintained by **[Priyanshu Rawat](https://github.com/priyanshu-rawa)**
 
 Built with ❤️ using **Obsidian + Quartz**
 
