@@ -49,6 +49,7 @@
     "globby": "^16.1.0",
     "hast-util-to-jsx-runtime": "^2.3.6",
     "isomorphic-git": "^1.36.3",
+    "lenis": "^1.0.0",
     "lightningcss": "^1.31.1",
     "micromorph": "^0.4.5",
     "minimatch": "^10.1.1",
