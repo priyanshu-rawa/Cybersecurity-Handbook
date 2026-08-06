@@ -1,7 +1,3 @@
-<p align="center">
-  <img src="./assets/images/banner.svg" alt="Cybersecurity Handbook" width="120">
-</p>
-
 <h1 align="center">📘 Cybersecurity Handbook</h1>
 
 <p align="center">
