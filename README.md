@@ -10,9 +10,14 @@
 ## 🖥️ What It Looks Like
 
 <p align="center">
-  <img src="assets/images/Homepage.png" alt="Homepage" width="32%">
-  <img src="assets/images/graph-view.png" alt="Interactive Graph" width="32%">
-  <img src="assets/images/reader-mode.png" alt="Reader Mode" width="32%">
+  <picture>
+    <source media="(max-width: 600px)" srcset="assets/images/Homepage.png" width="280">
+    <img src="assets/images/Homepage.png" alt="Homepage" width="32%">
+  </picture>
+  <picture>
+    <source media="(max-width: 600px)" srcset="assets/images/reader-mode.png" width="280">
+    <img src="assets/images/reader-mode.png" alt="Reader Mode" width="32%">
+  </picture>
 </p>
 
 <p align="center">
@@ -25,7 +30,9 @@
 
 ### 🏠 Homepage
 
-![Homepage](assets/images/Homepage.png)
+<p align="center">
+  <img src="assets/images/Homepage.png" alt="Homepage" width="600">
+</p>
 
 *The clean, distraction-free homepage — designed for reading.*
 
@@ -33,7 +40,9 @@
 
 ### 🌐 Interactive Knowledge Graph
 
-![Interactive Graph](assets/images/graph-view.png)
+<p align="center">
+  <img src="assets/images/graph-view.png" alt="Interactive Graph" width="600">
+</p>
 
 *See how topics connect. Every note is linked to related concepts.*
 
@@ -41,7 +50,9 @@
 
 ### 📖 Reader Mode
 
-![Reader Mode](assets/images/reader-mode.png)
+<p align="center">
+  <img src="assets/images/reader-mode.png" alt="Reader Mode" width="600">
+</p>
 
 *Focus on what matters. No distractions, just learning.*
 
@@ -49,15 +60,18 @@
 
 ### 🌓 Dark Mode (Catppuccin Mocha)
 
-![Dark Mode](assets/images/catppuccin-dark-mode.png)
+<p align="center">
+  <img src="assets/images/catppuccin-dark-mode.png" alt="Dark Mode" width="600">
+</p>
 
 *Easy on the eyes — perfect for late-night reading sessions.*
 
----
 
 ### 📱 Mobile View
 
-![Mobile View](assets/images/Phone-view.jpeg)
+<p align="center">
+  <img src="assets/images/Phone-view.jpeg" alt="Mobile View" width="300">
+</p>
 
 *Fully responsive — access from any device, anywhere.*
 
