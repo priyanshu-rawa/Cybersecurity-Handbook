@@ -6,7 +6,7 @@ This isn't just another collection of notes. It's a structured, living knowledge
 
 The content is designed to grow with you – from the first time you open a terminal to the day you're building your own detection rules. No fluff, no copy-pasted documentation. Just clear explanations, real-world examples, and a focus on understanding *why* things work the way they do.
 
----
+
 
 ## 🧠 Philosophy
 
@@ -16,7 +16,6 @@ I believe that mastering security requires a solid grasp of the underlying techn
 
 It's a slow, deliberate approach. But it builds the kind of deep understanding that stays with you long after you've closed the browser.
 
----
 
 ## 👥 Who This is For
 
@@ -40,7 +39,6 @@ This handbook is for anyone who wants to understand cybersecurity at a professio
 
 The content is designed to be accessible without sacrificing depth. Whether you're learning your first Linux command or analyzing a kernel exploit, the material remains useful.
 
----
 
 ## ✨ Design Principles
 
@@ -58,7 +56,6 @@ Every article in this handbook follows a consistent structure – because consis
 
 The goal is not to overwhelm you with information, but to guide you through a logical learning path. By the end of each topic, you should be able to explain it to someone else.
 
----
 
 ## 🧠 Coverage
 
@@ -131,7 +128,6 @@ The handbook spans the full spectrum of modern cybersecurity. Here's a high-leve
 - **Authentication** – Passwords, multi-factor authentication, and biometrics.
 </details>
 
----
 
 ## 🔬 Learning Methodology
 
@@ -147,7 +143,6 @@ Every concept follows the same progression:
 
 This approach ensures that you're not just memorizing commands, but truly understanding the technology. It's a method that scales from beginner to expert.
 
----
 
 ## 🌱 A Living Resource
 
@@ -160,7 +155,6 @@ Cybersecurity is a moving target. New vulnerabilities, attack techniques, and de
 
 Articles are regularly refined to stay accurate and relevant. If you spot an error or have a suggestion, contributions are always welcome – just open an issue or submit a pull request.
 
----
 
 ## 🛠️ Built With
 
@@ -173,7 +167,6 @@ The handbook is built using a modern, documentation-first workflow:
 
 This setup ensures the handbook is fast, searchable, and easy to maintain over the long term.
 
----
 
 ## 👨‍💻 About the Author
 
@@ -189,7 +182,6 @@ I'm particularly interested in:
 
 This handbook is my attempt to build a comprehensive, accessible, and practical resource for anyone serious about cybersecurity. It's free, open, and always evolving.
 
----
 
 ## 📢 Core Principles
 
@@ -198,11 +190,8 @@ This handbook is my attempt to build a comprehensive, accessible, and practical 
 > 📝 **Document everything.**  
 > 🌍 **Share knowledge.**
 
----
-
 > *Always Learning. Always Documenting. Always Improving.*
 
----
 
 <div align="center">
 
