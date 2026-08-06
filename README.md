@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="assets/banner.svg" width="120" alt="Cybersecurity Handbook">
+  <img src="./assets/images/banner.svg" alt="Cybersecurity Handbook" width="120">
 </p>
 
 <h1 align="center">📘 Cybersecurity Handbook</h1>
@@ -16,27 +16,25 @@
 
 <p align="center">
   <a href="https://cybersecurity-handbook.vercel.app">
-    <img src="https://img.shields.io/badge/🌐_Live_Website-Visit-4D6BFE?style=for-the-badge">
+    <img src="https://img.shields.io/badge/🌐_Live_Website-Visit-4D6BFE?style=for-the-badge" alt="Live Website">
   </a>
   <a href="#-getting-started">
-    <img src="https://img.shields.io/badge/🚀_Getting_Started-Guide-success?style=for-the-badge">
+    <img src="https://img.shields.io/badge/🚀_Getting_Started-Guide-success?style=for-the-badge" alt="Getting Started">
   </a>
   <a href="#-contributing">
-    <img src="https://img.shields.io/badge/🤝_Contributions-Welcome-orange?style=for-the-badge">
+    <img src="https://img.shields.io/badge/🤝_Contributions-Welcome-orange?style=for-the-badge" alt="Contributions">
   </a>
 </p>
 
 <p align="center">
-
-![Stars](https://img.shields.io/github/stars/priyanshu-rawa/Cybersecurity-Handbook?style=flat-square&logo=github)
-![Forks](https://img.shields.io/github/forks/priyanshu-rawa/Cybersecurity-Handbook?style=flat-square&logo=github)
-![Contributors](https://img.shields.io/github/contributors/priyanshu-rawa/Cybersecurity-Handbook?style=flat-square)
-![Issues](https://img.shields.io/github/issues/priyanshu-rawa/Cybersecurity-Handbook?style=flat-square)
-![Last Commit](https://img.shields.io/github/last-commit/priyanshu-rawa/Cybersecurity-Handbook?style=flat-square)
-![License](https://img.shields.io/github/license/priyanshu-rawa/Cybersecurity-Handbook?style=flat-square)
-![Quartz](https://img.shields.io/badge/Built%20With-Quartz-7C3AED?style=flat-square)
-![Markdown](https://img.shields.io/badge/Docs-Markdown-000000?style=flat-square&logo=markdown)
-
+  <img src="https://img.shields.io/github/stars/priyanshu-rawa/Cybersecurity-Handbook?style=flat-square&logo=github" alt="Stars">
+  <img src="https://img.shields.io/github/forks/priyanshu-rawa/Cybersecurity-Handbook?style=flat-square&logo=github" alt="Forks">
+  <img src="https://img.shields.io/github/contributors/priyanshu-rawa/Cybersecurity-Handbook?style=flat-square" alt="Contributors">
+  <img src="https://img.shields.io/github/issues/priyanshu-rawa/Cybersecurity-Handbook?style=flat-square" alt="Issues">
+  <img src="https://img.shields.io/github/last-commit/priyanshu-rawa/Cybersecurity-Handbook?style=flat-square" alt="Last Commit">
+  <img src="https://img.shields.io/github/license/priyanshu-rawa/Cybersecurity-Handbook?style=flat-square" alt="License">
+  <img src="https://img.shields.io/badge/Built%20With-Quartz-7C3AED?style=flat-square" alt="Quartz">
+  <img src="https://img.shields.io/badge/Docs-Markdown-000000?style=flat-square&logo=markdown" alt="Markdown">
 </p>
 
 ---
@@ -45,10 +43,24 @@
 
 <div align="center">
 
-| 🌐 Website | 📚 Notes | 🔍 Search | 🤝 Open Source |
-|------------|----------|-----------|----------------|
-| **Live Demo** | Continuously Growing | Lightning Fast | Community Driven |
+<table>
+<tr>
+<th>📚 Notes</th>
+<th>🧪 Labs</th>
+<th>🔍 Search</th>
+<th>⚡ Performance</th>
+<th>🤝 Community</th>
+</tr>
 
+<tr>
+<td>Continuously Growing</td>
+<td>Hands-on Learning</td>
+<td>Lightning Fast</td>
+<td>Powered by Quartz</td>
+<td>Open Source</td>
+</tr>
+
+</table>
 
 </div>
 
