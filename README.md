@@ -11,7 +11,7 @@
 </p>
 
 <p align="center">
-  <a href="https://cybersecurity-handbook.vercel.app">
+  <a href="https://cybersecurity-handbook-lake.vercel.app" target="_blank">
     <img src="https://img.shields.io/badge/🌐_Live_Website-Visit-4D6BFE?style=for-the-badge" alt="Live Website">
   </a>
   <a href="#-getting-started">
@@ -55,7 +55,6 @@
 <td>Powered by Quartz</td>
 <td>Open Source</td>
 </tr>
-
 </table>
 
 </div>
