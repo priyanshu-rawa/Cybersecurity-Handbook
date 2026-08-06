@@ -319,26 +319,71 @@ All contributors will be acknowledged in the README and on the live site. Your w
 ---
 
 ## ☕ Support & Sponsorship
+## 💎 Support This Project
 
-Maintaining a comprehensive cybersecurity knowledge base takes time, effort, and infrastructure costs. If this handbook has helped you, please consider supporting its continued development.
+This handbook is — and will always be — **completely free and open-source**. If it has helped you in any way, here are some meaningful ways you can support the project:
 
-### Why Sponsor?
+> **"Open source is built by people who care. Every contribution, no matter how small, makes a difference."**
 
-- **🎯 Recognition:** Your logo and link featured prominently on the GitHub repo and live site.
-- **💰 Direct Impact:** Your funds help cover hosting, domain, and tooling costs.
-- **👥 Community Growth:** Support an open resource that educates thousands of cybersecurity students and professionals.
-- ** 🎯 Talent Pipeline:** Show your company's commitment to open-source security education.
+---
 
-### Sponsor Tiers
+### 🌟 How You Can Support
 
-| Tier | Benefits |
-|------|----------|
-| **Bronze** | Name listed in README as a supporter. |
-| **Silver** | Logo and link in README, plus social media shoutout. |
-| **Gold** | Premium placement on the live site, acknowledgment in project updates. |
-| **Platinum** | All Gold benefits + direct consulting/recruiting access to maintainers. |
+| Way | What It Does | Why It Helps |
+|-----|--------------|--------------|
+| ⭐ **Star the repo** | Click the star button at the top | Helps others discover the handbook |
+| 🔗 **Share the handbook** | Post it on LinkedIn, Twitter, Reddit, Discord | Brings more learners to the community |
+| 📝 **Contribute content** | Add new topics, fix typos, improve explanations | Makes the handbook better for everyone |
+| 💬 **Give feedback** | Open an issue or start a discussion | Helps me understand what to improve next |
+| 👥 **Tell a friend** | Share with someone learning cybersecurity | Grows the community organically |
+| 🐛 **Report bugs** | Let me know if something is broken | Keeps the handbook accurate and reliable |
+| 📖 **Use it daily** | Reference it in your learning or work | The best support is using it! |
 
-> **👉 [Sponsor the project](https://github.com/sponsors/priyanshu-rawa)**  
+---
+
+### 🙏 How You Can Contribute
+
+| Area | What You Can Do |
+|------|-----------------|
+| 📝 **Content** | Add new topics, fix errors, improve explanations |
+| 🎨 **Design** | Suggest improvements to layout, visuals, diagrams |
+| 🔧 **Code** | Improve the Quartz setup, fix bugs, add features |
+| 📖 **Documentation** | Improve clarity, formatting, cross-references |
+| 💬 **Community** | Help others in issues/discussions, spread the word |
+
+---
+
+### 💬 Say Thanks
+
+A simple "thank you" or "this helped me" goes a long way. If this handbook made a difference in your learning journey, I'd love to hear about it.
+
+- 📧 **Email**: `zero.trace0654@proton.me`
+
+---
+
+### 🚀 Spread the Word
+
+The best way to support this project is to share it with others who might find it useful.
+
+**Copy this and share it:**
+
+> *"I found this free Cybersecurity Handbook with 400+ notes, built with Obsidian + Quartz. Check it out: https://github.com/priyanshu-rawa/Cybersecurity-Handbook"*
+
+---
+
+### 🌱 Join the Community
+
+- 🐙 **Star on GitHub**: https://github.com/priyanshu-rawa/Cybersecurity-Handbook
+- 📖 **Visit the live site**: https://cybersecurity-handbook.vercel.app
+- 💬 **Start a discussion**: Open an issue or start a conversation
+
+---
+
+**Thank you for being part of this journey. Every star, share, and contribution matters. ❤️**
+
+[![Star](https://img.shields.io/github/stars/priyanshu-rawa/Cybersecurity-Handbook?style=for-the-badge&logo=github)](https://github.com/priyanshu-rawa/Cybersecurity-Handbook)
+[![Share](https://img.shields.io/badge/Share-🔗-4D6BFE?style=for-the-badge)](https://github.com/priyanshu-rawa/Cybersecurity-Handbook)
+
 
 ---
 
@@ -364,7 +409,7 @@ Every star and share helps someone discover this resource.
 
 <div align="center">
 
-**🛡️ Cybersecurity Handbook**
+**📖 Cybersecurity Handbook**
 
 *A continuously evolving cybersecurity knowledge base built through documentation, experimentation, and practical learning.*
 
