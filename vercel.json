@@ -2,5 +2,12 @@
   "buildCommand": "npx quartz plugin install && npx quartz build",
   "outputDirectory": "public",
   "framework": null,
-  "trailingSlash": false
+  "trailingSlash": false,
+  "cleanUrls": true,
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "/$1"
+    }
+  ]
 }
