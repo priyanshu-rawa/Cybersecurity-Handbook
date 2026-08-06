@@ -1,4 +1,9 @@
-> A continuously evolving cybersecurity knowledge base focused on practical understanding, technical accuracy, and first-principles learning.
+---
+title: Cybersecurity Handbook
+description: A community-driven cybersecurity knowledge base with 400+ notes, mind-maps, and cheat-sheets – built from first principles.
+---
+
+A continuously evolving cybersecurity knowledge base focused on practical understanding, technical accuracy, and first-principles learning.
 
 ## 📖 Overview
 
