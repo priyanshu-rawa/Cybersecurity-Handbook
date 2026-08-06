@@ -28,7 +28,7 @@ configuration:
         dark: "#303446"
         secondary: "#7287fd"
         tertiary: "#81c8be"
-        highlight: rgba(114, 135, 253,.15)
+        highlight: rgba(114, 135, 253, 0.15)
         textHighlight: "#eebebe88"
       darkMode:
         light: "#1e1e2e"
@@ -38,7 +38,7 @@ configuration:
         dark: "#f5e0dc"
         secondary: "#89b4fa"
         tertiary: "#94e2d5"
-        highlight: rgba(137, 180, 250, .15)
+        highlight: rgba(137, 180, 250, 0.15)
         textHighlight: "#f9e2af55"
 plugins:
   - source: github:quartz-community/created-modified-date
@@ -224,9 +224,9 @@ plugins:
   - source: github:quartz-community/footer
     enabled: true
     options:
-    links:
-    GitHub: https://github.com/priyanshu-rawa/Cybersecurity-Handbook
-    LinkedIn: https://linkedin.com/in/priyanshurawat9111
+      links:
+        GitHub: https://github.com/priyanshu-rawa/Cybersecurity-Handbook
+        LinkedIn: https://linkedin.com/in/priyanshurawat9111
   - source: github:quartz-community/recent-notes
     enabled: true
   - source: github:quartz-community/spacer
