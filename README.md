@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="assets/logo.png" width="120" alt="Cybersecurity Handbook">
+  <img src="assets/banner.svg" width="120" alt="Cybersecurity Handbook">
 </p>
 
 <h1 align="center">📘 Cybersecurity Handbook</h1>
@@ -49,7 +49,6 @@
 |------------|----------|-----------|----------------|
 | **Live Demo** | Continuously Growing | Lightning Fast | Community Driven |
 
-### **➡️ https://cybersecurity-handbook.vercel.app**
 
 </div>
 
