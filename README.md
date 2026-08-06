@@ -15,6 +15,10 @@
     <img src="assets/images/Homepage.png" alt="Homepage" width="32%">
   </picture>
   <picture>
+    <source media="(max-width: 600px)" srcset="assets/images/graph-view.png" width="280">
+    <img src="assets/images/graph-view.png" alt="Interactive Graph" width="32%">
+  </picture>
+  <picture>
     <source media="(max-width: 600px)" srcset="assets/images/reader-mode.png" width="280">
     <img src="assets/images/reader-mode.png" alt="Reader Mode" width="32%">
   </picture>
@@ -66,6 +70,7 @@
 
 *Easy on the eyes — perfect for late-night reading sessions.*
 
+---
 
 ### 📱 Mobile View
 
