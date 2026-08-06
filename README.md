@@ -55,14 +55,6 @@
 
 ---
 
-### 📂 Explorer View
-
-![Explorer View](assets/images/explorer-view.png)
-
-*Browse through 400+ notes organized by category.*
-
----
-
 ### 📱 Mobile View
 
 ![Mobile View](assets/images/Phone-view.jpeg)
