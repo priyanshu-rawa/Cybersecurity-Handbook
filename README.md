@@ -7,7 +7,7 @@
 [![Visitors](https://api.visitorbadge.io/api/visitors?path=priyanshu-rawa%2FCybersecurity-Handbook&label=Visitors&countColor=%23263759)](https://visitorbadge.io/status?path=priyanshu-rawa%2FCybersecurity-Handbook)
 
 ## 👀 Preview
-## 🖥️ What It Looks Like
+## 🖼️ What It Looks Like
 
 <p align="center">
   <picture>
@@ -25,14 +25,14 @@
 </p>
 
 <p align="center">
-  <strong>📖 Clean Homepage</strong> &nbsp;&nbsp;|&nbsp;&nbsp;
-  <strong>🌐 Interactive Graph</strong> &nbsp;&nbsp;|&nbsp;&nbsp;
+  <strong>🧼 Clean Homepage</strong> &nbsp;&nbsp;|&nbsp;&nbsp;
+  <strong>🕸️ Interactive Graph</strong> &nbsp;&nbsp;|&nbsp;&nbsp;
   <strong>📖 Reader Mode</strong>
 </p>
 
 ---
 
-### 🏠 Homepage
+### 🧼 Homepage
 
 <p align="center">
   <img src="assets/images/Homepage.png" alt="Homepage" width="600">
@@ -42,7 +42,7 @@
 
 ---
 
-### 🌐 Interactive Knowledge Graph
+### 🕸️ Interactive Knowledge Graph
 
 <p align="center">
   <img src="assets/images/graph-view.png" alt="Interactive Graph" width="600">
@@ -62,7 +62,7 @@
 
 ---
 
-### 🌓 Dark Mode (Catppuccin Mocha)
+### 🎨 Dark Mode (Catppuccin Mocha)
 
 <p align="center">
   <img src="assets/images/catppuccin-dark-mode.png" alt="Dark Mode" width="600">
@@ -72,7 +72,7 @@
 
 ---
 
-### 📱 Mobile View
+### 📲 Mobile View
 
 <p align="center">
   <img src="assets/images/Phone-view.jpeg" alt="Mobile View" width="300">
@@ -91,7 +91,7 @@ Focus on what matters. No distractions, just learning.
 
 ---
 
-## 📖 Table of Contents
+## 📚 Table of Contents
 
 - [💡 Why This Exists](#-why-this-exists)
 - [🎨 Key Features](#-key-features)
@@ -100,39 +100,39 @@ Focus on what matters. No distractions, just learning.
 - [📚 What's Inside](#-whats-inside)
 - [🧠 Philosophy](#-philosophy)
 - [🗺️ Roadmap](#-roadmap)
-- [🤝 Contributing](#-contributing)
-- [💖 Support & Sponsorship](#-support--sponsorship)
+- [🌱 Contributing](#-contributing)
+- [🌟 Support & Sponsorship](#-support--sponsorship)
 - [📄 License](#-license)
 
 ---
 
-## 🚀 Why This Exists
+## 💡 Why This Exists
 
 The world of cybersecurity moves fast. New vulnerabilities, tools, and best practices emerge daily. Yet, most resources are scattered across forums, blogs, and paid courses — inaccessible to many who need them most.
 
 **This handbook is different.**
 
 - **📖 Open & Free:** No paywalls, no ads. Just knowledge.
-- **🌐 Interactive:** Powered by Quartz, it's a living document with search, graphs, and deep linking.
-- **👥 Community-Driven:** Built by cybersecurity professionals for the next generation.
-- **🔍 Practical & Current:** Covers real-world threats, tools, and defense strategies.
+- **🕸️ Interactive:** Powered by Quartz, it's a living document with search, graphs, and deep linking.
+- **💬 Community-Driven:** Built by cybersecurity professionals for the next generation.
+- **📡 Practical & Current:** Covers real-world threats, tools, and defense strategies.
 
 Whether you're preparing for your first security certification, defending a corporate network, or just curious about how the digital world stays safe, this handbook is for you.
 
 ---
 
-## ✨ Key Features
+## 🔥 Key Features
 
 - 📚 **400+ Comprehensive Notes** — From OSINT to cryptography to cloud security
-- 🌐 **Interactive Knowledge Graph** — See how topics connect visually
-- 🔍 **Full-Text Search** — Find exactly what you need, instantly
-- 🌓 **Dark/Light Mode** — Read comfortably in any environment
+- 🕸️ **Interactive Knowledge Graph** — See how topics connect visually
+- 🔦 **Full-Text Search** — Find exactly what you need, instantly
+- 🖌️ **Dark/Light Mode** — Read comfortably in any environment
 - 📱 **Mobile-Friendly** — Access from any device, anywhere
 - 🧠 **First-Principles Learning** — Understand *why*, not just *how*
 
 ---
 
-## ⚡ Quick Start
+## 📦 Quick Start
 
 Get the handbook running locally in under 2 minutes.
 
@@ -186,7 +186,7 @@ npm run quartz:serve
 
 ## 📖  What's Inside
 
-### 🧠 Operating Systems
+###  Operating Systems
 
 | Category | Topics |
 |----------|--------|
@@ -194,7 +194,7 @@ npm run quartz:serve
 | Windows | Windows Internals, Active Directory, Security |
 | Networking | TCP/IP, DNS, HTTP/HTTPS, VPN, Firewalls |
 
-### ⚔️ Offensive Security
+###  Offensive Security
 
 | Category | Topics |
 |----------|--------|
@@ -203,7 +203,7 @@ npm run quartz:serve
 | Penetration Testing | Methodologies, Tools, Reporting |
 | Post-Exploitation | Persistence, Lateral Movement, Privilege Escalation |
 
-### 🔐 Defensive Security
+###  Defensive Security
 
 | Category | Topics |
 |----------|--------|
@@ -211,7 +211,7 @@ npm run quartz:serve
 | Detection Engineering | SIEM, Log Analysis, Threat Hunting |
 | Digital Forensics | Memory Forensics, Network Forensics, Malware Analysis |
 
-### ☁️ Cloud & Infrastructure
+###  Cloud & Infrastructure
 
 | Category | Topics |
 |----------|--------|
@@ -219,14 +219,14 @@ npm run quartz:serve
 | Container Security | Docker, Kubernetes, DevSecOps |
 | IAM | Identity Management, Federation, MFA |
 
-### 💻 Programming & Automation
+###  Programming & Automation
 
 | Category | Topics |
 |----------|--------|
 | Languages | Python, Bash, PowerShell |
 | Automation | Scripting, CI/CD, Git |
 
-### 🔑 Cryptography
+###  Cryptography
 
 | Category | Topics |
 |----------|--------|
@@ -336,7 +336,7 @@ We welcome contributions of all kinds — from fixing a single typo to adding an
 
 ---
 
-### 🔍 What We're Looking For
+###📍 Where You Can Contribute
 
 | Type | Description |
 |------|-------------|
@@ -360,20 +360,16 @@ We welcome contributions of all kinds — from fixing a single typo to adding an
 
 ---
 
-### 📖 Need Help?
+###  Need Help?
 
 | Resource | Description |
 |----------|-------------|
-| 📧 **Open an Issue** | [Create a new issue](https://github.com/priyanshu-rawa/Cybersecurity-Handbook/issues) — we'll get back to you |
-| 💬 **Start a Discussion** | Use the Discussions tab for ideas and suggestions |
-| 📄 **View Full Guidelines** | See [CONTRIBUTING.md](CONTRIBUTING.md) for detailed guidelines |
-| 📋 **Code of Conduct** | Please read our [Code of Conduct](CODE_OF_CONDUCT.md) before contributing |
-
+| 📧 **Open an Issue** | [Create a new issue](https://github.com/priyanshu-rawa/Cybersecurity-Handbook/issues) — I'll respond as soon as possible. |
+| 💬 **Start a Discussion** | Use the Discussions tab to share ideas, ask questions, or suggest improvements. |
+| 📄 **Contribution Guide** | See [CONTRIBUTING.md](CONTRIBUTING.md) for contribution guidelines. |
+| 📋 **Code of Conduct** | Please read the [Code of Conduct](CODE_OF_CONDUCT.md) before contributing. |
 ---
 
-### ⭐ Recognition
-
-All contributors will be acknowledged in the README and on the live site. Your work will help thousands of learners worldwide.
 
 ---
 
