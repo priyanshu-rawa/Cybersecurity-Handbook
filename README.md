@@ -6,6 +6,46 @@
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen?style=for-the-badge&logo=github)](CONTRIBUTING.md)
 [![Visitors](https://api.visitorbadge.io/api/visitors?path=priyanshu-rawa%2FCybersecurity-Handbook&label=Visitors&countColor=%23263759)](https://visitorbadge.io/status?path=priyanshu-rawa%2FCybersecurity-Handbook)
 
+## 👀 Preview
+## 🖥️ What It Looks Like
+
+<p align="center">
+  <img src="assets/images/homepage.png" alt="Homepage" width="32%">
+  <img src="assets/images/graph-view.png" alt="Interactive Graph" width="32%">
+  <img src="assets/images/reader-mode.png" alt="Reader Mode" width="32%">
+</p>
+
+<p align="center">
+  <strong>📖 Interactive Knowledge Graph</strong> &nbsp;&nbsp;|&nbsp;&nbsp;
+  <strong>🌓 Dark/Light Mode</strong> &nbsp;&nbsp;|&nbsp;&nbsp;
+  <strong>🔍 Full-Text Search</strong>
+</p>
+
+---
+
+### 🏠 Homepage
+
+![Homepage](assets/images/homepage.png)
+
+The clean, distraction-free homepage — designed for reading.
+
+---
+
+### 🌐 Interactive Knowledge Graph
+
+![Interactive Graph](assets/images/graph-view.png)
+
+See how topics connect. Every note is linked to related concepts.
+
+---
+
+### 📖 Reader Mode
+
+![Reader Mode](assets/images/reader-mode.png)
+
+Focus on what matters. No distractions, just learning.
+
+
 # 📘  Cybersecurity Handbook
 
 
@@ -105,21 +145,6 @@ npm run quartz:serve
 
 ---
 
-## 👀 Preview
-
-### 🏠 Homepage
-
-![Homepage](assets/images/homepage.png)
-
-### 🕸️ Interactive Knowledge Graph
-
-![Interactive Graph](assets/images/graph-view.png)
-
-### 📖 Reader Mode
-
-![Reader Mode](assets/images/read-mode.png)
-
----
 
 ## 📖  What's Inside
 
