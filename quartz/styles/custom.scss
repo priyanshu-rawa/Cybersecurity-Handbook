@@ -1,83 +1,283 @@
 @use "./variables.scss" as *;
 
-// put your custom CSS here!
-/* ---------- Global Page Fade ---------- */
+/* ============================================
+   🎬 GLOBAL ANIMATIONS
+   ============================================ */
 
+/* ---------- Page Load Fade ---------- */
 body {
-  animation: fadePage .45s ease;
+  animation: fadePage 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
 }
 
 @keyframes fadePage {
-  from {
+  0% {
     opacity: 0;
-    transform: translateY(10px);
+    transform: translateY(18px) scale(0.98);
   }
-
-  to {
+  100% {
     opacity: 1;
-    transform: translateY(0);
+    transform: translateY(0) scale(1);
   }
 }
 
 /* ---------- Smooth Scroll ---------- */
-
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 2rem;
 }
 
-/* ---------- Links ---------- */
+/* ============================================
+   🌈 THEME TRANSITIONS (Light/Dark Mode)
+   ============================================ */
 
+html,
+html * {
+  transition: 
+    background-color 0.35s cubic-bezier(0.4, 0, 0.2, 1),
+    color 0.35s cubic-bezier(0.4, 0, 0.2, 1),
+    border-color 0.35s cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ============================================
+   🔗 LINKS & INTERACTIVE ELEMENTS
+   ============================================ */
+
+/* ---------- Links ---------- */
 a {
-  transition: color .2s ease, transform .2s ease;
+  transition: 
+    color 0.2s cubic-bezier(0.4, 0, 0.2, 1),
+    transform 0.2s cubic-bezier(0.4, 0, 0.2, 1),
+    background-color 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
 }
 
 a:hover {
   transform: translateY(-2px);
 }
 
-/* ---------- Sidebar ---------- */
-
-.explorer {
-  transition: all .25s ease;
+/* Internal links glow effect */
+a.internal {
+  transition: 
+    background-color 0.2s ease,
+    color 0.2s ease,
+    box-shadow 0.2s ease;
 }
 
-/* ---------- Cards ---------- */
+a.internal:hover {
+  box-shadow: 0 2px 12px rgba(77, 107, 254, 0.2);
+}
 
+/* ---------- Sidebar (Explorer) ---------- */
+.explorer {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.explorer:hover {
+  transform: translateX(2px);
+}
+
+/* ---------- Sidebar Items ---------- */
+.sidebar li {
+  transition: 
+    transform 0.2s cubic-bezier(0.4, 0, 0.2, 1),
+    padding-left 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.sidebar li:hover {
+  transform: translateX(4px);
+  padding-left: 0.25rem;
+}
+
+/* ============================================
+   📄 CONTENT CARDS & ARTICLES
+   ============================================ */
+
+/* ---------- Article Cards ---------- */
 article {
-  transition: transform .25s ease, box-shadow .25s ease;
+  animation: fadeInUp 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+  transition: 
+    transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 article:hover {
-  transform: translateY(-4px);
+  transform: translateY(-6px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.08);
 }
 
-/* ---------- Images ---------- */
+/* ---------- Article Cards Stagger Animation ---------- */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Stagger delay for cards */
+article:nth-child(1) { animation-delay: 0.05s; }
+article:nth-child(2) { animation-delay: 0.10s; }
+article:nth-child(3) { animation-delay: 0.15s; }
+article:nth-child(4) { animation-delay: 0.20s; }
+article:nth-child(5) { animation-delay: 0.25s; }
+article:nth-child(6) { animation-delay: 0.30s; }
+article:nth-child(7) { animation-delay: 0.35s; }
+article:nth-child(8) { animation-delay: 0.40s; }
+
+/* ============================================
+   🖼️ IMAGES
+   ============================================ */
 
 img {
   border-radius: 14px;
-  transition: transform .25s ease;
+  transition: 
+    transform 0.35s cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 0.35s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 img:hover {
   transform: scale(1.02);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
 }
 
-/* ---------- Code ---------- */
+/* ============================================
+   💻 CODE BLOCKS
+   ============================================ */
 
 pre {
   border-radius: 14px;
+  transition: 
+    box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+    transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* ---------- Tables ---------- */
+pre:hover {
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+}
+
+/* ============================================
+   📊 TABLES
+   ============================================ */
 
 table {
   border-radius: 14px;
   overflow: hidden;
+  transition: 
+    box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* ---------- Selection ---------- */
+table:hover {
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+}
+
+/* ============================================
+   🎨 SELECTION STYLING
+   ============================================ */
 
 ::selection {
   background: #89b4fa;
-  color: #fff;
+  color: #ffffff;
+}
+
+/* ============================================
+   📱 SIDEBAR TOGGLE ANIMATION
+   ============================================ */
+
+.left.sidebar {
+  transition: 
+    transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+    opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ============================================
+   🔍 SEARCH BAR ANIMATION
+   ============================================ */
+
+.search {
+  transition: 
+    width 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.search:focus-within {
+  box-shadow: 0 0 0 3px rgba(77, 107, 254, 0.15);
+}
+
+/* ============================================
+   🏷️ TAGS
+   ============================================ */
+
+.tag-link {
+  transition: 
+    transform 0.2s cubic-bezier(0.4, 0, 0.2, 1),
+    background-color 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.tag-link:hover {
+  transform: translateY(-2px) scale(1.02);
+}
+
+/* ============================================
+   ⚡ TABLE OF CONTENTS
+   ============================================ */
+
+.toc {
+  transition: 
+    opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+    transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.toc:hover {
+  transform: translateX(2px);
+}
+
+/* ============================================
+   🌓 DARK MODE CUSTOM (Catppuccin Mocha)
+   ============================================ */
+
+[saved-theme="dark"] ::selection {
+  background: #cba6f7;
+  color: #1e1e2e;
+}
+
+[saved-theme="dark"] a:hover {
+  color: #cba6f7;
+}
+
+[saved-theme="dark"] article:hover {
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
+}
+
+[saved-theme="dark"] .explorer:hover {
+  background: rgba(203, 166, 247, 0.05);
+}
+
+/* ============================================
+   📱 MOBILE RESPONSIVE
+   ============================================ */
+
+@media (max-width: 800px) {
+  body {
+    animation: fadePage 0.4s ease forwards;
+  }
+  
+  article {
+    animation: fadeInUp 0.4s ease forwards;
+  }
+  
+  article:hover {
+    transform: translateY(-2px);
+  }
+  
+  img:hover {
+    transform: scale(1.01);
+  }
+  
+  .sidebar li:hover {
+    transform: none;
+  }
 }
