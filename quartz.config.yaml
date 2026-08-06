@@ -7,6 +7,7 @@ configuration:
   analytics:
     provider: plausible
   locale: en-US
+  baseUrl: cybersecurity-handbook.vercel.app
   ignorePatterns:
     - private
     - templates
