@@ -1,10 +1,21 @@
 @use "./variables.scss" as *;
 
 /* ============================================
-    NUCLEAR HR REMOVAL – KILLS EVERYTHING
+   HIDE PAGE TITLE ON HOMEPAGE
    ============================================ */
+.hide-title .article-title,
+.hide-title h1.article-title,
+.hide-title .page-title {
+  display: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  height: 0 !important;
+  overflow: hidden !important;
+}
 
-/* Kill ALL horizontal rules in EVERY way possible */
+/* ============================================
+   NUCLEAR HR REMOVAL – KILLS EVERYTHING
+   ============================================ */
 hr,
 hr *,
 hr::before,
@@ -25,7 +36,6 @@ hr::after {
   overflow: hidden !important;
 }
 
-/* Kill all thematic breaks and separators */
 .thematic-break,
 .markdown-hr,
 .section-divider,
@@ -37,7 +47,6 @@ hr::after {
   display: none !important;
 }
 
-/* Kill any element that might look like a line */
 [class*="hr"],
 [class*="divider"],
 [class*="separator"],
@@ -47,10 +56,8 @@ hr::after {
 }
 
 /* ============================================
-   🎬 GLOBAL ANIMATIONS
+   GLOBAL ANIMATIONS
    ============================================ */
-
-/* ---------- Page Load Fade ---------- */
 body {
   animation: fadePage 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
 }
@@ -66,19 +73,17 @@ body {
   }
 }
 
-/* ---------- Smooth Scroll ---------- */
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 2rem;
 }
 
 /* ============================================
-   🌈 THEME TRANSITIONS (Light/Dark Mode)
+   THEME TRANSITIONS
    ============================================ */
-
 html,
 html * {
-  transition: 
+  transition:
     background-color 0.35s cubic-bezier(0.4, 0, 0.2, 1),
     color 0.35s cubic-bezier(0.4, 0, 0.2, 1),
     border-color 0.35s cubic-bezier(0.4, 0, 0.2, 1),
@@ -86,12 +91,10 @@ html * {
 }
 
 /* ============================================
-   🔗 LINKS & INTERACTIVE ELEMENTS
+   LINKS & INTERACTIVE ELEMENTS
    ============================================ */
-
-/* ---------- Links ---------- */
 a {
-  transition: 
+  transition:
     color 0.2s cubic-bezier(0.4, 0, 0.2, 1),
     transform 0.2s cubic-bezier(0.4, 0, 0.2, 1),
     background-color 0.2s cubic-bezier(0.4, 0, 0.2, 1);
@@ -102,9 +105,8 @@ a:hover {
   transform: translateY(-2px);
 }
 
-/* Internal links glow effect */
 a.internal {
-  transition: 
+  transition:
     background-color 0.2s ease,
     color 0.2s ease,
     box-shadow 0.2s ease;
@@ -123,9 +125,8 @@ a.internal:hover {
   transform: translateX(2px);
 }
 
-/* ---------- Sidebar Items ---------- */
 .sidebar li {
-  transition: 
+  transition:
     transform 0.2s cubic-bezier(0.4, 0, 0.2, 1),
     padding-left 0.2s cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -136,13 +137,11 @@ a.internal:hover {
 }
 
 /* ============================================
-   📄 CONTENT CARDS & ARTICLES
+   CONTENT CARDS & ARTICLES
    ============================================ */
-
-/* ---------- Article Cards ---------- */
 article {
   animation: fadeInUp 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
-  transition: 
+  transition:
     transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
     box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -152,7 +151,6 @@ article:hover {
   box-shadow: 0 12px 40px rgba(0, 0, 0, 0.08);
 }
 
-/* ---------- Article Cards Stagger Animation ---------- */
 @keyframes fadeInUp {
   0% {
     opacity: 0;
@@ -164,7 +162,6 @@ article:hover {
   }
 }
 
-/* Stagger delay for cards */
 article:nth-child(1) { animation-delay: 0.05s; }
 article:nth-child(2) { animation-delay: 0.10s; }
 article:nth-child(3) { animation-delay: 0.15s; }
@@ -175,12 +172,11 @@ article:nth-child(7) { animation-delay: 0.35s; }
 article:nth-child(8) { animation-delay: 0.40s; }
 
 /* ============================================
-   🖼️ IMAGES
+   IMAGES
    ============================================ */
-
 img {
   border-radius: 14px;
-  transition: 
+  transition:
     transform 0.35s cubic-bezier(0.4, 0, 0.2, 1),
     box-shadow 0.35s cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -191,12 +187,11 @@ img:hover {
 }
 
 /* ============================================
-   💻 CODE BLOCKS
+   CODE BLOCKS
    ============================================ */
-
 pre {
   border-radius: 14px;
-  transition: 
+  transition:
     box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1),
     transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -206,14 +201,12 @@ pre:hover {
 }
 
 /* ============================================
-   📊 TABLES
+   TABLES
    ============================================ */
-
 table {
   border-radius: 14px;
   overflow: hidden;
-  transition: 
-    box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 table:hover {
@@ -221,30 +214,27 @@ table:hover {
 }
 
 /* ============================================
-   🎨 SELECTION STYLING
+   SELECTION STYLING
    ============================================ */
-
 ::selection {
   background: #89b4fa;
   color: #ffffff;
 }
 
 /* ============================================
-   📱 SIDEBAR TOGGLE ANIMATION
+   SIDEBAR TOGGLE
    ============================================ */
-
 .left.sidebar {
-  transition: 
+  transition:
     transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
     opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* ============================================
-   🔍 SEARCH BAR ANIMATION
+   SEARCH BAR
    ============================================ */
-
 .search {
-  transition: 
+  transition:
     width 0.3s cubic-bezier(0.4, 0, 0.2, 1),
     box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -254,11 +244,10 @@ table:hover {
 }
 
 /* ============================================
-   🏷️ TAGS
+   TAGS
    ============================================ */
-
 .tag-link {
-  transition: 
+  transition:
     transform 0.2s cubic-bezier(0.4, 0, 0.2, 1),
     background-color 0.2s cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -268,11 +257,10 @@ table:hover {
 }
 
 /* ============================================
-   ⚡ TABLE OF CONTENTS
+   TABLE OF CONTENTS
    ============================================ */
-
 .toc {
-  transition: 
+  transition:
     opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1),
     transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -282,9 +270,8 @@ table:hover {
 }
 
 /* ============================================
-   🌓 DARK MODE CUSTOM (Catppuccin Mocha)
+   DARK MODE (Catppuccin Mocha)
    ============================================ */
-
 [saved-theme="dark"] ::selection {
   background: #cba6f7;
   color: #1e1e2e;
@@ -303,60 +290,83 @@ table:hover {
 }
 
 /* ============================================
-   📱 MOBILE RESPONSIVE
+   MOBILE RESPONSIVE
    ============================================ */
-
 @media (max-width: 800px) {
   body {
     animation: fadePage 0.4s ease forwards;
   }
-  
+
   article {
     animation: fadeInUp 0.4s ease forwards;
   }
-  
+
   article:hover {
     transform: translateY(-2px);
   }
-  
+
   img:hover {
     transform: scale(1.01);
   }
-  
+
   .sidebar li:hover {
     transform: none;
   }
 }
 
 /* ============================================
-   💫 THEME ANIMATIONS – OVERLAY EFFECTS
+   THEME OVERLAY EFFECTS
    ============================================ */
-
-/* ---------- Sunlight Burst ---------- */
 #theme-overlay.sunlight {
-  background: radial-gradient(circle at center, rgba(255, 200, 50, 0.6), rgba(255, 150, 0, 0.3) 40%, transparent 70%);
+  background: radial-gradient(
+    circle at center,
+    rgba(255, 200, 50, 0.6),
+    rgba(255, 150, 0, 0.3) 40%,
+    transparent 70%
+  );
   animation: sunlightPulse 0.8s ease-out forwards;
 }
 
 @keyframes sunlightPulse {
-  0% { opacity: 0; transform: scale(0.8); }
-  30% { opacity: 1; transform: scale(1.2); }
-  100% { opacity: 0; transform: scale(1.5); }
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  30% {
+    opacity: 1;
+    transform: scale(1.2);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1.5);
+  }
 }
 
-/* ---------- Night Star Shimmer ---------- */
 #theme-overlay.night {
-  background: radial-gradient(circle at center, rgba(100, 80, 255, 0.4), rgba(20, 10, 50, 0.6) 50%, transparent 70%);
+  background: radial-gradient(
+    circle at center,
+    rgba(100, 80, 255, 0.4),
+    rgba(20, 10, 50, 0.6) 50%,
+    transparent 70%
+  );
   animation: nightShimmer 0.8s ease-out forwards;
 }
 
 @keyframes nightShimmer {
-  0% { opacity: 0; transform: scale(0.8); }
-  30% { opacity: 1; transform: scale(1.1); }
-  100% { opacity: 0; transform: scale(1.3); }
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  30% {
+    opacity: 1;
+    transform: scale(1.1);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1.3);
+  }
 }
 
-/* ---------- Dark/Light Button Haptic Feedback ---------- */
 .darkmode {
   transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1) !important;
 }
@@ -365,23 +375,23 @@ table:hover {
   transform: scale(0.85) !important;
 }
 
-/* ---------- Reader Mode Smooth Transition ---------- */
 body {
-  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1),
-              opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  transition:
+    transform 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+    opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
 }
 
-/* ---------- No Lag on Mobile ---------- */
 @media (max-width: 800px) {
   #theme-overlay {
     transition: opacity 0.3s ease !important;
   }
-  
+
   body {
-    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
-                opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    transition:
+      transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+      opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
   }
-  
+
   .darkmode:active {
     transform: scale(0.9) !important;
   }
