@@ -1,12 +1,68 @@
-[![License](https://img.shields.io/github/license/priyanshu-rawa/Cybersecurity-Handbook?style=for-the-badge&logo=opensourceinitiative)](LICENSE)
-[![Stars](https://img.shields.io/github/stars/priyanshu-rawa/Cybersecurity-Handbook?style=for-the-badge)](https://github.com/priyanshu-rawa/Cybersecurity-Handbook/stargazers)
-[![Forks](https://img.shields.io/github/forks/priyanshu-rawa/Cybersecurity-Handbook?style=for-the-badge)](https://github.com/priyanshu-rawa/Cybersecurity-Handbook/network/members)
-[![Issues](https://img.shields.io/github/issues/priyanshu-rawa/Cybersecurity-Handbook?style=for-the-badge)](https://github.com/priyanshu-rawa/Cybersecurity-Handbook/issues)
-[![Live Demo](https://img.shields.io/badge/Live_Demo-View_Site-4D6BFE?style=for-the-badge&logo=vercel)](https://cybersecurity-handbook.vercel.app)
-[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen?style=for-the-badge&logo=github)](CONTRIBUTING.md)
-[![Visitors](https://api.visitorbadge.io/api/visitors?path=priyanshu-rawa%2FCybersecurity-Handbook&label=Visitors&countColor=%23263759)](https://visitorbadge.io/status?path=priyanshu-rawa%2FCybersecurity-Handbook)
+<h1 align="center">📘 Cybersecurity Handbook</h1>
+
+<p align="center">
+  A modern, open-source cybersecurity knowledge base designed to help students,
+  professionals, and lifelong learners build practical security skills through
+  structured notes, hands-on labs, and real-world concepts.
+</p>
+
+<p align="center">
+  Built with <b>Quartz</b> • Powered by <b>Markdown</b> • Community Driven • MIT Licensed
+</p>
+
+<p align="center">
+  <a href="https://cybersecurity-handbook-lake.vercel.app">
+    <img src="https://img.shields.io/badge/🌐_Live_Website-Visit-4D6BFE?style=for-the-badge" alt="Live Website">
+  </a>
+  <a href="#-getting-started">
+    <img src="https://img.shields.io/badge/🚀_Getting_Started-Guide-success?style=for-the-badge" alt="Getting Started">
+  </a>
+  <a href="#-contributing">
+    <img src="https://img.shields.io/badge/🤝_Contributions-Welcome-orange?style=for-the-badge" alt="Contributions">
+  </a>
+</p>
+
+<p align="center">
+  <img src="https://img.shields.io/github/stars/priyanshu-rawa/Cybersecurity-Handbook?style=flat-square&logo=github" alt="Stars">
+  <img src="https://img.shields.io/github/forks/priyanshu-rawa/Cybersecurity-Handbook?style=flat-square&logo=github" alt="Forks">
+  <img src="https://img.shields.io/github/contributors/priyanshu-rawa/Cybersecurity-Handbook?style=flat-square" alt="Contributors">
+  <img src="https://img.shields.io/github/issues/priyanshu-rawa/Cybersecurity-Handbook?style=flat-square" alt="Issues">
+  <img src="https://img.shields.io/github/last-commit/priyanshu-rawa/Cybersecurity-Handbook?style=flat-square" alt="Last Commit">
+  <img src="https://img.shields.io/github/license/priyanshu-rawa/Cybersecurity-Handbook?style=flat-square" alt="License">
+  <img src="https://img.shields.io/badge/Built%20With-Quartz-7C3AED?style=flat-square" alt="Quartz">
+  <img src="https://img.shields.io/badge/Docs-Markdown-000000?style=flat-square&logo=markdown" alt="Markdown">
+</p>
+
+---
+
+> **Learn cybersecurity with clarity — from fundamentals to advanced concepts, all in one searchable, open-source handbook.**
+
+<div align="center">
+
+<table>
+<tr>
+<th>📚 Notes</th>
+<th>🧪 Labs</th>
+<th>🔍 Search</th>
+<th>⚡ Performance</th>
+<th>🤝 Community</th>
+</tr>
+
+<tr>
+<td>Continuously Growing</td>
+<td>Hands-on Learning</td>
+<td>Lightning Fast</td>
+<td>Powered by Quartz</td>
+<td>Open Source</td>
+</tr>
+</table>
+
+</div>
+
+---
 
 ## 👀 Preview
+
 ## 🖼️ What It Looks Like
 
 <p align="center">
@@ -81,15 +137,6 @@
 *Fully responsive — access from any device, anywhere.*
 
 
-Focus on what matters. No distractions, just learning.
-
-
-# 📘  Cybersecurity Handbook
-
-
-> **An interactive, open-source knowledge base for cybersecurity professionals, students, and enthusiasts.** Built with Quartz, designed for clarity, and maintained by the community.
-
----
 
 ## 📚 Table of Contents
 
@@ -433,7 +480,7 @@ The best way to support this project is to share it with others who might find i
 ### 🌱 Join the Community
 
 - 🐙 **Star on GitHub**: https://github.com/priyanshu-rawa/Cybersecurity-Handbook
-- 📖 **Visit the live site**: https://cybersecurity-handbook.vercel.app
+- 📖 **Visit the live site**: https://cybersecurity-handbook-lake.vercel.app
 - 💬 **Start a discussion**: Open an issue or start a conversation
 
 ---

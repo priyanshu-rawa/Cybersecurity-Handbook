@@ -1,4 +1,5 @@
 # yaml-language-server: $schema=./quartz/plugins/quartz-plugins.schema.json
+
 configuration:
   pageTitle: Cybersecurity Handbook
   pageTitleSuffix: ""
@@ -12,6 +13,7 @@ configuration:
     - private
     - templates
     - .obsidian
+
   theme:
     fontOrigin: googleFonts
     cdnCaching: true
@@ -40,7 +42,9 @@ configuration:
         tertiary: "#94e2d5"
         highlight: rgba(137, 180, 250, 0.15)
         textHighlight: "#f9e2af55"
+
 plugins:
+  # ========== Transformers ==========
   - source: github:quartz-community/created-modified-date
     enabled: true
     options:
@@ -50,6 +54,7 @@ plugins:
         - git
         - filesystem
     order: 10
+
   - source: github:quartz-community/syntax-highlighting
     enabled: true
     options:
@@ -58,6 +63,7 @@ plugins:
         dark: github-dark
       keepBackground: false
     order: 20
+
   - source: github:quartz-community/obsidian-flavored-markdown
     enabled: true
     options:
@@ -74,50 +80,64 @@ plugins:
       enableVideoEmbed: true
       enableCheckbox: true
     order: 30
+
   - source: github:quartz-community/github-flavored-markdown
     enabled: true
     order: 40
+
   - source: github:quartz-community/table-of-contents
     enabled: true
     order: 50
     layout:
       position: right
       priority: 30
+
   - source: github:quartz-community/crawl-links
     enabled: true
     options:
       markdownLinkResolution: shortest
     order: 60
+
   - source: github:quartz-community/description
     enabled: true
     order: 70
+
   - source: github:quartz-community/latex
     enabled: true
     options:
       renderEngine: katex
     order: 80
+
   - source: github:quartz-community/citations
     enabled: false
     order: 85
+
   - source: github:quartz-community/hard-line-breaks
     enabled: true
     order: 90
+
   - source: github:quartz-community/ox-hugo
     enabled: false
     order: 91
+
   - source: github:quartz-community/roam
     enabled: false
     order: 92
+
   - source: github:quartz-community/fonts
     enabled: true
+
   - source: github:quartz-community/remove-draft
     enabled: true
+
   - source: github:quartz-community/explicit-publish
     enabled: false
+
   - source: github:quartz-community/unlisted-pages
     enabled: true
     options: {}
     order: 45
+
   - source: github:quartz-community/encrypted-pages
     enabled: true
     options:
@@ -125,43 +145,72 @@ plugins:
       passwordField: password
       unlistWhenEncrypted: false
       outputPath: static/encryptedContentIndex.json
+    order: 900
+    layout:
+      position: body
+      priority: 100
+      display: all
+
   - source: github:quartz-community/stacked-pages
     enabled: false
     layout:
       position: afterBody
       priority: 50
       display: all
+
   - source: github:quartz-community/alias-redirects
     enabled: true
+
   - source: github:quartz-community/content-index
     enabled: true
     options:
       enableSiteMap: true
       enableRSS: true
+
   - source: github:quartz-community/favicon
     enabled: true
+
   - source: github:quartz-community/og-image
     enabled: true
+
   - source: github:quartz-community/cname
     enabled: true
+
   - source: github:quartz-community/canvas-page
     enabled: true
+
   - source: github:quartz-community/content-page
     enabled: true
+
   - source: github:quartz-community/folder-page
     enabled: true
+
   - source: github:quartz-community/tag-page
     enabled: true
+
+  # ========== Components ==========
   - source: github:quartz-community/explorer
     enabled: true
+    options:
+      folderClickBehavior: collapse
+      folderDefaultState: collapsed
+      useSavedState: true
     layout:
       position: left
       priority: 50
+
   - source: github:quartz-community/graph
     enabled: true
+    options:
+      localGraph:
+        enable: true
+      globalGraph:
+        enable: true
+        showTags: false
     layout:
       position: right
       priority: 10
+
   - source: github:quartz-community/search
     enabled: true
     layout:
@@ -170,50 +219,62 @@ plugins:
       group: toolbar
       groupOptions:
         grow: true
+
   - source: github:quartz-community/backlinks
     enabled: true
     layout:
       position: right
       priority: 50
+
   - source: github:quartz-community/article-title
     enabled: true
     layout:
       position: beforeBody
       priority: 10
+
   - source: github:quartz-community/content-meta
     enabled: true
     layout:
       position: beforeBody
       priority: 20
+<<<<<<< HEAD
       condition: not-index
+=======
+
+>>>>>>> 6a3940771b7e306e5c334236bc162b0f577ee852
   - source: github:quartz-community/tag-list
     enabled: false
     layout:
       position: beforeBody
       priority: 30
+
   - source: github:quartz-community/page-title
     enabled: true
     layout:
       position: left
       priority: 10
+
   - source: github:quartz-community/darkmode
     enabled: true
     layout:
       position: left
       priority: 30
       group: toolbar
+
   - source: github:quartz-community/reader-mode
     enabled: true
     layout:
       position: left
       priority: 35
       group: toolbar
+
   - source: github:quartz-community/breadcrumbs
     enabled: true
     layout:
       position: beforeBody
       priority: 5
       condition: not-index
+
   - source: github:quartz-community/comments
     enabled: false
     options:
@@ -222,14 +283,17 @@ plugins:
     layout:
       position: afterBody
       priority: 10
+
   - source: github:quartz-community/footer
     enabled: true
     options:
       links:
         GitHub: https://github.com/priyanshu-rawa/Cybersecurity-Handbook
         LinkedIn: https://linkedin.com/in/priyanshurawat9111
+
   - source: github:quartz-community/recent-notes
     enabled: true
+
   - source: github:quartz-community/spacer
     enabled: true
     options: {}
@@ -238,10 +302,12 @@ plugins:
       position: left
       priority: 25
       display: mobile-only
+
   - source: github:quartz-community/bases-page
     enabled: true
     options: {}
     order: 50
+
   - source: github:quartz-community/note-properties
     enabled: false
     options:
@@ -259,6 +325,7 @@ plugins:
       position: beforeBody
       priority: 15
       display: all
+
   - source: github:quartz-community/obsidian-plugin-excalidraw
     enabled: true
     options:
@@ -266,12 +333,14 @@ plugins:
       darkMode: auto
       exportPadding: 20
     order: 50
+
 layout:
   groups:
     toolbar:
       priority: 35
       direction: row
       gap: 0.5rem
+
   byPageType:
     "404":
       positions:
