@@ -24,10 +24,11 @@ hr::after {
 }
 
 /* ============================================
-   GLOBAL ANIMATIONS
+   GLOBAL ANIMATIONS (faster on mobile)
    ============================================ */
 body {
   animation: fadePage 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+  will-change: transform; /* GPU acceleration */
 }
 
 @keyframes fadePage {
@@ -84,9 +85,10 @@ a.internal:hover {
   box-shadow: 0 2px 12px rgba(77, 107, 254, 0.2);
 }
 
-/* ---------- Sidebar (Explorer) ---------- */
+/* ---------- Sidebar (Explorer) – mobile optimised ---------- */
 .explorer {
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  overscroll-behavior: contain; /* smoother scrolling */
 }
 
 .explorer:hover {
@@ -258,11 +260,16 @@ table:hover {
 }
 
 /* ============================================
-   MOBILE RESPONSIVE
+   MOBILE RESPONSIVE (optimised)
    ============================================ */
 @media (max-width: 800px) {
   body {
     animation: fadePage 0.4s ease forwards;
+  }
+
+  /* Reduce animation times for smoother feel */
+  * {
+    animation-duration: 0.3s !important;
   }
 
   article {
@@ -279,6 +286,28 @@ table:hover {
 
   .sidebar li:hover {
     transform: none;
+  }
+
+  /* Explorer mobile specific */
+  .explorer {
+    max-height: 70vh;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* Graph overlay – force visibility on mobile */
+  .graph-container {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100vw !important;
+    height: 100vh !important;
+    z-index: 9999 !important;
+    background: var(--light) !important;
+  }
+
+  .graph-toggle {
+    touch-action: manipulation;
   }
 }
 
