@@ -198,7 +198,7 @@ plugins:
     enabled: true
     options:
       localGraph:
-        enable: false
+        enable: true
       globalGraph:
         enable: true
         showTags: false
