@@ -5,12 +5,14 @@
    ============================================ */
 .hide-title .article-title,
 .hide-title h1.article-title,
-.hide-title .page-title {
+.hide-title .page-title,
+.hide-title article > h1:first-of-type {
   display: none !important;
   margin: 0 !important;
   padding: 0 !important;
   height: 0 !important;
   overflow: hidden !important;
+  visibility: hidden !important;
 }
 
 /* ============================================
