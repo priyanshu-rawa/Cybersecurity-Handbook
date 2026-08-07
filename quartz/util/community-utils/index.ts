@@ -1,91 +1,45 @@
-// ============================================
-// Local replacement for @quartz-community/utils
-// ============================================
 
-// ----- Path & Slug utilities -----
-export const isFilePath = (path: string): boolean => /^\.{0,2}\//.test(path);
-export const isFullSlug = (slug: string): boolean => /^[^/]+$/.test(slug) && !slug.includes('..');
-export const isSimpleSlug = (slug: string): boolean => /^[a-zA-Z0-9_-]+$/.test(slug);
-export const isRelativeURL = (url: string): boolean => /^\.{0,2}\//.test(url);
-export const isAbsoluteURL = (url: string): boolean => /^https?:\/\//.test(url);
+❯ cd C:\Users\Pansi\Downloads\Cybersecurity-Handbook
 
-export const getFullSlug = (slug: string): string => slug.replace(/^\/+/, '').replace(/\/+$/, '');
-export const slugifyFilePath = (filePath: string): string => {
-  return filePath
-    .replace(/\.md$/, '')
-    .replace(/[^a-zA-Z0-9_\-/]/g, '-')
-    .replace(/\/{2,}/g, '/')
-    .replace(/^-|-$/g, '');
-};
-export const simplifySlug = (slug: string): string => slug.split('/').pop() || slug;
+❯ git add quartz/util/community-utils/index.ts quartz/util/path.ts
 
-export const joinSegments = (...segments: string[]): string => {
-  return segments.filter(Boolean).join('/').replace(/\/{2,}/g, '/').replace(/^\/|\/$/g, '');
-};
+❯ git commit -m "fix: add full community-utils export set"
+On branch main
+Your branch is up to date with 'origin/main'.
 
-export const endsWith = (str: string, suffix: string): boolean => str.endsWith(suffix);
-export const trimSuffix = (str: string, suffix: string): string =>
-  str.endsWith(suffix) ? str.slice(0, -suffix.length) : str;
-export const stripSlashes = (str: string): string => str.replace(/^\/+|\/+$/g, '');
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   .gitignore
 
-export const getFileExtension = (path: string): string => {
-  const ext = path.split('.').pop();
-  return ext ? '.' + ext : '';
-};
+no changes added to commit (use "git add" and/or "git commit -a")
 
-export const isFolderPath = (path: string): boolean => path.endsWith('/');
+❯ git push origin main
+To https://github.com/priyanshu-rawa/Cybersecurity-Handbook.git
+ ! [rejected]        main -> main (fetch first)
+error: failed to push some refs to 'https://github.com/priyanshu-rawa/Cybersecurity-Handbook.git'
+hint: Updates were rejected because the remote contains work that you do not
+hint: have locally. This is usually caused by another repository pushing to
+hint: the same ref. If you want to integrate the remote changes, use
+hint: 'git pull' before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
 
-export const getAllSegmentPrefixes = (path: string): string[] => {
-  const segments = path.split('/').filter(Boolean);
-  return segments.map((_, i) => segments.slice(0, i + 1).join('/'));
-};
+❯ git pull origin main
+remote: Enumerating objects: 17, done.
+remote: Counting objects: 100% (17/17), done.
+remote: Compressing objects: 100% (9/9), done.
+remote: Total 10 (delta 6), reused 0 (delta 0), pack-reused 0 (from 0)
+Unpacking objects: 100% (10/10), 3.22 KiB | 86.00 KiB/s, done.
+From https://github.com/priyanshu-rawa/Cybersecurity-Handbook
+ * branch            main       -> FETCH_HEAD
+   38416e5..5a79a52  main       -> origin/main
+Updating 38416e5..5a79a52
+Fast-forward
+ content/01 Cybersecurity Mastery.md  |   7 --
+ quartz/util/community-utils/index.ts | 194 ++++++++++++++++-------------------
+ 2 files changed, 86 insertions(+), 115 deletions(-)
 
-export const pathToRoot = (from: string): string => {
-  const depth = from.split('/').filter(Boolean).length;
-  return '../'.repeat(depth) || './';
-};
+❯ git push origin main
+Everything up-to-date
 
-export const resolveRelative = (from: string, to: string): string => {
-  const fromSegments = from.split('/').filter(Boolean);
-  const toSegments = to.split('/').filter(Boolean);
-  let i = 0;
-  while (i < fromSegments.length && i < toSegments.length && fromSegments[i] === toSegments[i]) i++;
-  const back = fromSegments.slice(i).map(() => '..');
-  const forward = toSegments.slice(i);
-  return [...back, ...forward].join('/') || './';
-};
-
-export const splitAnchor = (url: string): [string, string] => {
-  const [base, anchor] = url.split('#');
-  return [base || '', anchor || ''];
-};
-
-export const slugTag = (tag: string): string => {
-  return tag.toLowerCase().replace(/[^a-zA-Z0-9_\-]/g, '-');
-};
-
-export type FilePath = string;
-export type FullSlug = string;
-export type SimpleSlug = string;
-export type RelativeURL = string;
-
-export interface TransformOptions {
-  base: string;
-  preserveAnchors?: boolean;
-  keepFileExtensions?: boolean;
-}
-
-export const transformInternalLink = (link: string, opts: TransformOptions): string => {
-  // Basic implementation – adjust if needed
-  return link;
-};
-
-export const transformLink = (link: string, opts: TransformOptions): string => {
-  // Basic implementation – adjust if needed
-  return link;
-};
-
-export const normalizeHastElement = (el: any, opts?: any): any => {
-  // Basic implementation – adjust if needed
-  return el;
-};
+❯
