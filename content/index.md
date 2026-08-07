@@ -1,142 +1,204 @@
 ---
 title: Cybersecurity Handbook
 description: A community-driven cybersecurity knowledge base with 400+ notes, mind maps, and cheat sheets — built from first principles.
-cssclasses:
-  - hide-title
 ---
 
 # Cybersecurity Handbook
 
-**400+ concept notes. Real technical depth. Built from first principles.**
+> A continuously evolving knowledge base focused on practical understanding, technical accuracy, and first-principles learning — from your first terminal command to writing your own detection rules.
 
-In 2026, organizations face an average of nearly **2,000 cyber attacks per week**. AI is supercharging both attackers and defenders. Ransomware appears in almost half of all breaches. Identity remains the #1 path for successful intrusions.
-
-This handbook exists so you can understand the systems, protocols, and techniques behind those numbers — not just memorize tool commands.
-
-[Explore Topics ↓](#what-youll-find-here) · [Start Learning ↓](#who-this-is-for) · [GitHub →](https://github.com/priyanshu-rawa)
+[Browse the coverage ↓](#coverage) · [Read the philosophy ↓](#philosophy) · [GitHub →](https://github.com/priyanshu-rawa)
 
 ---
 
-## Why This Exists
+## Overview
 
-Most cybersecurity resources are either too shallow or too tool-heavy.  
-This one focuses on **how things actually work**.
+This isn’t another collection of scattered notes.
 
-> “Security is not a product, but a process.”  
-> — Bruce Schneier
+It’s a structured, living knowledge base that breaks complex cybersecurity topics into clear, practical pieces — useful whether you’re a student making sense of the OWASP Top 10, a SOC analyst hunting for IoCs, or a red teamer building a custom exploit.
 
-Every note starts from first principles: how a protocol functions, why an algorithm is secure (or not), how an operating system manages privileges, and where the real attack surface lies.
+No fluff. No copy-pasted documentation. Just clear explanations, real-world examples, and a consistent focus on understanding **why** things work the way they do — not just which command to run.
 
 ---
 
-## What You’ll Find Here
+## Philosophy
 
-### Core Fundamentals
-CIA Triad, Risk Management, Security Principles, Threat Landscape, Frameworks (NIST, ISO), Ethics & Legal considerations.
+> **Cybersecurity is best learned by understanding systems — not by memorizing tools.**
 
-> **Tip:** Master the CIA Triad and risk thinking before jumping into tools. Almost every advanced technique is just an application of these basics.
+Mastering security requires a solid grasp of the underlying technology. Every topic here starts from first principles: how a protocol actually works, how an OS manages memory, how a cryptographic algorithm achieves its guarantees.
 
-### Network & Protocol Security
-ARP, TCP/IP, DNS, Firewalls, VPNs, IDS/IPS, Wireless Security (Aircrack-ng suite, handshake capture, deauthentication, WPA/WPA2).
+Only after that do we move to practical application, attack scenarios, and defensive strategy.
 
-> **Current reality (2026):** Vulnerability exploitation has risen sharply as an initial access vector. Understanding protocols still remains the best long-term defense.
+It’s a slower, more deliberate approach than most tutorials take. But it builds understanding that remains useful long after you’ve closed the browser tab.
 
-### Application & API Security
-OWASP concepts, Secure Coding, API Security, Web Application Exploitation, DevSecOps.
+---
 
-### Identity & Access Management
-Authentication mechanisms, MFA, RBAC/ABAC, Privileged Access Management, Kerberos, SSO & Federation.
+## What Makes It Different
 
-> **2026 Insight:** Identity weaknesses appear in nearly 90% of serious incident investigations. “Log in” has become more common than “break in.”
+**First principles before tools**  
+Before you learn to crack a Wi-Fi password, you understand how 802.11 authentication actually works. Tools change. The underlying systems don’t.
 
-### Cryptography (Classical → Post-Quantum)
-AES, RSA, ECC, Hashing (SHA family, BLAKE2), PKI, Digital Signatures, and modern post-quantum algorithms (CRYSTALS-Kyber, Dilithium, BIKE, SPHINCS+, etc.).
+**Internal architecture, not surface-level**  
+How does Kerberos actually issue a ticket? What happens inside the CPU when a buffer overflow occurs? We go under the hood.
 
-> **Tip:** “Harvest now, decrypt later” is already happening. Understanding post-quantum cryptography is no longer optional for long-term security design.
+**Attack and defense, together**  
+Every vulnerability is explained from both sides — how an attacker exploits it, and how a defender detects and prevents it. Red teamers learn how blue teams think, and vice versa.
 
-### Offensive Techniques & Privilege Escalation
-Ethical Hacking fundamentals, Penetration Testing methodologies, Social Engineering, Wireless attacks, and a full **Privilege Escalation Handbook** covering Linux, Windows, Cloud, Containers, reverse shells, and detection evasion.
+**Real implementation, not just theory**  
+Every topic comes back to practical application: configuration examples, command references, sample code, and hands-on labs.
 
-### Defensive Operations
-SIEM, Endpoint Security, Threat Hunting, Digital Forensics & Incident Response, Malware Analysis concepts, Threat Intelligence.
+---
 
-### Additional Areas
-Blockchain & Crypto concepts, Cloud Security notes, Digital Well-Being, Emerging Tech, and Career topics.
+## Learning Methodology
+
+Every concept follows the same deliberate progression:
+
+1. **Fundamentals** — the core idea, stripped of complexity  
+2. **Internal working** — how it actually operates under the hood  
+3. **Real-world example** — a practical demonstration  
+4. **Hands-on practice** — labs and exercises to apply it  
+5. **Attacker’s perspective** — how an adversary would exploit it  
+6. **Defender’s perspective** — how to detect and prevent it  
+7. **Detection & mitigation** — logs, alerts, and countermeasures  
+
+This ensures you’re not memorizing commands — you’re building understanding that scales from beginner to expert.
+
+---
+
+## Coverage
+
+The handbook spans the full spectrum of modern cybersecurity, organized into six areas:
+
+<details>
+<summary><strong>Core Computing & Systems</strong></summary>
+
+- **Linux** — Commands, file systems, process management, security hardening  
+- **Windows** — Internals, Active Directory, PowerShell for automation and security  
+- **Networking** — TCP/IP, DNS, routing, VPNs, firewalls, packet analysis  
+- **Operating Systems** — Process scheduling, memory management, file systems, kernel security  
+- **Virtualization & Containers** — Docker, Kubernetes, hypervisors, container security  
+
+</details>
+
+<details>
+<summary><strong>Offensive Security</strong></summary>
+
+- **Reconnaissance** — OSINT, scanning, service enumeration, information gathering  
+- **Web Application Security** — OWASP Top 10, SQL injection, XSS, SSRF, CSRF, secure coding  
+- **Wireless Security** — Wi-Fi attacks, WPA/WPA2 cracking, evil twin, wireless auditing  
+- **Active Directory Attacks** — Kerberos attacks, LDAP enumeration, privilege escalation, lateral movement  
+- **Privilege Escalation** — Linux and Windows techniques, from kernel exploits to misconfigurations  
+- **Exploit Development** — Buffer overflows, ROP, shellcode, fuzzing  
+- **Reverse Engineering** — Binary analysis, decompilation, debugging, compiled code  
+- **Red Team Methodology** — Full attack lifecycle, C2, persistence, threat simulation  
+
+</details>
+
+<details>
+<summary><strong>Defensive Security</strong></summary>
+
+- **Detection Engineering** — Sigma rules, YARA rules, SIEM detection logic  
+- **Threat Hunting** — Proactive, hypothesis-driven investigation  
+- **Incident Response** — Playbooks, containment, eradication, recovery, post-incident analysis  
+- **Malware Analysis** — Static, dynamic, and behavioral analysis  
+- **Digital Forensics** — Memory, disk, and network forensics, evidence handling  
+- **SIEM** — Log aggregation, correlation, alerting, tuning (Splunk, ELK, QRadar)  
+- **Endpoint Security** — EDR, antivirus, application control, hardening  
+- **Network Security** — Firewalls, IDS/IPS, segmentation, secure architecture  
+- **Threat Intelligence** — Consuming and producing intel, IoCs, threat actor profiling  
+
+</details>
+
+<details>
+<summary><strong>Cloud & Infrastructure Security</strong></summary>
+
+- **AWS Security** — IAM, S3 bucket security, EC2 security groups, cloud attack vectors  
+- **Azure Security** — Entra ID, Key Vault, Azure Security Center  
+- **GCP Security** — IAM, Cloud Run, Google Cloud best practices  
+- **Container & Kubernetes Security** — Docker hardening, Kubernetes RBAC, cluster hardening  
+- **DevSecOps** — CI/CD security, infrastructure-as-code scanning, shift-left practices  
+
+</details>
+
+<details>
+<summary><strong>Programming & Automation</strong></summary>
+
+- **Python** — Scripting for security tasks, tool building, automation  
+- **Bash** — Shell scripting for Linux administration and automation  
+- **PowerShell** — Windows automation and offensive scripting  
+- **APIs** — REST and GraphQL security, authentication, common vulnerabilities  
+
+</details>
+
+<details>
+<summary><strong>Cryptography</strong></summary>
+
+- **Classical Cryptography** — Historical ciphers and their modern relevance  
+- **Modern Cryptography** — Symmetric/asymmetric algorithms, AES, RSA, ECC, post-quantum  
+- **PKI** — Certificates, Certificate Authorities, trust models, deployment  
+- **TLS** — The handshake, cipher suites, vulnerabilities, best practices  
+- **Hashing** — SHA-2, SHA-3, MD5, and integrity verification  
+- **Authentication** — Passwords, MFA, biometrics  
+
+</details>
 
 ---
 
 ## Who This Is For
 
-| Level | What you’ll get |
-|-------|-----------------|
-| **Beginner** | Clear explanations of core concepts (CIA Triad, basic networking, authentication, cryptography foundations) without unnecessary complexity |
-| **Intermediate** | Deeper protocol and tool understanding, practical attack/defense context, wireless security, application security, IAM |
-| **Advanced** | Privilege Escalation Handbook, post-quantum cryptography, detection evasion, DFIR concepts, and internal architecture notes |
+- **Students & self-learners** — a structured path without the noise  
+- **SOC analysts** — playbooks, log analysis guides, detection engineering deep dives  
+- **Penetration testers** — practical content from enumeration through post-exploitation  
+- **Red & blue teams** — attackers get methodology, defenders get detection and mitigation  
+- **Detection engineers & incident responders** — SIEM configs, forensic workflows, real IR playbooks  
+- **Cloud & infrastructure engineers** — hands-on security for AWS, Azure, GCP, Docker, Kubernetes  
+- **Reverse engineers & malware analysts** — static/dynamic analysis, binary RE, malware behavior  
+- **Researchers & IT professionals** — deep dives into emerging threats, cryptography, networking internals  
 
-> “The weakest link in the security chain is the human element.”  
-> — Kevin Mitnick
-
----
-
-## Learning Philosophy
-
-1. **Understand the system first**  
-2. **Then learn how it can be attacked**  
-3. **Then learn how to detect and defend**  
-
-Tools change. Foundations last.
-
-> “It takes 20 years to build a reputation and a few minutes of a cyber-incident to ruin it.”  
-> — Stéphane Nappo
-
----
-
-## Current Landscape Snapshot (2026)
-
-- AI is the #1 driver of change according to the majority of security leaders  
-- AI-related vulnerabilities are considered the fastest-growing risk  
-- Ransomware remains present in roughly half of breaches  
-- Identity-based techniques dominate successful intrusions  
-- Average global data breach cost sits around $4.4 million  
-
-This handbook helps you build the mental models needed to navigate that reality.
+The material stays accessible without sacrificing depth — whether you’re learning your first Linux command or analyzing a kernel exploit.
 
 ---
 
 ## A Living Resource
 
-New notes, deeper series, and refinements continue to be added.  
-The Privilege Escalation Handbook and post-quantum cryptography sections are already substantial technical resources.
+Cybersecurity is a moving target, and this handbook moves with it:
 
-> [!tip] Found an error or want to contribute?  
-> Open an issue or pull request — contributions are welcome.
+- New research and threat intelligence  
+- New labs and walkthroughs  
+- Updated tools and techniques  
+- Ongoing refinement based on community feedback  
+
+> [!tip] Found something wrong or outdated?  
+> Open an issue or submit a pull request — contributions are always welcome.
 
 ---
 
 ## Built With
 
-Obsidian + Quartz 5 + GitHub + Vercel  
+- **Obsidian** — knowledge management and note-taking  
+- **Quartz 5** — the static site generator turning markdown into a fast, searchable website  
+- **Git & GitHub** — version control and collaboration  
+- **Vercel** — hosting and continuous deployment  
 
-Push → automatic rebuild and deploy.
+Push to GitHub, and the site rebuilds and redeploys automatically. Fast, searchable, and easy to maintain over the long term.
 
 ---
 
 ## About the Author
 
-**Priyanshu Rawat** — self-taught security learner who documents everything he studies.
+I’m **Priyanshu Rawat**, a self-taught security learner sharing what I discover.
 
-This started as personal notes and grew into a public knowledge base because the best way to learn is to write concepts clearly enough for someone else to understand them deeply.
+I believe the best way to learn is to document everything — this handbook is the result of that habit turned into a project.
 
-Free. Open. Always evolving.
+I’m particularly interested in Linux and Windows internals, networking protocols and their security implications, offensive and defensive methodology, cloud security and containerization, and automation for security workflows.
+
+This is my attempt at a comprehensive, accessible, practical resource for anyone serious about cybersecurity. It’s free, open, and always evolving.
 
 ---
 
 ## Core Principles
 
-> **Learn deeply.  
-> Build deliberately.  
-> Document everything.  
-> Share knowledge.**
+> **Learn deeply. Build deliberately. Document everything. Share knowledge.**
 
 > *Always learning. Always documenting. Always improving.*
 
@@ -149,6 +211,6 @@ Created and maintained by [Priyanshu Rawat](https://github.com/priyanshu-rawa)
 
 Built with Obsidian + Quartz
 
-If this helped you, a star on [GitHub](https://github.com/priyanshu-rawa) is appreciated.
+If this helped you, a star on [GitHub](https://github.com/priyanshu-rawa) is always appreciated.
 
 </div>
