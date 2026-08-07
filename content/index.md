@@ -1,9 +1,4 @@
----
-title: Cybersecurity Handbook
-description: A community-driven cybersecurity knowledge base with 400+ notes, mind maps, and cheat sheets — built from first principles.
----
-
-# Cybersecurity Handbook
+# 📘 Cybersecurity Handbook
 
 **New:** A complete Privilege Escalation Handbook has been added. You’ll find the full folder on the left in the Explorer.
 
