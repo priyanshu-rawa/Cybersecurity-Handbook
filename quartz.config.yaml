@@ -183,14 +183,25 @@ plugins:
   - source: github:quartz-community/tag-page
     enabled: true
 
+  # ========== Components ==========
   - source: github:quartz-community/explorer
     enabled: true
+    options:
+      folderClickBehavior: collapse
+      folderDefaultState: collapsed
+      useSavedState: true
     layout:
       position: left
       priority: 50
 
   - source: github:quartz-community/graph
     enabled: true
+    options:
+      localGraph:
+        enable: false
+      globalGraph:
+        enable: true
+        showTags: false
     layout:
       position: right
       priority: 10
