@@ -1,7 +1,7 @@
 @use "./variables.scss" as *;
 
 /* ============================================
-   NUCLEAR HR REMOVAL – KILLS EVERYTHING
+   HR REMOVAL – only targets actual <hr> elements
    ============================================ */
 hr,
 hr *,
@@ -21,25 +21,6 @@ hr::after {
   pointer-events: none !important;
   clip: rect(0, 0, 0, 0) !important;
   overflow: hidden !important;
-}
-
-.thematic-break,
-.markdown-hr,
-.section-divider,
-.article-separator,
-.separator,
-.divider,
-.border-line,
-.hr-line {
-  display: none !important;
-}
-
-[class*="hr"],
-[class*="divider"],
-[class*="separator"],
-[class*="break"],
-[data-thematic-break] {
-  display: none !important;
 }
 
 /* ============================================
