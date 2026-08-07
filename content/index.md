@@ -116,6 +116,7 @@ The Privilege Escalation Handbook and post-quantum cryptography sections are alr
 ## Built With
 
 Obsidian + Quartz 5 + GitHub + Vercel  
+
 Push → automatic rebuild and deploy.
 
 ---
