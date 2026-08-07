@@ -1,3 +1,4 @@
+```
 @use "./variables.scss" as *;
 
 /* ============================================
@@ -399,48 +400,4 @@ body {
   }
 }
 
-/* ============================================
-   SITE-WIDE: HIDE TITLES & DESCRIPTIONS
-   (Appended block — hides titles/descriptions across the site)
-   ============================================ */
-
-.article-title,
-h1.article-title,
-.page-title,
-.site-title,
-.header .page-title,
-.entry-title,
-.article > h1:first-of-type,
-.article h1:first-of-type,
-.post-subtitle,
-.lead,
-.article-description,
-.page-description,
-.content-meta,
-.content-meta .description,
-.content-meta .excerpt,
-.article-meta .description,
-.article-subtitle,
-.quartz-left .page-title,
-.quartz-left .site-title,
-.left .page-title {
-  display: none !important;
-  visibility: hidden !important;
-  height: 0 !important;
-  margin: 0 !important;
-  padding: 0 !important;
-  overflow: hidden !important;
-}
-
-/* Extra safety: hide any page title that may be rendered by plugins or components */
-[data-component="page-title"],
-[data-component="article-title"],
-.plugin-page-title,
-.plugin-article-title {
-  display: none !important;
-  visibility: hidden !important;
-  height: 0 !important;
-  margin: 0 !important;
-  padding: 0 !important;
-  overflow: hidden !important;
-}
+```
