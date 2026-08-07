@@ -195,6 +195,7 @@ plugins:
       folderClickBehavior: collapse
       folderDefaultState: collapsed
       useSavedState: true
+      maxDepth: 2                # ← ADDED for faster mobile rendering
     layout:
       position: left
       priority: 50
