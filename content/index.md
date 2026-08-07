@@ -1,4 +1,4 @@
-# 📘 Cybersecurity Handbook
+## 📖 Cybersecurity Handbook
 
 **New:** A complete Privilege Escalation Handbook has been added. You’ll find the full folder on the left in the Explorer.
 
