@@ -1,4 +1,5 @@
 # yaml-language-server: $schema=./quartz/plugins/quartz-plugins.schema.json
+# GRAPH PLUGIN ENABLED - FIXED INDENTATION
 configuration:
   pageTitle: Cybersecurity Handbook
   pageTitleSuffix: ""
