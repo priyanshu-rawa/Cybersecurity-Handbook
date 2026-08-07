@@ -1,3 +1,4 @@
+```
 # yaml-language-server: $schema=./quartz/plugins/quartz-plugins.schema.json
 configuration:
   pageTitle: Cybersecurity Handbook
@@ -176,7 +177,7 @@ plugins:
       position: right
       priority: 50
   - source: github:quartz-community/article-title
-    enabled: false
+    enabled: true
     layout:
       position: beforeBody
       priority: 10
@@ -191,7 +192,7 @@ plugins:
       position: beforeBody
       priority: 30
   - source: github:quartz-community/page-title
-    enabled: false
+    enabled: true
     layout:
       position: left
       priority: 10
@@ -290,3 +291,5 @@ layout:
         right: []
     canvas: {}
     bases: {}
+
+```
