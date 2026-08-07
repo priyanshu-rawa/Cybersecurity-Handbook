@@ -6,7 +6,7 @@ configuration:
   enableSPA: true
   enablePopovers: true
   analytics:
-    provider: plausible
+    provider: vercel
   locale: en-US
   baseUrl: cybersecurity-handbook.vercel.app
   ignorePatterns:
