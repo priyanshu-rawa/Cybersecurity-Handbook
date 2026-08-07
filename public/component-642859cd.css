@@ -1,0 +1,1 @@
+@layer quartz-base{.backlinks{flex-direction:column}.backlinks>h3{margin:0;font-size:1rem}.backlinks>ul.overflow{overscroll-behavior:contain;max-height:calc(100% - 2rem);margin:.5rem 0;padding:0;list-style:none}.backlinks>ul.overflow>li>a{background-color:#0000}}

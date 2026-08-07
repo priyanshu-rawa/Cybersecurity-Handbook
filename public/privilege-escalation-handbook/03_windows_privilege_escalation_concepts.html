@@ -1,0 +1,950 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr"><head><title>Untitled</title><meta charset="utf-8"/><link rel="preload" href="../index-b488e415.css" as="style"/><link rel="preload" href="../prescript-2bfc6315.js" as="script"/><link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com"/><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space Grotesk:wght@400;700&amp;family=Inter:ital,wght@0,400;0,600;1,400;1,600&amp;family=IBM Plex Mono:wght@400;600&amp;display=swap"/><link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin="anonymous"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta name="og:site_name" content="Cybersecurity Handbook"/><meta property="og:title" content="Untitled"/><meta property="og:type" content="website"/><meta name="twitter:card" content="summary_large_image"/><meta name="twitter:title" content="Untitled"/><meta name="twitter:description" content="Windows Privilege Escalation Concepts Privilege Escalation Handbook — File 03 Focus: security architecture that enables Windows privilege escalation Techniques are covered in File 04 Table of Contents Introduction Windows Security Architecture Overview Security Identifiers (SIDs) Access Tokens Integ..."/><meta property="og:description" content="Windows Privilege Escalation Concepts Privilege Escalation Handbook — File 03 Focus: security architecture that enables Windows privilege escalation Techniques are covered in File 04 Table of Contents Introduction Windows Security Architecture Overview Security Identifiers (SIDs) Access Tokens Integ..."/><meta property="og:image:alt" content="Windows Privilege Escalation Concepts Privilege Escalation Handbook — File 03 Focus: security architecture that enables Windows privilege escalation Techniques are covered in File 04 Table of Contents Introduction Windows Security Architecture Overview Security Identifiers (SIDs) Access Tokens Integ..."/><meta property="og:image" content="https://cybersecurity-handbook.vercel.app/static/og-image.png"/><meta property="og:image:url" content="https://cybersecurity-handbook.vercel.app/static/og-image.png"/><meta name="twitter:image" content="https://cybersecurity-handbook.vercel.app/static/og-image.png"/><meta property="og:image:type" content="image/.png"/><meta property="twitter:domain" content="cybersecurity-handbook.vercel.app"/><meta property="og:url" content="https://cybersecurity-handbook.vercel.app/privilege-escalation-handbook/03_windows_privilege_escalation_concepts"/><meta property="twitter:url" content="https://cybersecurity-handbook.vercel.app/privilege-escalation-handbook/03_windows_privilege_escalation_concepts"/><link rel="icon" href="../static/icon.png"/><meta name="description" content="Windows Privilege Escalation Concepts Privilege Escalation Handbook — File 03 Focus: security architecture that enables Windows privilege escalation Techniques are covered in File 04 Table of Contents Introduction Windows Security Architecture Overview Security Identifiers (SIDs) Access Tokens Integ..."/><meta name="generator" content="Quartz"/><link href="../index-b488e415.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-735924e0.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-589c1cea.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-2911f5d1.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-e427079e.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-53b25b2b.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-c93c6a44.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-8a06014f.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-77d6a441.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-6ee21cee.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-1ea6ad18.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-34bdfded.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-788c9ca3.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-642859cd.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-4abc06bd.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-274a3dfe.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-94cb6c84.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-58d5ff56.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-9f9b2774.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-caf7c009.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-7262b5a7.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../static/resource-style-a5c806d2.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../static/resource-style-6bd36952.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../static/resource-style-9857b007.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../static/resource-style-d3a1a224.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" rel="stylesheet" type="text/css" data-persist="true"/><script src="../prescript-2bfc6315.js" type="application/javascript" data-persist="true"></script><script type="application/javascript" data-persist="true">const fetchData = fetch("../static/contentIndex.json").then(data => data.json())</script><link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous"/><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Schibsted%20Grotesk%3Awght%40400%3B700&amp;family=Source%20Sans%20Pro%3Aital%2Cwght%400%2C400%3B0%2C600%3B1%2C400%3B1%2C600&amp;family=IBM%20Plex%20Mono%3Awght%40400%3B600&amp;display=swap"/><meta property="og:image:width" content="1200"/><meta property="og:image:height" content="630"/><meta property="og:image" content="https://cybersecurity-handbook.vercel.app/privilege-escalation-handbook/03_windows_privilege_escalation_concepts-og-image.webp"/><meta property="og:image:url" content="https://cybersecurity-handbook.vercel.app/privilege-escalation-handbook/03_windows_privilege_escalation_concepts-og-image.webp"/><meta name="twitter:image" content="https://cybersecurity-handbook.vercel.app/privilege-escalation-handbook/03_windows_privilege_escalation_concepts-og-image.webp"/><meta property="og:image:type" content="image/webp"/></head><body data-slug="privilege-escalation-handbook/03_windows_privilege_escalation_concepts" data-basepath><div id="quartz-root" class="page" data-frame="default"><div id="quartz-body"><div class="left sidebar"><h2 class="page-title"><a href="..">Cybersecurity Handbook</a></h2><div class="mobile-only"><div class="spacer"></div></div><div class="flex-component" style="flex-direction: row; flex-wrap: nowrap; gap: 0.5rem;"><div style="flex-grow: 1; flex-shrink: 1; flex-basis: auto; order: 0; align-self: center; justify-self: center;"><div class="search"><button class="search-button" aria-label="Search" aria-expanded="false"><svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.9 19.7"><title>Search</title><g class="search-path" fill="none"><path stroke-linecap="square" d="M18.5 18.3l-5.4-5.4"></path><circle cx="8" cy="8" r="7"></circle></g></svg><p>Search</p></button><div class="search-container"><div class="search-space"><input autocomplete="off" class="search-bar" name="search" type="text" aria-label="Search for something..." placeholder="Search for something..."/><div class="search-layout" data-preview="true" data-field-priority="[&quot;title&quot;,&quot;content&quot;,&quot;tags&quot;]"></div></div></div></div></div><div style="flex-grow: 0; flex-shrink: 1; flex-basis: auto; order: 0; align-self: center; justify-self: center;"><button class="darkmode" aria-label="Dark mode"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" class="dayIcon" x="0px" y="0px" viewBox="0 0 35 35" style="enable-background:new 0 0 35 35" xml:space="preserve" aria-label="Dark mode"><title>Dark mode</title><path d="M6,17.5C6,16.672,5.328,16,4.5,16h-3C0.672,16,0,16.672,0,17.5    S0.672,19,1.5,19h3C5.328,19,6,18.328,6,17.5z M7.5,26c-0.414,0-0.789,0.168-1.061,0.439l-2,2C4.168,28.711,4,29.086,4,29.5    C4,30.328,4.671,31,5.5,31c0.414,0,0.789-0.168,1.06-0.44l2-2C8.832,28.289,9,27.914,9,27.5C9,26.672,8.329,26,7.5,26z M17.5,6    C18.329,6,19,5.328,19,4.5v-3C19,0.672,18.329,0,17.5,0S16,0.672,16,1.5v3C16,5.328,16.671,6,17.5,6z M27.5,9    c0.414,0,0.789-0.168,1.06-0.439l2-2C30.832,6.289,31,5.914,31,5.5C31,4.672,30.329,4,29.5,4c-0.414,0-0.789,0.168-1.061,0.44    l-2,2C26.168,6.711,26,7.086,26,7.5C26,8.328,26.671,9,27.5,9z M6.439,8.561C6.711,8.832,7.086,9,7.5,9C8.328,9,9,8.328,9,7.5    c0-0.414-0.168-0.789-0.439-1.061l-2-2C6.289,4.168,5.914,4,5.5,4C4.672,4,4,4.672,4,5.5c0,0.414,0.168,0.789,0.439,1.06    L6.439,8.561z M33.5,16h-3c-0.828,0-1.5,0.672-1.5,1.5s0.672,1.5,1.5,1.5h3c0.828,0,1.5-0.672,1.5-1.5S34.328,16,33.5,16z     M28.561,26.439C28.289,26.168,27.914,26,27.5,26c-0.828,0-1.5,0.672-1.5,1.5c0,0.414,0.168,0.789,0.439,1.06l2,2    C28.711,30.832,29.086,31,29.5,31c0.828,0,1.5-0.672,1.5-1.5c0-0.414-0.168-0.789-0.439-1.061L28.561,26.439z M17.5,29    c-0.829,0-1.5,0.672-1.5,1.5v3c0,0.828,0.671,1.5,1.5,1.5s1.5-0.672,1.5-1.5v-3C19,29.672,18.329,29,17.5,29z M17.5,7    C11.71,7,7,11.71,7,17.5S11.71,28,17.5,28S28,23.29,28,17.5S23.29,7,17.5,7z M17.5,25c-4.136,0-7.5-3.364-7.5-7.5    c0-4.136,3.364-7.5,7.5-7.5c4.136,0,7.5,3.364,7.5,7.5C25,21.636,21.636,25,17.5,25z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" class="nightIcon" x="0px" y="0px" viewBox="0 0 100 100" style="enable-background:new 0 0 100 100" xml:space="preserve" aria-label="Light mode"><title>Light mode</title><path d="M96.76,66.458c-0.853-0.852-2.15-1.064-3.23-0.534c-6.063,2.991-12.858,4.571-19.655,4.571  C62.022,70.495,50.88,65.88,42.5,57.5C29.043,44.043,25.658,23.536,34.076,6.47c0.532-1.08,0.318-2.379-0.534-3.23  c-0.851-0.852-2.15-1.064-3.23-0.534c-4.918,2.427-9.375,5.619-13.246,9.491c-9.447,9.447-14.65,22.008-14.65,35.369  c0,13.36,5.203,25.921,14.65,35.368s22.008,14.65,35.368,14.65c13.361,0,25.921-5.203,35.369-14.65  c3.872-3.871,7.064-8.328,9.491-13.246C97.826,68.608,97.611,67.309,96.76,66.458z"></path></svg></button></div><div style="flex-grow: 0; flex-shrink: 1; flex-basis: auto; order: 0; align-self: center; justify-self: center;"><button class="readermode" aria-label="Reader mode"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" class="readerIcon" fill="currentColor" stroke="currentColor" stroke-width="0.2" stroke-linecap="round" stroke-linejoin="round" width="64px" height="64px" viewBox="0 0 24 24" aria-label="Reader mode"><title>Reader mode</title><g transform="translate(-1.8, -1.8) scale(1.15, 1.2)"><path d="M8.9891247,2.5 C10.1384702,2.5 11.2209868,2.96705384 12.0049645,3.76669482 C12.7883914,2.96705384 13.8709081,2.5 15.0202536,2.5 L18.7549359,2.5 C19.1691495,2.5 19.5049359,2.83578644 19.5049359,3.25 L19.5046891,4.004 L21.2546891,4.00457396 C21.6343849,4.00457396 21.9481801,4.28672784 21.9978425,4.6528034 L22.0046891,4.75457396 L22.0046891,20.25 C22.0046891,20.6296958 21.7225353,20.943491 21.3564597,20.9931534 L21.2546891,21 L2.75468914,21 C2.37499337,21 2.06119817,20.7178461 2.01153575,20.3517706 L2.00468914,20.25 L2.00468914,4.75457396 C2.00468914,4.37487819 2.28684302,4.061083 2.65291858,4.01142057 L2.75468914,4.00457396 L4.50368914,4.004 L4.50444233,3.25 C4.50444233,2.87030423 4.78659621,2.55650904 5.15267177,2.50684662 L5.25444233,2.5 L8.9891247,2.5 Z M4.50368914,5.504 L3.50468914,5.504 L3.50468914,19.5 L10.9478955,19.4998273 C10.4513189,18.9207296 9.73864328,18.5588115 8.96709342,18.5065584 L8.77307039,18.5 L5.25444233,18.5 C4.87474657,18.5 4.56095137,18.2178461 4.51128895,17.8517706 L4.50444233,17.75 L4.50368914,5.504 Z M19.5049359,17.75 C19.5049359,18.1642136 19.1691495,18.5 18.7549359,18.5 L15.2363079,18.5 C14.3910149,18.5 13.5994408,18.8724714 13.0614828,19.4998273 L20.5046891,19.5 L20.5046891,5.504 L19.5046891,5.504 L19.5049359,17.75 Z M18.0059359,3.999 L15.0202536,4 L14.8259077,4.00692283 C13.9889509,4.06666544 13.2254227,4.50975805 12.7549359,5.212 L12.7549359,17.777 L12.7782651,17.7601316 C13.4923805,17.2719483 14.3447024,17 15.2363079,17 L18.0059359,16.999 L18.0056891,4.798 L18.0033792,4.75457396 L18.0056891,4.71 L18.0059359,3.999 Z M8.9891247,4 L6.00368914,3.999 L6.00599909,4.75457396 L6.00599909,4.75457396 L6.00368914,4.783 L6.00368914,16.999 L8.77307039,17 C9.57551536,17 10.3461406,17.2202781 11.0128313,17.6202194 L11.2536891,17.776 L11.2536891,5.211 C10.8200889,4.56369974 10.1361548,4.13636104 9.37521067,4.02745763 L9.18347055,4.00692283 L8.9891247,4 Z"></path></g></svg></button></div></div><div class="explorer nav-files-container" data-behavior="collapse" data-collapsed="collapsed" data-savestate="true" data-data-fns="{&quot;order&quot;:[&quot;filter&quot;,&quot;map&quot;,&quot;sort&quot;],&quot;sortFn&quot;:&quot;(a2, b2) => {\r\n    if (!a2.isFolder &amp;&amp; !b2.isFolder || a2.isFolder &amp;&amp; b2.isFolder) {\r\n      return (a2.displayName || \&quot;\&quot;).localeCompare(b2.displayName || \&quot;\&quot;, void 0, {\r\n        numeric: true,\r\n        sensitivity: \&quot;base\&quot;\r\n      });\r\n    }\r\n    if (!a2.isFolder &amp;&amp; b2.isFolder) {\r\n      return 1;\r\n    }\r\n    return -1;\r\n  }&quot;,&quot;filterFn&quot;:&quot;(node) => node.slugSegment !== \&quot;tags\&quot;&quot;,&quot;mapFn&quot;:&quot;(node) => {\r\n    return node;\r\n  }&quot;}"><button type="button" class="explorer-toggle mobile-explorer hide-until-loaded" data-mobile="true" aria-controls="explorer-297" aria-label="Explorer"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide-menu"><line x1="4" x2="20" y1="12" y2="12"></line><line x1="4" x2="20" y1="6" y2="6"></line><line x1="4" x2="20" y1="18" y2="18"></line></svg></button><button type="button" class="title-button explorer-toggle desktop-explorer" data-mobile="false" aria-expanded="true"><h2>Explorer</h2><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="5 8 14 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="fold"><polyline points="6 9 12 15 18 9"></polyline></svg></button><div id="explorer-297" class="explorer-content" aria-expanded="false" role="group"><ul class="explorer-ul overflow" id="list-0"><li class="overflow-end"></li></ul></div><template id="template-file"><li><a href="#" class="nav-file-title tree-item-self"></a></li></template><template id="template-folder"><li><div class="folder-container nav-folder-title tree-item-self"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="5 8 14 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="folder-icon nav-folder-collapse-indicator collapse-icon"><polyline points="6 9 12 15 18 9"></polyline></svg><div><button class="folder-button"><span class="folder-title"></span></button></div></div><div class="folder-outer"><ul class="content tree-item-children"></ul></div></li></template></div></div><div class="center"><div class="page-header"><div class="popover-hint"><p show-comma="true" class="content-meta"><time datetime="2026-08-05T18:59:14.000Z">Aug 06, 2026</time><span>11 min read</span></p></div></div><article class="popover-hint"><div class="markdown-preview-view markdown-rendered"><h1 id="windows-privilege-escalation-concepts">Windows Privilege Escalation Concepts<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#windows-privilege-escalation-concepts" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h1>
+<blockquote>
+<p><strong>Privilege Escalation Handbook</strong> — File 03<br/>
+Focus: security architecture that enables Windows privilege escalation<br/>
+Techniques are covered in File 04</p>
+</blockquote>
+<hr/>
+<h2 id="table-of-contents">Table of Contents<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#table-of-contents" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<ol>
+<li><a href="#1-introduction" class="internal internal-link alias">Introduction</a></li>
+<li><a href="#2-windows-security-architecture-overview" class="internal internal-link alias">Windows Security Architecture Overview</a></li>
+<li><a href="#3-security-identifiers-sids" class="internal internal-link alias">Security Identifiers (SIDs)</a></li>
+<li><a href="#4-access-tokens" class="internal internal-link alias">Access Tokens</a></li>
+<li><a href="#5-integrity-levels--mandatory-integrity-control" class="internal internal-link alias">Integrity Levels &amp; Mandatory Integrity Control</a></li>
+<li><a href="#6-user-account-control-uac" class="internal internal-link alias">User Account Control (UAC)</a></li>
+<li><a href="#7-privileges" class="internal internal-link alias">Privileges</a></li>
+<li><a href="#8-access-control-lists-dacl--sacl" class="internal internal-link alias">Access Control Lists (DACL / SACL)</a></li>
+<li><a href="#9-service-security" class="internal internal-link alias">Service Security</a></li>
+<li><a href="#10-registry-security" class="internal internal-link alias">Registry Security</a></li>
+<li><a href="#11-ntfs-security" class="internal internal-link alias">NTFS Security</a></li>
+<li><a href="#12-authentication-packages--credential-storage" class="internal internal-link alias">Authentication Packages &amp; Credential Storage</a></li>
+<li><a href="#13-active-directory-concepts-for-privesc" class="internal internal-link alias">Active Directory Concepts for PrivEsc</a></li>
+<li><a href="#14-process--thread-security" class="internal internal-link alias">Process &amp; Thread Security</a></li>
+<li><a href="#15-how-concepts-map-to-attack-vectors" class="internal internal-link alias">How Concepts Map to Attack Vectors</a></li>
+<li><a href="#16-references" class="internal internal-link alias">References</a></li>
+</ol>
+<hr/>
+<h2 id="1-introduction">1. Introduction<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#1-introduction" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>Windows privilege escalation is rarely about a single “exploit button.” It is about understanding <strong>who you are</strong> (token), <strong>what you can do</strong> (privileges + groups), <strong>what objects you can touch</strong> (DACL), and <strong>what runs automatically as higher privilege</strong> (services, tasks, drivers).</p>
+<p>This file builds the mental model. File 04 applies it with concrete techniques.</p>
+<blockquote>
+<p><strong>Pro tip:</strong> On Windows, always dump your token groups and privileges first (<code>whoami /all</code>). Many “privesc” paths are already half-granted by misassigned rights.</p>
+</blockquote>
+<hr/>
+<h2 id="2-windows-security-architecture-overview">2. Windows Security Architecture Overview<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#2-windows-security-architecture-overview" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<h3 id="21-core-components">2.1 Core Components<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#21-core-components" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th>Component</th><th>Role</th></tr></thead><tbody><tr><td><strong>LSA</strong> (Local Security Authority)</td><td>Policy, authentication, token creation</td></tr><tr><td><strong>SRM</strong> (Security Reference Monitor)</td><td>Access checks in kernel</td></tr><tr><td><strong>LSASS</strong></td><td>User-mode auth process; holds secrets</td></tr><tr><td><strong>SAM</strong></td><td>Local account database</td></tr><tr><td><strong>Security Descriptors</strong></td><td>Owner, DACL, SACL, labels on objects</td></tr><tr><td><strong>Access Tokens</strong></td><td>Process/thread identity + privileges</td></tr></tbody></table></div>
+<h3 id="22-subject--object-access-check-simplified">2.2 Subject → Object Access Check (Simplified)<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#22-subject--object-access-check-simplified" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ol>
+<li>Subject presents <strong>access token</strong>.</li>
+<li>Object has <strong>security descriptor</strong> (DACL).</li>
+<li>SRM evaluates desired access against DACL + privileges + integrity level.</li>
+<li>Grant or deny; optionally audit via SACL.</li>
+</ol>
+<h3 id="23-local-vs-domain">2.3 Local vs Domain<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#23-local-vs-domain" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th>Context</th><th>Identity store</th><th>Typical privesc focus</th></tr></thead><tbody><tr><td>Workgroup / local</td><td>SAM</td><td>Services, UAC, tokens, unquoted paths</td></tr><tr><td>Domain-joined</td><td>AD + local SAM</td><td>Both local + AD abuse paths</td></tr><tr><td>Domain controller</td><td>AD DS</td><td>DCSync, tickets, domain groups</td></tr></tbody></table></div>
+<hr/>
+<h2 id="3-security-identifiers-sids">3. Security Identifiers (SIDs)<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#3-security-identifiers-sids" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<h3 id="31-what-is-a-sid">3.1 What Is a SID?<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#31-what-is-a-sid" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>A <strong>Security Identifier</strong> uniquely identifies a principal (user, group, computer, well-known authority).</p>
+<p>Example formats:</p>
+<figure data-rehype-pretty-code-figure><pre tabindex="0" data-language="text" data-theme="github-light github-dark"><code data-language="text" data-theme="github-light github-dark" style="display:grid;"><span data-line><span>S-1-5-21-&lt;domain>-&lt;RID>     # domain/local account</span></span>
+<span data-line><span>S-1-5-18                     # Local System</span></span>
+<span data-line><span>S-1-5-19                     # Local Service</span></span>
+<span data-line><span>S-1-5-20                     # Network Service</span></span>
+<span data-line><span>S-1-5-32-544                 # Administrators (built-in)</span></span>
+<span data-line><span>S-1-5-32-545                 # Users</span></span>
+<span data-line><span>S-1-5-32-546                 # Guests</span></span></code></pre></figure>
+<h3 id="32-well-known-sids-high-value">3.2 Well-Known SIDs (High Value)<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#32-well-known-sids-high-value" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th>SID</th><th>Name</th><th>Why it matters</th></tr></thead><tbody><tr><td>S-1-5-18</td><td>SYSTEM</td><td>Highest local machine identity</td></tr><tr><td>S-1-5-32-544</td><td>Administrators</td><td>Local admin group</td></tr><tr><td>S-1-5-32-547</td><td>Power Users</td><td>Legacy elevation paths</td></tr><tr><td>S-1-1-0</td><td>Everyone</td><td>Over-permissive DACLs</td></tr><tr><td>S-1-5-11</td><td>Authenticated Users</td><td>Common mis-ACL target</td></tr><tr><td>S-1-5-32-555</td><td>Remote Desktop Users</td><td>Lateral access</td></tr><tr><td>S-1-5-32-562</td><td>Distributed COM Users</td><td>DCOM abuse surface</td></tr></tbody></table></div>
+<h3 id="33-rids">3.3 RIDs<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#33-rids" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>Relative IDs for built-in accounts (local):</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th>RID</th><th>Account</th></tr></thead><tbody><tr><td>500</td><td>Administrator</td></tr><tr><td>501</td><td>Guest</td></tr><tr><td>502</td><td>KRBTGT (domain)</td></tr><tr><td>512</td><td>Domain Admins (domain)</td></tr><tr><td>515</td><td>Domain Computers</td></tr><tr><td>516</td><td>Domain Controllers</td></tr></tbody></table></div>
+<h3 id="34-commands">3.4 Commands<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#34-commands" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<figure data-rehype-pretty-code-figure><pre tabindex="0" data-language="cmd" data-theme="github-light github-dark"><code data-language="cmd" data-theme="github-light github-dark" style="display:grid;"><span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="normal">whoami /user</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="normal">whoami /groups</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">wmic useraccount</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="keyword"> get </span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="normal">name,sid</span></span></code></pre></figure>
+<figure data-rehype-pretty-code-figure><pre tabindex="0" data-language="powershell" data-theme="github-light github-dark"><code data-language="powershell" data-theme="github-light github-dark" style="display:grid;"><span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation">[</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="keyword">System.Security.Principal.WindowsIdentity</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation">]::GetCurrent().User.Value</span></span>
+<span data-line><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;" data-token-type="function">Get-LocalUser</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="operator"> |</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;"> Select Name</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="operator">,</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;"> SID</span></span></code></pre></figure>
+<h3 id="35-attack-vector-angle">3.5 Attack Vector Angle<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#35-attack-vector-angle" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ul>
+<li>Misconfigured DACLs granting <strong>Everyone</strong> or <strong>Authenticated Users</strong> write access to service binaries/registry keys.</li>
+<li>SIDHistory abuse in AD (migration attributes) for privilege retention.</li>
+<li>Knowing SYSTEM SID helps when reading ACLs and scheduled task principals.</li>
+</ul>
+<hr/>
+<h2 id="4-access-tokens">4. Access Tokens<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#4-access-tokens" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<h3 id="41-token-contents">4.1 Token Contents<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#41-token-contents" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>An access token typically includes:</p>
+<ul>
+<li>User SID</li>
+<li>Group SIDs</li>
+<li>Privileges (enabled/disabled)</li>
+<li>Owner defaults</li>
+<li>Integrity level</li>
+<li>Restricted SIDs (sometimes)</li>
+<li>Elevated vs limited token linkage (UAC)</li>
+</ul>
+<h3 id="42-primary-vs-impersonation-tokens">4.2 Primary vs Impersonation Tokens<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#42-primary-vs-impersonation-tokens" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><strong>Primary token</strong></td><td>Assigned to process at creation</td></tr><tr><td><strong>Impersonation token</strong></td><td>Thread can adopt another user’s security context</td></tr></tbody></table></div>
+<p>Impersonation levels:</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th>Level</th><th>Capability</th></tr></thead><tbody><tr><td>Anonymous</td><td>Almost none</td></tr><tr><td>Identification</td><td>Know identity, limited</td></tr><tr><td>Impersonation</td><td>Act as user <strong>on local system</strong></td></tr><tr><td>Delegation</td><td>Act as user on remote systems too</td></tr></tbody></table></div>
+<h3 id="43-why-tokens-are-attack-vectors">4.3 Why Tokens Are Attack Vectors<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#43-why-tokens-are-attack-vectors" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ul>
+<li><strong>Token impersonation / theft</strong>: SeImpersonatePrivilege → potato-family attacks.</li>
+<li><strong>Token duplication</strong>: From privileged processes if you can open them.</li>
+<li><strong>UAC split tokens</strong>: Admin users run most apps with filtered tokens.</li>
+</ul>
+<h3 id="44-inspection">4.4 Inspection<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#44-inspection" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<figure data-rehype-pretty-code-figure><pre tabindex="0" data-language="cmd" data-theme="github-light github-dark"><code data-language="cmd" data-theme="github-light github-dark" style="display:grid;"><span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="normal">whoami /all</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="normal">whoami /priv</span></span></code></pre></figure>
+<figure data-rehype-pretty-code-figure><pre tabindex="0" data-language="powershell" data-theme="github-light github-dark"><code data-language="powershell" data-theme="github-light github-dark" style="display:grid;"><span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">whoami </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="operator">/</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">groups </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="operator">/</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">fo list</span></span>
+<span data-line><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;" data-token-type="function">Get-Process</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="operator"> -</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">IncludeUserName </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="operator">|</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;" data-token-type="function"> Sort-Object</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;"> UserName</span></span></code></pre></figure>
+<p>Tools: Process Explorer, Process Hacker, <code>TokenViewer</code>, Seatbelt <code>TokenPrivileges</code>.</p>
+<h3 id="45-network-service--local-service">4.5 NETWORK SERVICE / LOCAL SERVICE<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#45-network-service--local-service" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>These service accounts often hold <strong>SeImpersonatePrivilege</strong>, enabling local privilege escalation via named pipe / COM tricks when a privileged client connects (potato family — File 04).</p>
+<hr/>
+<h2 id="5-integrity-levels--mandatory-integrity-control">5. Integrity Levels &amp; Mandatory Integrity Control<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#5-integrity-levels--mandatory-integrity-control" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<h3 id="51-integrity-levels-il">5.1 Integrity Levels (IL)<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#51-integrity-levels-il" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th>Level</th><th>SID (label)</th><th>Examples</th></tr></thead><tbody><tr><td>Low</td><td>S-1-16-4096</td><td>Protected Mode IE, some sandboxes</td></tr><tr><td>Medium</td><td>S-1-16-8192</td><td>Standard user processes</td></tr><tr><td>High</td><td>S-1-16-12288</td><td>Elevated admin</td></tr><tr><td>System</td><td>S-1-16-16384</td><td>SYSTEM services</td></tr></tbody></table></div>
+<h3 id="52-mic-rules-simplified">5.2 MIC Rules (Simplified)<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#52-mic-rules-simplified" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ul>
+<li>Lower IL generally cannot write to higher IL objects.</li>
+<li>UAC elevation moves Medium → High for elevated processes.</li>
+<li>UIAccess and other special cases exist.</li>
+</ul>
+<h3 id="53-why-it-matters-for-privesc">5.3 Why It Matters for PrivEsc<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#53-why-it-matters-for-privesc" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ul>
+<li>UAC bypasses often aim to start a <strong>High integrity</strong> process without proper consent UX.</li>
+<li>Writing to High IL locations from Medium fails — attackers target <strong>writable High/System paths</strong> via weak DACLs instead.</li>
+</ul>
+<h3 id="54-viewing-il">5.4 Viewing IL<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#54-viewing-il" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<figure data-rehype-pretty-code-figure><pre tabindex="0" data-language="cmd" data-theme="github-light github-dark"><code data-language="cmd" data-theme="github-light github-dark" style="display:grid;"><span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="normal">whoami /groups | findstr Level</span></span></code></pre></figure>
+<p>Or Process Explorer “Integrity” column.</p>
+<hr/>
+<h2 id="6-user-account-control-uac">6. User Account Control (UAC)<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#6-user-account-control-uac" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<h3 id="61-purpose">6.1 Purpose<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#61-purpose" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>UAC separates <strong>standard rights</strong> from <strong>administrative rights</strong> for users in Administrators group using <strong>split tokens</strong>:</p>
+<ul>
+<li>Filtered (medium IL) token for daily use</li>
+<li>Linked full admin token for elevation</li>
+</ul>
+<h3 id="62-consent--credential-prompts">6.2 Consent / Credential Prompts<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#62-consent--credential-prompts" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th>Policy / scenario</th><th>Behavior</th></tr></thead><tbody><tr><td>Admin consent prompt</td><td>Click Yes to elevate</td></tr><tr><td>Credential prompt</td><td>Non-admin must enter admin creds</td></tr><tr><td>Auto-elevate</td><td>Some Microsoft binaries elevate silently (auto-elevation)</td></tr></tbody></table></div>
+<h3 id="63-uac-levels-conceptual">6.3 UAC Levels (Conceptual)<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#63-uac-levels-conceptual" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>Registry policy under:</p>
+<figure data-rehype-pretty-code-figure><pre tabindex="0" data-language="text" data-theme="github-light github-dark"><code data-language="text" data-theme="github-light github-dark" style="display:grid;"><span data-line><span>HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System</span></span></code></pre></figure>
+<p>Notable values:</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th>Value</th><th>Role</th></tr></thead><tbody><tr><td><code>EnableLUA</code></td><td>Master UAC switch</td></tr><tr><td><code>ConsentPromptBehaviorAdmin</code></td><td>Prompt behavior for admins</td></tr><tr><td><code>ConsentPromptBehaviorUser</code></td><td>For standard users</td></tr><tr><td><code>PromptOnSecureDesktop</code></td><td>Secure desktop dimming</td></tr><tr><td><code>FilterAdministratorToken</code></td><td>Built-in Administrator filtering</td></tr></tbody></table></div>
+<h3 id="64-auto-elevation">6.4 Auto-Elevation<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#64-auto-elevation" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>Certain Windows binaries marked for auto-elevation can start elevated without a prompt under specific conditions. Attackers abuse this for <strong>UAC bypass</strong> chains (File 04).</p>
+<h3 id="65-why-uac-is-not-a-security-boundary">6.5 Why UAC Is Not a Security Boundary<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#65-why-uac-is-not-a-security-boundary" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>Microsoft has stated UAC is primarily a <strong>convenience / safety</strong> feature against accidental admin actions, not a hard security boundary against malware running as an admin user. From a red team view:</p>
+<ul>
+<li>Code execution as local admin user ≠ full high-integrity admin yet</li>
+<li>But many reliable UAC bypasses exist when already admin-group member</li>
+</ul>
+<blockquote>
+<p><strong>Warning note for defenders:</strong> Do not treat “UAC enabled” as equivalent to “malware cannot get SYSTEM.” Combine with AppLocker/WDAC, EDR, least privilege, and no standing local admin.</p>
+</blockquote>
+<h3 id="66-checking-elevation">6.6 Checking Elevation<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#66-checking-elevation" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<figure data-rehype-pretty-code-figure><pre tabindex="0" data-language="cmd" data-theme="github-light github-dark"><code data-language="cmd" data-theme="github-light github-dark" style="display:grid;"><span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="normal">whoami /groups | findstr /i </span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string">&quot;High Mandatory&quot;</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">net </span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;" data-token-type="property">session</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="operator"> ></span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="normal">nul </span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;" data-token-type="value">2</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="operator">>&amp;</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;" data-token-type="value">1</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="operator"> &amp;&amp;</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="normal"> echo Elevated </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="operator">||</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;"> echo </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="operator">Not</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;"> elevated</span></span></code></pre></figure>
+<hr/>
+<h2 id="7-privileges">7. Privileges<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#7-privileges" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<h3 id="71-privileges-vs-rights-vs-permissions">7.1 Privileges vs Rights vs Permissions<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#71-privileges-vs-rights-vs-permissions" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th>Term</th><th>Meaning</th></tr></thead><tbody><tr><td><strong>Privilege</strong></td><td>System-wide right in token (e.g., SeDebugPrivilege)</td></tr><tr><td><strong>Logon right</strong></td><td>Who may log on interactively/network/service</td></tr><tr><td><strong>Permission</strong></td><td>DACL entry on a specific object</td></tr></tbody></table></div>
+<h3 id="72-high-value-privileges-for-attackers">7.2 High-Value Privileges for Attackers<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#72-high-value-privileges-for-attackers" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th>Privilege</th><th>Attack use</th></tr></thead><tbody><tr><td><strong>SeImpersonatePrivilege</strong></td><td>Potato attacks → SYSTEM</td></tr><tr><td><strong>SeAssignPrimaryTokenPrivilege</strong></td><td>Token assignment / service style elevation</td></tr><tr><td><strong>SeDebugPrivilege</strong></td><td>Open almost any process; LSASS dump; inject</td></tr><tr><td><strong>SeBackupPrivilege</strong></td><td>Read any file (backup semantics)</td></tr><tr><td><strong>SeRestorePrivilege</strong></td><td>Write any file (restore semantics)</td></tr><tr><td><strong>SeTakeOwnershipPrivilege</strong></td><td>Take ownership then change DACL</td></tr><tr><td><strong>SeLoadDriverPrivilege</strong></td><td>Load vulnerable drivers</td></tr><tr><td><strong>SeTcbPrivilege</strong></td><td>Act as part of OS (very powerful)</td></tr><tr><td><strong>SeCreateTokenPrivilege</strong></td><td>Create arbitrary tokens (rare)</td></tr></tbody></table></div>
+<h3 id="73-enabling-privileges">7.3 Enabling Privileges<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#73-enabling-privileges" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>Privileges may be <strong>present but disabled</strong>. Attack tools enable them via <code>AdjustTokenPrivileges</code>.</p>
+<figure data-rehype-pretty-code-figure><pre tabindex="0" data-language="cmd" data-theme="github-light github-dark"><code data-language="cmd" data-theme="github-light github-dark" style="display:grid;"><span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="normal">whoami /priv</span></span></code></pre></figure>
+<h3 id="74-service-accounts--default-privileges">7.4 Service Accounts &amp; Default Privileges<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#74-service-accounts--default-privileges" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>IIS app pools, SQL Server service accounts, and many third-party services run with SeImpersonate — a frequent foothold after web/SQL compromise.</p>
+<hr/>
+<h2 id="8-access-control-lists-dacl--sacl">8. Access Control Lists (DACL / SACL)<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#8-access-control-lists-dacl--sacl" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<h3 id="81-security-descriptor-parts">8.1 Security Descriptor Parts<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#81-security-descriptor-parts" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ul>
+<li><strong>Owner</strong></li>
+<li><strong>DACL</strong> — who is allowed/denied what</li>
+<li><strong>SACL</strong> — what is audited</li>
+<li><strong>Integrity label</strong> (MIC)</li>
+</ul>
+<h3 id="82-ace-types">8.2 ACE Types<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#82-ace-types" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ul>
+<li>Access Allowed</li>
+<li>Access Denied (evaluated with care; order matters conceptually with canonical ACL order)</li>
+<li>Object-specific ACEs (AD, directory objects)</li>
+</ul>
+<h3 id="83-common-dangerous-ace-patterns">8.3 Common Dangerous ACE Patterns<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#83-common-dangerous-ace-patterns" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th>Principal</th><th>Permission on</th><th>Risk</th></tr></thead><tbody><tr><td>Everyone / Auth Users</td><td>Write/Modify service binary</td><td>Replace with payload</td></tr><tr><td>Everyone</td><td>Full Control service</td><td>Reconfigure service</td></tr><tr><td>Users</td><td>Write property on service registry</td><td>ImagePath hijack</td></tr><tr><td>Auth Users</td><td>GenericAll on AD object</td><td>Takeover</td></tr></tbody></table></div>
+<h3 id="84-tools-to-inspect">8.4 Tools to Inspect<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#84-tools-to-inspect" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<figure data-rehype-pretty-code-figure><pre tabindex="0" data-language="cmd" data-theme="github-light github-dark"><code data-language="cmd" data-theme="github-light github-dark" style="display:grid;"><span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="normal">icacls C:\path\file.exe</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">sc sdshow ServiceName</span></span></code></pre></figure>
+<figure data-rehype-pretty-code-figure><pre tabindex="0" data-language="powershell" data-theme="github-light github-dark"><code data-language="powershell" data-theme="github-light github-dark" style="display:grid;"><span data-line><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;" data-token-type="function">Get-Acl</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;"> C:\path </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="operator">|</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;" data-token-type="function"> Format-List</span></span>
+<span data-line><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;" data-token-type="function">Get-Acl</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;"> HKLM:\SYSTEM\CurrentControlSet\Services\ServiceName</span></span></code></pre></figure>
+<p>GUI: <code>secpol.msc</code>, advanced security tabs, Sysinternals AccessChk:</p>
+<figure data-rehype-pretty-code-figure><pre tabindex="0" data-language="cmd" data-theme="github-light github-dark"><code data-language="cmd" data-theme="github-light github-dark" style="display:grid;"><span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="normal">accesschk.exe </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="operator">-</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="normal">uwcqv </span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string">&quot;Authenticated Users&quot;</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="operator"> *</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="normal">accesschk.exe </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="operator">-</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="normal">uwdqs Users C:\</span></span></code></pre></figure>
+<hr/>
+<h2 id="9-service-security">9. Service Security<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#9-service-security" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<h3 id="91-how-services-run">9.1 How Services Run<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#91-how-services-run" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ul>
+<li>Configured in SCM (Service Control Manager)</li>
+<li>Binary path: <code>ImagePath</code></li>
+<li>Account: LocalSystem, LocalService, NetworkService, or custom</li>
+<li>Start type: auto, manual, disabled</li>
+<li>Optional: triggers, failure actions, dependencies</li>
+</ul>
+<h3 id="92-security-on-services">9.2 Security on Services<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#92-security-on-services" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>Three layers commonly abused:</p>
+<ol>
+<li><strong>Service DACL</strong> — who can change config / start/stop</li>
+<li><strong>Registry key DACL</strong> for <code>HKLM\SYSTEM\CurrentControlSet\Services\&lt;Name></code></li>
+<li><strong>File DACL</strong> on the service executable and its directory</li>
+</ol>
+<h3 id="93-why-services-are-prime-privesc-targets">9.3 Why Services Are Prime PrivEsc Targets<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#93-why-services-are-prime-privesc-targets" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ul>
+<li>Many run as <strong>SYSTEM</strong></li>
+<li>Admins install third-party agents with weak ACLs</li>
+<li>Unquoted paths + weak directory perms = classic combo</li>
+<li>DLL search order issues in service context</li>
+</ul>
+<h3 id="94-inspection-commands">9.4 Inspection Commands<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#94-inspection-commands" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<figure data-rehype-pretty-code-figure><pre tabindex="0" data-language="cmd" data-theme="github-light github-dark"><code data-language="cmd" data-theme="github-light github-dark" style="display:grid;"><span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">sc qc ServiceName</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">sc qc ServiceName</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">sc sdshow ServiceName</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="normal">sc query state</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="operator">=</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="normal"> all</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">wmic service</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="keyword"> get </span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="normal">name,pathname,startname,startmode</span></span></code></pre></figure>
+<figure data-rehype-pretty-code-figure><pre tabindex="0" data-language="powershell" data-theme="github-light github-dark"><code data-language="powershell" data-theme="github-light github-dark" style="display:grid;"><span data-line><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;" data-token-type="function">Get-CimInstance</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;"> Win32_Service </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="operator">|</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;"> Select Name</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="operator">,</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;"> State</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="operator">,</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;"> StartName</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="operator">,</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;"> PathName</span></span></code></pre></figure>
+<hr/>
+<h2 id="10-registry-security">10. Registry Security<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#10-registry-security" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<h3 id="101-hives-of-interest">10.1 Hives of Interest<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#101-hives-of-interest" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th>Hive</th><th>Interest</th></tr></thead><tbody><tr><td><code>HKLM\SYSTEM\CurrentControlSet\Services</code></td><td>Service ImagePath</td></tr><tr><td><code>HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Run</code></td><td>Persistence</td></tr><tr><td><code>HKLM\SOFTWARE\Policies</code></td><td>Hardening / GPO remnants</td></tr><tr><td><code>HKCU\...</code></td><td>Per-user persistence / hijacks</td></tr><tr><td><code>HKLM\SAM</code> / <code>SECURITY</code></td><td>Secrets (needs high priv to read)</td></tr></tbody></table></div>
+<h3 id="102-autostart-extensibility-points-aseps">10.2 Autostart Extensibility Points (ASEPs)<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#102-autostart-extensibility-points-aseps" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>Registry Run keys, shell extensions, IFEO, AppInit (legacy), Winlogon notifications — more persistence than pure privesc, but weak ACLs on HKLM run keys can yield elevation if executed in elevated context.</p>
+<h3 id="103-alwaysinstallelevated">10.3 AlwaysInstallElevated<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#103-alwaysinstallelevated" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>Policies:</p>
+<figure data-rehype-pretty-code-figure><pre tabindex="0" data-language="text" data-theme="github-light github-dark"><code data-language="text" data-theme="github-light github-dark" style="display:grid;"><span data-line><span>HKLM\SOFTWARE\Policies\Microsoft\Windows\Installer\AlwaysInstallElevated</span></span>
+<span data-line><span>HKCU\SOFTWARE\Policies\Microsoft\Windows\Installer\AlwaysInstallElevated</span></span></code></pre></figure>
+<p>If both are <code>1</code>, MSI packages install with elevated privileges → trivial privesc (File 04).</p>
+<h3 id="104-attack-vector-angle">10.4 Attack Vector Angle<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#104-attack-vector-angle" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>Writable service registry keys allow changing <code>ImagePath</code> to attacker binary → restart service → SYSTEM.</p>
+<hr/>
+<h2 id="11-ntfs-security">11. NTFS Security<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#11-ntfs-security" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<h3 id="111-permissions-overview">11.1 Permissions Overview<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#111-permissions-overview" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>Common rights: Read, Write, Modify, Full Control, Read &amp; Execute, List folder.</p>
+<p>Special: <strong>Write DAC</strong>, <strong>Write Owner</strong>, <strong>Delete</strong>, <strong>FILE_WRITE_DATA</strong> on directories (create files).</p>
+<h3 id="112-inheritance">11.2 Inheritance<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#112-inheritance" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>Child objects inherit ACEs unless protected. Mis-set inheritance on <code>C:\Program Files\Vendor</code> often leaves <code>Users:(M)</code> on service folders.</p>
+<h3 id="113-tools">11.3 Tools<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#113-tools" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<figure data-rehype-pretty-code-figure><pre tabindex="0" data-language="cmd" data-theme="github-light github-dark"><code data-language="cmd" data-theme="github-light github-dark" style="display:grid;"><span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">icacls </span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string">&quot;C:\Program Files\Vulnerable App&quot;</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="normal"> /T</span></span></code></pre></figure>
+<figure data-rehype-pretty-code-figure><pre tabindex="0" data-language="powershell" data-theme="github-light github-dark"><code data-language="powershell" data-theme="github-light github-dark" style="display:grid;"><span data-line><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;" data-token-type="function">Get-ChildItem</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string"> &quot;C:\Program Files&quot;</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="operator"> -</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">Directory </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="operator">|</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;" data-token-type="function"> ForEach-Object</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation"> {</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation">  $acl </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="operator">=</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;" data-token-type="function"> Get-Acl</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;" data-token-type="punctuation"> $_</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="normal">.FullName</span></span>
+<span data-line><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D;" data-token-type="comment">  # review</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation">}</span></span></code></pre></figure>
+<h3 id="114-related-concepts">11.4 Related Concepts<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#114-related-concepts" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ul>
+<li><strong>Alternate Data Streams (ADS)</strong> — hiding payloads</li>
+<li><strong>Opportunistic locks / file locking</strong> races — advanced</li>
+<li><strong>Junctions / reparse points</strong> — path confusion attacks</li>
+</ul>
+<hr/>
+<h2 id="12-authentication-packages--credential-storage">12. Authentication Packages &amp; Credential Storage<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#12-authentication-packages--credential-storage" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<h3 id="121-lsass-role">12.1 LSASS Role<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#121-lsass-role" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>LSASS hosts:</p>
+<ul>
+<li>Logon sessions</li>
+<li>Kerberos tickets (domain)</li>
+<li>NTLM material (version/config dependent)</li>
+<li>Cached credentials (domain)</li>
+</ul>
+<p>Dumping LSASS is a <strong>credential access</strong> technique that enables privilege escalation and lateral movement (File 04).</p>
+<h3 id="122-sam--system">12.2 SAM &amp; SYSTEM<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#122-sam--system" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>Local password hashes live in SAM, encrypted with keys tied to SYSTEM hive. Reading them typically requires SYSTEM or equivalent backup privileges.</p>
+<h3 id="123-dpapi">12.3 DPAPI<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#123-dpapi" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>Data Protection API protects user secrets (browsers, RDP, etc.) with user or machine keys. Machine DPAPI secrets may be reachable after SYSTEM.</p>
+<h3 id="124-lsa-secrets">12.4 LSA Secrets<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#124-lsa-secrets" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>Service account passwords (auto-logon, service creds) may be stored as LSA secrets — extractable as SYSTEM (e.g., with Mimikatz <code>lsadump::secrets</code>).</p>
+<h3 id="125-credential-manager--cmdkey">12.5 Credential Manager / cmdkey<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#125-credential-manager--cmdkey" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<figure data-rehype-pretty-code-figure><pre tabindex="0" data-language="cmd" data-theme="github-light github-dark"><code data-language="cmd" data-theme="github-light github-dark" style="display:grid;"><span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="normal">cmdkey /list</span></span></code></pre></figure>
+<p>Saved creds can escalate or move laterally.</p>
+<hr/>
+<h2 id="13-active-directory-concepts-for-privesc">13. Active Directory Concepts for PrivEsc<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#13-active-directory-concepts-for-privesc" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<h3 id="131-why-ad-changes-the-game">13.1 Why AD Changes the Game<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#131-why-ad-changes-the-game" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>On domain-joined hosts, local admin is powerful <strong>on that host</strong>, but domain privilege escalation targets:</p>
+<ul>
+<li>Domain Users → high-value groups</li>
+<li>Service tickets / TGT abuse</li>
+<li>ACL misconfigs on AD objects</li>
+<li>GPO permissions</li>
+</ul>
+<h3 id="132-security-principals">13.2 Security Principals<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#132-security-principals" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ul>
+<li>Users, groups, computers</li>
+<li>gMSAs / sMSAs</li>
+<li>Managed service accounts</li>
+<li>Trusts between domains/forests</li>
+</ul>
+<h3 id="133-kerberos-basics-attack-relevant">13.3 Kerberos Basics (Attack-Relevant)<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#133-kerberos-basics-attack-relevant" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th>Item</th><th>Role</th></tr></thead><tbody><tr><td><strong>TGT</strong></td><td>Proves authentication to KDC</td></tr><tr><td><strong>TGS / service ticket</strong></td><td>Access to SPN-enabled services</td></tr><tr><td><strong>SPN</strong></td><td>Maps service to account — Kerberoasting target</td></tr><tr><td><strong>KRBTGT</strong></td><td>Key for forging Golden Tickets</td></tr><tr><td><strong>PAC</strong></td><td>Authorization data in tickets</td></tr></tbody></table></div>
+<h3 id="134-group-hierarchy-highlights">13.4 Group Hierarchy Highlights<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#134-group-hierarchy-highlights" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th>Group</th><th>Impact</th></tr></thead><tbody><tr><td>Domain Admins</td><td>Domain dominance</td></tr><tr><td>Enterprise Admins</td><td>Forest-wide</td></tr><tr><td>Account Operators</td><td>User/group management abuse</td></tr><tr><td>Backup Operators</td><td>DC file access paths</td></tr><tr><td>Server Operators</td><td>Local server control</td></tr><tr><td>Print Operators</td><td>Historical LPE vectors</td></tr><tr><td>DNSAdmins</td><td>DLL loading tricks historically</td></tr><tr><td>Group Policy Creator Owners</td><td>GPO abuse</td></tr></tbody></table></div>
+<h3 id="135-acl-based-ad-attacks-conceptual">13.5 ACL-Based AD Attacks (Conceptual)<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#135-acl-based-ad-attacks-conceptual" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ul>
+<li><strong>GenericAll / GenericWrite</strong> on user → reset password / SPN set</li>
+<li><strong>WriteDACL</strong> → grant yourself more rights</li>
+<li><strong>DCSync rights</strong> (Replicating Directory Changes) → dump hashes</li>
+<li><strong>GPO Edit</strong> → software installation / scheduled tasks as SYSTEM on OUs</li>
+</ul>
+<h3 id="136-authentication-nuances">13.6 Authentication Nuances<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#136-authentication-nuances" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ul>
+<li><strong>Kerberos</strong> vs <strong>NTLM</strong></li>
+<li><strong>LDAP signing / channel binding</strong></li>
+<li><strong>SMB signing</strong></li>
+<li><strong>Constrained / unconstrained / resource-based constrained delegation</strong></li>
+</ul>
+<p>Unconstrained delegation and RBCD are high-impact privilege paths in AD assessments (File 04).</p>
+<hr/>
+<h2 id="14-process--thread-security">14. Process &amp; Thread Security<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#14-process--thread-security" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<h3 id="141-process-access-rights">14.1 Process Access Rights<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#141-process-access-rights" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>Opening a process with <code>PROCESS_ALL_ACCESS</code> or specific rights enables:</p>
+<ul>
+<li>Memory read (credential dump)</li>
+<li>Thread creation (injection)</li>
+<li>Token opening (duplication)</li>
+</ul>
+<p>Protected Process Light (PPL) and RunAsPPL for LSASS raise the bar.</p>
+<h3 id="142-parent-child-relationships">14.2 Parent-Child Relationships<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#142-parent-child-relationships" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>Malware and attackers care about:</p>
+<ul>
+<li>Who spawns whom (detection)</li>
+<li>Inheriting handles/tokens</li>
+<li>Elevated children from auto-elevate parents (UAC bypass)</li>
+</ul>
+<h3 id="143-com--rpc--named-pipes">14.3 COM / RPC / Named Pipes<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#143-com--rpc--named-pipes" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>Windows IPC is central to potato attacks, DCOM lateral movement, and service communication. Understanding that <strong>privileged clients talk to low-priv servers</strong> (or vice versa) is key to impersonation abuse.</p>
+<hr/>
+<h2 id="15-how-concepts-map-to-attack-vectors">15. How Concepts Map to Attack Vectors<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#15-how-concepts-map-to-attack-vectors" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th>Concept</th><th>Example attack (File 04)</th></tr></thead><tbody><tr><td>SeImpersonate</td><td>JuicyPotato / GodPotato / PrintSpoofer</td></tr><tr><td>UAC split token</td><td>Fodhelper / eventvwr bypasses</td></tr><tr><td>Weak service DACL</td><td><code>sc config</code> ImagePath hijack</td></tr><tr><td>Weak NTFS on service</td><td>Replace service.exe</td></tr><tr><td>Unquoted path</td><td>Drop <code>C:\Program.exe</code></td></tr><tr><td>AlwaysInstallElevated</td><td>Malicious MSI</td></tr><tr><td>SeDebug</td><td>LSASS dump → admin hash</td></tr><tr><td>Kerberos SPN</td><td>Kerberoast → service account</td></tr><tr><td>Pre-auth disabled</td><td>AS-REP Roast</td></tr><tr><td>KRBTGT hash</td><td>Golden Ticket</td></tr><tr><td>GPO write</td><td>Immediate scheduled task</td></tr><tr><td>Token IL</td><td>Medium → High elevation chains</td></tr></tbody></table></div>
+<h3 id="151-mental-model-summary">15.1 Mental Model Summary<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#151-mental-model-summary" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<figure data-rehype-pretty-code-figure><pre tabindex="0" data-language="text" data-theme="github-light github-dark"><code data-language="text" data-theme="github-light github-dark" style="display:grid;"><span data-line><span>Identity (SID + groups)</span></span>
+<span data-line><span>   + Privileges (Se*)</span></span>
+<span data-line><span>   + Integrity level</span></span>
+<span data-line><span>   + Restricted tokens / UAC filtering</span></span>
+<span data-line><span>        |</span></span>
+<span data-line><span>        v</span></span>
+<span data-line><span>Access check against object DACL</span></span>
+<span data-line><span>        |</span></span>
+<span data-line><span>        v</span></span>
+<span data-line><span>If object is a SYSTEM service/task/autostart → privilege escalation</span></span>
+<span data-line><span>If object is credential store → identity expansion</span></span>
+<span data-line><span>If object is AD ACL → domain privilege escalation</span></span></code></pre></figure>
+<h3 id="152-enumeration-starts-with-concepts">15.2 Enumeration Starts With Concepts<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#152-enumeration-starts-with-concepts" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>Before running WinPEAS blindly, answer:</p>
+<ol>
+<li>Who am I? (<code>whoami /all</code>)</li>
+<li>Am I admin group but not elevated?</li>
+<li>Do I have SeImpersonate / SeDebug / SeBackup?</li>
+<li>What runs as SYSTEM that I can modify?</li>
+<li>Am I domain-joined? Any AD ACL attack path from my user?</li>
+</ol>
+<hr/>
+<h2 id="16-references">16. References<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#16-references" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<ul>
+<li><a href="https://learn.microsoft.com/en-us/windows/win32/secauthn/access-tokens" class="external external-link">Microsoft — Access Tokens<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></li>
+<li><a href="https://learn.microsoft.com/en-us/windows/win32/secauthz/mandatory-integrity-control" class="external external-link">Microsoft — Mandatory Integrity Control<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></li>
+<li><a href="https://learn.microsoft.com/en-us/windows/security/application-security/application-control/user-account-control/" class="external external-link">Microsoft — How UAC Works<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></li>
+<li><a href="https://learn.microsoft.com/en-us/windows/win32/secauthz/privilege-constants" class="external external-link">Microsoft — Privileges<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></li>
+<li><a href="https://learn.microsoft.com/en-us/windows/win32/secauthz/access-control-lists" class="external external-link">Microsoft — Security Descriptors and Access Control Lists<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></li>
+<li><a href="https://attack.mitre.org/tactics/TA0004/" class="external external-link">MITRE ATT&amp;CK — Privilege Escalation<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></li>
+<li><a href="https://posts.specterops.io/" class="external external-link">HarmJ0y / SpecterOps AD writings<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></li>
+<li><a href="https://learn.microsoft.com/en-us/sysinternals/resources/windows-internals" class="external external-link">Windows Internals (book)<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> — conceptual depth</li>
+</ul>
+<hr/>
+<h2 id="appendix-a-whoami-all-field-guide">Appendix A: whoami /all Field Guide<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#appendix-a-whoami-all-field-guide" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th>Section</th><th>Read for</th></tr></thead><tbody><tr><td>USER INFORMATION</td><td>SID of current user</td></tr><tr><td>GROUP INFORMATION</td><td>Admin? Backup Operators? Integrity?</td></tr><tr><td>PRIVILEGES INFORMATION</td><td>SeImpersonate, SeDebug, etc.</td></tr></tbody></table></div>
+<h2 id="appendix-b-local-admin-vs-system-vs-domain-admin">Appendix B: Local Admin vs SYSTEM vs Domain Admin<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#appendix-b-local-admin-vs-system-vs-domain-admin" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th>Principal</th><th>Scope</th></tr></thead><tbody><tr><td>Local Users group member</td><td>Limited</td></tr><tr><td>Local Administrators (elevated)</td><td>Full control of one machine</td></tr><tr><td>SYSTEM</td><td>Machine-local ultimate; used by services</td></tr><tr><td>Domain Admin</td><td>Broad control of domain resources / DCs</td></tr><tr><td>Enterprise Admin</td><td>Forest configuration power</td></tr></tbody></table></div>
+<h2 id="appendix-c-lab-validation-ideas">Appendix C: Lab Validation Ideas<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#appendix-c-lab-validation-ideas" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<ol>
+<li>Create weak service ACL → reconfigure as low-priv user.</li>
+<li>Grant SeImpersonate to a test service account → potato lab.</li>
+<li>Domain lab: set SPN on user → Kerberoast offline crack.</li>
+<li>Compare Medium vs High integrity file write attempts.</li>
+</ol>
+<hr/>
+<p><em>End of File 03 — Windows Privilege Escalation Concepts</em><br/>
+<em>Next: <code>04_Windows_Privilege_Escalation_Techniques.md</code></em></p></div></article><hr/><div class="page-footer"></div></div><div class="right sidebar"><div class="graph"><h3>Graph View</h3><div class="graph-outer"><div class="graph-container" data-cfg="{&quot;drag&quot;:true,&quot;zoom&quot;:true,&quot;depth&quot;:1,&quot;scale&quot;:1.1,&quot;repelForce&quot;:0.5,&quot;centerForce&quot;:0.3,&quot;linkDistance&quot;:30,&quot;fontSize&quot;:0.6,&quot;opacityScale&quot;:1,&quot;showTags&quot;:true,&quot;removeTags&quot;:[],&quot;focusOnHover&quot;:false,&quot;enableRadial&quot;:false,&quot;enable&quot;:true}"></div><button class="global-graph-icon" aria-label="Global Graph"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 55 55" fill="currentColor" xml:space="preserve"><path d="M49,0c-3.309,0-6,2.691-6,6c0,1.035,0.263,2.009,0.726,2.86l-9.829,9.829C32.542,17.634,30.846,17,29,17
+                s-3.542,0.634-4.898,1.688l-7.669-7.669C16.785,10.424,17,9.74,17,9c0-2.206-1.794-4-4-4S9,6.794,9,9s1.794,4,4,4
+                c0.74,0,1.424-0.215,2.019-0.567l7.669,7.669C21.634,21.458,21,23.154,21,25s0.634,3.542,1.688,4.897L10.024,42.562
+                C8.958,41.595,7.549,41,6,41c-3.309,0-6,2.691-6,6s2.691,6,6,6s6-2.691,6-6c0-1.035-0.263-2.009-0.726-2.86l12.829-12.829
+                c1.106,0.86,2.44,1.436,3.898,1.619v10.16c-2.833,0.478-5,2.942-5,5.91c0,3.309,2.691,6,6,6s6-2.691,6-6c0-2.967-2.167-5.431-5-5.91
+                v-10.16c1.458-0.183,2.792-0.759,3.898-1.619l7.669,7.669C41.215,39.576,41,40.26,41,41c0,2.206,1.794,4,4,4s4-1.794,4-4
+                s-1.794-4-4-4c-0.74,0-1.424,0.215-2.019,0.567l-7.669-7.669C36.366,28.542,37,26.846,37,25s-0.634-3.542-1.688-4.897l9.665-9.665
+                C46.042,11.405,47.451,12,49,12c3.309,0,6-2.691,6-6S52.309,0,49,0z M11,9c0-1.103,0.897-2,2-2s2,0.897,2,2s-0.897,2-2,2
+                S11,10.103,11,9z M6,51c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4S8.206,51,6,51z M33,49c0,2.206-1.794,4-4,4s-4-1.794-4-4
+                s1.794-4,4-4S33,46.794,33,49z M29,31c-3.309,0-6-2.691-6-6s2.691-6,6-6s6,2.691,6,6S32.309,31,29,31z M47,41c0,1.103-0.897,2-2,2
+                s-2-0.897-2-2s0.897-2,2-2S47,39.897,47,41z M49,10c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4S51.206,10,49,10z"></path></svg></button></div><div class="global-graph-outer"><div class="global-graph-container" data-cfg="{&quot;drag&quot;:true,&quot;zoom&quot;:true,&quot;depth&quot;:-1,&quot;scale&quot;:0.9,&quot;repelForce&quot;:0.5,&quot;centerForce&quot;:0.2,&quot;linkDistance&quot;:30,&quot;fontSize&quot;:0.6,&quot;opacityScale&quot;:1,&quot;showTags&quot;:false,&quot;removeTags&quot;:[],&quot;focusOnHover&quot;:true,&quot;enableRadial&quot;:true,&quot;enable&quot;:true}"></div></div></div><div class="toc"><button type="button" class="toc-header" aria-controls="toc-285" aria-expanded="true"><h3>Table of Contents</h3><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="fold"><polyline points="6 9 12 15 18 9"></polyline></svg></button><ul id="list-0" class="toc-content overflow"><li class="depth-0"><a href="#windows-privilege-escalation-concepts" data-for="windows-privilege-escalation-concepts">Windows Privilege Escalation Concepts</a></li><li class="depth-1"><a href="#table-of-contents" data-for="table-of-contents">Table of Contents</a></li><li class="depth-1"><a href="#1-introduction" data-for="1-introduction">1. Introduction</a></li><li class="depth-1"><a href="#2-windows-security-architecture-overview" data-for="2-windows-security-architecture-overview">2. Windows Security Architecture Overview</a></li><li class="depth-2"><a href="#21-core-components" data-for="21-core-components">2.1 Core Components</a></li><li class="depth-2"><a href="#22-subject--object-access-check-simplified" data-for="22-subject--object-access-check-simplified">2.2 Subject → Object Access Check (Simplified)</a></li><li class="depth-2"><a href="#23-local-vs-domain" data-for="23-local-vs-domain">2.3 Local vs Domain</a></li><li class="depth-1"><a href="#3-security-identifiers-sids" data-for="3-security-identifiers-sids">3. Security Identifiers (SIDs)</a></li><li class="depth-2"><a href="#31-what-is-a-sid" data-for="31-what-is-a-sid">3.1 What Is a SID?</a></li><li class="depth-2"><a href="#32-well-known-sids-high-value" data-for="32-well-known-sids-high-value">3.2 Well-Known SIDs (High Value)</a></li><li class="depth-2"><a href="#33-rids" data-for="33-rids">3.3 RIDs</a></li><li class="depth-2"><a href="#34-commands" data-for="34-commands">3.4 Commands</a></li><li class="depth-2"><a href="#35-attack-vector-angle" data-for="35-attack-vector-angle">3.5 Attack Vector Angle</a></li><li class="depth-1"><a href="#4-access-tokens" data-for="4-access-tokens">4. Access Tokens</a></li><li class="depth-2"><a href="#41-token-contents" data-for="41-token-contents">4.1 Token Contents</a></li><li class="depth-2"><a href="#42-primary-vs-impersonation-tokens" data-for="42-primary-vs-impersonation-tokens">4.2 Primary vs Impersonation Tokens</a></li><li class="depth-2"><a href="#43-why-tokens-are-attack-vectors" data-for="43-why-tokens-are-attack-vectors">4.3 Why Tokens Are Attack Vectors</a></li><li class="depth-2"><a href="#44-inspection" data-for="44-inspection">4.4 Inspection</a></li><li class="depth-2"><a href="#45-network-service--local-service" data-for="45-network-service--local-service">4.5 NETWORK SERVICE / LOCAL SERVICE</a></li><li class="depth-1"><a href="#5-integrity-levels--mandatory-integrity-control" data-for="5-integrity-levels--mandatory-integrity-control">5. Integrity Levels &amp; Mandatory Integrity Control</a></li><li class="depth-2"><a href="#51-integrity-levels-il" data-for="51-integrity-levels-il">5.1 Integrity Levels (IL)</a></li><li class="depth-2"><a href="#52-mic-rules-simplified" data-for="52-mic-rules-simplified">5.2 MIC Rules (Simplified)</a></li><li class="depth-2"><a href="#53-why-it-matters-for-privesc" data-for="53-why-it-matters-for-privesc">5.3 Why It Matters for PrivEsc</a></li><li class="depth-2"><a href="#54-viewing-il" data-for="54-viewing-il">5.4 Viewing IL</a></li><li class="depth-1"><a href="#6-user-account-control-uac" data-for="6-user-account-control-uac">6. User Account Control (UAC)</a></li><li class="depth-2"><a href="#61-purpose" data-for="61-purpose">6.1 Purpose</a></li><li class="depth-2"><a href="#62-consent--credential-prompts" data-for="62-consent--credential-prompts">6.2 Consent / Credential Prompts</a></li><li class="depth-2"><a href="#63-uac-levels-conceptual" data-for="63-uac-levels-conceptual">6.3 UAC Levels (Conceptual)</a></li><li class="depth-2"><a href="#64-auto-elevation" data-for="64-auto-elevation">6.4 Auto-Elevation</a></li><li class="depth-2"><a href="#65-why-uac-is-not-a-security-boundary" data-for="65-why-uac-is-not-a-security-boundary">6.5 Why UAC Is Not a Security Boundary</a></li><li class="depth-2"><a href="#66-checking-elevation" data-for="66-checking-elevation">6.6 Checking Elevation</a></li><li class="depth-1"><a href="#7-privileges" data-for="7-privileges">7. Privileges</a></li><li class="depth-2"><a href="#71-privileges-vs-rights-vs-permissions" data-for="71-privileges-vs-rights-vs-permissions">7.1 Privileges vs Rights vs Permissions</a></li><li class="depth-2"><a href="#72-high-value-privileges-for-attackers" data-for="72-high-value-privileges-for-attackers">7.2 High-Value Privileges for Attackers</a></li><li class="depth-2"><a href="#73-enabling-privileges" data-for="73-enabling-privileges">7.3 Enabling Privileges</a></li><li class="depth-2"><a href="#74-service-accounts--default-privileges" data-for="74-service-accounts--default-privileges">7.4 Service Accounts &amp; Default Privileges</a></li><li class="depth-1"><a href="#8-access-control-lists-dacl--sacl" data-for="8-access-control-lists-dacl--sacl">8. Access Control Lists (DACL / SACL)</a></li><li class="depth-2"><a href="#81-security-descriptor-parts" data-for="81-security-descriptor-parts">8.1 Security Descriptor Parts</a></li><li class="depth-2"><a href="#82-ace-types" data-for="82-ace-types">8.2 ACE Types</a></li><li class="depth-2"><a href="#83-common-dangerous-ace-patterns" data-for="83-common-dangerous-ace-patterns">8.3 Common Dangerous ACE Patterns</a></li><li class="depth-2"><a href="#84-tools-to-inspect" data-for="84-tools-to-inspect">8.4 Tools to Inspect</a></li><li class="depth-1"><a href="#9-service-security" data-for="9-service-security">9. Service Security</a></li><li class="depth-2"><a href="#91-how-services-run" data-for="91-how-services-run">9.1 How Services Run</a></li><li class="depth-2"><a href="#92-security-on-services" data-for="92-security-on-services">9.2 Security on Services</a></li><li class="depth-2"><a href="#93-why-services-are-prime-privesc-targets" data-for="93-why-services-are-prime-privesc-targets">9.3 Why Services Are Prime PrivEsc Targets</a></li><li class="depth-2"><a href="#94-inspection-commands" data-for="94-inspection-commands">9.4 Inspection Commands</a></li><li class="depth-1"><a href="#10-registry-security" data-for="10-registry-security">10. Registry Security</a></li><li class="depth-2"><a href="#101-hives-of-interest" data-for="101-hives-of-interest">10.1 Hives of Interest</a></li><li class="depth-2"><a href="#102-autostart-extensibility-points-aseps" data-for="102-autostart-extensibility-points-aseps">10.2 Autostart Extensibility Points (ASEPs)</a></li><li class="depth-2"><a href="#103-alwaysinstallelevated" data-for="103-alwaysinstallelevated">10.3 AlwaysInstallElevated</a></li><li class="depth-2"><a href="#104-attack-vector-angle" data-for="104-attack-vector-angle">10.4 Attack Vector Angle</a></li><li class="depth-1"><a href="#11-ntfs-security" data-for="11-ntfs-security">11. NTFS Security</a></li><li class="depth-2"><a href="#111-permissions-overview" data-for="111-permissions-overview">11.1 Permissions Overview</a></li><li class="depth-2"><a href="#112-inheritance" data-for="112-inheritance">11.2 Inheritance</a></li><li class="depth-2"><a href="#113-tools" data-for="113-tools">11.3 Tools</a></li><li class="depth-2"><a href="#114-related-concepts" data-for="114-related-concepts">11.4 Related Concepts</a></li><li class="depth-1"><a href="#12-authentication-packages--credential-storage" data-for="12-authentication-packages--credential-storage">12. Authentication Packages &amp; Credential Storage</a></li><li class="depth-2"><a href="#121-lsass-role" data-for="121-lsass-role">12.1 LSASS Role</a></li><li class="depth-2"><a href="#122-sam--system" data-for="122-sam--system">12.2 SAM &amp; SYSTEM</a></li><li class="depth-2"><a href="#123-dpapi" data-for="123-dpapi">12.3 DPAPI</a></li><li class="depth-2"><a href="#124-lsa-secrets" data-for="124-lsa-secrets">12.4 LSA Secrets</a></li><li class="depth-2"><a href="#125-credential-manager--cmdkey" data-for="125-credential-manager--cmdkey">12.5 Credential Manager / cmdkey</a></li><li class="depth-1"><a href="#13-active-directory-concepts-for-privesc" data-for="13-active-directory-concepts-for-privesc">13. Active Directory Concepts for PrivEsc</a></li><li class="depth-2"><a href="#131-why-ad-changes-the-game" data-for="131-why-ad-changes-the-game">13.1 Why AD Changes the Game</a></li><li class="depth-2"><a href="#132-security-principals" data-for="132-security-principals">13.2 Security Principals</a></li><li class="depth-2"><a href="#133-kerberos-basics-attack-relevant" data-for="133-kerberos-basics-attack-relevant">13.3 Kerberos Basics (Attack-Relevant)</a></li><li class="depth-2"><a href="#134-group-hierarchy-highlights" data-for="134-group-hierarchy-highlights">13.4 Group Hierarchy Highlights</a></li><li class="depth-2"><a href="#135-acl-based-ad-attacks-conceptual" data-for="135-acl-based-ad-attacks-conceptual">13.5 ACL-Based AD Attacks (Conceptual)</a></li><li class="depth-2"><a href="#136-authentication-nuances" data-for="136-authentication-nuances">13.6 Authentication Nuances</a></li><li class="depth-1"><a href="#14-process--thread-security" data-for="14-process--thread-security">14. Process &amp; Thread Security</a></li><li class="depth-2"><a href="#141-process-access-rights" data-for="141-process-access-rights">14.1 Process Access Rights</a></li><li class="depth-2"><a href="#142-parent-child-relationships" data-for="142-parent-child-relationships">14.2 Parent-Child Relationships</a></li><li class="depth-2"><a href="#143-com--rpc--named-pipes" data-for="143-com--rpc--named-pipes">14.3 COM / RPC / Named Pipes</a></li><li class="depth-1"><a href="#15-how-concepts-map-to-attack-vectors" data-for="15-how-concepts-map-to-attack-vectors">15. How Concepts Map to Attack Vectors</a></li><li class="depth-2"><a href="#151-mental-model-summary" data-for="151-mental-model-summary">15.1 Mental Model Summary</a></li><li class="depth-2"><a href="#152-enumeration-starts-with-concepts" data-for="152-enumeration-starts-with-concepts">15.2 Enumeration Starts With Concepts</a></li><li class="depth-1"><a href="#16-references" data-for="16-references">16. References</a></li><li class="depth-1"><a href="#appendix-a-whoami-all-field-guide" data-for="appendix-a-whoami-all-field-guide">Appendix A: whoami /all Field Guide</a></li><li class="depth-1"><a href="#appendix-b-local-admin-vs-system-vs-domain-admin" data-for="appendix-b-local-admin-vs-system-vs-domain-admin">Appendix B: Local Admin vs SYSTEM vs Domain Admin</a></li><li class="depth-1"><a href="#appendix-c-lab-validation-ideas" data-for="appendix-c-lab-validation-ideas">Appendix C: Lab Validation Ideas</a></li><li class="overflow-end"></li></ul></div></div><footer class><p>Created with <a href="https://quartz.jzhao.xyz/">Quartz v5.0.0</a> © 2026</p><ul><li><a href="https://github.com/priyanshu-rawa/Cybersecurity-Handbook">GitHub</a></li><li><a href="https://linkedin.com/in/priyanshurawat9111">LinkedIn</a></li></ul></footer></div></div></body><script src="../static/resource-after-e13fffa1.js" type="application/javascript" data-persist="true"></script><script src="../static/resource-after-8b336f9a.js" type="application/javascript" data-persist="true"></script><script src="../static/resource-after-baba652b.js" type="application/javascript" data-persist="true"></script><script src="../static/resource-after-5eb75950.js" type="module" data-persist="true"></script><script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/copy-tex.min.js" type="application/javascript" data-persist="true"></script><script src="../postscript-cd8794c3.js" type="module" data-persist="true"></script></html>

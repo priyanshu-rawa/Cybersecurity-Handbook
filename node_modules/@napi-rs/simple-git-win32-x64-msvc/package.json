@@ -1,0 +1,21 @@
+{
+  "name": "@napi-rs/simple-git-win32-x64-msvc",
+  "version": "0.1.22",
+  "cpu": [
+    "x64"
+  ],
+  "main": "simple-git.win32-x64-msvc.node",
+  "files": [
+    "simple-git.win32-x64-msvc.node"
+  ],
+  "license": "MIT",
+  "engines": {
+    "node": ">= 10"
+  },
+  "repository": {
+    "url": "https://github.com/Brooooooklyn/simple-git"
+  },
+  "os": [
+    "win32"
+  ]
+}

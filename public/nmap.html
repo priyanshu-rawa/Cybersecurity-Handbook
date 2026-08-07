@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr"><head><title>Untitled</title><meta charset="utf-8"/><link rel="preload" href="./index-b488e415.css" as="style"/><link rel="preload" href="./prescript-2bfc6315.js" as="script"/><link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com"/><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space Grotesk:wght@400;700&amp;family=Inter:ital,wght@0,400;0,600;1,400;1,600&amp;family=IBM Plex Mono:wght@400;600&amp;display=swap"/><link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin="anonymous"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta name="og:site_name" content="Cybersecurity Handbook"/><meta property="og:title" content="Untitled"/><meta property="og:type" content="website"/><meta name="twitter:card" content="summary_large_image"/><meta name="twitter:title" content="Untitled"/><meta name="twitter:description" content="aliases: Network Mapper Network Mapper (Nmap) up:: Hacking Toolkit Nmap (Network Mapper) Nmap (Network Mapper) is an open-source network scanner used by network administrators and security professionals to discover devices and services on a network, assess network inventories, manage service upgrad..."/><meta property="og:description" content="aliases: Network Mapper Network Mapper (Nmap) up:: Hacking Toolkit Nmap (Network Mapper) Nmap (Network Mapper) is an open-source network scanner used by network administrators and security professionals to discover devices and services on a network, assess network inventories, manage service upgrad..."/><meta property="og:image:alt" content="aliases: Network Mapper Network Mapper (Nmap) up:: Hacking Toolkit Nmap (Network Mapper) Nmap (Network Mapper) is an open-source network scanner used by network administrators and security professionals to discover devices and services on a network, assess network inventories, manage service upgrad..."/><meta property="og:image" content="https://cybersecurity-handbook.vercel.app/static/og-image.png"/><meta property="og:image:url" content="https://cybersecurity-handbook.vercel.app/static/og-image.png"/><meta name="twitter:image" content="https://cybersecurity-handbook.vercel.app/static/og-image.png"/><meta property="og:image:type" content="image/.png"/><meta property="twitter:domain" content="cybersecurity-handbook.vercel.app"/><meta property="og:url" content="https://cybersecurity-handbook.vercel.app/nmap"/><meta property="twitter:url" content="https://cybersecurity-handbook.vercel.app/nmap"/><link rel="icon" href="./static/icon.png"/><meta name="description" content="aliases: Network Mapper Network Mapper (Nmap) up:: Hacking Toolkit Nmap (Network Mapper) Nmap (Network Mapper) is an open-source network scanner used by network administrators and security professionals to discover devices and services on a network, assess network inventories, manage service upgrad..."/><meta name="generator" content="Quartz"/><link href="./index-b488e415.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="./component-735924e0.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="./component-589c1cea.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="./component-2911f5d1.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="./component-e427079e.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="./component-53b25b2b.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="./component-c93c6a44.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="./component-8a06014f.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="./component-77d6a441.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="./component-6ee21cee.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="./component-1ea6ad18.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="./component-34bdfded.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="./component-788c9ca3.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="./component-642859cd.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="./component-4abc06bd.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="./component-274a3dfe.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="./component-94cb6c84.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="./component-58d5ff56.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="./component-9f9b2774.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="./component-caf7c009.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="./component-7262b5a7.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="./static/resource-style-a5c806d2.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="./static/resource-style-6bd36952.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="./static/resource-style-9857b007.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="./static/resource-style-d3a1a224.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" rel="stylesheet" type="text/css" data-persist="true"/><script src="./prescript-2bfc6315.js" type="application/javascript" data-persist="true"></script><script type="application/javascript" data-persist="true">const fetchData = fetch("./static/contentIndex.json").then(data => data.json())</script><link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous"/><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Schibsted%20Grotesk%3Awght%40400%3B700&amp;family=Source%20Sans%20Pro%3Aital%2Cwght%400%2C400%3B0%2C600%3B1%2C400%3B1%2C600&amp;family=IBM%20Plex%20Mono%3Awght%40400%3B600&amp;display=swap"/><meta property="og:image:width" content="1200"/><meta property="og:image:height" content="630"/><meta property="og:image" content="https://cybersecurity-handbook.vercel.app/nmap-og-image.webp"/><meta property="og:image:url" content="https://cybersecurity-handbook.vercel.app/nmap-og-image.webp"/><meta name="twitter:image" content="https://cybersecurity-handbook.vercel.app/nmap-og-image.webp"/><meta property="og:image:type" content="image/webp"/></head><body data-slug="nmap" data-basepath><div id="quartz-root" class="page" data-frame="default"><div id="quartz-body"><div class="left sidebar"><h2 class="page-title"><a href=".">Cybersecurity Handbook</a></h2><div class="mobile-only"><div class="spacer"></div></div><div class="flex-component" style="flex-direction: row; flex-wrap: nowrap; gap: 0.5rem;"><div style="flex-grow: 1; flex-shrink: 1; flex-basis: auto; order: 0; align-self: center; justify-self: center;"><div class="search"><button class="search-button" aria-label="Search" aria-expanded="false"><svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.9 19.7"><title>Search</title><g class="search-path" fill="none"><path stroke-linecap="square" d="M18.5 18.3l-5.4-5.4"></path><circle cx="8" cy="8" r="7"></circle></g></svg><p>Search</p></button><div class="search-container"><div class="search-space"><input autocomplete="off" class="search-bar" name="search" type="text" aria-label="Search for something..." placeholder="Search for something..."/><div class="search-layout" data-preview="true" data-field-priority="[&quot;title&quot;,&quot;content&quot;,&quot;tags&quot;]"></div></div></div></div></div><div style="flex-grow: 0; flex-shrink: 1; flex-basis: auto; order: 0; align-self: center; justify-self: center;"><button class="darkmode" aria-label="Dark mode"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" class="dayIcon" x="0px" y="0px" viewBox="0 0 35 35" style="enable-background:new 0 0 35 35" xml:space="preserve" aria-label="Dark mode"><title>Dark mode</title><path d="M6,17.5C6,16.672,5.328,16,4.5,16h-3C0.672,16,0,16.672,0,17.5    S0.672,19,1.5,19h3C5.328,19,6,18.328,6,17.5z M7.5,26c-0.414,0-0.789,0.168-1.061,0.439l-2,2C4.168,28.711,4,29.086,4,29.5    C4,30.328,4.671,31,5.5,31c0.414,0,0.789-0.168,1.06-0.44l2-2C8.832,28.289,9,27.914,9,27.5C9,26.672,8.329,26,7.5,26z M17.5,6    C18.329,6,19,5.328,19,4.5v-3C19,0.672,18.329,0,17.5,0S16,0.672,16,1.5v3C16,5.328,16.671,6,17.5,6z M27.5,9    c0.414,0,0.789-0.168,1.06-0.439l2-2C30.832,6.289,31,5.914,31,5.5C31,4.672,30.329,4,29.5,4c-0.414,0-0.789,0.168-1.061,0.44    l-2,2C26.168,6.711,26,7.086,26,7.5C26,8.328,26.671,9,27.5,9z M6.439,8.561C6.711,8.832,7.086,9,7.5,9C8.328,9,9,8.328,9,7.5    c0-0.414-0.168-0.789-0.439-1.061l-2-2C6.289,4.168,5.914,4,5.5,4C4.672,4,4,4.672,4,5.5c0,0.414,0.168,0.789,0.439,1.06    L6.439,8.561z M33.5,16h-3c-0.828,0-1.5,0.672-1.5,1.5s0.672,1.5,1.5,1.5h3c0.828,0,1.5-0.672,1.5-1.5S34.328,16,33.5,16z     M28.561,26.439C28.289,26.168,27.914,26,27.5,26c-0.828,0-1.5,0.672-1.5,1.5c0,0.414,0.168,0.789,0.439,1.06l2,2    C28.711,30.832,29.086,31,29.5,31c0.828,0,1.5-0.672,1.5-1.5c0-0.414-0.168-0.789-0.439-1.061L28.561,26.439z M17.5,29    c-0.829,0-1.5,0.672-1.5,1.5v3c0,0.828,0.671,1.5,1.5,1.5s1.5-0.672,1.5-1.5v-3C19,29.672,18.329,29,17.5,29z M17.5,7    C11.71,7,7,11.71,7,17.5S11.71,28,17.5,28S28,23.29,28,17.5S23.29,7,17.5,7z M17.5,25c-4.136,0-7.5-3.364-7.5-7.5    c0-4.136,3.364-7.5,7.5-7.5c4.136,0,7.5,3.364,7.5,7.5C25,21.636,21.636,25,17.5,25z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" class="nightIcon" x="0px" y="0px" viewBox="0 0 100 100" style="enable-background:new 0 0 100 100" xml:space="preserve" aria-label="Light mode"><title>Light mode</title><path d="M96.76,66.458c-0.853-0.852-2.15-1.064-3.23-0.534c-6.063,2.991-12.858,4.571-19.655,4.571  C62.022,70.495,50.88,65.88,42.5,57.5C29.043,44.043,25.658,23.536,34.076,6.47c0.532-1.08,0.318-2.379-0.534-3.23  c-0.851-0.852-2.15-1.064-3.23-0.534c-4.918,2.427-9.375,5.619-13.246,9.491c-9.447,9.447-14.65,22.008-14.65,35.369  c0,13.36,5.203,25.921,14.65,35.368s22.008,14.65,35.368,14.65c13.361,0,25.921-5.203,35.369-14.65  c3.872-3.871,7.064-8.328,9.491-13.246C97.826,68.608,97.611,67.309,96.76,66.458z"></path></svg></button></div><div style="flex-grow: 0; flex-shrink: 1; flex-basis: auto; order: 0; align-self: center; justify-self: center;"><button class="readermode" aria-label="Reader mode"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" class="readerIcon" fill="currentColor" stroke="currentColor" stroke-width="0.2" stroke-linecap="round" stroke-linejoin="round" width="64px" height="64px" viewBox="0 0 24 24" aria-label="Reader mode"><title>Reader mode</title><g transform="translate(-1.8, -1.8) scale(1.15, 1.2)"><path d="M8.9891247,2.5 C10.1384702,2.5 11.2209868,2.96705384 12.0049645,3.76669482 C12.7883914,2.96705384 13.8709081,2.5 15.0202536,2.5 L18.7549359,2.5 C19.1691495,2.5 19.5049359,2.83578644 19.5049359,3.25 L19.5046891,4.004 L21.2546891,4.00457396 C21.6343849,4.00457396 21.9481801,4.28672784 21.9978425,4.6528034 L22.0046891,4.75457396 L22.0046891,20.25 C22.0046891,20.6296958 21.7225353,20.943491 21.3564597,20.9931534 L21.2546891,21 L2.75468914,21 C2.37499337,21 2.06119817,20.7178461 2.01153575,20.3517706 L2.00468914,20.25 L2.00468914,4.75457396 C2.00468914,4.37487819 2.28684302,4.061083 2.65291858,4.01142057 L2.75468914,4.00457396 L4.50368914,4.004 L4.50444233,3.25 C4.50444233,2.87030423 4.78659621,2.55650904 5.15267177,2.50684662 L5.25444233,2.5 L8.9891247,2.5 Z M4.50368914,5.504 L3.50468914,5.504 L3.50468914,19.5 L10.9478955,19.4998273 C10.4513189,18.9207296 9.73864328,18.5588115 8.96709342,18.5065584 L8.77307039,18.5 L5.25444233,18.5 C4.87474657,18.5 4.56095137,18.2178461 4.51128895,17.8517706 L4.50444233,17.75 L4.50368914,5.504 Z M19.5049359,17.75 C19.5049359,18.1642136 19.1691495,18.5 18.7549359,18.5 L15.2363079,18.5 C14.3910149,18.5 13.5994408,18.8724714 13.0614828,19.4998273 L20.5046891,19.5 L20.5046891,5.504 L19.5046891,5.504 L19.5049359,17.75 Z M18.0059359,3.999 L15.0202536,4 L14.8259077,4.00692283 C13.9889509,4.06666544 13.2254227,4.50975805 12.7549359,5.212 L12.7549359,17.777 L12.7782651,17.7601316 C13.4923805,17.2719483 14.3447024,17 15.2363079,17 L18.0059359,16.999 L18.0056891,4.798 L18.0033792,4.75457396 L18.0056891,4.71 L18.0059359,3.999 Z M8.9891247,4 L6.00368914,3.999 L6.00599909,4.75457396 L6.00599909,4.75457396 L6.00368914,4.783 L6.00368914,16.999 L8.77307039,17 C9.57551536,17 10.3461406,17.2202781 11.0128313,17.6202194 L11.2536891,17.776 L11.2536891,5.211 C10.8200889,4.56369974 10.1361548,4.13636104 9.37521067,4.02745763 L9.18347055,4.00692283 L8.9891247,4 Z"></path></g></svg></button></div></div><div class="explorer nav-files-container" data-behavior="collapse" data-collapsed="collapsed" data-savestate="true" data-data-fns="{&quot;order&quot;:[&quot;filter&quot;,&quot;map&quot;,&quot;sort&quot;],&quot;sortFn&quot;:&quot;(a2, b2) => {\r\n    if (!a2.isFolder &amp;&amp; !b2.isFolder || a2.isFolder &amp;&amp; b2.isFolder) {\r\n      return (a2.displayName || \&quot;\&quot;).localeCompare(b2.displayName || \&quot;\&quot;, void 0, {\r\n        numeric: true,\r\n        sensitivity: \&quot;base\&quot;\r\n      });\r\n    }\r\n    if (!a2.isFolder &amp;&amp; b2.isFolder) {\r\n      return 1;\r\n    }\r\n    return -1;\r\n  }&quot;,&quot;filterFn&quot;:&quot;(node) => node.slugSegment !== \&quot;tags\&quot;&quot;,&quot;mapFn&quot;:&quot;(node) => {\r\n    return node;\r\n  }&quot;}"><button type="button" class="explorer-toggle mobile-explorer hide-until-loaded" data-mobile="true" aria-controls="explorer-269" aria-label="Explorer"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide-menu"><line x1="4" x2="20" y1="12" y2="12"></line><line x1="4" x2="20" y1="6" y2="6"></line><line x1="4" x2="20" y1="18" y2="18"></line></svg></button><button type="button" class="title-button explorer-toggle desktop-explorer" data-mobile="false" aria-expanded="true"><h2>Explorer</h2><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="5 8 14 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="fold"><polyline points="6 9 12 15 18 9"></polyline></svg></button><div id="explorer-269" class="explorer-content" aria-expanded="false" role="group"><ul class="explorer-ul overflow" id="list-0"><li class="overflow-end"></li></ul></div><template id="template-file"><li><a href="#" class="nav-file-title tree-item-self"></a></li></template><template id="template-folder"><li><div class="folder-container nav-folder-title tree-item-self"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="5 8 14 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="folder-icon nav-folder-collapse-indicator collapse-icon"><polyline points="6 9 12 15 18 9"></polyline></svg><div><button class="folder-button"><span class="folder-title"></span></button></div></div><div class="folder-outer"><ul class="content tree-item-children"></ul></div></li></template></div></div><div class="center"><div class="page-header"><div class="popover-hint"><p show-comma="true" class="content-meta"><time datetime="2026-06-30T09:06:07.000Z">Jun 30, 2026</time><span>11 min read</span></p></div></div><article class="popover-hint"><div class="markdown-preview-view markdown-rendered"><hr/>
+<p>aliases:</p>
+<ul>
+<li>Network Mapper</li>
+<li>Network Mapper (Nmap)</li>
+</ul>
+<hr/>
+<p>up:: <a href="./hacking-toolkit" class="internal internal-link alias" data-slug="hacking-toolkit">Hacking Toolkit</a></p>
+<h1 id="nmap-network-mapper">Nmap (Network Mapper)<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#nmap-network-mapper" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h1>
+<p>Nmap (Network Mapper) is an open-source network scanner used by network administrators and security professionals to discover devices and services on a network, assess network inventories, manage service upgrade schedules, and monitor host or service uptime. Nmap uses raw IP packets in novel ways to determine what hosts are available on the network, what services (application name and version) those hosts are offering, what operating systems (and OS versions) they are running, and what type of packet filters/<a href="./firewalls" class="internal internal-link" data-slug="firewalls">firewalls</a> are in use.</p>
+<h2 id="key-features">Key Features<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#key-features" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<ul>
+<li><strong>Host Discovery:</strong> Identifies devices on the network, determining which hosts are available and the services they offer.</li>
+<li><strong>Port Scanning:</strong> Enumerates open ports on target hosts.</li>
+<li><strong>Version Detection:</strong> Helps in identifying the application name and version number of the services running on open ports.</li>
+<li><strong>OS Detection:</strong> Determines the operating system and hardware characteristics of networked devices.</li>
+<li><strong>Scriptable Interaction:</strong> Uses the Nmap Scripting Engine (NSE) for more advanced discovery and security auditing.</li>
+</ul>
+<h2 id="how-it-works">How It Works<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#how-it-works" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>Nmap sends specially crafted packets to the target host and then analyzes the responses to discover hosts and services on a computer network. It supports several types of scans, most notably TCP SYN scans, which are used to determine if ports are open by sending a SYN packet and waiting for a response, and UDP scans for identifying open UDP ports.</p>
+<h2 id="advantages">Advantages<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#advantages" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<ul>
+<li><strong>Flexibility:</strong> Offers a variety of options for scanning in different environments and for different purposes.</li>
+<li><strong>Wide Range of Features:</strong> From basic network scanning to advanced vulnerability detection.</li>
+<li><strong>Extensive OS and Service Version Database:</strong> Regularly updated to recognize the latest operating systems and network services.</li>
+<li><strong>Powerful Scripting Engine:</strong> Allows users to write scripts for customized tasks.</li>
+</ul>
+<h2 id="exploitable-mechanismsweaknesses">Exploitable Mechanisms/Weaknesses<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#exploitable-mechanismsweaknesses" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<ul>
+<li><strong>Detectability:</strong> Certain scans are easily detected by IDS/IPS, potentially alerting adversaries.</li>
+<li><strong>Misconfigurations:</strong> Incorrectly configured scans can lead to incomplete or misleading results.</li>
+</ul>
+<h2 id="documentation-and-resources">Documentation and Resources<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#documentation-and-resources" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<ul>
+<li><strong>Official Nmap Website:</strong> <a href="https://nmap.org/" class="external external-link">Nmap Official Site<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></li>
+<li><strong>Official Nmap Documentation:</strong> <a href="https://nmap.org/docs.html" class="external external-link">Nmap Documentation<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></li>
+<li><strong>Nmap Network Scanning Book:</strong> <a href="https://nmap.org/book/" class="external external-link">Nmap Book<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> by Gordon Lyon (also known as Fyodor Vaskovich), the creator of Nmap.</li>
+</ul>
+<h2 id="helpful-beginner-tips">Helpful Beginner Tips<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#helpful-beginner-tips" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<ul>
+<li><strong>Start with Simple Scans:</strong> Begin by running simple scans, such as <code>nmap -sP 192.168.1.*</code> to discover which hosts are up in a local subnet.</li>
+<li><strong>Use the Zenmap GUI:</strong> For beginners, using Nmap’s official GUI, Zenmap, can simplify the scanning process and help in understanding the command options.</li>
+<li><strong>Practice Ethical Scanning:</strong> Always have permission to scan networks. Unauthorized scanning can be considered illegal or intrusive.</li>
+<li><strong>Learn from Examples:</strong> Explore the wide range of scan types and scripts included in the Nmap documentation and book to better understand how to effectively use the tool.</li>
+</ul>
+<h2 id="subtopics">Subtopics<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#subtopics" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<ul>
+<li><strong><a href="./banner-grabbing" class="internal internal-link alias" data-slug="banner-grabbing">Banner Grabbing</a></strong>: a technique used to gain information about a computer system on a network and the services running on its open ports.</li>
+<li><strong><a href="./transmission-control-protocol-(tcp)" class="internal internal-link alias" data-slug="transmission-control-protocol-(tcp)">Transmission Control Protocol (TCP)</a></strong>:
+<ul>
+<li><strong><a href="./tcp-message-types" class="internal internal-link alias" data-slug="tcp-message-types">TCP Message Types</a></strong>: are part of the TCP header used to manage the state of a TCP connection</li>
+</ul>
+</li>
+<li><strong><a href="./user-datagram-protocol-(udp)" class="internal internal-link alias" data-slug="user-datagram-protocol-(udp)">User Datagram Protocol (UDP)</a></strong>:</li>
+</ul>
+<h2 id="scripts">Scripts<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#scripts" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>NMAP uses the Nmap Scripting Engine (NSE) to extend its functionality with scripts that can perform a wide range of functions from vulnerability detection to advanced network discovery:</p>
+<ul>
+<li><strong>Default Scripts (-sC):</strong> Executes standard scripts for additional discovery.</li>
+<li><strong>Vulnerability Scanning:</strong> Scripts in NSE can check for vulnerabilities within the network.</li>
+</ul>
+<h2 id="how-to-use-nmap">How To Use Nmap<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#how-to-use-nmap" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<h3 id="basic-usage">Basic Usage<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#basic-usage" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>To run a simple scan on a target, you can use the following command:</p>
+<figure data-rehype-pretty-code-figure><pre tabindex="0" data-language="bash" data-theme="github-light github-dark"><code data-language="bash" data-theme="github-light github-dark" style="display:grid;"><span data-line><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;" data-token-type="function">nmap</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;"> [target]</span></span></code></pre></figure>
+<p>Where <code>[target]</code> can be an IP address, a range of IP addresses, or a domain name.</p>
+<h3 id="common-scanning-techniques">Common Scanning Techniques<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#common-scanning-techniques" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ol>
+<li>
+<p><strong>Ping Scan:</strong> To check if a host is online without scanning ports:</p>
+<figure data-rehype-pretty-code-figure><pre tabindex="0" data-language="bash" data-theme="github-light github-dark"><code data-language="bash" data-theme="github-light github-dark" style="display:grid;"><span data-line><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;" data-token-type="function">nmap</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;" data-token-type="value"> -sn</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;"> [target]</span></span></code></pre></figure>
+</li>
+<li>
+<p><strong>Scan Specific Ports:</strong> To scan specific ports, use the <code>-p</code> option:</p>
+<figure data-rehype-pretty-code-figure><pre tabindex="0" data-language="bash" data-theme="github-light github-dark"><code data-language="bash" data-theme="github-light github-dark" style="display:grid;"><span data-line><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;" data-token-type="function">nmap</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;" data-token-type="value"> -p</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string"> 80,443</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;"> [target]</span></span></code></pre></figure>
+</li>
+<li>
+<p><strong>Aggressive Scan:</strong> An aggressive scan performs service detection, OS detection, traceroute, and runs scripts against target services:</p>
+<figure data-rehype-pretty-code-figure><pre tabindex="0" data-language="bash" data-theme="github-light github-dark"><code data-language="bash" data-theme="github-light github-dark" style="display:grid;"><span data-line><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;" data-token-type="function">nmap</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;" data-token-type="value"> -A</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;"> [target]</span></span></code></pre></figure>
+</li>
+<li>
+<p><strong>Stealth Scan:</strong> Use a SYN scan to be less intrusive and avoid logging the scan as a full connection:</p>
+<figure data-rehype-pretty-code-figure><pre tabindex="0" data-language="bash" data-theme="github-light github-dark"><code data-language="bash" data-theme="github-light github-dark" style="display:grid;"><span data-line><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;" data-token-type="function">nmap</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;" data-token-type="value"> -sS</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;"> [target]</span></span></code></pre></figure>
+</li>
+<li>
+<p><strong>UDP Scan:</strong> Scanning UDP ports can be done with the <code>-sU</code> option:</p>
+<figure data-rehype-pretty-code-figure><pre tabindex="0" data-language="bash" data-theme="github-light github-dark"><code data-language="bash" data-theme="github-light github-dark" style="display:grid;"><span data-line><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;" data-token-type="function">nmap</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;" data-token-type="value"> -sU</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;"> [target]</span></span></code></pre></figure>
+</li>
+<li>
+<p><strong>Full Scan:</strong> To scan all 65535 ports, use:</p>
+<figure data-rehype-pretty-code-figure><pre tabindex="0" data-language="bash" data-theme="github-light github-dark"><code data-language="bash" data-theme="github-light github-dark" style="display:grid;"><span data-line><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;" data-token-type="function">nmap</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;" data-token-type="value"> -p-</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;"> [target]</span></span></code></pre></figure>
+</li>
+</ol>
+<h3 id="interpreting-results">Interpreting Results<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#interpreting-results" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ul>
+<li><strong>Open:</strong> The port is accessible and responding to requests.</li>
+<li><strong>Closed:</strong> The port is accessible but no application is listening on it.</li>
+<li><strong>Filtered:</strong> Nmap cannot determine if the port is open because packet filtering prevents its probes from reaching the port.</li>
+<li><strong>Unfiltered:</strong> The port is accessible, but Nmap cannot determine if it is open or closed.</li>
+<li><strong>Open|Filtered:</strong> Nmap cannot determine whether the port is open or filtered.</li>
+</ul>
+<h3 id="advanced-usage">Advanced Usage<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#advanced-usage" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ul>
+<li>
+<p><strong>OS Detection:</strong> Use the <code>-O</code> option to attempt to determine the operating system of the target:</p>
+<figure data-rehype-pretty-code-figure><pre tabindex="0" data-language="bash" data-theme="github-light github-dark"><code data-language="bash" data-theme="github-light github-dark" style="display:grid;"><span data-line><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;" data-token-type="function">nmap</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;" data-token-type="value"> -O</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;"> [target]</span></span></code></pre></figure>
+</li>
+<li>
+<p><strong>Service Version Detection:</strong> To determine service versions running on open ports, use the <code>-sV</code> option:</p>
+<figure data-rehype-pretty-code-figure><pre tabindex="0" data-language="bash" data-theme="github-light github-dark"><code data-language="bash" data-theme="github-light github-dark" style="display:grid;"><span data-line><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;" data-token-type="function">nmap</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;" data-token-type="value"> -sV</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;"> [target]</span></span></code></pre></figure>
+</li>
+<li>
+<p><strong>Script Scanning:</strong> Nmap’s scripting engine (NSE) is extremely powerful and can be used to perform a variety of network security checks:</p>
+<figure data-rehype-pretty-code-figure><pre tabindex="0" data-language="bash" data-theme="github-light github-dark"><code data-language="bash" data-theme="github-light github-dark" style="display:grid;"><span data-line><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;" data-token-type="function">nmap</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;" data-token-type="value"> --script=default</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;"> [target]</span></span></code></pre></figure>
+</li>
+<li>
+<p><strong>Output Options:</strong> Save your scan results in a specific format for later analysis:</p>
+<figure data-rehype-pretty-code-figure><pre tabindex="0" data-language="bash" data-theme="github-light github-dark"><code data-language="bash" data-theme="github-light github-dark" style="display:grid;"><span data-line><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;" data-token-type="function">nmap</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;" data-token-type="value"> -oX</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string"> output.xml</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;"> [target]  </span><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D;" data-token-type="comment"># XML format</span></span>
+<span data-line><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;" data-token-type="function">nmap</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;" data-token-type="value"> -oN</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string"> output.nmap</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;"> [target] </span><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D;" data-token-type="comment"># Normal format</span></span></code></pre></figure>
+</li>
+</ul>
+<h2 id="scan-types">Scan Types<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#scan-types" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th><strong>Scan Type</strong></th><th><strong>Description</strong></th><th><strong>Primary Function</strong></th></tr></thead><tbody><tr><td><strong>Sweep Scan</strong></td><td>Involves pinging a range of IP addresses to identify which hosts are online. Commonly uses ICMP Echo requests or ARP for LANs.</td><td>Quickly identify active hosts within a network.</td></tr><tr><td><strong>Trace Scan</strong></td><td>Uses the <code>--traceroute</code> option in Nmap to identify the path packets take to reach a specific host.</td><td>Map the route packets take through the network.</td></tr><tr><td><strong>Port Scanning</strong></td><td>The core function of Nmap, this scan type probes ports on a host to identify network services and their status (open, closed, etc.).</td><td>Determine open, closed, or filtered ports on a host.</td></tr><tr><td><strong>Fingerprinting</strong></td><td>Also known as OS detection, uses a series of TCP/IP stack behavior tests to identify the operating system of a target host.</td><td>Identify the operating system of networked devices.</td></tr><tr><td><strong>Version Scanning</strong></td><td>Uses the <code>-sV</code> option to probe ports to determine service/application version information running on open ports.</td><td>Identify application and service versions to assess compatibility or vulnerabilities.</td></tr><tr><td><strong>Vulnerability Scanning</strong></td><td>While not a direct feature of Nmap, the NSE (Nmap Scripting Engine) can be used to run scripts that check for known vulnerabilities.</td><td>Check for known vulnerabilities in services and protocols on the network.</td></tr></tbody></table></div>
+<h2 id="scan-options---target-specifications">Scan Options - Target Specifications<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#scan-options---target-specifications" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th><strong>Option</strong></th><th><strong>Description</strong></th><th>Examples</th></tr></thead><tbody><tr><td><strong>Direct Input</strong></td><td>You can directly input hostnames, IP addresses, and networks as targets. Examples:</td><td><code>scanme.nmap.org</code>, <code>192.168.0.1</code>, <code>10.0.0-255.1-254</code>.</td></tr><tr><td><strong>-iL <code>&lt;inputfilename></code></strong></td><td>Specifies a file that contains a list of hosts or networks to scan. Each line in the file specifies a single target. Use this option to scan multiple targets listed in a file.</td><td><code>nmap -iL inputfilename.txt</code></td></tr><tr><td><strong>-iR <code>&lt;num hosts></code></strong></td><td>Randomly selects the specified number of hosts to scan. Useful for sampling the network.</td><td><code>nmap -iR 10</code> (to randomly scan ten hosts)</td></tr><tr><td><strong>—exclude <code>&lt;host1[,host2][,host3],...></code></strong></td><td>Excludes one or more specified hosts or networks from a scan. Useful when you want to avoid scanning specific targets.</td><td><code>nmap --exclude 192.168.0.5,scanme.nmap.org</code></td></tr><tr><td><strong>—excludefile <code>&lt;exclude_file></code></strong></td><td>Similar to <code>--exclude</code>, but the excluded targets are listed in a file, with one target per line. This option is useful for maintaining a consistent set of exclusion rules.</td><td><code>nmap --excludefile excluded_hosts.txt</code></td></tr></tbody></table></div>
+<h2 id="scan-options---host-discovery">Scan Options - Host Discovery<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#scan-options---host-discovery" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th><strong>Option</strong></th><th><strong>Description</strong></th><th><strong>Example</strong></th></tr></thead><tbody><tr><td><strong>-sL</strong></td><td>List Scan - simply lists targets without scanning them.</td><td><code>nmap -sL 192.168.1.0/24</code></td></tr><tr><td><strong>-sn</strong></td><td>Ping Scan - disables port scan, only checks if the host is up.</td><td><code>nmap -sn 192.168.1.0/24</code></td></tr><tr><td><strong>-Pn</strong></td><td>Treat all hosts as online and skip host discovery.</td><td><code>nmap -Pn 192.168.1.0/24</code></td></tr><tr><td><strong>-PS/PA/PU/PY</strong></td><td>TCP SYN/ACK, UDP or SCTP discovery to given ports.</td><td><code>nmap -PS22,80 192.168.1.0/24</code></td></tr><tr><td><strong>-PE/PP/PM</strong></td><td>ICMP echo, timestamp, and netmask request discovery probes.</td><td><code>nmap -PE 192.168.1.0/24</code></td></tr><tr><td><strong>-PO</strong></td><td>IP Protocol Ping to determine if a host is up by protocol.</td><td><code>nmap -PO 192.168.1.0/24</code></td></tr><tr><td><strong>-n/-R</strong></td><td>Never do DNS resolution/Always resolve (sometimes is default).</td><td><code>nmap -n 192.168.1.0/24</code>, <code>nmap -R 192.168.1.0/24</code></td></tr><tr><td><strong>—dns-servers</strong></td><td>Specify custom DNS servers.</td><td><code>nmap --dns-servers 8.8.8.8 192.168.1.0/24</code></td></tr><tr><td><strong>—system-dns</strong></td><td>Use the OS’s DNS resolver.</td><td><code>nmap --system-dns 192.168.1.0/24</code></td></tr><tr><td><strong>—traceroute</strong></td><td>Trace the hop path to each host.</td><td><code>nmap --traceroute 192.168.1.0/24</code></td></tr></tbody></table></div>
+<h2 id="scan-options---scan-techniques">Scan Options - Scan Techniques<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#scan-options---scan-techniques" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th><strong>Option</strong></th><th><strong>Scan Technique</strong></th><th><strong>Description</strong></th><th><strong>Example</strong></th></tr></thead><tbody><tr><td><strong>-sS</strong></td><td>TCP SYN Scan</td><td>Initiates a half-open connection to the target, less likely to be logged.</td><td><code>nmap -sS 192.168.1.1</code></td></tr><tr><td><strong>-sT</strong></td><td>TCP Connect() Scan</td><td>Uses the standard TCP/IP <code>connect()</code> system call to scan. More likely to be logged by the target.</td><td><code>nmap -sT 192.168.1.1</code></td></tr><tr><td><strong>-sA</strong></td><td>TCP ACK Scan</td><td>Useful for mapping out firewall rule sets and finding unfiltered ports.</td><td><code>nmap -sA 192.168.1.1</code></td></tr><tr><td><strong>-sW</strong></td><td>TCP Window Scan</td><td>Similar to ACK scan, but reveals more information about whether the port is open based on the window size of the returned packet.</td><td><code>nmap -sW 192.168.1.1</code></td></tr><tr><td><strong>-sM</strong></td><td>TCP Maimon Scan</td><td>Variation of the FIN scan that can be used to bypass certain packet filters.</td><td><code>nmap -sM 192.168.1.1</code></td></tr><tr><td><strong>-sU</strong></td><td>UDP Scan</td><td>Sends UDP packets to the target ports. Useful for finding open UDP ports.</td><td><code>nmap -sU 192.168.1.1</code></td></tr><tr><td><strong>-sN/sF/sX</strong></td><td>TCP Null, FIN, and Xmas Scans</td><td>These scans turn off certain flags in a TCP header to elicit a response from hosts.</td><td><code>nmap -sN 192.168.1.1</code>, <code>nmap -sF 192.168.1.1</code>, <code>nmap -sX 192.168.1.1</code></td></tr><tr><td><strong>—scanflags</strong></td><td>Custom TCP Scan Flags</td><td>Allows you to customize the TCP flags in a packet to create specialized scans.</td><td><code>nmap --scanflags URGACKPSHRSTSYNFIN 192.168.1.1</code></td></tr><tr><td><strong>-sI</strong></td><td>Idle Scan</td><td>Uses a “zombie” host to scan a target, which can allow the scanner to remain anonymous.</td><td><code>nmap -sI zombiehost 192.168.1.1</code></td></tr><tr><td><strong>-sY/sZ</strong></td><td>SCTP INIT/COOKIE-ECHO Scans</td><td>Scans using SCTP messages to find listening ports.</td><td><code>nmap -sY 192.168.1.1</code>, <code>nmap -sZ 192.168.1.1</code></td></tr><tr><td><strong>-sO</strong></td><td>IP Protocol Scan</td><td>Determines which IP protocols are supported by the target.</td><td><code>nmap -sO 192.168.1.1</code></td></tr><tr><td><strong>-b</strong></td><td>FTP Bounce Scan</td><td>Uses the FTP protocol’s feature to scan other hosts through an FTP relay.</td><td><code>nmap -b FTPrelayhost 192.168.1.1</code></td></tr></tbody></table></div>
+<h2 id="scan-options---port-specification--scan-order">Scan Options - Port Specification &amp; Scan Order<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#scan-options---port-specification--scan-order" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th><strong>Option</strong></th><th><strong>Function</strong></th><th><strong>Description</strong></th><th><strong>Example</strong></th></tr></thead><tbody><tr><td><strong>-p</strong></td><td>Port Ranges</td><td>Specifies particular ports or ranges of ports to scan.</td><td><code>-p22</code>, <code>-p1-65535</code>, <code>-p U:53,111,137,T:21-25,80,139,8080</code></td></tr><tr><td><strong>-F</strong></td><td>Fast Mode</td><td>Scans fewer ports than the default scan, limiting to the most commonly used ports.</td><td><code>nmap -F 192.168.1.1</code></td></tr><tr><td><strong>-r</strong></td><td>Consecutive Scan</td><td>Scans ports in numerical order rather than randomizing the scan order.</td><td><code>nmap -r 192.168.1.1</code></td></tr><tr><td><strong>—top-ports</strong></td><td>Top Ports</td><td>Scans a specific number of the most common ports as determined by Nmap’s built-in frequency data.</td><td><code>nmap --top-ports 10 192.168.1.1</code></td></tr><tr><td><strong>—port-ratio</strong></td><td>Port Ratio</td><td>Scans ports more common than a given ratio (a value between 0 and 1).</td><td><code>nmap --port-ratio 0.1 192.168.1.1</code></td></tr></tbody></table></div>
+<h2 id="scan-options---serviceversion-detection">Scan Options - Service/Version Detection<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#scan-options---serviceversion-detection" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th><strong>Option</strong></th><th><strong>Function</strong></th><th><strong>Description</strong></th><th><strong>Example</strong></th></tr></thead><tbody><tr><td><strong>-sV</strong></td><td>Service/Version Detection</td><td>Probes open ports to determine service and version information.</td><td><code>nmap -sV 192.168.1.1</code></td></tr><tr><td><strong>—version-intensity</strong></td><td>Version Scan Intensity Level</td><td>Sets the intensity of the version detection scan from 0 (light) to 9 (try all probes).</td><td><code>nmap -sV --version-intensity 5 192.168.1.1</code></td></tr><tr><td><strong>—version-light</strong></td><td>Light Version Scan</td><td>Limits to most likely probes, equivalent to an intensity level of 2.</td><td><code>nmap -sV --version-light 192.168.1.1</code></td></tr><tr><td><strong>—version-all</strong></td><td>Exhaustive Version Scan</td><td>Tries every single probe, equivalent to an intensity level of 9.</td><td><code>nmap -sV --version-all 192.168.1.1</code></td></tr><tr><td><strong>—version-trace</strong></td><td>Version Scan Trace</td><td>Shows detailed version scan activity, useful for debugging.</td><td><code>nmap -sV --version-trace 192.168.1.1</code></td></tr></tbody></table></div>
+<h2 id="scan-options---script-scan">Scan Options - Script Scan<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#scan-options---script-scan" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th><strong>Option</strong></th><th><strong>Function</strong></th><th><strong>Description</strong></th><th><strong>Example</strong></th></tr></thead><tbody><tr><td><strong>-sC</strong></td><td>Default Script Scan</td><td>Equivalent to <code>--script=default</code>, which runs default scripts against target hosts.</td><td><code>nmap -sC 192.168.1.1</code></td></tr><tr><td><strong>—script</strong></td><td>Specify Custom Scripts</td><td>Allows the user to specify individual scripts, directories, or categories of scripts to execute.</td><td><code>nmap --script=http-title,ssl-cert 192.168.1.1</code></td></tr><tr><td><strong>—script-args</strong></td><td>Provide Arguments to Scripts</td><td>Used to pass arguments to scripts in key=value format, separated by commas.</td><td><code>nmap --script-args user=admin,pass=password 192.168.1.1</code></td></tr><tr><td><strong>—script-trace</strong></td><td>Trace Script Activity</td><td>Shows all the data sent and received by Nmap scripts, useful for debugging.</td><td><code>nmap --script-trace --script=http-title 192.168.1.1</code></td></tr><tr><td><strong>—script-updatedb</strong></td><td>Update Script Database</td><td>Updates the script database to ensure the latest scripts are used.</td><td><code>nmap --script-updatedb</code></td></tr></tbody></table></div>
+<h2 id="scan-option---os-detection">Scan Option - OS Detection<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#scan-option---os-detection" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th><strong>Option</strong></th><th><strong>Function</strong></th><th><strong>Description</strong></th></tr></thead><tbody><tr><td><strong>-O</strong></td><td>Enable OS Detection</td><td>Activates Nmap’s OS detection feature to attempt to identify the operating system of the target host.</td></tr><tr><td><strong>—osscan-limit</strong></td><td>Limit OS Detection</td><td>Restricts OS detection to targets that are likely to be accurately identified (such as those that are up and have at least one open and one closed TCP port).</td></tr><tr><td><strong>—osscan-guess</strong></td><td>Aggressive OS Guessing</td><td>Makes Nmap guess the OS more aggressively when detection is uncertain.</td></tr></tbody></table></div>
+<h2 id="scan-options---timing--performance">Scan Options - Timing &amp; Performance<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#scan-options---timing--performance" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>Here’s a table that outlines the timing and performance-related scan options for Nmap:</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th><strong>Option</strong></th><th><strong>Function</strong></th><th><strong>Description</strong></th><th><strong>Example</strong></th></tr></thead><tbody><tr><td><strong>-T&lt;0-5></strong></td><td>Timing Template</td><td>Sets the timing aggressiveness of the scan, with higher numbers being faster but potentially less stealthy and more resource-intensive.</td><td><code>nmap -T4 192.168.1.1</code></td></tr><tr><td><strong>—min-hostgroup</strong></td><td>Minimum Host Group Size</td><td>Sets the minimum number of hosts scanned in parallel.</td><td><code>nmap --min-hostgroup 10 192.168.1.0/24</code></td></tr><tr><td><strong>—max-hostgroup</strong></td><td>Maximum Host Group Size</td><td>Sets the maximum number of hosts scanned in parallel.</td><td><code>nmap --max-hostgroup 100 192.168.1.0/24</code></td></tr><tr><td><strong>—min-parallelism</strong></td><td>Minimum Probe Parallelization</td><td>Sets the minimum number of probe parallelization (number of probe packets sent in parallel).</td><td><code>nmap --min-parallelism 10 192.168.1.1</code></td></tr><tr><td><strong>—max-parallelism</strong></td><td>Maximum Probe Parallelization</td><td>Sets the maximum number of probe parallelization.</td><td><code>nmap --max-parallelism 100 192.168.1.1</code></td></tr><tr><td><strong>—min-rtt-timeout</strong></td><td>Minimum RTT Timeout</td><td>Sets the minimum round trip time (RTT) timeout for a probe.</td><td><code>nmap --min-rtt-timeout 100ms 192.168.1.1</code></td></tr><tr><td><strong>—max-rtt-timeout</strong></td><td>Maximum RTT Timeout</td><td>Sets the maximum round trip time (RTT) timeout for a probe.</td><td><code>nmap --max-rtt-timeout 2s 192.168.1.1</code></td></tr><tr><td><strong>—initial-rtt-timeout</strong></td><td>Initial RTT Timeout</td><td>Sets the initial round trip time (RTT) timeout for a probe.</td><td><code>nmap --initial-rtt-timeout 1s 192.168.1.1</code></td></tr><tr><td><strong>—max-retries</strong></td><td>Maximum Retries</td><td>Sets the cap for the number of port scan probe retransmissions.</td><td><code>nmap --max-retries 5 192.168.1.1</code></td></tr><tr><td><strong>—host-timeout</strong></td><td>Host Timeout</td><td>Specifies the maximum amount of time to spend scanning a target before giving up.</td><td><code>nmap --host-timeout 30m 192.168.1.1</code></td></tr><tr><td><strong>—scan-delay</strong></td><td>Minimum Delay Between Probes</td><td>Sets a delay between individual probe packets to reduce scan speed and bandwidth usage.</td><td><code>nmap --scan-delay 1s 192.168.1.1</code></td></tr><tr><td><strong>—max-scan-delay</strong></td><td>Maximum Delay Between Probes</td><td>Sets the maximum delay allowed between probes, useful to ensure timely scanning while being polite to the network.</td><td><code>nmap --max-scan-delay 10s 192.168.1.1</code></td></tr><tr><td><strong>—min-rate</strong></td><td>Minimum Packet Rate</td><td>Ensures that scanning does not fall below a specified packets-per-second rate.</td><td><code>nmap --min-rate 50 192.168.1.1</code></td></tr><tr><td><strong>—max-rate</strong></td><td>Maximum Packet Rate</td><td>Limits the rate of sending packets to avoid overwhelming the network and target hosts.</td><td><code>nmap --max-rate 10 192.168.1.1</code></td></tr></tbody></table></div>
+<h2 id="scan-options--">Scan Options -<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#scan-options--" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<h2 id="scan-options---1">Scan Options -<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#scan-options---1" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<h2 id="current-status--">Current Status -<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#current-status--" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>Nmap continues to be developed and updated with new features and improvements, maintaining its relevance as one of the most powerful and versatile network scanning tools available today.</p>
+<h2 id="revision-history">Revision History<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#revision-history" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<ul>
+<li><strong>2024-04-23:</strong> Entry created.</li>
+</ul></div></article><hr/><div class="page-footer"></div></div><div class="right sidebar"><div class="graph"><h3>Graph View</h3><div class="graph-outer"><div class="graph-container" data-cfg="{&quot;drag&quot;:true,&quot;zoom&quot;:true,&quot;depth&quot;:1,&quot;scale&quot;:1.1,&quot;repelForce&quot;:0.5,&quot;centerForce&quot;:0.3,&quot;linkDistance&quot;:30,&quot;fontSize&quot;:0.6,&quot;opacityScale&quot;:1,&quot;showTags&quot;:true,&quot;removeTags&quot;:[],&quot;focusOnHover&quot;:false,&quot;enableRadial&quot;:false,&quot;enable&quot;:true}"></div><button class="global-graph-icon" aria-label="Global Graph"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 55 55" fill="currentColor" xml:space="preserve"><path d="M49,0c-3.309,0-6,2.691-6,6c0,1.035,0.263,2.009,0.726,2.86l-9.829,9.829C32.542,17.634,30.846,17,29,17
+                s-3.542,0.634-4.898,1.688l-7.669-7.669C16.785,10.424,17,9.74,17,9c0-2.206-1.794-4-4-4S9,6.794,9,9s1.794,4,4,4
+                c0.74,0,1.424-0.215,2.019-0.567l7.669,7.669C21.634,21.458,21,23.154,21,25s0.634,3.542,1.688,4.897L10.024,42.562
+                C8.958,41.595,7.549,41,6,41c-3.309,0-6,2.691-6,6s2.691,6,6,6s6-2.691,6-6c0-1.035-0.263-2.009-0.726-2.86l12.829-12.829
+                c1.106,0.86,2.44,1.436,3.898,1.619v10.16c-2.833,0.478-5,2.942-5,5.91c0,3.309,2.691,6,6,6s6-2.691,6-6c0-2.967-2.167-5.431-5-5.91
+                v-10.16c1.458-0.183,2.792-0.759,3.898-1.619l7.669,7.669C41.215,39.576,41,40.26,41,41c0,2.206,1.794,4,4,4s4-1.794,4-4
+                s-1.794-4-4-4c-0.74,0-1.424,0.215-2.019,0.567l-7.669-7.669C36.366,28.542,37,26.846,37,25s-0.634-3.542-1.688-4.897l9.665-9.665
+                C46.042,11.405,47.451,12,49,12c3.309,0,6-2.691,6-6S52.309,0,49,0z M11,9c0-1.103,0.897-2,2-2s2,0.897,2,2s-0.897,2-2,2
+                S11,10.103,11,9z M6,51c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4S8.206,51,6,51z M33,49c0,2.206-1.794,4-4,4s-4-1.794-4-4
+                s1.794-4,4-4S33,46.794,33,49z M29,31c-3.309,0-6-2.691-6-6s2.691-6,6-6s6,2.691,6,6S32.309,31,29,31z M47,41c0,1.103-0.897,2-2,2
+                s-2-0.897-2-2s0.897-2,2-2S47,39.897,47,41z M49,10c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4S51.206,10,49,10z"></path></svg></button></div><div class="global-graph-outer"><div class="global-graph-container" data-cfg="{&quot;drag&quot;:true,&quot;zoom&quot;:true,&quot;depth&quot;:-1,&quot;scale&quot;:0.9,&quot;repelForce&quot;:0.5,&quot;centerForce&quot;:0.2,&quot;linkDistance&quot;:30,&quot;fontSize&quot;:0.6,&quot;opacityScale&quot;:1,&quot;showTags&quot;:false,&quot;removeTags&quot;:[],&quot;focusOnHover&quot;:true,&quot;enableRadial&quot;:true,&quot;enable&quot;:true}"></div></div></div><div class="toc"><button type="button" class="toc-header" aria-controls="toc-259" aria-expanded="true"><h3>Table of Contents</h3><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="fold"><polyline points="6 9 12 15 18 9"></polyline></svg></button><ul id="list-0" class="toc-content overflow"><li class="depth-0"><a href="#nmap-network-mapper" data-for="nmap-network-mapper">Nmap (Network Mapper)</a></li><li class="depth-1"><a href="#key-features" data-for="key-features">Key Features</a></li><li class="depth-1"><a href="#how-it-works" data-for="how-it-works">How It Works</a></li><li class="depth-1"><a href="#advantages" data-for="advantages">Advantages</a></li><li class="depth-1"><a href="#exploitable-mechanismsweaknesses" data-for="exploitable-mechanismsweaknesses">Exploitable Mechanisms/Weaknesses</a></li><li class="depth-1"><a href="#documentation-and-resources" data-for="documentation-and-resources">Documentation and Resources</a></li><li class="depth-1"><a href="#helpful-beginner-tips" data-for="helpful-beginner-tips">Helpful Beginner Tips</a></li><li class="depth-1"><a href="#subtopics" data-for="subtopics">Subtopics</a></li><li class="depth-1"><a href="#scripts" data-for="scripts">Scripts</a></li><li class="depth-1"><a href="#how-to-use-nmap" data-for="how-to-use-nmap">How To Use Nmap</a></li><li class="depth-2"><a href="#basic-usage" data-for="basic-usage">Basic Usage</a></li><li class="depth-2"><a href="#common-scanning-techniques" data-for="common-scanning-techniques">Common Scanning Techniques</a></li><li class="depth-2"><a href="#interpreting-results" data-for="interpreting-results">Interpreting Results</a></li><li class="depth-2"><a href="#advanced-usage" data-for="advanced-usage">Advanced Usage</a></li><li class="depth-1"><a href="#scan-types" data-for="scan-types">Scan Types</a></li><li class="depth-1"><a href="#scan-options---target-specifications" data-for="scan-options---target-specifications">Scan Options - Target Specifications</a></li><li class="depth-1"><a href="#scan-options---host-discovery" data-for="scan-options---host-discovery">Scan Options - Host Discovery</a></li><li class="depth-1"><a href="#scan-options---scan-techniques" data-for="scan-options---scan-techniques">Scan Options - Scan Techniques</a></li><li class="depth-1"><a href="#scan-options---port-specification--scan-order" data-for="scan-options---port-specification--scan-order">Scan Options - Port Specification &amp; Scan Order</a></li><li class="depth-1"><a href="#scan-options---serviceversion-detection" data-for="scan-options---serviceversion-detection">Scan Options - Service/Version Detection</a></li><li class="depth-1"><a href="#scan-options---script-scan" data-for="scan-options---script-scan">Scan Options - Script Scan</a></li><li class="depth-1"><a href="#scan-option---os-detection" data-for="scan-option---os-detection">Scan Option - OS Detection</a></li><li class="depth-1"><a href="#scan-options---timing--performance" data-for="scan-options---timing--performance">Scan Options - Timing &amp; Performance</a></li><li class="depth-1"><a href="#scan-options--" data-for="scan-options--">Scan Options -</a></li><li class="depth-1"><a href="#scan-options---1" data-for="scan-options---1">Scan Options -</a></li><li class="depth-1"><a href="#current-status--" data-for="current-status--">Current Status -</a></li><li class="depth-1"><a href="#revision-history" data-for="revision-history">Revision History</a></li><li class="overflow-end"></li></ul></div><div class="backlinks"><h3>Backlinks</h3><ul id="list-0" class="overflow"><li><a href="./banner-grabbing" class="internal"></a></li><li><a href="./ethical-hacking-fundamentals" class="internal"></a></li><li><a href="./ethical-hacking" class="internal"></a></li><li><a href="./hacking-toolkit" class="internal"></a></li><li><a href="./kali-linux" class="internal"></a></li><li><a href="./red-teaming" class="internal"></a></li><li><a href="./transmission-control-protocol-(tcp)" class="internal"></a></li><li class="overflow-end"></li></ul></div></div><footer class><p>Created with <a href="https://quartz.jzhao.xyz/">Quartz v5.0.0</a> © 2026</p><ul><li><a href="https://github.com/priyanshu-rawa/Cybersecurity-Handbook">GitHub</a></li><li><a href="https://linkedin.com/in/priyanshurawat9111">LinkedIn</a></li></ul></footer></div></div></body><script src="./static/resource-after-e13fffa1.js" type="application/javascript" data-persist="true"></script><script src="./static/resource-after-8b336f9a.js" type="application/javascript" data-persist="true"></script><script src="./static/resource-after-baba652b.js" type="application/javascript" data-persist="true"></script><script src="./static/resource-after-5eb75950.js" type="module" data-persist="true"></script><script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/copy-tex.min.js" type="application/javascript" data-persist="true"></script><script src="./postscript-cd8794c3.js" type="module" data-persist="true"></script></html>

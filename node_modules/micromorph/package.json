@@ -1,0 +1,35 @@
+{
+  "name": "micromorph",
+  "version": "0.4.5",
+  "main": "./index.mjs",
+  "types": "./types.d.ts",
+  "exports": {
+    ".": "./index.mjs",
+    "./spa": "./dist/spa.js",
+    "./nav": "./dist/nav.js"
+  },
+  "files": [
+    "index.mjs",
+    "index.d.ts",
+    "spa.d.ts",
+    "nav.d.ts",
+    "dist/"
+  ],
+  "packageManager": "pnpm@6.32.3",
+  "devDependencies": {
+    "@changesets/cli": "^2.22.0",
+    "esbuild": "^0.14.14"
+  },
+  "volta": {
+    "node": "18.16.0"
+  },
+  "license": "MIT",
+  "scripts": {
+    "build": "pnpm run build:index && pnpm run build:spa && pnpm run build:nav",
+    "build:index": "esbuild src/index.ts --bundle --format=esm --target=es2020 --outfile=dist/index.js --minify",
+    "build:spa": "esbuild src/spa.ts --bundle --format=esm --target=es2020 --outfile=dist/spa.js --minify",
+    "build:nav": "esbuild src/nav.ts --bundle --format=esm --target=es2020 --outfile=dist/nav.js --minify",
+    "demo": "pnpm --filter demo run build && pnpm --filter demo run preview"
+  },
+  "readme": "# 🤏 micromorph\n\nA very tiny library for diffing live DOM nodes.\n\nExtremely handy when used in conjunction with the [`DOMParser`](https://developer.mozilla.org/en-US/docs/Web/API/DOMParser) API.\n\n---\n\n## Use Cases\n\n#### Want to update one node to match another?\n\nDiff them efficiently and only sync changes between the two nodes.\n\n```js\nimport diff from 'micromorph';\n\ndiff(fromNode, toNode);\n```\n\n#### Want to update the current `document` to match a new `document`, maybe from a string?\n\nMicromorph is smart enough to handle full document diffing while avoiding FOUC.\n\n```js\nimport diff from 'micromorph';\nconst p = new DOMParser();\n\nconst newDoc = p.parseFromString(`<h1>Hello world!</h1>`, 'text/html');\n\ndiff(document, newDoc);\n```\n\n#### Want to turn your MPA into an SPA?\n\nWith the `/nav` entrypoint, Micromorph automatically converts your MPA into a SPA while only re-rendering content that has changed.\n\n```js\nimport listen from 'micromorph/nav';\n\nlisten();\n```\n\nFor browsers that don't support the `Navigation` API, the `/spa` entrypoint can be used.\n\n\n```js\nimport listen from 'micromorph/spa';\n\nlisten();\n```\n"
+}

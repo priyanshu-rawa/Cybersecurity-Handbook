@@ -1,0 +1,70 @@
+{
+  "name": "@quartz-community/types",
+  "version": "0.2.1",
+  "description": "Type definitions for Quartz community plugins",
+  "type": "module",
+  "license": "MIT",
+  "author": "Quartz Community",
+  "homepage": "https://quartz.jzhao.xyz",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/quartz-community/types"
+  },
+  "keywords": [
+    "quartz",
+    "quartz-plugin",
+    "types",
+    "typescript"
+  ],
+  "files": [
+    "src",
+    "dist",
+    "globals.d.ts",
+    "README.md",
+    "LICENSE"
+  ],
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./globals": {
+      "types": "./globals.d.ts"
+    },
+    "./package.json": "./package.json"
+  },
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "sideEffects": false,
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "unified": "^11.0.5",
+    "vfile": "^6.0.3"
+  },
+  "engines": {
+    "node": ">=22",
+    "npm": ">=10.9.2"
+  },
+  "devDependencies": {
+    "@types/hast": "^3.0.4",
+    "@types/mdast": "^4.0.4",
+    "tsup": "^8.5.0",
+    "typescript": "^5.9.3"
+  },
+  "peerDependencies": {
+    "unified": "^11.0.5",
+    "vfile": "^6.0.3"
+  },
+  "peerDependenciesMeta": {
+    "unified": {
+      "optional": true
+    },
+    "vfile": {
+      "optional": true
+    }
+  }
+}

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0">
+    <channel>
+      <title>Cybersecurity Handbook</title>
+      <link>https://cybersecurity-handbook.vercel.app</link>
+      <description>Last 10 notes on Cybersecurity Handbook</description>
+      <generator>Quartz -- quartz.jzhao.xyz</generator>
+      <item>
+    <title>Privilege-Escalation-Handbook</title>
+    <link>https://cybersecurity-handbook.vercel.app/privilege-escalation-handbook/</link>
+    <guid>https://cybersecurity-handbook.vercel.app/privilege-escalation-handbook/</guid>
+    <description><![CDATA[  ]]></description>
+    <pubDate>Fri, 07 Aug 2026 14:29:03 GMT</pubDate>
+  </item><item>
+    <title>Tag Index</title>
+    <link>https://cybersecurity-handbook.vercel.app/tags/</link>
+    <guid>https://cybersecurity-handbook.vercel.app/tags/</guid>
+    <description><![CDATA[  ]]></description>
+    <pubDate>Fri, 07 Aug 2026 14:29:03 GMT</pubDate>
+  </item><item>
+    <title></title>
+    <link>https://cybersecurity-handbook.vercel.app/</link>
+    <guid>https://cybersecurity-handbook.vercel.app/</guid>
+    <description><![CDATA[ 📖 Cybersecurity Handbook New: A complete Privilege Escalation Handbook has been added. You’ll find the full folder on the left in the Explorer. ]]></description>
+    <pubDate>Fri, 07 Aug 2026 09:25:14 GMT</pubDate>
+  </item><item>
+    <title></title>
+    <link>https://cybersecurity-handbook.vercel.app/zk-starks</link>
+    <guid>https://cybersecurity-handbook.vercel.app/zk-starks</guid>
+    <description><![CDATA[  aliases: zK STARK Zero-Knowledge Scalable Transparent Argument of Knowledge Definition: zK-STARKs (Zero-Knowledge Scalable Transparent Arguments of Knowledge) are a type of Zero-knowledge Proofs that allows one party to prove the validity of a statement without revealing any specific details of the... ]]></description>
+    <pubDate>Wed, 05 Aug 2026 21:22:04 GMT</pubDate>
+  </item><item>
+    <title></title>
+    <link>https://cybersecurity-handbook.vercel.app/privilege-escalation-handbook/01_linux_enumeration_deep_dive</link>
+    <guid>https://cybersecurity-handbook.vercel.app/privilege-escalation-handbook/01_linux_enumeration_deep_dive</guid>
+    <description><![CDATA[ Linux Enumeration Deep Dive Privilege Escalation Handbook — File 01 Audience: penetration testers, red teamers, security analysts Scope: post-compromise Linux host enumeration before privilege escalation Table of Contents Introduction &amp; Methodology System Information Users, Groups &amp; Authenti... ]]></description>
+    <pubDate>Wed, 05 Aug 2026 18:59:14 GMT</pubDate>
+  </item><item>
+    <title></title>
+    <link>https://cybersecurity-handbook.vercel.app/privilege-escalation-handbook/02_linux_privilege_escalation_techniques</link>
+    <guid>https://cybersecurity-handbook.vercel.app/privilege-escalation-handbook/02_linux_privilege_escalation_techniques</guid>
+    <description><![CDATA[ Linux Privilege Escalation Techniques Privilege Escalation Handbook — File 02 Focus: exploitation paths after enumeration (see File 01) Assumes authorized testing only Table of Contents Overview &amp; Decision Framework Kernel Exploits Sudo Misconfigurations &amp; GTFOBins SUID / SGID Abuse Linux Ca... ]]></description>
+    <pubDate>Wed, 05 Aug 2026 18:59:14 GMT</pubDate>
+  </item><item>
+    <title></title>
+    <link>https://cybersecurity-handbook.vercel.app/privilege-escalation-handbook/03_windows_privilege_escalation_concepts</link>
+    <guid>https://cybersecurity-handbook.vercel.app/privilege-escalation-handbook/03_windows_privilege_escalation_concepts</guid>
+    <description><![CDATA[ Windows Privilege Escalation Concepts Privilege Escalation Handbook — File 03 Focus: security architecture that enables Windows privilege escalation Techniques are covered in File 04 Table of Contents Introduction Windows Security Architecture Overview Security Identifiers (SIDs) Access Tokens Integ... ]]></description>
+    <pubDate>Wed, 05 Aug 2026 18:59:14 GMT</pubDate>
+  </item><item>
+    <title></title>
+    <link>https://cybersecurity-handbook.vercel.app/privilege-escalation-handbook/04_windows_privilege_escalation_techniques</link>
+    <guid>https://cybersecurity-handbook.vercel.app/privilege-escalation-handbook/04_windows_privilege_escalation_techniques</guid>
+    <description><![CDATA[ Windows Privilege Escalation Techniques Privilege Escalation Handbook — File 04 Practical techniques building on concepts in File 03 Authorized testing only Table of Contents Methodology &amp; Initial Checks Token Impersonation (Potato Family) UAC Bypass Methods Service Exploitation Unquoted Service... ]]></description>
+    <pubDate>Wed, 05 Aug 2026 18:59:14 GMT</pubDate>
+  </item><item>
+    <title></title>
+    <link>https://cybersecurity-handbook.vercel.app/privilege-escalation-handbook/05_reverse_shells_stabilisation_and_tools</link>
+    <guid>https://cybersecurity-handbook.vercel.app/privilege-escalation-handbook/05_reverse_shells_stabilisation_and_tools</guid>
+    <description><![CDATA[ Reverse Shells, Stabilisation, and Tools Privilege Escalation Handbook — File 05 Reliable interactive access after initial code execution Authorized engagements only Table of Contents Bind vs Reverse Shells Netcat Family Socat Metasploit multi/handler &amp; Meterpreter msfvenom Payloads &amp; Encodi... ]]></description>
+    <pubDate>Wed, 05 Aug 2026 18:59:14 GMT</pubDate>
+  </item><item>
+    <title></title>
+    <link>https://cybersecurity-handbook.vercel.app/privilege-escalation-handbook/06_modern_cloud_and_container_privilege_escalation</link>
+    <guid>https://cybersecurity-handbook.vercel.app/privilege-escalation-handbook/06_modern_cloud_and_container_privilege_escalation</guid>
+    <description><![CDATA[ Modern Cloud and Container Privilege Escalation Privilege Escalation Handbook — File 06 AWS, Azure, GCP, containers, Kubernetes, and CI/CD Authorized cloud assessments only — watch for production blast radius Table of Contents Cloud Privesc Mindset AWS Privilege Escalation Azure / Entra ID Privilege... ]]></description>
+    <pubDate>Wed, 05 Aug 2026 18:59:14 GMT</pubDate>
+  </item>
+    </channel>
+  </rss>

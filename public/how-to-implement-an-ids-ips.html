@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr"><head><title>Untitled</title><meta charset="utf-8"/><link rel="preload" href="./index-b488e415.css" as="style"/><link rel="preload" href="./prescript-2bfc6315.js" as="script"/><link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com"/><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space Grotesk:wght@400;700&amp;family=Inter:ital,wght@0,400;0,600;1,400;1,600&amp;family=IBM Plex Mono:wght@400;600&amp;display=swap"/><link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin="anonymous"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta name="og:site_name" content="Cybersecurity Handbook"/><meta property="og:title" content="Untitled"/><meta property="og:type" content="website"/><meta name="twitter:card" content="summary_large_image"/><meta name="twitter:title" content="Untitled"/><meta name="twitter:description" content="up:: Network &amp; Systems Security Labs, Threat Detection &amp; Response Labs Project: Implementing an IDS/IPS with Snort Snort is an open-source tool used to detect and prevent potential security threats by monitoring network traffic."/><meta property="og:description" content="up:: Network &amp; Systems Security Labs, Threat Detection &amp; Response Labs Project: Implementing an IDS/IPS with Snort Snort is an open-source tool used to detect and prevent potential security threats by monitoring network traffic."/><meta property="og:image:alt" content="up:: Network &amp; Systems Security Labs, Threat Detection &amp; Response Labs Project: Implementing an IDS/IPS with Snort Snort is an open-source tool used to detect and prevent potential security threats by monitoring network traffic."/><meta property="og:image" content="https://cybersecurity-handbook.vercel.app/static/og-image.png"/><meta property="og:image:url" content="https://cybersecurity-handbook.vercel.app/static/og-image.png"/><meta name="twitter:image" content="https://cybersecurity-handbook.vercel.app/static/og-image.png"/><meta property="og:image:type" content="image/.png"/><meta property="twitter:domain" content="cybersecurity-handbook.vercel.app"/><meta property="og:url" content="https://cybersecurity-handbook.vercel.app/how-to-implement-an-ids-ips"/><meta property="twitter:url" content="https://cybersecurity-handbook.vercel.app/how-to-implement-an-ids-ips"/><link rel="icon" href="./static/icon.png"/><meta name="description" content="up:: Network &amp; Systems Security Labs, Threat Detection &amp; Response Labs Project: Implementing an IDS/IPS with Snort Snort is an open-source tool used to detect and prevent potential security threats by monitoring network traffic."/><meta name="generator" content="Quartz"/><link href="./index-b488e415.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="./component-735924e0.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="./component-589c1cea.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="./component-2911f5d1.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="./component-e427079e.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="./component-53b25b2b.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="./component-c93c6a44.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="./component-8a06014f.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="./component-77d6a441.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="./component-6ee21cee.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="./component-1ea6ad18.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="./component-34bdfded.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="./component-788c9ca3.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="./component-642859cd.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="./component-4abc06bd.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="./component-274a3dfe.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="./component-94cb6c84.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="./component-58d5ff56.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="./component-9f9b2774.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="./component-caf7c009.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="./component-7262b5a7.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="./static/resource-style-a5c806d2.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="./static/resource-style-6bd36952.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="./static/resource-style-9857b007.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="./static/resource-style-d3a1a224.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" rel="stylesheet" type="text/css" data-persist="true"/><script src="./prescript-2bfc6315.js" type="application/javascript" data-persist="true"></script><script type="application/javascript" data-persist="true">const fetchData = fetch("./static/contentIndex.json").then(data => data.json())</script><link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous"/><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Schibsted%20Grotesk%3Awght%40400%3B700&amp;family=Source%20Sans%20Pro%3Aital%2Cwght%400%2C400%3B0%2C600%3B1%2C400%3B1%2C600&amp;family=IBM%20Plex%20Mono%3Awght%40400%3B600&amp;display=swap"/><meta property="og:image:width" content="1200"/><meta property="og:image:height" content="630"/><meta property="og:image" content="https://cybersecurity-handbook.vercel.app/how-to-implement-an-ids-ips-og-image.webp"/><meta property="og:image:url" content="https://cybersecurity-handbook.vercel.app/how-to-implement-an-ids-ips-og-image.webp"/><meta name="twitter:image" content="https://cybersecurity-handbook.vercel.app/how-to-implement-an-ids-ips-og-image.webp"/><meta property="og:image:type" content="image/webp"/></head><body data-slug="how-to-implement-an-ids-ips" data-basepath><div id="quartz-root" class="page" data-frame="default"><div id="quartz-body"><div class="left sidebar"><h2 class="page-title"><a href=".">Cybersecurity Handbook</a></h2><div class="mobile-only"><div class="spacer"></div></div><div class="flex-component" style="flex-direction: row; flex-wrap: nowrap; gap: 0.5rem;"><div style="flex-grow: 1; flex-shrink: 1; flex-basis: auto; order: 0; align-self: center; justify-self: center;"><div class="search"><button class="search-button" aria-label="Search" aria-expanded="false"><svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.9 19.7"><title>Search</title><g class="search-path" fill="none"><path stroke-linecap="square" d="M18.5 18.3l-5.4-5.4"></path><circle cx="8" cy="8" r="7"></circle></g></svg><p>Search</p></button><div class="search-container"><div class="search-space"><input autocomplete="off" class="search-bar" name="search" type="text" aria-label="Search for something..." placeholder="Search for something..."/><div class="search-layout" data-preview="true" data-field-priority="[&quot;title&quot;,&quot;content&quot;,&quot;tags&quot;]"></div></div></div></div></div><div style="flex-grow: 0; flex-shrink: 1; flex-basis: auto; order: 0; align-self: center; justify-self: center;"><button class="darkmode" aria-label="Dark mode"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" class="dayIcon" x="0px" y="0px" viewBox="0 0 35 35" style="enable-background:new 0 0 35 35" xml:space="preserve" aria-label="Dark mode"><title>Dark mode</title><path d="M6,17.5C6,16.672,5.328,16,4.5,16h-3C0.672,16,0,16.672,0,17.5    S0.672,19,1.5,19h3C5.328,19,6,18.328,6,17.5z M7.5,26c-0.414,0-0.789,0.168-1.061,0.439l-2,2C4.168,28.711,4,29.086,4,29.5    C4,30.328,4.671,31,5.5,31c0.414,0,0.789-0.168,1.06-0.44l2-2C8.832,28.289,9,27.914,9,27.5C9,26.672,8.329,26,7.5,26z M17.5,6    C18.329,6,19,5.328,19,4.5v-3C19,0.672,18.329,0,17.5,0S16,0.672,16,1.5v3C16,5.328,16.671,6,17.5,6z M27.5,9    c0.414,0,0.789-0.168,1.06-0.439l2-2C30.832,6.289,31,5.914,31,5.5C31,4.672,30.329,4,29.5,4c-0.414,0-0.789,0.168-1.061,0.44    l-2,2C26.168,6.711,26,7.086,26,7.5C26,8.328,26.671,9,27.5,9z M6.439,8.561C6.711,8.832,7.086,9,7.5,9C8.328,9,9,8.328,9,7.5    c0-0.414-0.168-0.789-0.439-1.061l-2-2C6.289,4.168,5.914,4,5.5,4C4.672,4,4,4.672,4,5.5c0,0.414,0.168,0.789,0.439,1.06    L6.439,8.561z M33.5,16h-3c-0.828,0-1.5,0.672-1.5,1.5s0.672,1.5,1.5,1.5h3c0.828,0,1.5-0.672,1.5-1.5S34.328,16,33.5,16z     M28.561,26.439C28.289,26.168,27.914,26,27.5,26c-0.828,0-1.5,0.672-1.5,1.5c0,0.414,0.168,0.789,0.439,1.06l2,2    C28.711,30.832,29.086,31,29.5,31c0.828,0,1.5-0.672,1.5-1.5c0-0.414-0.168-0.789-0.439-1.061L28.561,26.439z M17.5,29    c-0.829,0-1.5,0.672-1.5,1.5v3c0,0.828,0.671,1.5,1.5,1.5s1.5-0.672,1.5-1.5v-3C19,29.672,18.329,29,17.5,29z M17.5,7    C11.71,7,7,11.71,7,17.5S11.71,28,17.5,28S28,23.29,28,17.5S23.29,7,17.5,7z M17.5,25c-4.136,0-7.5-3.364-7.5-7.5    c0-4.136,3.364-7.5,7.5-7.5c4.136,0,7.5,3.364,7.5,7.5C25,21.636,21.636,25,17.5,25z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" class="nightIcon" x="0px" y="0px" viewBox="0 0 100 100" style="enable-background:new 0 0 100 100" xml:space="preserve" aria-label="Light mode"><title>Light mode</title><path d="M96.76,66.458c-0.853-0.852-2.15-1.064-3.23-0.534c-6.063,2.991-12.858,4.571-19.655,4.571  C62.022,70.495,50.88,65.88,42.5,57.5C29.043,44.043,25.658,23.536,34.076,6.47c0.532-1.08,0.318-2.379-0.534-3.23  c-0.851-0.852-2.15-1.064-3.23-0.534c-4.918,2.427-9.375,5.619-13.246,9.491c-9.447,9.447-14.65,22.008-14.65,35.369  c0,13.36,5.203,25.921,14.65,35.368s22.008,14.65,35.368,14.65c13.361,0,25.921-5.203,35.369-14.65  c3.872-3.871,7.064-8.328,9.491-13.246C97.826,68.608,97.611,67.309,96.76,66.458z"></path></svg></button></div><div style="flex-grow: 0; flex-shrink: 1; flex-basis: auto; order: 0; align-self: center; justify-self: center;"><button class="readermode" aria-label="Reader mode"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" class="readerIcon" fill="currentColor" stroke="currentColor" stroke-width="0.2" stroke-linecap="round" stroke-linejoin="round" width="64px" height="64px" viewBox="0 0 24 24" aria-label="Reader mode"><title>Reader mode</title><g transform="translate(-1.8, -1.8) scale(1.15, 1.2)"><path d="M8.9891247,2.5 C10.1384702,2.5 11.2209868,2.96705384 12.0049645,3.76669482 C12.7883914,2.96705384 13.8709081,2.5 15.0202536,2.5 L18.7549359,2.5 C19.1691495,2.5 19.5049359,2.83578644 19.5049359,3.25 L19.5046891,4.004 L21.2546891,4.00457396 C21.6343849,4.00457396 21.9481801,4.28672784 21.9978425,4.6528034 L22.0046891,4.75457396 L22.0046891,20.25 C22.0046891,20.6296958 21.7225353,20.943491 21.3564597,20.9931534 L21.2546891,21 L2.75468914,21 C2.37499337,21 2.06119817,20.7178461 2.01153575,20.3517706 L2.00468914,20.25 L2.00468914,4.75457396 C2.00468914,4.37487819 2.28684302,4.061083 2.65291858,4.01142057 L2.75468914,4.00457396 L4.50368914,4.004 L4.50444233,3.25 C4.50444233,2.87030423 4.78659621,2.55650904 5.15267177,2.50684662 L5.25444233,2.5 L8.9891247,2.5 Z M4.50368914,5.504 L3.50468914,5.504 L3.50468914,19.5 L10.9478955,19.4998273 C10.4513189,18.9207296 9.73864328,18.5588115 8.96709342,18.5065584 L8.77307039,18.5 L5.25444233,18.5 C4.87474657,18.5 4.56095137,18.2178461 4.51128895,17.8517706 L4.50444233,17.75 L4.50368914,5.504 Z M19.5049359,17.75 C19.5049359,18.1642136 19.1691495,18.5 18.7549359,18.5 L15.2363079,18.5 C14.3910149,18.5 13.5994408,18.8724714 13.0614828,19.4998273 L20.5046891,19.5 L20.5046891,5.504 L19.5046891,5.504 L19.5049359,17.75 Z M18.0059359,3.999 L15.0202536,4 L14.8259077,4.00692283 C13.9889509,4.06666544 13.2254227,4.50975805 12.7549359,5.212 L12.7549359,17.777 L12.7782651,17.7601316 C13.4923805,17.2719483 14.3447024,17 15.2363079,17 L18.0059359,16.999 L18.0056891,4.798 L18.0033792,4.75457396 L18.0056891,4.71 L18.0059359,3.999 Z M8.9891247,4 L6.00368914,3.999 L6.00599909,4.75457396 L6.00599909,4.75457396 L6.00368914,4.783 L6.00368914,16.999 L8.77307039,17 C9.57551536,17 10.3461406,17.2202781 11.0128313,17.6202194 L11.2536891,17.776 L11.2536891,5.211 C10.8200889,4.56369974 10.1361548,4.13636104 9.37521067,4.02745763 L9.18347055,4.00692283 L8.9891247,4 Z"></path></g></svg></button></div></div><div class="explorer nav-files-container" data-behavior="collapse" data-collapsed="collapsed" data-savestate="true" data-data-fns="{&quot;order&quot;:[&quot;filter&quot;,&quot;map&quot;,&quot;sort&quot;],&quot;sortFn&quot;:&quot;(a2, b2) => {\r\n    if (!a2.isFolder &amp;&amp; !b2.isFolder || a2.isFolder &amp;&amp; b2.isFolder) {\r\n      return (a2.displayName || \&quot;\&quot;).localeCompare(b2.displayName || \&quot;\&quot;, void 0, {\r\n        numeric: true,\r\n        sensitivity: \&quot;base\&quot;\r\n      });\r\n    }\r\n    if (!a2.isFolder &amp;&amp; b2.isFolder) {\r\n      return 1;\r\n    }\r\n    return -1;\r\n  }&quot;,&quot;filterFn&quot;:&quot;(node) => node.slugSegment !== \&quot;tags\&quot;&quot;,&quot;mapFn&quot;:&quot;(node) => {\r\n    return node;\r\n  }&quot;}"><button type="button" class="explorer-toggle mobile-explorer hide-until-loaded" data-mobile="true" aria-controls="explorer-170" aria-label="Explorer"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide-menu"><line x1="4" x2="20" y1="12" y2="12"></line><line x1="4" x2="20" y1="6" y2="6"></line><line x1="4" x2="20" y1="18" y2="18"></line></svg></button><button type="button" class="title-button explorer-toggle desktop-explorer" data-mobile="false" aria-expanded="true"><h2>Explorer</h2><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="5 8 14 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="fold"><polyline points="6 9 12 15 18 9"></polyline></svg></button><div id="explorer-170" class="explorer-content" aria-expanded="false" role="group"><ul class="explorer-ul overflow" id="list-0"><li class="overflow-end"></li></ul></div><template id="template-file"><li><a href="#" class="nav-file-title tree-item-self"></a></li></template><template id="template-folder"><li><div class="folder-container nav-folder-title tree-item-self"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="5 8 14 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="folder-icon nav-folder-collapse-indicator collapse-icon"><polyline points="6 9 12 15 18 9"></polyline></svg><div><button class="folder-button"><span class="folder-title"></span></button></div></div><div class="folder-outer"><ul class="content tree-item-children"></ul></div></li></template></div></div><div class="center"><div class="page-header"><div class="popover-hint"><p show-comma="true" class="content-meta"><time datetime="2026-06-30T09:06:07.000Z">Jun 30, 2026</time><span>7 min read</span></p></div></div><article class="popover-hint"><div class="markdown-preview-view markdown-rendered"><p>up:: <a href="./network--and--systems-security-labs" class="internal internal-link alias" data-slug="network--and--systems-security-labs">Network &amp; Systems Security Labs</a>, <a href="./threat-detection--and--response-labs" class="internal internal-link alias" data-slug="threat-detection--and--response-labs">Threat Detection &amp; Response Labs</a></p>
+<h3 id="project-implementing-an-idsips-with-snort">Project: Implementing an IDS/IPS with Snort<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#project-implementing-an-idsips-with-snort" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p><strong>Snort</strong> is an open-source tool used to detect and prevent potential security threats by monitoring network traffic. An <strong>IDS</strong> (Intrusion Detection System) watches for suspicious activity and alerts you, while an <strong>IPS</strong> (Intrusion Prevention System) can actively block such threats.</p>
+<hr/>
+<h3 id="prerequisites">Prerequisites<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#prerequisites" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>Before you begin, make sure you have:</p>
+<ul>
+<li><strong>Basic knowledge of Linux commands</strong> for navigating and editing files.</li>
+<li><strong>A Linux system</strong> (Ubuntu is preferred for this guide).</li>
+<li><strong>Root or sudo access</strong> to run administrative commands.</li>
+</ul>
+<hr/>
+<h3 id="step-by-step-guide-to-setting-up-snort">Step-by-Step Guide to Setting Up Snort<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#step-by-step-guide-to-setting-up-snort" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<hr/>
+<h4 id="step-1-update-your-system">Step 1: Update Your System<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#step-1-update-your-system" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<p>It’s always best to start with an up-to-date system to ensure compatibility.</p>
+<ol>
+<li>
+<p>Open the terminal.</p>
+</li>
+<li>
+<p>Run these commands to update your package list and install any upgrades:</p>
+<figure data-rehype-pretty-code-figure><pre tabindex="0" data-language="bash" data-theme="github-light github-dark"><code data-language="bash" data-theme="github-light github-dark" style="display:grid;"><span data-line><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;" data-token-type="function">sudo</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string"> apt</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string"> update</span></span>
+<span data-line><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;" data-token-type="function">sudo</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string"> apt</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string"> upgrade</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;" data-token-type="value"> -y</span></span></code></pre></figure>
+<ul>
+<li><strong>Explanation</strong>: <code>apt update</code> refreshes the list of available packages, and <code>apt upgrade -y</code> installs the latest versions. The <code>-y</code> flag auto-confirms prompts.</li>
+</ul>
+</li>
+</ol>
+<hr/>
+<h4 id="step-2-install-required-dependencies">Step 2: Install Required Dependencies<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#step-2-install-required-dependencies" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<p>Snort requires several additional packages for proper operation.</p>
+<ol>
+<li>
+<p>Install the necessary dependencies with this command:</p>
+<figure data-rehype-pretty-code-figure><pre tabindex="0" data-language="bash" data-theme="github-light github-dark"><code data-language="bash" data-theme="github-light github-dark" style="display:grid;"><span data-line> </span></code></pre></figure>
+</li>
+</ol>
+<p>sudo apt install -y build-essential libpcap-dev libpcre3-dev libdumbnet-dev bison flex zlib1g-dev libssl-dev libluajit-5.1-dev libtirpc-dev pkg-config</p>
+<pre><code>
+- **Explanation**: These packages help with compiling Snort and include important libraries, like `libpcap` (for packet capturing) and `libpcre` (for regular expression support).
+
+2. Download and Install DAQ (Data Acquisition Library)**
+Snort requires the DAQ library. Download, compile, and install it before Snort.
+
+1. **Download DAQ**:
+```bash
+wget https://www.snort.org/downloads/snort/daq-2.0.7.tar.gz
+</code></pre>
+<ol start="2">
+<li>
+<p><strong>Extract DAQ</strong>:</p>
+<figure data-rehype-pretty-code-figure><pre tabindex="0" data-language="bash" data-theme="github-light github-dark"><code data-language="bash" data-theme="github-light github-dark" style="display:grid;"><span data-line><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;" data-token-type="function">tar</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;" data-token-type="value"> -xvzf</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string"> daq-2.0.7.tar.gz</span></span>
+<span data-line><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;" data-token-type="function">cd</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string"> daq-2.0.7</span></span></code></pre></figure>
+</li>
+<li>
+<p><strong>Build and Install DAQ</strong>:</p>
+<figure data-rehype-pretty-code-figure><pre tabindex="0" data-language="bash" data-theme="github-light github-dark"><code data-language="bash" data-theme="github-light github-dark" style="display:grid;"><span data-line><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;" data-token-type="function">./configure</span></span>
+<span data-line><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;" data-token-type="function">make</span></span>
+<span data-line><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;" data-token-type="function">sudo</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string"> make</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string"> install</span></span></code></pre></figure>
+</li>
+<li>
+<p><strong>Verify Installation</strong>:<br/>
+Run the following command to check if DAQ is installed:</p>
+<figure data-rehype-pretty-code-figure><pre tabindex="0" data-language="bash" data-theme="github-light github-dark"><code data-language="bash" data-theme="github-light github-dark" style="display:grid;"><span data-line><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;" data-token-type="function">ldconfig</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;" data-token-type="value"> -p</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;" data-token-type="operator"> |</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;" data-token-type="function"> grep</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string"> daq</span></span></code></pre></figure>
+</li>
+</ol>
+<hr/>
+<h4 id="step-3-download-and-install-snort">Step 3: Download and Install Snort<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#step-3-download-and-install-snort" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<ol>
+<li>
+<p><strong>Download the Snort Source Code</strong>:</p>
+<ul>
+<li>
+<p>Visit <a href="https://www.snort.org/downloads" class="external external-link">Snort’s downloads page<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> and get the latest version of Snort.</p>
+</li>
+<li>
+<p>Alternatively, you can use the following command (replace <code>2.9.20</code> with the latest version):</p>
+<figure data-rehype-pretty-code-figure><pre tabindex="0" data-language="bash" data-theme="github-light github-dark"><code data-language="bash" data-theme="github-light github-dark" style="display:grid;"><span data-line><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;" data-token-type="function">wget</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string"> https://www.snort.org/downloads/snort/snort-2.9.20.tar.gz</span></span></code></pre></figure>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Extract the Downloaded File</strong>:</p>
+<figure data-rehype-pretty-code-figure><pre tabindex="0" data-language="bash" data-theme="github-light github-dark"><code data-language="bash" data-theme="github-light github-dark" style="display:grid;"><span data-line><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;" data-token-type="function">tar</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;" data-token-type="value"> -xvzf</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string"> snort-2.9.20.tar.gz</span></span>
+<span data-line><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;" data-token-type="function">cd</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string"> snort-2.9.20</span></span></code></pre></figure>
+</li>
+<li>
+<p><strong>Compile and Install Snort</strong>:</p>
+<figure data-rehype-pretty-code-figure><pre tabindex="0" data-language="bash" data-theme="github-light github-dark"><code data-language="bash" data-theme="github-light github-dark" style="display:grid;"><span data-line><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;" data-token-type="function">./configure</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;" data-token-type="value"> --enable-sourcefire</span></span>
+<span data-line><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;" data-token-type="function">make</span></span>
+<span data-line><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;" data-token-type="function">sudo</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string"> make</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string"> install</span></span>
+<span data-line><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;" data-token-type="function">sudo</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string"> ldconfig</span></span>
+<span data-line><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;" data-token-type="function">sudo</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string"> ln</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;" data-token-type="value"> -s</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string"> /usr/local/bin/snort</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string"> /usr/sbin/snort</span></span></code></pre></figure>
+<ul>
+<li><strong>Explanation</strong>: These commands compile Snort from source and add a symbolic link to make it accessible system-wide.</li>
+</ul>
+</li>
+</ol>
+<hr/>
+<h4 id="step-4-verify-installation">Step 4: Verify Installation<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#step-4-verify-installation" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<p>To confirm that Snort is installed correctly, check its version:</p>
+<figure data-rehype-pretty-code-figure><pre tabindex="0" data-language="bash" data-theme="github-light github-dark"><code data-language="bash" data-theme="github-light github-dark" style="display:grid;"><span data-line><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;" data-token-type="function">snort</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;" data-token-type="value"> -V</span></span></code></pre></figure>
+<p>You should see the version number and other details, which means Snort is ready.</p>
+<hr/>
+<h4 id="step-5-create-configuration-directories">Step 5: Create Configuration Directories<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#step-5-create-configuration-directories" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<p>Snort requires specific directories for configuration files and logs.</p>
+<ol>
+<li>
+<p>Set up the necessary directories:</p>
+<figure data-rehype-pretty-code-figure><pre tabindex="0" data-language="bash" data-theme="github-light github-dark"><code data-language="bash" data-theme="github-light github-dark" style="display:grid;"><span data-line><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;" data-token-type="function">sudo</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string"> mkdir</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string"> /etc/snort</span></span>
+<span data-line><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;" data-token-type="function">sudo</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string"> mkdir</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string"> /etc/snort/rules</span></span>
+<span data-line><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;" data-token-type="function">sudo</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string"> mkdir</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string"> /var/log/snort</span></span>
+<span data-line><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;" data-token-type="function">sudo</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string"> mkdir</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string"> /usr/local/lib/snort_dynamicrules</span></span></code></pre></figure>
+<ul>
+<li><strong>Explanation</strong>: These directories will store Snort’s configuration, rules, and log files.</li>
+</ul>
+</li>
+</ol>
+<hr/>
+<h4 id="step-6-download-and-configure-snort-rules">Step 6: Download and Configure Snort Rules<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#step-6-download-and-configure-snort-rules" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<p>Rules are essential for Snort to recognize threats by defining patterns to watch for in network traffic.</p>
+<ol>
+<li>
+<p><strong>Download Snort Rules</strong>:</p>
+<ul>
+<li>
+<p>Register on <a href="https://www.snort.org/" class="external external-link">Snort’s website<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> to access the latest rules.</p>
+</li>
+<li>
+<p>Download the <strong>Community Rules</strong> (free option) and extract them:</p>
+<figure data-rehype-pretty-code-figure><pre tabindex="0" data-language="bash" data-theme="github-light github-dark"><code data-language="bash" data-theme="github-light github-dark" style="display:grid;"><span data-line><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;" data-token-type="function">wget</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string"> https://www.snort.org/downloads/community/community-rules.tar.gz</span></span>
+<span data-line><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;" data-token-type="function">tar</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;" data-token-type="value"> -xvzf</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string"> community-rules.tar.gz</span></span>
+<span data-line><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;" data-token-type="function">sudo</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string"> cp</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string"> community-rules/</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;" data-token-type="value">*</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string"> /etc/snort/rules</span></span></code></pre></figure>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Get Default Configuration Files</strong>:</p>
+<ul>
+<li>
+<p>Copy default configuration files to the <code>/etc/snort</code> directory:</p>
+<figure data-rehype-pretty-code-figure><pre tabindex="0" data-language="bash" data-theme="github-light github-dark"><code data-language="bash" data-theme="github-light github-dark" style="display:grid;"><span data-line><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;" data-token-type="function">sudo</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string"> cp</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string"> etc/</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;" data-token-type="value">*</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string">.conf</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string"> /etc/snort</span></span>
+<span data-line><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;" data-token-type="function">sudo</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string"> cp</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string"> etc/</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;" data-token-type="value">*</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string">.map</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string"> /etc/snort</span></span></code></pre></figure>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Edit the Snort Configuration File</strong>:</p>
+<ul>
+<li>
+<p>Open the main Snort configuration file:</p>
+<figure data-rehype-pretty-code-figure><pre tabindex="0" data-language="bash" data-theme="github-light github-dark"><code data-language="bash" data-theme="github-light github-dark" style="display:grid;"><span data-line><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;" data-token-type="function">sudo</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string"> nano</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string"> /etc/snort/snort.conf</span></span></code></pre></figure>
+</li>
+<li>
+<p><strong>Set Network Variables</strong>:</p>
+<ul>
+<li>
+<p>Find the <code>HOME_NET</code> variable and set it to your network’s IP range, such as:</p>
+<figure data-rehype-pretty-code-figure><pre tabindex="0" data-language="plaintext" data-theme="github-light github-dark"><code data-language="plaintext" data-theme="github-light github-dark" style="display:grid;"><span data-line><span>var HOME_NET 192.168.1.0/24</span></span></code></pre></figure>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Rule Path</strong>:</p>
+<ul>
+<li>
+<p>Ensure the rule path is set correctly in the configuration:</p>
+<figure data-rehype-pretty-code-figure><pre tabindex="0" data-language="plaintext" data-theme="github-light github-dark"><code data-language="plaintext" data-theme="github-light github-dark" style="display:grid;"><span data-line><span>var RULE_PATH /etc/snort/rules</span></span></code></pre></figure>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Include Rule Files</strong>:</p>
+<ul>
+<li>
+<p>At the end of the file, include the community rules by adding:</p>
+<figure data-rehype-pretty-code-figure><pre tabindex="0" data-language="plaintext" data-theme="github-light github-dark"><code data-language="plaintext" data-theme="github-light github-dark" style="display:grid;"><span data-line><span>include $RULE_PATH/community.rules</span></span></code></pre></figure>
+</li>
+</ul>
+</li>
+</ul>
+<p><strong>Tip</strong>: Make sure to save and close the file after editing.</p>
+</li>
+</ol>
+<hr/>
+<h4 id="step-7-test-snort-configuration">Step 7: Test Snort Configuration<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#step-7-test-snort-configuration" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<p>To check if Snort is configured correctly, run this test command:</p>
+<figure data-rehype-pretty-code-figure><pre tabindex="0" data-language="bash" data-theme="github-light github-dark"><code data-language="bash" data-theme="github-light github-dark" style="display:grid;"><span data-line><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;" data-token-type="function">sudo</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string"> snort</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;" data-token-type="value"> -T</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;" data-token-type="value"> -c</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string"> /etc/snort/snort.conf</span></span></code></pre></figure>
+<ul>
+<li><strong>Explanation</strong>: The <code>-T</code> option tests the configuration without starting Snort.</li>
+<li>If everything is configured correctly, you should see a success message.</li>
+</ul>
+<hr/>
+<h4 id="step-8-run-snort-in-ids-mode">Step 8: Run Snort in IDS Mode<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#step-8-run-snort-in-ids-mode" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<p>In IDS mode, Snort monitors network traffic and logs suspicious activities without blocking them.</p>
+<ol>
+<li>
+<p>Start Snort in IDS mode with this command:</p>
+<figure data-rehype-pretty-code-figure><pre tabindex="0" data-language="bash" data-theme="github-light github-dark"><code data-language="bash" data-theme="github-light github-dark" style="display:grid;"><span data-line><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;" data-token-type="function">sudo</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string"> snort</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;" data-token-type="value"> -A</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string"> console</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;" data-token-type="value"> -q</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;" data-token-type="value"> -c</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string"> /etc/snort/snort.conf</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;" data-token-type="value"> -i</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string"> eth0</span></span></code></pre></figure>
+<ul>
+<li><strong>Options</strong>:
+<ul>
+<li><code>-A console</code>: Prints alerts to the console.</li>
+<li><code>-q</code>: Quiet mode, reducing the amount of output.</li>
+<li><code>-c /etc/snort/snort.conf</code>: Specifies the configuration file.</li>
+<li><code>-i eth0</code>: Specifies the network interface. Replace <code>eth0</code> with your interface name (use <code>ip a</code> to list interfaces).</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<hr/>
+<h4 id="step-9-run-snort-in-ips-mode-optional">Step 9: Run Snort in IPS Mode (Optional)<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#step-9-run-snort-in-ips-mode-optional" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<p>In IPS mode, Snort can block suspicious traffic, adding an extra layer of security.</p>
+<ol>
+<li>
+<p><strong>Enable Inline Mode</strong>:</p>
+<ul>
+<li>
+<p>Open the configuration file and add the following line to enable inline blocking:</p>
+<figure data-rehype-pretty-code-figure><pre tabindex="0" data-language="plaintext" data-theme="github-light github-dark"><code data-language="plaintext" data-theme="github-light github-dark" style="display:grid;"><span data-line><span>config policy_mode:inline</span></span></code></pre></figure>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Run Snort in IPS Mode</strong>:</p>
+<figure data-rehype-pretty-code-figure><pre tabindex="0" data-language="bash" data-theme="github-light github-dark"><code data-language="bash" data-theme="github-light github-dark" style="display:grid;"><span data-line><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;" data-token-type="function">sudo</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string"> snort</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;" data-token-type="value"> -Q</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;" data-token-type="value"> --daq</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string"> afpacket</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;" data-token-type="value"> -c</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string"> /etc/snort/snort.conf</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;" data-token-type="value"> -i</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string"> eth0:eth1</span></span></code></pre></figure>
+<ul>
+<li><strong>Options</strong>:
+<ul>
+<li><code>-Q</code>: Enables inline mode.</li>
+<li><code>--daq afpacket</code>: Specifies the DAQ (Data Acquisition) module for inline mode.</li>
+<li><code>-i eth0:eth1</code>: Specifies the interfaces Snort will bridge in IPS mode. Replace <code>eth0</code> and <code>eth1</code> with your specific interfaces.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<hr/>
+<h4 id="step-10-monitor-logs">Step 10: Monitor Logs<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#step-10-monitor-logs" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<p>Snort logs activity to the <code>/var/log/snort</code> directory, where you can check for alerts.</p>
+<ol>
+<li>
+<p>To monitor the logs, use this command:</p>
+<figure data-rehype-pretty-code-figure><pre tabindex="0" data-language="bash" data-theme="github-light github-dark"><code data-language="bash" data-theme="github-light github-dark" style="display:grid;"><span data-line><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;" data-token-type="function">sudo</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string"> tail</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;" data-token-type="value"> -f</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;" data-token-type="string"> /var/log/snort/alert</span></span></code></pre></figure>
+<ul>
+<li><strong>Explanation</strong>: The <code>-f</code> option continuously updates the output with new log entries, letting you monitor activity in real-time.</li>
+</ul>
+</li>
+</ol>
+<hr/>
+<h4 id="step-11-document-your-setup">Step 11: Document Your Setup<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#step-11-document-your-setup" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<p>Keeping track of your configurations is essential for maintenance and troubleshooting.</p>
+<ol>
+<li>
+<p><strong>Create a Network Diagram</strong>:</p>
+<ul>
+<li>Use a tool like <a href="https://www.draw.io" class="external external-link">draw.io<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> to create a simple diagram showing your network, including Snort’s location, IP addresses, and any key devices.</li>
+</ul>
+</li>
+<li>
+<p><strong>Document Configuration Details</strong>:</p>
+<ul>
+<li>Record important configurations, like the <code>HOME_NET</code> settings, rule paths, and any specific Snort commands you use.</li>
+</ul>
+</li>
+</ol>
+<hr/>
+<h3 id="conclusion">Conclusion<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#conclusion" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>You have successfully set up Snort as an IDS/IPS on your Linux system. With Snort, you can monitor and protect your network from potential threats by setting up alerts or actively blocking malicious traffic. Continue exploring Snort’s extensive features to create custom rules and fine-tune your security settings to suit your network’s needs.</p>
+<hr/>
+<h3 id="where-to-find-assistance">Where to Find Assistance<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#where-to-find-assistance" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>For those new to setting up Snort as an IDS/IPS, the following resources will provide essential support:</p>
+<ol>
+<li><strong>Snort Official Documentation</strong>: Access detailed setup guides, configuration options, and troubleshooting tips <a href="https://www.snort.org/documents" class="external external-link">here<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>.</li>
+<li><strong>Snort Users Mailing List</strong>: Join the mailing list for discussions, advice, and support from other Snort users <a href="https://lists.snort.org/mailman/listinfo/snort-users" class="external external-link">Snort Mailing List<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>.</li>
+<li><strong>Online Forums</strong>: Websites like <a href="https://stackoverflow.com/questions/tagged/snort" class="external external-link">Stack Overflow<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> and <a href="https://security.stackexchange.com/questions/tagged/snort" class="external external-link">Security StackExchange<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> offer community support where you can ask specific questions.</li>
+<li><strong>YouTube Tutorials</strong>: Search for tutorials on setting up Snort; channels like <a href="https://www.youtube.com/user/NetworkChuck" class="external external-link">NetworkChuck<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> may have related content.</li>
+<li><strong>GitHub Repositories</strong>: Explore repositories that share custom Snort rules and configuration tips, such as <a href="https://github.com/snort3/snort3" class="external external-link">Snort on GitHub<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>.</li>
+</ol>
+<h3 id="learning-in-public-prompts">Learning in Public Prompts<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#learning-in-public-prompts" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ul>
+<li>“Configured my first Snort IDS rule today—amazed by what it can detect!”</li>
+<li>“Getting my hands dirty with Snort’s inline IPS mode. Blocking threats in real-time is quite empowering.”</li>
+<li>“Struggled with Snort dependencies but finally got everything running. Here’s a breakdown of what I learned.”</li>
+<li>“Exploring network packet data with Snort. It’s fascinating to see the traffic that goes through unnoticed.”</li>
+<li>“Successfully implemented Snort in my home lab network—feels like a big step forward in my cybersecurity journey!”</li>
+</ul>
+<h3 id="metrics-to-track">Metrics to Track<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#metrics-to-track" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ol>
+<li>
+<p><strong>Technical Metrics</strong>:</p>
+<ul>
+<li>Number of intrusions detected and prevented by Snort.</li>
+<li>Accuracy of threat detection (true positives vs. false positives).</li>
+<li>Network latency and throughput before and after Snort implementation.</li>
+</ul>
+</li>
+<li>
+<p><strong>Learning-Focused Metrics</strong>:</p>
+<ul>
+<li>Number of Snort rules written and successfully implemented.</li>
+<li>Hours spent learning Snort’s configuration and rule syntax.</li>
+<li>Progress in understanding network traffic and threat patterns.</li>
+</ul>
+</li>
+<li>
+<p><strong>Monetary and Helpful Metrics</strong>:</p>
+<ul>
+<li>Estimated cost savings from prevented security breaches.</li>
+<li>Number of peers or colleagues helped in setting up their own Snort systems.</li>
+</ul>
+</li>
+</ol>
+<h3 id="star-statement-examples-for-resumes">STAR Statement Examples for Resumes<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#star-statement-examples-for-resumes" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ul>
+<li>“Implemented Snort IDS/IPS on a network, increasing threat detection by 75% and reducing unauthorized access incidents by 50%.”</li>
+<li>“Customized and deployed Snort rules that decreased false positives by 30%, enhancing the accuracy of network security monitoring.”</li>
+<li>“Led a project to integrate Snort with network infrastructure, which prevented significant data breaches and safeguarded critical assets.”</li>
+<li>“Configured Snort to operate in inline IPS mode, effectively blocking 90% of potential threats and maintaining high network performance.”</li>
+</ul>
+<h3 id="tools--skills-to-add-to-tools--technologies-sheet">Tools &amp; Skills to Add to Tools &amp; Technologies Sheet<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#tools--skills-to-add-to-tools--technologies-sheet" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ul>
+<li>
+<p><strong>Tools</strong>:</p>
+<ul>
+<li>Snort IDS/IPS</li>
+<li>Linux operating systems (Ubuntu, CentOS)</li>
+<li>Network monitoring tools (Wireshark, tcpdump)</li>
+<li>Data Acquisition (DAQ) for Snort</li>
+</ul>
+</li>
+<li>
+<p><strong>Skills</strong>:</p>
+<ul>
+<li>Intrusion detection and prevention configuration</li>
+<li>Network traffic analysis and monitoring</li>
+<li>Security policy implementation</li>
+<li>Regular expressions and rule-writing for IDS/IPS</li>
+<li>Troubleshooting and optimizing network security settings</li>
+</ul>
+</li>
+</ul></div></article><hr/><div class="page-footer"></div></div><div class="right sidebar"><div class="graph"><h3>Graph View</h3><div class="graph-outer"><div class="graph-container" data-cfg="{&quot;drag&quot;:true,&quot;zoom&quot;:true,&quot;depth&quot;:1,&quot;scale&quot;:1.1,&quot;repelForce&quot;:0.5,&quot;centerForce&quot;:0.3,&quot;linkDistance&quot;:30,&quot;fontSize&quot;:0.6,&quot;opacityScale&quot;:1,&quot;showTags&quot;:true,&quot;removeTags&quot;:[],&quot;focusOnHover&quot;:false,&quot;enableRadial&quot;:false,&quot;enable&quot;:true}"></div><button class="global-graph-icon" aria-label="Global Graph"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 55 55" fill="currentColor" xml:space="preserve"><path d="M49,0c-3.309,0-6,2.691-6,6c0,1.035,0.263,2.009,0.726,2.86l-9.829,9.829C32.542,17.634,30.846,17,29,17
+                s-3.542,0.634-4.898,1.688l-7.669-7.669C16.785,10.424,17,9.74,17,9c0-2.206-1.794-4-4-4S9,6.794,9,9s1.794,4,4,4
+                c0.74,0,1.424-0.215,2.019-0.567l7.669,7.669C21.634,21.458,21,23.154,21,25s0.634,3.542,1.688,4.897L10.024,42.562
+                C8.958,41.595,7.549,41,6,41c-3.309,0-6,2.691-6,6s2.691,6,6,6s6-2.691,6-6c0-1.035-0.263-2.009-0.726-2.86l12.829-12.829
+                c1.106,0.86,2.44,1.436,3.898,1.619v10.16c-2.833,0.478-5,2.942-5,5.91c0,3.309,2.691,6,6,6s6-2.691,6-6c0-2.967-2.167-5.431-5-5.91
+                v-10.16c1.458-0.183,2.792-0.759,3.898-1.619l7.669,7.669C41.215,39.576,41,40.26,41,41c0,2.206,1.794,4,4,4s4-1.794,4-4
+                s-1.794-4-4-4c-0.74,0-1.424,0.215-2.019,0.567l-7.669-7.669C36.366,28.542,37,26.846,37,25s-0.634-3.542-1.688-4.897l9.665-9.665
+                C46.042,11.405,47.451,12,49,12c3.309,0,6-2.691,6-6S52.309,0,49,0z M11,9c0-1.103,0.897-2,2-2s2,0.897,2,2s-0.897,2-2,2
+                S11,10.103,11,9z M6,51c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4S8.206,51,6,51z M33,49c0,2.206-1.794,4-4,4s-4-1.794-4-4
+                s1.794-4,4-4S33,46.794,33,49z M29,31c-3.309,0-6-2.691-6-6s2.691-6,6-6s6,2.691,6,6S32.309,31,29,31z M47,41c0,1.103-0.897,2-2,2
+                s-2-0.897-2-2s0.897-2,2-2S47,39.897,47,41z M49,10c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4S51.206,10,49,10z"></path></svg></button></div><div class="global-graph-outer"><div class="global-graph-container" data-cfg="{&quot;drag&quot;:true,&quot;zoom&quot;:true,&quot;depth&quot;:-1,&quot;scale&quot;:0.9,&quot;repelForce&quot;:0.5,&quot;centerForce&quot;:0.2,&quot;linkDistance&quot;:30,&quot;fontSize&quot;:0.6,&quot;opacityScale&quot;:1,&quot;showTags&quot;:false,&quot;removeTags&quot;:[],&quot;focusOnHover&quot;:true,&quot;enableRadial&quot;:true,&quot;enable&quot;:true}"></div></div></div><div class="toc"><button type="button" class="toc-header" aria-controls="toc-164" aria-expanded="true"><h3>Table of Contents</h3><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="fold"><polyline points="6 9 12 15 18 9"></polyline></svg></button><ul id="list-0" class="toc-content overflow"><li class="depth-0"><a href="#project-implementing-an-idsips-with-snort" data-for="project-implementing-an-idsips-with-snort">Project: Implementing an IDS/IPS with Snort</a></li><li class="depth-0"><a href="#prerequisites" data-for="prerequisites">Prerequisites</a></li><li class="depth-0"><a href="#step-by-step-guide-to-setting-up-snort" data-for="step-by-step-guide-to-setting-up-snort">Step-by-Step Guide to Setting Up Snort</a></li><li class="depth-0"><a href="#conclusion" data-for="conclusion">Conclusion</a></li><li class="depth-0"><a href="#where-to-find-assistance" data-for="where-to-find-assistance">Where to Find Assistance</a></li><li class="depth-0"><a href="#learning-in-public-prompts" data-for="learning-in-public-prompts">Learning in Public Prompts</a></li><li class="depth-0"><a href="#metrics-to-track" data-for="metrics-to-track">Metrics to Track</a></li><li class="depth-0"><a href="#star-statement-examples-for-resumes" data-for="star-statement-examples-for-resumes">STAR Statement Examples for Resumes</a></li><li class="depth-0"><a href="#tools--skills-to-add-to-tools--technologies-sheet" data-for="tools--skills-to-add-to-tools--technologies-sheet">Tools &amp; Skills to Add to Tools &amp; Technologies Sheet</a></li><li class="overflow-end"></li></ul></div><div class="backlinks"><h3>Backlinks</h3><ul id="list-0" class="overflow"><li><a href="./z_network--and--systems-security-labs" class="internal"></a></li><li><a href="./z_threat-detection--and--response-labs" class="internal"></a></li><li class="overflow-end"></li></ul></div></div><footer class><p>Created with <a href="https://quartz.jzhao.xyz/">Quartz v5.0.0</a> © 2026</p><ul><li><a href="https://github.com/priyanshu-rawa/Cybersecurity-Handbook">GitHub</a></li><li><a href="https://linkedin.com/in/priyanshurawat9111">LinkedIn</a></li></ul></footer></div></div></body><script src="./static/resource-after-e13fffa1.js" type="application/javascript" data-persist="true"></script><script src="./static/resource-after-8b336f9a.js" type="application/javascript" data-persist="true"></script><script src="./static/resource-after-baba652b.js" type="application/javascript" data-persist="true"></script><script src="./static/resource-after-5eb75950.js" type="module" data-persist="true"></script><script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/copy-tex.min.js" type="application/javascript" data-persist="true"></script><script src="./postscript-cd8794c3.js" type="module" data-persist="true"></script></html>
