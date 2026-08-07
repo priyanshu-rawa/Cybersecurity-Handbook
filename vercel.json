@@ -1,5 +1,5 @@
 {
-  "buildCommand": "npx quartz plugin install && npx quartz build",
+  "buildCommand": "npx quartz build",
   "outputDirectory": "public",
   "framework": null,
   "cleanUrls": true,
