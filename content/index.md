@@ -7,194 +7,124 @@ cssclasses:
 
 # Cybersecurity Handbook
 
-**A living knowledge base of cybersecurity concepts, protocols, tools, and techniques — built from first principles.**
+**400+ concept notes. Real technical depth. Built from first principles.**
 
-Clear explanations of how systems actually work, why vulnerabilities exist, and how both attackers and defenders operate. From core security principles to deep technical notes on privilege escalation, cryptography, network protocols, and more.
+In 2026, organizations face an average of nearly **2,000 cyber attacks per week**. AI is supercharging both attackers and defenders. Ransomware appears in almost half of all breaches. Identity remains the #1 path for successful intrusions.
 
-[Explore Coverage ↓](#coverage) · [Philosophy ↓](#philosophy) · [GitHub →](https://github.com/priyanshu-rawa)
+This handbook exists so you can understand the systems, protocols, and techniques behind those numbers — not just memorize tool commands.
 
----
-
-## Overview
-
-This is not another collection of scattered notes or recycled documentation.
-
-It is a structured, continuously evolving cybersecurity knowledge base focused on clarity, technical accuracy, and real understanding. Whether you are studying the CIA Triad, analyzing ARP spoofing, exploring post-quantum cryptography, or working through privilege escalation techniques — every note is written to explain the *why* behind the *what*.
-
-No fluff.  
-No copy-paste from official docs.  
-Just clear, practical concept notes and deeper technical series.
+[Explore Topics ↓](#what-youll-find-here) · [Start Learning ↓](#who-this-is-for) · [GitHub →](https://github.com/priyanshu-rawa)
 
 ---
 
-## Philosophy
+## Why This Exists
 
-> **Cybersecurity is best learned by understanding systems — not by memorizing tools.**
+Most cybersecurity resources are either too shallow or too tool-heavy.  
+This one focuses on **how things actually work**.
 
-Every topic starts from first principles:
-- How the protocol actually works  
-- How the algorithm achieves its guarantees  
-- How the operating system manages privileges and memory  
-- Why a particular attack is possible in the first place  
+> “Security is not a product, but a process.”  
+> — Bruce Schneier
 
-Only after that foundation is solid do we move into practical techniques, tools, and defensive strategies.
-
-It is slower than most tutorials.  
-It is also far more durable.
+Every note starts from first principles: how a protocol functions, why an algorithm is secure (or not), how an operating system manages privileges, and where the real attack surface lies.
 
 ---
 
-## What Makes This Different
+## What You’ll Find Here
 
-**First principles before tools**  
-Before using Aircrack-ng, you understand how WPA handshakes and 802.11 authentication work. Tools change. The underlying systems do not.
+### Core Fundamentals
+CIA Triad, Risk Management, Security Principles, Threat Landscape, Frameworks (NIST, ISO), Ethics & Legal considerations.
 
-**Internal architecture, not surface level**  
-How does Kerberos issue a ticket? What happens during a buffer overflow? How do modern post-quantum algorithms actually work? We go under the hood.
+> **Tip:** Master the CIA Triad and risk thinking before jumping into tools. Almost every advanced technique is just an application of these basics.
 
-**Attack and defense together**  
-Concepts are explained from both sides — how an attacker exploits a weakness and how a defender detects or prevents it.
+### Network & Protocol Security
+ARP, TCP/IP, DNS, Firewalls, VPNs, IDS/IPS, Wireless Security (Aircrack-ng suite, handshake capture, deauthentication, WPA/WPA2).
 
-**Concept notes + deeper series**  
-Hundreds of focused concept notes sit alongside more extensive technical handbooks (such as the Privilege Escalation series).
+> **Current reality (2026):** Vulnerability exploitation has risen sharply as an initial access vector. Understanding protocols still remains the best long-term defense.
 
----
+### Application & API Security
+OWASP concepts, Secure Coding, API Security, Web Application Exploitation, DevSecOps.
 
-## Learning Approach
+### Identity & Access Management
+Authentication mechanisms, MFA, RBAC/ABAC, Privileged Access Management, Kerberos, SSO & Federation.
 
-Most notes follow a consistent pattern:
+> **2026 Insight:** Identity weaknesses appear in nearly 90% of serious incident investigations. “Log in” has become more common than “break in.”
 
-1. **Core concept** — what it is and why it exists  
-2. **How it works internally** — the real mechanics  
-3. **Practical context** — where and how it appears in the real world  
-4. **Attack surface** — how it can be abused  
-5. **Defense & detection** — how to protect against or detect misuse  
+### Cryptography (Classical → Post-Quantum)
+AES, RSA, ECC, Hashing (SHA family, BLAKE2), PKI, Digital Signatures, and modern post-quantum algorithms (CRYSTALS-Kyber, Dilithium, BIKE, SPHINCS+, etc.).
 
-This builds understanding that scales instead of just command memorization.
+> **Tip:** “Harvest now, decrypt later” is already happening. Understanding post-quantum cryptography is no longer optional for long-term security design.
 
----
+### Offensive Techniques & Privilege Escalation
+Ethical Hacking fundamentals, Penetration Testing methodologies, Social Engineering, Wireless attacks, and a full **Privilege Escalation Handbook** covering Linux, Windows, Cloud, Containers, reverse shells, and detection evasion.
 
-## Coverage
+### Defensive Operations
+SIEM, Endpoint Security, Threat Hunting, Digital Forensics & Incident Response, Malware Analysis concepts, Threat Intelligence.
 
-The handbook currently covers a wide range of cybersecurity domains through individual concept notes and deeper technical series:
-
-<details>
-<summary><strong>Core Concepts & Fundamentals</strong></summary>
-
-- CIA Triad, Risk Management, Security Principles  
-- Threat Landscape, Security Frameworks (NIST, ISO)  
-- Ethical & Legal Considerations, Security Policies  
-- Awareness, Training, and Emerging Threats  
-
-</details>
-
-<details>
-<summary><strong>Network Security</strong></summary>
-
-- TCP/IP, ARP, DNS, and core protocols  
-- Firewalls, VPNs, IDS/IPS  
-- Wireless Security (Aircrack-ng suite, handshake capture, etc.)  
-- Network Monitoring, NAC, and Secure Architecture  
-
-</details>
-
-<details>
-<summary><strong>Application & API Security</strong></summary>
-
-- Web Application Security & OWASP concepts  
-- Secure Coding Practices  
-- API Security  
-- Application Vulnerability Testing & DevSecOps  
-
-</details>
-
-<details>
-<summary><strong>Identity & Access Management</strong></summary>
-
-- Authentication Mechanisms & MFA  
-- Authorization Models (RBAC, ABAC, etc.)  
-- Privileged Access Management  
-- Directory Services, SSO, and Federation  
-
-</details>
-
-<details>
-<summary><strong>Cryptography</strong></summary>
-
-- Symmetric & Asymmetric Encryption (AES, RSA, ECC)  
-- Hashing (SHA, BLAKE2, etc.)  
-- Public Key Infrastructure (PKI) & Digital Signatures  
-- Post-Quantum Cryptography (CRYSTALS-Kyber, Dilithium, BIKE…)  
-- Cryptanalysis and cryptographic attacks  
-
-</details>
-
-<details>
-<summary><strong>Offensive Techniques & Privilege Escalation</strong></summary>
-
-- Ethical Hacking Fundamentals & Penetration Testing Methodologies  
-- Wireless Network Attacks  
-- Web Application Exploitation concepts  
-- Full **Privilege Escalation Handbook** (Linux, Windows, Cloud, Containers, Detection Evasion)  
-- Reverse Shells, Stabilization, and Post-Exploitation concepts  
-
-</details>
-
-<details>
-<summary><strong>Defensive Security & Operations</strong></summary>
-
-- SIEM, Endpoint Security, Network Scanning  
-- Threat Intelligence & Vulnerability Management  
-- Digital Forensics & Incident Response concepts  
-- Malware Analysis fundamentals  
-
-</details>
-
-<details>
-<summary><strong>Additional Areas</strong></summary>
-
-- Blockchain & Cryptography  
-- Cloud Application Security concepts  
-- Digital Well-Being, Emerging Tech, and Career topics (in progress)  
-
-</details>
+### Additional Areas
+Blockchain & Crypto concepts, Cloud Security notes, Digital Well-Being, Emerging Tech, and Career topics.
 
 ---
 
 ## Who This Is For
 
-- **Students & self-learners** looking for clear concept explanations  
-- **SOC analysts** who want solid foundational and detection-related notes  
-- **Penetration testers & red teamers** (especially the Privilege Escalation series)  
-- **Anyone who prefers understanding systems over just running tools**  
+| Level | What you’ll get |
+|-------|-----------------|
+| **Beginner** | Clear explanations of core concepts (CIA Triad, basic networking, authentication, cryptography foundations) without unnecessary complexity |
+| **Intermediate** | Deeper protocol and tool understanding, practical attack/defense context, wireless security, application security, IAM |
+| **Advanced** | Privilege Escalation Handbook, post-quantum cryptography, detection evasion, DFIR concepts, and internal architecture notes |
 
-The material is written to stay accessible without sacrificing technical depth.
+> “The weakest link in the security chain is the human element.”  
+> — Kevin Mitnick
+
+---
+
+## Learning Philosophy
+
+1. **Understand the system first**  
+2. **Then learn how it can be attacked**  
+3. **Then learn how to detect and defend**  
+
+Tools change. Foundations last.
+
+> “It takes 20 years to build a reputation and a few minutes of a cyber-incident to ruin it.”  
+> — Stéphane Nappo
+
+---
+
+## Current Landscape Snapshot (2026)
+
+- AI is the #1 driver of change according to the majority of security leaders  
+- AI-related vulnerabilities are considered the fastest-growing risk  
+- Ransomware remains present in roughly half of breaches  
+- Identity-based techniques dominate successful intrusions  
+- Average global data breach cost sits around $4.4 million  
+
+This handbook helps you build the mental models needed to navigate that reality.
 
 ---
 
 ## A Living Resource
 
-This handbook continues to grow. New concept notes, deeper technical series, and refinements are added over time.
+New notes, deeper series, and refinements continue to be added.  
+The Privilege Escalation Handbook and post-quantum cryptography sections are already substantial technical resources.
 
-> [!tip] Found something outdated or incorrect?  
-> Open an issue or submit a pull request. Contributions are welcome.
+> [!tip] Found an error or want to contribute?  
+> Open an issue or pull request — contributions are welcome.
 
 ---
 
 ## Built With
 
-- **Obsidian** — knowledge management  
-- **Quartz 5** — fast, searchable static site generation  
-- **Git & GitHub** — version control and collaboration  
-- **Vercel** — automatic builds and hosting  
+Obsidian + Quartz 5 + GitHub + Vercel  
+Push → automatic rebuild and deploy.
 
 ---
 
 ## About the Author
 
-**Priyanshu Rawat** — self-taught security learner documenting everything I study.
+**Priyanshu Rawat** — self-taught security learner who documents everything he studies.
 
-This handbook started as personal notes and grew into a structured, public knowledge base. The goal is simple: write concepts clearly enough that someone else can understand them deeply.
+This started as personal notes and grew into a public knowledge base because the best way to learn is to write concepts clearly enough for someone else to understand them deeply.
 
 Free. Open. Always evolving.
 
