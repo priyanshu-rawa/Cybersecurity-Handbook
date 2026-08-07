@@ -237,11 +237,7 @@ plugins:
     layout:
       position: beforeBody
       priority: 20
-<<<<<<< HEAD
-      condition: not-index
-=======
 
->>>>>>> 6a3940771b7e306e5c334236bc162b0f577ee852
   - source: github:quartz-community/tag-list
     enabled: false
     layout:
