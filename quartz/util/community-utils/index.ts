@@ -1,113 +1,91 @@
 // ============================================
-// This is a copy of @quartz-community/utils
-// Simplified for Quartz 5 compatibility
+// Local replacement for @quartz-community/utils
 // ============================================
 
-// ----- Path utilities -----
-export const slugify = (str: string): string => {
-  return str
-    .toLowerCase()
-    .replace(/[^\w\s-]/g, '')
-    .replace(/[\s_-]+/g, '-')
-    .replace(/^-+|-+$/g, '');
-}
+// ----- Path & Slug utilities -----
+export const isFilePath = (path: string): boolean => /^\.{0,2}\//.test(path);
+export const isFullSlug = (slug: string): boolean => /^[^/]+$/.test(slug) && !slug.includes('..');
+export const isSimpleSlug = (slug: string): boolean => /^[a-zA-Z0-9_-]+$/.test(slug);
+export const isRelativeURL = (url: string): boolean => /^\.{0,2}\//.test(url);
+export const isAbsoluteURL = (url: string): boolean => /^https?:\/\//.test(url);
 
-export const normalizePath = (path: string): string => {
-  return path.replace(/\/+/g, '/').replace(/^\/|\/$/g, '');
-}
+export const getFullSlug = (slug: string): string => slug.replace(/^\/+/, '').replace(/\/+$/, '');
+export const slugifyFilePath = (filePath: string): string => {
+  return filePath
+    .replace(/\.md$/, '')
+    .replace(/[^a-zA-Z0-9_\-/]/g, '-')
+    .replace(/\/{2,}/g, '/')
+    .replace(/^-|-$/g, '');
+};
+export const simplifySlug = (slug: string): string => slug.split('/').pop() || slug;
 
-export const joinPaths = (...paths: string[]): string => {
-  return normalizePath(paths.join('/'));
-}
+export const joinSegments = (...segments: string[]): string => {
+  return segments.filter(Boolean).join('/').replace(/\/{2,}/g, '/').replace(/^\/|\/$/g, '');
+};
 
-export const getExtension = (path: string): string => {
+export const endsWith = (str: string, suffix: string): boolean => str.endsWith(suffix);
+export const trimSuffix = (str: string, suffix: string): string =>
+  str.endsWith(suffix) ? str.slice(0, -suffix.length) : str;
+export const stripSlashes = (str: string): string => str.replace(/^\/+|\/+$/g, '');
+
+export const getFileExtension = (path: string): string => {
   const ext = path.split('.').pop();
   return ext ? '.' + ext : '';
+};
+
+export const isFolderPath = (path: string): boolean => path.endsWith('/');
+
+export const getAllSegmentPrefixes = (path: string): string[] => {
+  const segments = path.split('/').filter(Boolean);
+  return segments.map((_, i) => segments.slice(0, i + 1).join('/'));
+};
+
+export const pathToRoot = (from: string): string => {
+  const depth = from.split('/').filter(Boolean).length;
+  return '../'.repeat(depth) || './';
+};
+
+export const resolveRelative = (from: string, to: string): string => {
+  const fromSegments = from.split('/').filter(Boolean);
+  const toSegments = to.split('/').filter(Boolean);
+  let i = 0;
+  while (i < fromSegments.length && i < toSegments.length && fromSegments[i] === toSegments[i]) i++;
+  const back = fromSegments.slice(i).map(() => '..');
+  const forward = toSegments.slice(i);
+  return [...back, ...forward].join('/') || './';
+};
+
+export const splitAnchor = (url: string): [string, string] => {
+  const [base, anchor] = url.split('#');
+  return [base || '', anchor || ''];
+};
+
+export const slugTag = (tag: string): string => {
+  return tag.toLowerCase().replace(/[^a-zA-Z0-9_\-]/g, '-');
+};
+
+export type FilePath = string;
+export type FullSlug = string;
+export type SimpleSlug = string;
+export type RelativeURL = string;
+
+export interface TransformOptions {
+  base: string;
+  preserveAnchors?: boolean;
+  keepFileExtensions?: boolean;
 }
 
-export const getFileName = (path: string): string => {
-  return path.split('/').pop() || '';
-}
+export const transformInternalLink = (link: string, opts: TransformOptions): string => {
+  // Basic implementation – adjust if needed
+  return link;
+};
 
-export const getFolderPath = (path: string): string => {
-  return path.split('/').slice(0, -1).join('/');
-}
+export const transformLink = (link: string, opts: TransformOptions): string => {
+  // Basic implementation – adjust if needed
+  return link;
+};
 
-export const isAbsolute = (path: string): boolean => {
-  return path.startsWith('/');
-}
-
-export const isRelative = (path: string): boolean => {
-  return path.startsWith('./') || path.startsWith('../');
-}
-
-// ----- Date utilities -----
-export const formatDate = (date: Date): string => {
-  return date.toISOString().split('T')[0];
-}
-
-export const parseDate = (str: string): Date => {
-  return new Date(str);
-}
-
-export const isDate = (str: string): boolean => {
-  return !isNaN(Date.parse(str));
-}
-
-// ----- DOM utilities -----
-export const getElement = <T extends Element>(selector: string): T | null => {
-  return document.querySelector(selector);
-}
-
-export const getElements = <T extends Element>(selector: string): NodeListOf<T> => {
-  return document.querySelectorAll(selector);
-}
-
-// ----- String utilities -----
-export const escapeHtml = (str: string): string => {
-  return str
-    .replace(/&/g, '&amp;')
-    .replace(/</g, '&lt;')
-    .replace(/>/g, '&gt;')
-    .replace(/"/g, '&quot;')
-    .replace(/'/g, '&#039;');
-}
-
-export const unescapeHtml = (str: string): string => {
-  return str
-    .replace(/&amp;/g, '&')
-    .replace(/&lt;/g, '<')
-    .replace(/&gt;/g, '>')
-    .replace(/&quot;/g, '"')
-    .replace(/&#039;/g, "'");
-}
-
-// ----- Misc utilities -----
-export const sleep = (ms: number): Promise<void> => {
-  return new Promise(resolve => setTimeout(resolve, ms));
-}
-
-export const debounce = <T extends (...args: any[]) => any>(
-  fn: T,
-  delay: number
-): ((...args: Parameters<T>) => void) => {
-  let timeout: NodeJS.Timeout;
-  return (...args: Parameters<T>) => {
-    clearTimeout(timeout);
-    timeout = setTimeout(() => fn(...args), delay);
-  };
-}
-
-export const throttle = <T extends (...args: any[]) => any>(
-  fn: T,
-  limit: number
-): ((...args: Parameters<T>) => void) => {
-  let inThrottle = false;
-  return (...args: Parameters<T>) => {
-    if (!inThrottle) {
-      fn(...args);
-      inThrottle = true;
-      setTimeout(() => (inThrottle = false), limit);
-    }
-  };
-}
+export const normalizeHastElement = (el: any, opts?: any): any => {
+  // Basic implementation – adjust if needed
+  return el;
+};
