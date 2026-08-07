@@ -199,7 +199,7 @@ plugins:
       position: left
       priority: 50
 
-  - source: github:quartz-community/graph
+    - source: github:quartz-community/graph
     enabled: true
     options:
       localGraph:
