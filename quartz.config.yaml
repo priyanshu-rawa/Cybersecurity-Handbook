@@ -1,5 +1,5 @@
 # yaml-language-server: $schema=./quartz/plugins/quartz-plugins.schema.json
-
+# Graph plugin disabled to resolve @quartz-community/utils dependency
 configuration:
   pageTitle: Cybersecurity Handbook
   pageTitleSuffix: ""
