@@ -200,17 +200,18 @@ plugins:
       position: left
       priority: 50
 
-  - source: github:quartz-community/graph
-    enabled: true
-    options:
-      localGraph:
-        enable: true
-      globalGraph:
-        enable: true
-      showTags: false
-    layout:
-      position: right
-      priority: 10
+#  - source: github:quartz-community/graph
+#    enabled: true
+#    options:
+#      localGraph:
+#        enable: true
+#      globalGraph:
+#        enable: true
+#      showTags: false
+#    layout:
+#      position: right
+#      priority: 10
+
 
   - source: github:quartz-community/search
     enabled: true
