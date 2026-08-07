@@ -5,7 +5,6 @@ cssclasses:
   - hide-title
 ---
 
-
 # Cybersecurity Handbook
 
 **A living knowledge base for people who want to understand systems — not just run tools.**
@@ -34,6 +33,7 @@ Just clear explanations, real examples, and a consistent focus on **why** system
 > **Cybersecurity is best learned by understanding systems — not by memorizing tools.**
 
 Every topic starts from first principles:
+
 - How the protocol actually works  
 - How the operating system manages memory  
 - How the cryptographic algorithm achieves its guarantees  
