@@ -173,10 +173,3 @@ Want to go even deeper? The **[Cyber Resistance Club](https://addie-clark.mykaja
 Your future in cyber doesn't start with a job post—it starts with your momentum.  
 Let's build it.
 
-| **Contact Type**      | **Details**                                                                         |
-| --------------------- | ----------------------------------------------------------------------------------- |
-| **Website**           | [addielamarr.com](https://www.addielamarr.com)                                      |
-| **Instagram**         | [instagram.com/addielamarr.sh/](https://www.instagram.com/addielamarr.sh/)          |
-| **LinkedIn**          | [linkedin.com/in/addie-clark](https://www.linkedin.com/in/addie-clark/)             |
-| **Mentorship**        | [mentorship](https://addie-clark.mykajabi.com/zero-to-cyber-hero-waitlist-discount) |
-| **Weekly Newsletter** | [Subscribe to Curious Cyber](https://addielamarr.activehosted.com/f/3)              |
