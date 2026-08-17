@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.1.1
+
+### Patch Changes
+
+- 1eb2dd8: Fix `getFullSlugFromUrl()` to decode URI-encoded pathnames. Non-ASCII characters (Cyrillic, Chinese, etc.) in page titles were URL-encoded in the browser pathname but not decoded before slug comparison, causing mismatches in graph, search, and other client-side features.
+
 All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/)

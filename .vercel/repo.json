@@ -1,0 +1,11 @@
+{
+  "remoteName": "origin",
+  "projects": [
+    {
+      "id": "prj_KhxdvRqkV6MmgxqdVdeG1hufeWwA",
+      "name": "cybersecurity-handbook",
+      "directory": ".",
+      "orgId": "team_C5sASaSjuHSqPSQAG6jncLZD"
+    }
+  ]
+}
