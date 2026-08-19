@@ -98,6 +98,18 @@ a.internal:hover {
   color: var(--light) !important;
   transform: scale(1.05);
 }
+/* ============================================
+   CUSTOM macOS‑STYLE CURSOR
+   ============================================ */
+
+html, body, * {
+  cursor: url("/assets/cursor.svg") 4 4, auto !important;
+}
+
+/* For interactive elements, keep the pointer clean */
+a, button, input, select, textarea, [role="button"] {
+  cursor: url("/assets/cursor.svg") 4 4, pointer !important;
+}
 
 // 9. Sidebar refinement
 .sidebar {
