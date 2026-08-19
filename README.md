@@ -216,55 +216,26 @@ npm run quartz:serve
 ---
 
 
-## 📖  What's Inside
+## 📖 What's Covered
+Operating Systems
+Linux, Windows, and networking basics — TCP/IP, DNS, VPNs, firewalls.
 
-###  Operating Systems
+Offensive Security
+Web app flaws like OWASP Top 10, SQL injection, and XSS. Also scanning, exploitation, and what comes after.
 
-| Category | Topics |
-|----------|--------|
-| Linux | Linux Internals, Commands, Security |
-| Windows | Windows Internals, Active Directory, Security |
-| Networking | TCP/IP, DNS, HTTP/HTTPS, VPN, Firewalls |
+Defensive Security
+Monitoring, incident response, SIEM, log analysis, threat hunting, and digital forensics.
 
-###  Offensive Security
+Cloud & Infrastructure
+AWS, Azure, GCP, Zero Trust, containers (Docker, Kubernetes), DevSecOps, and IAM.
 
-| Category | Topics |
-|----------|--------|
-| Web Security | OWASP Top 10, SQL Injection, XSS |
-| Vulnerability Assessment | Scanning, Enumeration, Exploitation |
-| Penetration Testing | Methodologies, Tools, Reporting |
-| Post-Exploitation | Persistence, Lateral Movement, Privilege Escalation |
+Programming & Automation
+Python, Bash, PowerShell, scripting, CI/CD, and Git.
 
-###  Defensive Security
+Cryptography
+Symmetric and asymmetric encryption, hashing (SHA, MD5), PKI, TLS, and certificates.
 
-| Category | Topics |
-|----------|--------|
-| Security Operations (SOC) | Monitoring, Incident Response |
-| Detection Engineering | SIEM, Log Analysis, Threat Hunting |
-| Digital Forensics | Memory Forensics, Network Forensics, Malware Analysis |
 
-###  Cloud & Infrastructure
-
-| Category | Topics |
-|----------|--------|
-| Cloud Security | AWS, Azure, GCP, Zero Trust |
-| Container Security | Docker, Kubernetes, DevSecOps |
-| IAM | Identity Management, Federation, MFA |
-
-###  Programming & Automation
-
-| Category | Topics |
-|----------|--------|
-| Languages | Python, Bash, PowerShell |
-| Automation | Scripting, CI/CD, Git |
-
-###  Cryptography
-
-| Category | Topics |
-|----------|--------|
-| Encryption | Symmetric, Asymmetric, AES, RSA |
-| Hashing | SHA-256, MD5, Hash Functions |
-| PKI | Digital Signatures, TLS, Certificates |
 
 ---
 
@@ -368,7 +339,7 @@ We welcome contributions of all kinds — from fixing a single typo to adding an
 
 ---
 
-###📍 Where You Can Contribute
+###  Where You Can Contribute
 
 | Type | Description |
 |------|-------------|
