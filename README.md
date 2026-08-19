@@ -300,15 +300,24 @@ We welcome contributions of all kinds — from fixing a single typo to adding an
 
 ---
 
-### 🌟 Ways You Can Contribute
+## Contributing
 
-| Area | Examples |
-|------|----------|
-| 📝 **Content** | Add new topics, fix errors, improve explanations, add practical examples |
-| 🎨 **Design** | Improve visuals, add diagrams, enhance layout |
-| 🔧 **Code** | Fix bugs, improve the Quartz setup, add features |
-| 📖 **Documentation** | Improve clarity, fix formatting, add cross-references |
-| 💬 **Community** | Report issues, suggest improvements, help others |
+I genuinely appreciate any help — whether it's fixing a typo, adding a new topic, or improving the design.
+
+Here's how you can get involved:
+
+### Ways to Contribute
+
+**Content** – Add new topics, fix errors, improve explanations, add practical examples.
+
+**Design** – Improve visuals, add diagrams, enhance layout.
+
+**Code** – Fix bugs, improve the Quartz setup, add features.
+
+**Documentation** – Improve clarity, fix formatting, add cross-references.
+
+**Community** – Report issues, suggest improvements, help others.
+---
 
 ---
 
@@ -327,15 +336,17 @@ We welcome contributions of all kinds — from fixing a single typo to adding an
 
 ---
 
-###  Guidelines
+### Guidelines
 
-| Aspect | Guideline |
-|--------|-----------|
-| **Content** | Write in clear, accessible English. Include practical examples and real-world scenarios. |
-| **Formatting** | Use proper Markdown headings (`##`, `###`). Keep code blocks with language specifiers (e.g., ` ```bash`, ` ```python`). |
-| **Images** | Store in `assets/images/`. Use descriptive, lowercase filenames (e.g., `network-osi-model.png`). |
-| **Style** | Follow the existing visual tone. No markdown errors. Keep it concise and practical. |
-| **Scope** | If you're unsure where to place a topic, open an issue first — we'll discuss the best location. |
+Content – Write in clear, accessible English. Include practical examples and real-world scenarios.
+
+Formatting – Use proper Markdown headings (##, ###). Keep code blocks with language specifiers (e.g., ```bash, ```python).
+
+Images – Store in assets/images/. Use descriptive, lowercase filenames (e.g., network-osi-model.png).
+
+Style – Follow the existing visual tone. No markdown errors. Keep it concise and practical.
+
+Scope – If you're unsure where to place a topic, open an issue first — we'll discuss the best location.
 
 ---
 
@@ -352,31 +363,26 @@ We welcome contributions of all kinds — from fixing a single typo to adding an
 
 ---
 
-###  Where to Put Your Files
+###  Where to Put Files
+Cybersecurity notes → content/ (in the relevant category folder)
 
-| File Type | Location |
-|-----------|----------|
-| Cybersecurity notes | `content/` (in the relevant category folder) |
-| Images | `assets/images/` |
-| Diagrams | `assets/diagrams/` |
-| Labs | `content/` (in the relevant lab folder) |
+Images → assets/images/
+
+Diagrams → assets/diagrams/
+
+Labs → content/ (in the relevant lab folder)
 
 ---
 
 ###  Need Help?
 
-| Resource | Description |
-|----------|-------------|
-| 📧 **Open an Issue** | [Create a new issue](https://github.com/priyanshu-rawa/Cybersecurity-Handbook/issues) — I'll respond as soon as possible. |
-| 💬 **Start a Discussion** | Use the Discussions tab to share ideas, ask questions, or suggest improvements. |
-| 📄 **Contribution Guide** | See [CONTRIBUTING.md](CONTRIBUTING.md) for contribution guidelines. |
-| 📋 **Code of Conduct** | Please read the [Code of Conduct](CODE_OF_CONDUCT.md) before contributing. |
----
+Open an Issue – Create a new issue — I'll respond as soon as possible.
 
+Start a Discussion – Use the Discussions tab to share ideas, ask questions, or suggest improvements.
 
----
+Contribution Guide – See CONTRIBUTING.md for contribution guidelines.
 
-**Thank you for helping make this a world-class resource! 🚀**
+Code of Conduct – Please read the Code of Conduct before contributing.
 
 ---
 
@@ -387,27 +393,21 @@ If it's helped you in any way, here are some simple ways to give back.
 
 > *"Open source is built by people who care. Every contribution — no matter how small — makes a difference."*
 
-### How You Can Support
+##  How You Can Support
 
-| Way | What It Does | Why It Helps |
-|-----|--------------|--------------|
-| ⭐ **Star the repo** | Adds a star to the project on GitHub | Increases visibility and discoverability |
-| 🔗 **Share the handbook** | Post it on LinkedIn, Twitter, Reddit, Discord | Drives organic growth of the community |
-| 📝 **Contribute content** | Add new topics, fix typos, sharpen explanations | Makes the content better for everyone |
-| 💬 **Give feedback** | Open an issue or start a discussion | Guides future improvements and priorities |
-| 👥 **Tell a friend** | Share with someone learning cybersecurity | Expands the network of learners and practitioners |
-| 🐛 **Report bugs** | Let me know if something is broken or unclear | Keeps the handbook accurate and reliable |
-| 📖 **Use it daily** | Reference it in your learning or work | The best support is using it |
+Star the repo – Adds a star to the project on GitHub. Increases visibility and discoverability.
 
-### How You Can Contribute
+Share the handbook – Post it on LinkedIn, Twitter, Reddit, Discord. Drives organic growth of the community.
 
-| Area | What You Can Do |
-|------|-----------------|
-| 📝 **Content** | Add new notes, correct errors, improve explanations |
-| 🎨 **Design** | Suggest layout improvements, better visuals, diagrams |
-| 🔧 **Code** | Improve the Quartz setup, fix bugs, add plugins or features |
-| 📖 **Documentation** | Improve clarity, formatting, internal links, and cross-references |
-| 💬 **Community** | Help others in issues and discussions, share the project widely |
+Contribute content – Add new topics, fix typos, sharpen explanations. Makes the content better for everyone.
+
+Give feedback – Open an issue or start a discussion. Guides future improvements and priorities.
+
+Tell a friend – Share with someone learning cybersecurity. Expands the network of learners and practitioners.
+
+Report bugs – Let me know if something is broken or unclear. Keeps the handbook accurate and reliable.
+
+Use it daily – Reference it in your learning or work. The best support is using it.
 
 ---
 
