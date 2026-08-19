@@ -93,11 +93,8 @@ a.internal:hover {
   color: var(--secondary) !important;
   transition: all 0.2s;
 }
+
 .tag-link:hover {
   background: var(--secondary);
   color: var(--light) !important;
   transform: scale(1.05);
-}
-a:hover {
-  text-shadow: 0 0 8px rgba(77, 107, 254, 0.3);
-}
