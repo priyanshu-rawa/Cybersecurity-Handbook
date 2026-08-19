@@ -1,5 +1,7 @@
-// Helper functions for community features (like GitHub discussions, etc.)
-// (This is the actual file from Quartz 5.0.0)
+/**
+ * Community utilities for Quartz
+ * Provides helper functions for GitHub discussions and community features
+ */
 
 export function getGitHubDiscussionURL(
   title: string,
@@ -14,5 +16,9 @@ export function getGitHubDiscussionURL(
   return `${base}?${params.toString()}`
 }
 
-// Add any other exported functions that path.ts expects.
-// The import in path.ts may use multiple exports, so check the exact usage.
+// Add any other exports that might be needed by path.ts
+// Common exports include:
+// - getGitHubIssueURL
+// - getGitHubSponsorURL
+// - formatCommunityLink
+// etc.
