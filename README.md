@@ -136,21 +136,6 @@
 
 *Fully responsive — access from any device, anywhere.*
 
-
-
-## 📚 Table of Contents
-
-- [💡 Why This Exists](#why-this-exists)
-- [🎨 Key Features](#key-features)
-- [🛠️ Quick Start](#quick-start)
-- [🖼️ Preview](#preview)
-- [📚 What's Inside](#whats-inside)
-- [🧠 Philosophy](#philosophy)
-- [🗺️ Roadmap](#roadmap)
-- [🌱 Contributing](#contributing)
-- [🌟 Support & Sponsorship](#support-sponsorship)
-- [📄 License](#license)
-
 ---
 
 ## 💡 Why This Exists
