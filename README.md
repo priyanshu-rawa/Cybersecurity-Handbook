@@ -500,7 +500,7 @@ Every star and share helps someone discover this resource.
 
 <div align="center">
 
-**📖 Cybersecurity Handbook**
+**📚 Cybersecurity Handbook**
 
 *A continuously evolving cybersecurity knowledge base built through documentation, experimentation, and practical learning.*
 
