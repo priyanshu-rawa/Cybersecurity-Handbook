@@ -1,7 +1,3 @@
----
-title: "00 Home"
----
-
 # Content Categories:
 
 NOTE: <mark style="background: #FFB86CA6;">Cybersecurity Mastery is the only fully-uploaded section at this moment, I'll add the other sections soon.</mark>
