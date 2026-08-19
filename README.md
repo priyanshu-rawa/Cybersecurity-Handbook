@@ -138,29 +138,33 @@
 
 ---
 
-##  Why This Exists
+## Why This Exists
 
-The world of cybersecurity moves fast. New vulnerabilities, tools, and best practices emerge daily. Yet, most resources are scattered across forums, blogs, and paid courses — inaccessible to many who need them most.
+Cybersecurity moves fast. New vulnerabilities, tools, and best practices show up every day. But most learning material is scattered across forums, blogs, and paid courses — hard to find, hard to trust, and often behind a paywall.
 
-**This handbook is different.**
+This handbook tries to do things differently.
 
-- **📖 Open & Free:** No paywalls, no ads. Just knowledge.
-- **🕸️ Interactive:** Powered by Quartz, it's a living document with search, graphs, and deep linking.
-- **💬 Community-Driven:** Built by cybersecurity professionals for the next generation.
-- **📡 Practical & Current:** Covers real-world threats, tools, and defense strategies.
+| What it offers | Details |
+|----------------|---------|
+| **Open and free** | No paywalls, no ads. Just knowledge you can access anytime. |
+| **Interactive** | Built with Quartz — full‑text search, knowledge graphs, and deep linking. |
+| **Community driven** | Written and maintained by people who actually work in the field. |
+| **Practical and current** | Covers real‑world threats, tools, and defense strategies that matter today. |
 
-Whether you're preparing for your first security certification, defending a corporate network, or just curious about how the digital world stays safe, this handbook is for you.
+Whether you're studying for your first certification, defending a corporate network, or just curious about how things work — this handbook is for you.
 
 ---
 
-##  Key Features
+## Key Features
 
-- 📚 **400+ Comprehensive Notes** — From OSINT to cryptography to cloud security
-- 🕸️ **Interactive Knowledge Graph** — See how topics connect visually
-- 🔦 **Full-Text Search** — Find exactly what you need, instantly
-- 🖌️ **Dark/Light Mode** — Read comfortably in any environment
-- 📱 **Mobile-Friendly** — Access from any device, anywhere
-- 🧠 **First-Principles Learning** — Understand *why*, not just *how*
+| Feature | Description |
+|---------|-------------|
+| **400+ Notes** | Covers everything from OSINT and cryptography to cloud security |
+| **Knowledge Graph** | Visual connections between topics — helps you see how concepts relate |
+| **Full-Text Search** | Find what you need instantly, no digging through pages |
+| **Dark & Light Mode** | Read comfortably in any environment, day or night |
+| **Mobile Friendly** | Works on any device — phone, tablet, or desktop |
+| **First‑Principles Learning** | Focuses on understanding the *why*, not just the *how* |
 
 ---
 
@@ -246,9 +250,9 @@ Each topic aims to answer not only *what* something does, but also *how* it work
 
 ---
 
-##   Roadmap
+## Roadmap
 
-Planned improvements include:
+Here's what I'm planning to work on next:
 
 - [ ] Expanded Linux internals documentation
 - [ ] Windows internals series
@@ -265,14 +269,18 @@ Planned improvements include:
 
 ---
 
-## 🌱 Contributing
+## Contributing
 
-We welcome contributions of all kinds! Whether you're fixing a typo, adding a new topic, or improving the visual design, your help makes this handbook better for everyone.
+I welcome contributions of all kinds — from fixing a typo to adding an entire new topic. Every contribution, no matter how small, helps make this handbook better for everyone.
+
+First time contributing to open source? No worries — I'll guide you through it.
 
 ### How to Contribute
 
 1. **Fork** the repository
+
 2. **Create a feature branch**:
+
    ```bash
    git checkout -b feature/your-feature-name
    ```
@@ -285,7 +293,6 @@ We welcome contributions of all kinds! Whether you're fixing a typo, adding a ne
    git push origin feature/your-feature-name
    ```
 5. **Open a Pull Request** against the `main` branch
-## 🤝 Contributing
 
 We welcome contributions of all kinds — from fixing a single typo to adding an entire new topic. Every contribution, no matter how small, helps make this handbook better for everyone.
 
@@ -305,7 +312,7 @@ We welcome contributions of all kinds — from fixing a single typo to adding an
 
 ---
 
-###  How to Contribute (Step-by-Step)
+###  Quick Guide
 
 | Step | Action |
 |------|--------|
@@ -320,7 +327,7 @@ We welcome contributions of all kinds — from fixing a single typo to adding an
 
 ---
 
-###  Contribution Guidelines
+###  Guidelines
 
 | Aspect | Guideline |
 |--------|-----------|
@@ -373,7 +380,7 @@ We welcome contributions of all kinds — from fixing a single typo to adding an
 
 ---
 
-## ☕ Support & Sponsorship
+##  Support & Sponsorship
 
 This handbook is — and will always be — **completely free and open source**.  
 If it's helped you in any way, here are some simple ways to give back.
