@@ -116,3 +116,6 @@ a, button, input, select, textarea, [role="button"] {
   background: var(--light);
   border-right: 1px solid var(--lightgray);
 }
+a:hover {
+  text-shadow: 0 0 8px rgba(77, 107, 254, 0.3);
+}
