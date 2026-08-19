@@ -131,7 +131,7 @@
 ###  Mobile View
 
 <p align="center">
-  <img src="assets/images/Phone-view.jpeg" alt="Mobile View" width="300">
+  <img src="assets/images/Phone-view-v2.jpeg" alt="Mobile View" width="300">
 </p>
 
 *Fully responsive — access from any device, anywhere.*
