@@ -1,5 +1,4 @@
 ---
-title: "Application Security Tools"
 ---
 
 up:: [[Application Security]]

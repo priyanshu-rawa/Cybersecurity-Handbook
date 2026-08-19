@@ -1,5 +1,4 @@
 ---
-title: "Learning With Errors (LWE)"
 ---
 
 ---

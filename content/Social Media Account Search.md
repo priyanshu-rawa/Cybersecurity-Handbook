@@ -1,5 +1,4 @@
 ---
-title: "Social Media Account Search"
 ---
 
 up:: [[OSINT]]

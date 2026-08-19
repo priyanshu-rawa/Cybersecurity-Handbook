@@ -1,5 +1,4 @@
 ---
-title: "IAM Policy and Governance"
 ---
 
 up:: [[Identity and Access Management]]

@@ -1,5 +1,4 @@
 ---
-title: "Post Connection Attacks"
 ---
 
 up:: [[Network Hacking]]

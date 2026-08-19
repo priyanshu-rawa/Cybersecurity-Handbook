@@ -1,5 +1,4 @@
 ---
-title: "Smishing (SMS Phishing)"
 ---
 
 ---

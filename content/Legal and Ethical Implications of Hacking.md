@@ -1,5 +1,4 @@
 ---
-title: "Legal and Ethical Implications of Hacking"
 ---
 
 up:: [[Hacking]]

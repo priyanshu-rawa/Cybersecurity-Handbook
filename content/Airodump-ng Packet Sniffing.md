@@ -1,5 +1,4 @@
 ---
-title: "Airodump ng Packet Sniffing"
 ---
 
 up:: [[Network Hacking]]

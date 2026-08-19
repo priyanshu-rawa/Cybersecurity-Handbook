@@ -1,5 +1,4 @@
 ---
-title: "Ethics in AI and Machine Learning"
 ---
 
 up:: [[Cybersecurity Ethics and Privacy]]

@@ -1,5 +1,4 @@
 ---
-title: "Defense in Depth"
 ---
 
 up:: [[Security Principles]]

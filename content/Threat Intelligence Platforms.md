@@ -1,5 +1,4 @@
 ---
-title: "Threat Intelligence Platforms"
 ---
 
 ---

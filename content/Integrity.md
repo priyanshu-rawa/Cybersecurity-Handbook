@@ -1,5 +1,4 @@
 ---
-title: "Integrity"
 ---
 
 up:: [[CIA Triad]]

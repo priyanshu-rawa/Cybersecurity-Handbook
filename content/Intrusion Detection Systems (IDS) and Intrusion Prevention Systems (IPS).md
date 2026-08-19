@@ -1,5 +1,4 @@
 ---
-title: "Intrusion Detection Systems (IDS) and Intrusion Prevention Systems (IPS)"
 ---
 
 up:: [[Network Security]]

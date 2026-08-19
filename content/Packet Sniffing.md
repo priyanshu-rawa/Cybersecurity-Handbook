@@ -1,5 +1,4 @@
 ---
-title: "Packet Sniffing"
 ---
 
 up:: [[Pre-Connection Network Attacks]]

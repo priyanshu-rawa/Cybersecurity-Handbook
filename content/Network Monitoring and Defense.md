@@ -1,5 +1,4 @@
 ---
-title: "Network Monitoring and Defense"
 ---
 
 up:: [[Network Security]]

@@ -1,5 +1,4 @@
 ---
-title: "Closest Vector Problem (CVP)"
 ---
 
 ---

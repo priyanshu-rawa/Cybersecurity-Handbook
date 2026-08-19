@@ -1,5 +1,4 @@
 ---
-title: "Capturing the Handshake"
 ---
 
 up:: [[WPA and WPA2 Cracking]]

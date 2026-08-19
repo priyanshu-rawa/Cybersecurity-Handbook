@@ -1,5 +1,4 @@
 ---
-title: "API Security"
 ---
 
 up:: [[Application Security]]

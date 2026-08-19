@@ -1,5 +1,4 @@
 ---
-title: "Elliptic Curve Cryptography"
 ---
 
 ---

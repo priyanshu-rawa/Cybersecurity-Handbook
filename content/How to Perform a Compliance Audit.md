@@ -1,5 +1,4 @@
 ---
-title: "How to Perform a Compliance Audit"
 ---
 
 up:: [[GRC and Advisory Labs]]

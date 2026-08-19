@@ -1,5 +1,4 @@
 ---
-title: "How to Configure & Manage a VPN"
 ---
 
 up:: [[Network & Systems Security Labs]]

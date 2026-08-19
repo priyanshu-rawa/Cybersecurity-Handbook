@@ -1,5 +1,4 @@
 ---
-title: "Google Dorking"
 ---
 
 up:: [[OSINT]]

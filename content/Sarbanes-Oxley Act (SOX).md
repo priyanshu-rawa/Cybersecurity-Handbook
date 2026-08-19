@@ -1,5 +1,4 @@
 ---
-title: "Sarbanes Oxley Act (SOX)"
 ---
 
 ---

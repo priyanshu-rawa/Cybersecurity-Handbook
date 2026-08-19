@@ -1,5 +1,4 @@
 ---
-title: "NIST Post Quantum Cryptography Standardization"
 ---
 
 ---

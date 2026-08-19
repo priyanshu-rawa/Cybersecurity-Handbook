@@ -1,5 +1,4 @@
 ---
-title: "Change MAC from Managed to Monitor Mode"
 ---
 
 ---

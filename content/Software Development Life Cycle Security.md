@@ -1,5 +1,4 @@
 ---
-title: "Software Development Life Cycle Security"
 ---
 
 up:: [[Application Security]]

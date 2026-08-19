@@ -1,5 +1,4 @@
 ---
-title: "Quid Pro Quo"
 ---
 
 up:: [[Social Engineering Techniques|social engineering]]

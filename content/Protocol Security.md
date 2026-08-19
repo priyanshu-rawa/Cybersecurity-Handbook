@@ -1,5 +1,4 @@
 ---
-title: "Protocol Security"
 ---
 
 up:: [[Network Security]]

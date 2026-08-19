@@ -1,5 +1,4 @@
 ---
-title: "Penetration Testing Frameworks"
 ---
 
 up:: [[Cybersecurity Tools and Technologies]]

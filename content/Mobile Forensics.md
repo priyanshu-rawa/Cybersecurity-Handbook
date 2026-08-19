@@ -1,5 +1,4 @@
 ---
-title: "Mobile Forensics"
 ---
 
 up:: [[Digital Forensics and Incident Response]]

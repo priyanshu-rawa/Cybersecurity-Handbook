@@ -1,5 +1,4 @@
 ---
-title: "Blake2"
 ---
 
 ## Overview

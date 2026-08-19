@@ -1,5 +1,4 @@
 ---
-title: "Penetration Testing Methodologies"
 ---
 
 up:: [[Hacking]]

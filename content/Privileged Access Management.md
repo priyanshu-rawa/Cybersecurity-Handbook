@@ -1,5 +1,4 @@
 ---
-title: "Privileged Access Management"
 ---
 
 ---

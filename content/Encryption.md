@@ -1,5 +1,4 @@
 ---
-title: "Encryption"
 ---
 
 up:: [[Introduction to Cryptography]]

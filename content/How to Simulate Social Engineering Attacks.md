@@ -1,5 +1,4 @@
 ---
-title: "How to Simulate Social Engineering Attacks"
 ---
 
 up:: [[Offensive Security Labs]]

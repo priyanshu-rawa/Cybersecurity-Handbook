@@ -1,5 +1,4 @@
 ---
-title: "Generating a Wordlist & Cracking the Password"
 ---
 
 up:: [[WPA and WPA2 Cracking]]

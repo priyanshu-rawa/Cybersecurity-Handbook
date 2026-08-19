@@ -1,5 +1,4 @@
 ---
-title: "Availability"
 ---
 
 up:: [[CIA Triad]]

@@ -1,5 +1,4 @@
 ---
-title: "How to Change Your MAC Address"
 ---
 
 up:: [[Network Hacking]]

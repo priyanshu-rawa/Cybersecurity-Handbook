@@ -1,5 +1,4 @@
 ---
-title: "Security Principles"
 ---
 
 up:: [[Cybersecurity Fundamentals]]

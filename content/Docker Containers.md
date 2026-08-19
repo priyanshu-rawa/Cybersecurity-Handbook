@@ -1,5 +1,4 @@
 ---
-title: "Docker Containers"
 ---
 
 # Docker Containers

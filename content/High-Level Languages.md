@@ -1,5 +1,4 @@
 ---
-title: "High Level Languages"
 ---
 
 up:: [[01 Cybersecurity Mastery]]

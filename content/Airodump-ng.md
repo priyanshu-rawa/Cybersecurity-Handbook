@@ -1,5 +1,4 @@
 ---
-title: "Airodump ng"
 ---
 
 up:: [[Aircrack-ng]]]

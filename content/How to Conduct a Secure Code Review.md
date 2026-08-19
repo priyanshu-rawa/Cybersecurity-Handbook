@@ -1,5 +1,4 @@
 ---
-title: "How to Conduct a Secure Code Review"
 ---
 
 up:: [[Application & Software Security Labs]]

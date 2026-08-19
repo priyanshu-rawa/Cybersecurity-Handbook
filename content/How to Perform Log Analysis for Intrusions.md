@@ -1,5 +1,4 @@
 ---
-title: "How to Perform Log Analysis for Intrusions"
 ---
 
 up:: [[Threat Detection & Response Labs]]

@@ -1,5 +1,4 @@
 ---
-title: "Threat Landscape"
 ---
 
 up:: [[Cybersecurity Fundamentals]]

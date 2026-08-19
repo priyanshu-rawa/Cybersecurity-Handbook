@@ -1,5 +1,4 @@
 ---
-title: "Code based cryptography"
 ---
 
 up:: [[Post-Quantum Cryptography (PQC)]]

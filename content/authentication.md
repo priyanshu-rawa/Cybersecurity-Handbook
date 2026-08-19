@@ -1,5 +1,4 @@
 ---
-title: "authentication"
 ---
 
 up:: [[CIA Triad]]

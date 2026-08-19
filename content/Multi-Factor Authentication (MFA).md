@@ -1,5 +1,4 @@
 ---
-title: "Multi Factor Authentication (MFA)"
 ---
 
 ---

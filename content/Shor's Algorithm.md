@@ -1,5 +1,4 @@
 ---
-title: "Shor's Algorithm"
 ---
 
 ---

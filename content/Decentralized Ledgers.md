@@ -1,5 +1,4 @@
 ---
-title: "Decentralized Ledgers"
 ---
 
 ---

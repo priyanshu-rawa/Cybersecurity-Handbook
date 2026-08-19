@@ -1,5 +1,4 @@
 ---
-title: "Wired Equivalent Privacy (WEP)"
 ---
 
 ---

@@ -1,5 +1,4 @@
 ---
-title: "Quantum Cryptography"
 ---
 
 up::[[Cryptology]]

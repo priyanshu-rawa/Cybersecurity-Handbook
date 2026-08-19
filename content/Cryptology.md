@@ -1,5 +1,4 @@
 ---
-title: "Cryptology"
 ---
 
 up:: [[01 Cybersecurity Mastery]]

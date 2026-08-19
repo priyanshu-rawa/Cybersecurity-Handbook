@@ -1,5 +1,4 @@
 ---
-title: "Advanced Persistent Threats (APTs)"
 ---
 
 ---

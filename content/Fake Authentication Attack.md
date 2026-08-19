@@ -1,5 +1,4 @@
 ---
-title: "Fake Authentication Attack"
 ---
 
 ---

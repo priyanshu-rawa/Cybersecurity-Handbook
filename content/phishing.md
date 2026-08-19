@@ -1,5 +1,4 @@
 ---
-title: "phishing"
 ---
 
 up:: [[Threat Landscape]]

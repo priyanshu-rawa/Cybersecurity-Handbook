@@ -1,5 +1,4 @@
 ---
-title: "Data Protection Techniques"
 ---
 
 up:: [[Cybersecurity Ethics and Privacy]]

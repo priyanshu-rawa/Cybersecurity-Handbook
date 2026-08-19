@@ -1,5 +1,4 @@
 ---
-title: "Cybersecurity Information Sharing Act (CISA)"
 ---
 
 ---

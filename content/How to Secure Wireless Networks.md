@@ -1,5 +1,4 @@
 ---
-title: "How to Secure Wireless Networks"
 ---
 
 up:: [[Network & Systems Security Labs]]

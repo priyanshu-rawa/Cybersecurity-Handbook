@@ -1,5 +1,4 @@
 ---
-title: "spyware"
 ---
 
 up:: [[Threat Landscape]]

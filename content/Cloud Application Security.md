@@ -1,5 +1,4 @@
 ---
-title: "Cloud Application Security"
 ---
 
 up:: [[Application Security]]

@@ -1,5 +1,4 @@
 ---
-title: "CIA Triad"
 ---
 
 up:: [[Security Principles]]

@@ -1,5 +1,4 @@
 ---
-title: "Cryptographic Security"
 ---
 
 Welcome to the fourth lesson of our blockchain course! In this lesson, we will delve into the critical aspect of cryptographic security that underpins blockchain technology. Drawing on the insights from "Blockchain Revolution," we will demystify the cryptographic foundations of blockchain and explore how encryption, digital signatures, and hashing algorithms contribute to the security of the system. Let's unlock the secrets of cryptographic security!

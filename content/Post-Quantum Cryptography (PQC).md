@@ -1,5 +1,4 @@
 ---
-title: "Post Quantum Cryptography (PQC)"
 ---
 
 ---

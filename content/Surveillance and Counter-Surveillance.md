@@ -1,5 +1,4 @@
 ---
-title: "Surveillance and Counter Surveillance"
 ---
 
 up:: [[Cybersecurity Ethics and Privacy]]

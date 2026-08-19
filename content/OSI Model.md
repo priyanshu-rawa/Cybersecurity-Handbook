@@ -1,5 +1,4 @@
 ---
-title: "OSI Model"
 ---
 
 # OSI Model

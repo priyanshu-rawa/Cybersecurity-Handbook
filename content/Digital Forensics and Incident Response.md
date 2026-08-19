@@ -1,5 +1,4 @@
 ---
-title: "Digital Forensics and Incident Response"
 ---
 
 up:: [[01 Cybersecurity Mastery]]

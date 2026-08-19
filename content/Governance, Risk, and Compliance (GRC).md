@@ -1,5 +1,4 @@
 ---
-title: "Governance, Risk, and Compliance (GRC)"
 ---
 
 ---

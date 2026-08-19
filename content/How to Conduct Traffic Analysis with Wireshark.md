@@ -1,5 +1,4 @@
 ---
-title: "How to Conduct Traffic Analysis with Wireshark"
 ---
 
 up:: [[Network & Systems Security Labs]], [[Threat Detection & Response Labs]]

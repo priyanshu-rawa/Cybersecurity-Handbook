@@ -1,5 +1,4 @@
 ---
-title: "07_Automated_Tools_and_Resources_for_Privesc"
 ---
 
 # Automated Tools and Resources for Privilege Escalation

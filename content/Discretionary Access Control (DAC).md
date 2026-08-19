@@ -1,5 +1,4 @@
 ---
-title: "Discretionary Access Control (DAC)"
 ---
 
 ---

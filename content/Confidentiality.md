@@ -1,5 +1,4 @@
 ---
-title: "Confidentiality"
 ---
 
 up:: [[CIA Triad]]

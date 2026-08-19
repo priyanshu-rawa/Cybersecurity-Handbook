@@ -1,5 +1,4 @@
 ---
-title: "Fully Homomorphic Encryption (FHE)"
 ---
 
 ---

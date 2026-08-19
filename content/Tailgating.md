@@ -1,5 +1,4 @@
 ---
-title: "Tailgating"
 ---
 
 up:: [[Social Engineering Techniques|social engineering]]

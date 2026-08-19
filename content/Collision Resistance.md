@@ -1,5 +1,4 @@
 ---
-title: "Collision Resistance"
 ---
 
 ## Overview

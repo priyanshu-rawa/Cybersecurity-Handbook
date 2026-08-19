@@ -1,5 +1,4 @@
 ---
-title: "z_Application & Software Security Labs"
 ---
 
 1. [[How to Set Up a Home Lab]]

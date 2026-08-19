@@ -1,5 +1,4 @@
 ---
-title: "Shortest Vector Problem (SVP)"
 ---
 
 ---

@@ -1,5 +1,4 @@
 ---
-title: "IAM in the Cloud"
 ---
 
 up:: [[Identity and Access Management]]

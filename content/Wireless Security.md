@@ -1,5 +1,4 @@
 ---
-title: "Wireless Security"
 ---
 
 up:: [[Network Security]]

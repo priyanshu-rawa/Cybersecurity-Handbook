@@ -1,5 +1,4 @@
 ---
-title: "Intrusion Prevention Systems"
 ---
 
 ---

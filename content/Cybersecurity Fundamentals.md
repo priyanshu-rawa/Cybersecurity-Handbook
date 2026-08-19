@@ -1,5 +1,4 @@
 ---
-title: "Cybersecurity Fundamentals"
 ---
 
 up:: [[01 Cybersecurity Mastery]]

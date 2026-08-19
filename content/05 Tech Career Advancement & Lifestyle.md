@@ -1,5 +1,4 @@
 ---
-title: "05 Tech Career Advancement & Lifestyle"
 ---
 
 up:: [[00 Home MOC]]

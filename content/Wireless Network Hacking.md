@@ -1,5 +1,4 @@
 ---
-title: "Wireless Network Hacking"
 ---
 
 up:: [[Hacking]]

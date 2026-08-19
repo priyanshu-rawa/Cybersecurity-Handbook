@@ -1,5 +1,4 @@
 ---
-title: "Zero Knowledge Proof based cryptography"
 ---
 
 ---

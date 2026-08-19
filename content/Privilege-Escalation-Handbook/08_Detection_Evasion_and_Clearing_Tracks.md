@@ -1,5 +1,4 @@
 ---
-title: "08_Detection_Evasion_and_Clearing_Tracks"
 ---
 
 # Detection, Evasion, and Clearing Tracks

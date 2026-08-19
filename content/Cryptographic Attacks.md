@@ -1,5 +1,4 @@
 ---
-title: "Cryptographic Attacks"
 ---
 
 up:: [[Hacking]]

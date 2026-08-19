@@ -1,5 +1,4 @@
 ---
-title: "Advanced Encryption Standard (AES)"
 ---
 
 ---

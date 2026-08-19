@@ -1,5 +1,4 @@
 ---
-title: "Zero Knowledge Proofs and the Future of Cryptocurrency"
 ---
 
 **Introduction: A Paradigm Shift in Blockchain Technology**

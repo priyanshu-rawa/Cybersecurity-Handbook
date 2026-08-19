@@ -1,5 +1,4 @@
 ---
-title: "Symmetric vs. Asymmetric Encryption"
 ---
 
 up:: [[Cryptology]]

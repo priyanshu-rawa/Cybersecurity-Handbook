@@ -1,5 +1,4 @@
 ---
-title: "Security Standards and Best Practices"
 ---
 
 up:: [[Cybersecurity Fundamentals]]

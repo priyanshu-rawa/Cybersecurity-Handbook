@@ -1,5 +1,4 @@
 ---
-title: "Digital Identity and Trust"
 ---
 
 up:: [[Cybersecurity Ethics and Privacy]]

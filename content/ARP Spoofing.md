@@ -1,5 +1,4 @@
 ---
-title: "ARP Spoofing"
 ---
 
 up:: [[Man-in-the-middle attacks]]

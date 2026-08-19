@@ -1,5 +1,4 @@
 ---
-title: "Identity as a Service"
 ---
 
 ---

@@ -1,5 +1,4 @@
 ---
-title: "z_Offensive Security Labs"
 ---
 
 1. [[How to Set Up a Home Lab]]

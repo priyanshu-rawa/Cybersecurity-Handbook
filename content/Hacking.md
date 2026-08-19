@@ -1,5 +1,4 @@
 ---
-title: "Hacking"
 ---
 
 up:: [[01 Cybersecurity Mastery]]

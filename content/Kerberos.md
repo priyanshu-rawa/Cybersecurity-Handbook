@@ -1,5 +1,4 @@
 ---
-title: "Kerberos"
 ---
 
 up:: [[Identity and Access Management]]

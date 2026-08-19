@@ -1,5 +1,4 @@
 ---
-title: "README"
 ---
 
 # Privilege Escalation Handbook

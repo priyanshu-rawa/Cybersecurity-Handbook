@@ -1,5 +1,4 @@
 ---
-title: "Social Media Scams"
 ---
 
 up:: [[Social Engineering Techniques|social engineering]]

@@ -1,5 +1,4 @@
 ---
-title: "Wi Fi Protected Access II (WPA2)"
 ---
 
 ---

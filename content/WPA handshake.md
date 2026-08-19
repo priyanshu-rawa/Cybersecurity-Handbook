@@ -1,5 +1,4 @@
 ---
-title: "WPA handshake"
 ---
 
 ---

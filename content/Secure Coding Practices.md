@@ -1,5 +1,4 @@
 ---
-title: "Secure Coding Practices"
 ---
 
 up:: [[Application Security]]

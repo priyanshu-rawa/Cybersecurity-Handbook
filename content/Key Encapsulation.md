@@ -1,5 +1,4 @@
 ---
-title: "Key Encapsulation"
 ---
 
 up:: [[Post-Quantum Cryptography (PQC)]]

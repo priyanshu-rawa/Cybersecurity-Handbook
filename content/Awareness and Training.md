@@ -1,5 +1,4 @@
 ---
-title: "Awareness and Training"
 ---
 
 up:: [[Cybersecurity Fundamentals]]

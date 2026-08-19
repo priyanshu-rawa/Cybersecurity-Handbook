@@ -1,5 +1,4 @@
 ---
-title: "Digital Signature Algorithm"
 ---
 
 ---

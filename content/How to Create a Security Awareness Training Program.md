@@ -1,5 +1,4 @@
 ---
-title: "How to Create a Security Awareness Training Program"
 ---
 
 up:: [[GRC and Advisory Labs]]

@@ -1,5 +1,4 @@
 ---
-title: "Zero knowledge Proofs"
 ---
 
 ---

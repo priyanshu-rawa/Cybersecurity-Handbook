@@ -1,5 +1,4 @@
 ---
-title: "Crunch"
 ---
 
 up:: [[WPA and WPA2 Cracking]]

@@ -1,5 +1,4 @@
 ---
-title: "Dependency Management"
 ---
 
 up:: [[Application Security]]

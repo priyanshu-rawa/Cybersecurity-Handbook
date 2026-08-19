@@ -1,5 +1,4 @@
 ---
-title: "Federation"
 ---
 
 up:: [[Single Sign-On and Federation]]

@@ -1,5 +1,4 @@
 ---
-title: "Cybersecurity Careers"
 ---
 
 up:: [[Cybersecurity Fundamentals]]

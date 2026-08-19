@@ -1,5 +1,4 @@
 ---
-title: "z_Network & Systems Security Labs"
 ---
 
 1. [[How to Set Up a Home Lab]]

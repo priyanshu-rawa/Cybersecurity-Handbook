@@ -1,5 +1,4 @@
 ---
-title: "NIST Cybersecurity Framework"
 ---
 
 ---

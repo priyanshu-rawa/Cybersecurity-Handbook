@@ -1,5 +1,4 @@
 ---
-title: "ransomware"
 ---
 
 up:: [[Threat Landscape]]

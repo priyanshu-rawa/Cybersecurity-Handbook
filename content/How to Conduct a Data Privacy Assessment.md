@@ -1,5 +1,4 @@
 ---
-title: "How to Conduct a Data Privacy Assessment"
 ---
 
 up:: [[GRC and Advisory Labs]]

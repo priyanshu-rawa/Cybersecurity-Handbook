@@ -1,5 +1,4 @@
 ---
-title: "Website Hacking"
 ---
 
 up:: [[Ethical Hacking]]

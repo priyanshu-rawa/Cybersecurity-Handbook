@@ -1,5 +1,4 @@
 ---
-title: "Diffie Hellman"
 ---
 
 ## Overview

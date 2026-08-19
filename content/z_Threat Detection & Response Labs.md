@@ -1,5 +1,4 @@
 ---
-title: "z_Threat Detection & Response Labs"
 ---
 
 1. [[How to Set Up a Home Lab]]

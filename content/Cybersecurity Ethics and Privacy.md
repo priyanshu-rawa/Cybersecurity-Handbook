@@ -1,5 +1,4 @@
 ---
-title: "Cybersecurity Ethics and Privacy"
 ---
 
 up:: [[01 Cybersecurity Mastery]]

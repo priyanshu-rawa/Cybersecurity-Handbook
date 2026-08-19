@@ -1,5 +1,4 @@
 ---
-title: "Digital Forensics Legal and Ethical Considerations"
 ---
 
 up:: [[Digital Forensics and Incident Response]]

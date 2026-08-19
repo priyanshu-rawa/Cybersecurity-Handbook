@@ -1,5 +1,4 @@
 ---
-title: "Pre Connection Network Attacks"
 ---
 
 up::[[Network Hacking]]

@@ -1,5 +1,4 @@
 ---
-title: "Data Recovery Techniques"
 ---
 
 up:: [[Digital Forensics and Incident Response]]

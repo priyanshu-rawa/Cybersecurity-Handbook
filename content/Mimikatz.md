@@ -1,5 +1,4 @@
 ---
-title: "Mimikatz"
 ---
 
 up:: [[Hacking Toolkit]]

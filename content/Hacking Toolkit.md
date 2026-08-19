@@ -1,5 +1,4 @@
 ---
-title: "Hacking Toolkit"
 ---
 
 up:: [[Cybersecurity Tools and Technologies]]

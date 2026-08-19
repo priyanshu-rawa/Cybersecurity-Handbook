@@ -1,5 +1,4 @@
 ---
-title: "Electronic Communications Privacy Act (ECPA)"
 ---
 
 ---

@@ -1,5 +1,4 @@
 ---
-title: "data link layer"
 ---
 
 up:: [[OSI Model]]

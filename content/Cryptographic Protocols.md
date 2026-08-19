@@ -1,5 +1,4 @@
 ---
-title: "Cryptographic Protocols"
 ---
 
 up:: [[Cryptology]]

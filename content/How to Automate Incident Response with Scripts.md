@@ -1,5 +1,4 @@
 ---
-title: "How to Automate Incident Response with Scripts"
 ---
 
 up:: [[Threat Detection & Response Labs]]

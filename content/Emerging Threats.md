@@ -1,5 +1,4 @@
 ---
-title: "Emerging Threats"
 ---
 
 up:: [[Cybersecurity Fundamentals]]

@@ -1,5 +1,4 @@
 ---
-title: "Critical Security Controls"
 ---
 
 up:: [[Security Standards and Best Practices]]

@@ -1,5 +1,4 @@
 ---
-title: "How to Run a Phishing Simulation Campaign"
 ---
 
 up:: [[Offensive Security Labs]]

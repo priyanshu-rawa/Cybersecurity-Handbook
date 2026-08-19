@@ -1,5 +1,4 @@
 ---
-title: "How to Build and Configure a Firewall"
 ---
 
 up:: [[Network & Systems Security Labs]]

@@ -1,5 +1,4 @@
 ---
-title: "Network Hacking"
 ---
 
 up:: [[Ethical Hacking]]

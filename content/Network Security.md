@@ -1,5 +1,4 @@
 ---
-title: "Network Security"
 ---
 
 up:: [[01 Cybersecurity Mastery]]

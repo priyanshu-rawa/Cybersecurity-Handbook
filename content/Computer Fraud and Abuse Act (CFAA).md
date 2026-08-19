@@ -1,5 +1,4 @@
 ---
-title: "Computer Fraud and Abuse Act (CFAA)"
 ---
 
 ---

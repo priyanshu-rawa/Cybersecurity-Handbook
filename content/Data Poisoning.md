@@ -1,5 +1,4 @@
 ---
-title: "Data Poisoning"
 ---
 
 up:: [[Threat Hunting]]

@@ -1,5 +1,4 @@
 ---
-title: "How to Set Up a Home Lab"
 ---
 
 ### Guide: Installing VirtualBox and Setting Up Ubuntu

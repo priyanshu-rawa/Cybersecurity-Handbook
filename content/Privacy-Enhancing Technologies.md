@@ -1,5 +1,4 @@
 ---
-title: "Privacy Enhancing Technologies"
 ---
 
 ---

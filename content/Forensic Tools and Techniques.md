@@ -1,5 +1,4 @@
 ---
-title: "Forensic Tools and Techniques"
 ---
 
 up:: [[Digital Forensics and Incident Response]]

@@ -1,5 +1,4 @@
 ---
-title: "CRYSTALS Dilithium"
 ---
 
 up:: [[Post-Quantum Cryptography (PQC)]]

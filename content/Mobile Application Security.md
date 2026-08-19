@@ -1,5 +1,4 @@
 ---
-title: "Mobile Application Security"
 ---
 
 up:: [[Application Security]]

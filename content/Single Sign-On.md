@@ -1,5 +1,4 @@
 ---
-title: "Single Sign On"
 ---
 
 ---

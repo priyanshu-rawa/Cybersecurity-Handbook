@@ -1,5 +1,4 @@
 ---
-title: "Freenet"
 ---
 
 up:: [[Dark Web]]

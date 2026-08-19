@@ -1,5 +1,4 @@
 ---
-title: "How to Perform a Privacy Impact Assessment"
 ---
 
 up:: [[GRC and Advisory Labs]]

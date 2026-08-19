@@ -1,5 +1,4 @@
 ---
-title: "Spear Phishing"
 ---
 
 up:: [[Social Engineering Techniques|social engineering]]

@@ -1,5 +1,4 @@
 ---
-title: "Triple DES"
 ---
 
 ---

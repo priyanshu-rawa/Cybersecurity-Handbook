@@ -1,5 +1,4 @@
 ---
-title: "Cracking WPA and WPA2 Wi Fi with Wifite"
 ---
 
 up:: [[Wifite]]

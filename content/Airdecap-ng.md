@@ -1,5 +1,4 @@
 ---
-title: "Airdecap ng"
 ---
 
 up:: [[Aircrack-ng]]

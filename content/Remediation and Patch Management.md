@@ -1,5 +1,4 @@
 ---
-title: "Remediation and Patch Management"
 ---
 
 up:: [[Threat Intelligence and Vulnerability Management]]

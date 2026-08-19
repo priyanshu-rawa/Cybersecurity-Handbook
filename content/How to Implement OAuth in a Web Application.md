@@ -1,5 +1,4 @@
 ---
-title: "How to Implement OAuth in a Web Application"
 ---
 
 up:: [[Application & Software Security Labs]]

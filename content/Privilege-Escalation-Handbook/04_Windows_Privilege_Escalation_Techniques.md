@@ -1,5 +1,4 @@
 ---
-title: "04_Windows_Privilege_Escalation_Techniques"
 ---
 
 # Windows Privilege Escalation Techniques

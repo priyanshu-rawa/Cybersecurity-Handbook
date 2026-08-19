@@ -1,5 +1,4 @@
 ---
-title: "Airbase ng"
 ---
 
 up:: [[Aircrack-ng]]

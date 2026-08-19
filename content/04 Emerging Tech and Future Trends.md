@@ -1,5 +1,4 @@
 ---
-title: "04 Emerging Tech and Future Trends"
 ---
 
 up:: [[00 Home MOC]]

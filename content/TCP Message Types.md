@@ -1,5 +1,4 @@
 ---
-title: "TCP Message Types"
 ---
 
 up:: [[Transmission Control Protocol (TCP)]]

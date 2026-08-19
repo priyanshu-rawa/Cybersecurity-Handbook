@@ -1,5 +1,4 @@
 ---
-title: "Ethical Hacking Fundamentals"
 ---
 
 up:: [[Hacking]]

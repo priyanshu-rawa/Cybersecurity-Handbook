@@ -1,5 +1,4 @@
 ---
-title: "Network Access Control (NAC)"
 ---
 
 ---

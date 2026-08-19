@@ -1,5 +1,4 @@
 ---
-title: "Counter surveillance"
 ---
 
 up:: [[Surveillance and Counter-Surveillance]]

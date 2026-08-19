@@ -1,5 +1,4 @@
 ---
-title: "Short Integer Solution (SIS)"
 ---
 
 ---

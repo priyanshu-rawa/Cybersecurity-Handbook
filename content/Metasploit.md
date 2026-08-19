@@ -1,5 +1,4 @@
 ---
-title: "Metasploit"
 ---
 
 up:: [[Hacking Toolkit]]

@@ -1,5 +1,4 @@
 ---
-title: "Endpoint Security"
 ---
 
 up:: [[Cybersecurity Tools and Technologies]]

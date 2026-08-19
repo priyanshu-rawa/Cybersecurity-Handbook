@@ -1,5 +1,4 @@
 ---
-title: "How to Develop Security Policies and Procedures"
 ---
 
 up:: [[GRC and Advisory Labs]]

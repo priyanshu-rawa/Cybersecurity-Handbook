@@ -1,5 +1,4 @@
 ---
-title: "Incident Response Plan (IRP)"
 ---
 
 ---

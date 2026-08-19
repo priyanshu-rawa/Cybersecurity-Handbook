@@ -1,5 +1,4 @@
 ---
-title: "Role Based Access Control (RBAC)"
 ---
 
 ---

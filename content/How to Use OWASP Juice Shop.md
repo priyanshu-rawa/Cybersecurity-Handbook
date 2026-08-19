@@ -1,5 +1,4 @@
 ---
-title: "How to Use OWASP Juice Shop"
 ---
 
 up:: [[Application & Software Security Labs]]

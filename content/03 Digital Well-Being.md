@@ -1,5 +1,4 @@
 ---
-title: "03 Digital Well Being"
 ---
 
 up:: [[00 Home MOC]]

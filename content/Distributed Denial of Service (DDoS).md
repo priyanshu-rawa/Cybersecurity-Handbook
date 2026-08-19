@@ -1,5 +1,4 @@
 ---
-title: "Distributed Denial of Service (DDoS)"
 ---
 
 ---

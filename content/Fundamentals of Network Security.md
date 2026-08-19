@@ -1,5 +1,4 @@
 ---
-title: "Fundamentals of Network Security"
 ---
 
 up:: [[Network Security]]

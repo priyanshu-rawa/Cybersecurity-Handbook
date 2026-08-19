@@ -1,5 +1,4 @@
 ---
-title: "Firewalls and VPNs"
 ---
 
 up:: [[Network Security]]

@@ -1,5 +1,4 @@
 ---
-title: "How to Do Web Application Security Testing"
 ---
 
 up:: [[Application & Software Security Labs]]

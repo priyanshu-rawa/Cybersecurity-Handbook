@@ -1,5 +1,4 @@
 ---
-title: "Supersingular Isogeny Diffie Hellman"
 ---
 
 ---

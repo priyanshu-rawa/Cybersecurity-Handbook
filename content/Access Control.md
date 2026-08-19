@@ -1,5 +1,4 @@
 ---
-title: "Access Control"
 ---
 
 up:: [[Network Security]]

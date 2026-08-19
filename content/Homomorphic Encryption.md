@@ -1,5 +1,4 @@
 ---
-title: "Homomorphic Encryption"
 ---
 
 ## Overview

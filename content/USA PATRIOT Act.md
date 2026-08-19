@@ -1,5 +1,4 @@
 ---
-title: "USA PATRIOT Act"
 ---
 
 ---

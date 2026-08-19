@@ -1,5 +1,4 @@
 ---
-title: "Ethical and Legal Considerations"
 ---
 
 up:: [[Cybersecurity Fundamentals]]

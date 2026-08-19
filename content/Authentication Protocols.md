@@ -1,5 +1,4 @@
 ---
-title: "Authentication Protocols"
 ---
 
 

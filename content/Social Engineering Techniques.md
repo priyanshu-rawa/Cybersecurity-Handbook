@@ -1,5 +1,4 @@
 ---
-title: "Social Engineering Techniques"
 ---
 
 ---

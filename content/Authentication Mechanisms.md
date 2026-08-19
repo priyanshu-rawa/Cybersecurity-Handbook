@@ -1,5 +1,4 @@
 ---
-title: "Authentication Mechanisms"
 ---
 
 up:: [[Identity and Access Management]]

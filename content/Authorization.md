@@ -1,5 +1,4 @@
 ---
-title: "Authorization"
 ---
 
 up:: [[Security Principles]]

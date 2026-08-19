@@ -1,5 +1,4 @@
 ---
-title: "Decoy Operations"
 ---
 
 up:: [[Dark Web]]

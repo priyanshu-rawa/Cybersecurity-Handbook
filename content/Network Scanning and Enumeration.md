@@ -1,5 +1,4 @@
 ---
-title: "Network Scanning and Enumeration"
 ---
 
 up:: [[Cybersecurity Tools and Technologies]]

@@ -1,5 +1,4 @@
 ---
-title: "Cobalt Strike"
 ---
 
 up:: [[Hacking Toolkit]]

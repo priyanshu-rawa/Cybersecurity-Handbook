@@ -1,5 +1,4 @@
 ---
-title: "Microservices Architecture"
 ---
 
 # Microservices Architecture

@@ -1,5 +1,4 @@
 ---
-title: "General Data Protection Regulation (GDPR)"
 ---
 
 ---

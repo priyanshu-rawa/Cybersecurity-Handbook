@@ -1,5 +1,4 @@
 ---
-title: "Vishing (Voice Phishing)"
 ---
 
 ---

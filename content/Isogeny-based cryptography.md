@@ -1,5 +1,4 @@
 ---
-title: "Isogeny based cryptography"
 ---
 
 up:: [[Post-Quantum Cryptography (PQC)]]

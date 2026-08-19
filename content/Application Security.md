@@ -1,5 +1,4 @@
 ---
-title: "Application Security"
 ---
 
 up:: [[01 Cybersecurity Mastery]]

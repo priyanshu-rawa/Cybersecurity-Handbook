@@ -1,5 +1,4 @@
 ---
-title: "How to Implement an IDS IPS"
 ---
 
 up:: [[Network & Systems Security Labs]], [[Threat Detection & Response Labs]]

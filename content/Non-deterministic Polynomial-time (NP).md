@@ -1,5 +1,4 @@
 ---
-title: "Non deterministic Polynomial time (NP)"
 ---
 
 ---

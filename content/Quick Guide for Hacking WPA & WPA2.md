@@ -1,5 +1,4 @@
 ---
-title: "Quick Guide for Hacking WPA & WPA2"
 ---
 
 up:: [[Generating a Wordlist & Cracking the Password]]

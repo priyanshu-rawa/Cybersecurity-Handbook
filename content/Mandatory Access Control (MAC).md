@@ -1,5 +1,4 @@
 ---
-title: "Mandatory Access Control (MAC)"
 ---
 
 up:: [[Access Control]]

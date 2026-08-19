@@ -1,5 +1,4 @@
 ---
-title: "How to Conduct a Risk Assessment"
 ---
 
 up:: [[GRC and Advisory Labs]]

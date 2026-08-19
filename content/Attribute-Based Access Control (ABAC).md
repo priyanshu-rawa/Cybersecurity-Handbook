@@ -1,5 +1,4 @@
 ---
-title: "Attribute Based Access Control (ABAC)"
 ---
 
 ---
