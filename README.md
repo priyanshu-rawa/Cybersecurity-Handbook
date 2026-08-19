@@ -143,7 +143,7 @@
 - [💡 Why This Exists](#why-this-exists)
 - [🎨 Key Features](#key-features)
 - [🛠️ Quick Start](#quick-start)
-- [🖼️ Preview](	#preview)
+- [🖼️ Preview](#preview)
 - [📚 What's Inside](#whats-inside)
 - [🧠 Philosophy](#philosophy)
 - [🗺️ Roadmap](#roadmap)
