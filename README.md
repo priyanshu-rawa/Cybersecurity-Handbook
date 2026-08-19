@@ -1,4 +1,4 @@
-<h1 align="center">📘 Cybersecurity Handbook</h1>
+<h1 align="center">📚 Cybersecurity Handbook</h1>
 
 <p align="center">
   A modern, open-source cybersecurity knowledge base designed to help students,
