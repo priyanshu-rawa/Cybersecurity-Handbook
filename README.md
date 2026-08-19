@@ -148,7 +148,7 @@
 - [🧠 Philosophy](#philosophy)
 - [🗺️ Roadmap](#roadmap)
 - [🌱 Contributing](#contributing)
-- [🌟 Support & Sponsorship](#support--sponsorship)
+- [🌟 Support & Sponsorship](#support-sponsorship)
 - [📄 License](#license)
 
 ---
