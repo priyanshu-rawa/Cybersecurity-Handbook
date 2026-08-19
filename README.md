@@ -218,23 +218,17 @@ npm run quartz:serve
 
 ##  📖 What's Covered
 
-**Operating Systems**  
-Linux, Windows, and networking basics — TCP/IP, DNS, VPNs, firewalls.
+**Operating Systems** – Linux, Windows, networking basics like TCP/IP, DNS, VPNs, and firewalls.
 
-**Offensive Security**  
-Web app flaws like OWASP Top 10, SQL injection, and XSS. Also scanning, exploitation, and what comes after.
+**Offensive Security** – OWASP Top 10, SQL injection, XSS, scanning, exploitation, and post‑exploitation.
 
-**Defensive Security**  
-Monitoring, incident response, SIEM, log analysis, threat hunting, and digital forensics.
+**Defensive Security** – SOC, incident response, SIEM, log analysis, threat hunting, and digital forensics.
 
-**Cloud & Infrastructure**  
-AWS, Azure, GCP, Zero Trust, containers (Docker, Kubernetes),  and IAM.
+**Cloud & Infrastructure** – AWS, Azure, GCP, Zero Trust, Docker, Kubernetes, DevSecOps, and IAM.
 
-**Programming & Automation**  
-Python, Bash, PowerShell, scripting, CI/CD, and Git.
+**Programming & Automation** – Python, Bash, PowerShell, scripting, CI/CD, and Git.
 
-**Cryptography**  
-Symmetric and asymmetric encryption, hashing (SHA, MD5), PKI, TLS, and certificates.
+**Cryptography** – Symmetric and asymmetric encryption, AES, RSA, hashing (SHA‑256, MD5), PKI, TLS, and certificates.
 
 ---
 
