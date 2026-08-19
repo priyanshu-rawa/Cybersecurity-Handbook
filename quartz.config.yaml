@@ -18,20 +18,20 @@ configuration:
     fontOrigin: googleFonts
     cdnCaching: true
     typography:
-      header: Space Grotesk
+      header: Playfair Display
       body: Inter
-      code: IBM Plex Mono
+      code: JetBrains Mono
     colors:
       lightMode:
-        light: "#f8f5fa"
-        lightgray: "#e5e5e5"
-        gray: "#838ba7"
-        darkgray: "#51576d"
-        dark: "#303446"
-        secondary: "#7287fd"
-        tertiary: "#81c8be"
-        highlight: rgba(114, 135, 253, 0.15)
-        textHighlight: "#eebebe88"
+        light: "#faf9f6"  
+        lightgray: "#e5e3e0"
+        gray: "#b0ada8"
+        darkgray: "#2c2a27"
+        dark: "#1a1816"
+        secondary: "#b8860b" 
+        tertiary: "#d4af37"
+        highlight: "rgba(184, 134, 11, 0.15)"
+        textHighlight: "rgba(184, 134, 11, 0.25)"
       darkMode:
         light: "#1e1e2e"
         lightgray: "#313244"
@@ -289,7 +289,7 @@ plugins:
         LinkedIn: https://linkedin.com/in/priyanshurawat9111
 
   - source: github:quartz-community/recent-notes
-    enabled: true
+    enabled: false
 
   - source: github:quartz-community/spacer
     enabled: true
