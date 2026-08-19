@@ -1,4 +1,8 @@
 ---
+title: "ARP (Address Resolution Protocol)"
+---
+
+---
 aliases:
   - ARP
   - Address Resolution Protocol

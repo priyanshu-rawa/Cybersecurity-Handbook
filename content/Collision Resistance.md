@@ -1,3 +1,7 @@
+---
+title: "Collision Resistance"
+---
+
 ## Overview
 
 Collision resistance is a crucial property of [[Cryptographic Hash Function|cryptographic hash functions]], ensuring it's computationally challenging to find two different inputs that produce the same output hash.

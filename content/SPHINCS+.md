@@ -1,3 +1,7 @@
+---
+title: "SPHINCS+"
+---
+
 up:: [[Post-Quantum Cryptography (PQC)|post quantum cryptography]]
 # SPHINCS+
 

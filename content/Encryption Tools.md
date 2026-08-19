@@ -1,3 +1,7 @@
+---
+title: "Encryption Tools"
+---
+
 up:: [[Cybersecurity Tools and Technologies]]
 # Encryption Tools
 

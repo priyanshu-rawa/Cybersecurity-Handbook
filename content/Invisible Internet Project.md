@@ -1,4 +1,8 @@
 ---
+title: "Invisible Internet Project"
+---
+
+---
 aliases:
   - I2P
 ---

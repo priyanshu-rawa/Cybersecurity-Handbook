@@ -1,4 +1,8 @@
 ---
+title: "Quantum Resistant"
+---
+
+---
 aliases:
   - Quantum Resistance
 ---

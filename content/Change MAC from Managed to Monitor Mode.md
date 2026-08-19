@@ -1,4 +1,8 @@
 ---
+title: "Change MAC from Managed to Monitor Mode"
+---
+
+---
 aliases:
   - Monitor Mode
   - monitor mode

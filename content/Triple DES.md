@@ -1,4 +1,8 @@
 ---
+title: "Triple DES"
+---
+
+---
 aliases:
   - 3DES
 ---

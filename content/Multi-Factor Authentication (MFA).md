@@ -1,4 +1,8 @@
 ---
+title: "Multi Factor Authentication (MFA)"
+---
+
+---
 aliases:
   - MFA
   - Multi-Factor Authentication

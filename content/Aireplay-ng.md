@@ -1,3 +1,7 @@
+---
+title: "Aireplay ng"
+---
+
 up:: [[Aircrack-ng]]
 # Aireplay-ng
 

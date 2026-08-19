@@ -1,4 +1,8 @@
 ---
+title: "Short Integer Solution (SIS)"
+---
+
+---
 aliases:
   - Short Integer Solution
   - SIS

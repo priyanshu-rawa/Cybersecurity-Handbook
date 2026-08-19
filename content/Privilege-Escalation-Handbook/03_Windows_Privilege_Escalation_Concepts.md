@@ -1,3 +1,7 @@
+---
+title: "03_Windows_Privilege_Escalation_Concepts"
+---
+
 # Windows Privilege Escalation Concepts
 
 > **Privilege Escalation Handbook** — File 03  

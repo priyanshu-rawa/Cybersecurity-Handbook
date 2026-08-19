@@ -1,4 +1,8 @@
 ---
+title: "Non deterministic Polynomial time hard (NP Hard)"
+---
+
+---
 aliases:
   - Non-deterministic Polynomial-time hard
   - NP-hard

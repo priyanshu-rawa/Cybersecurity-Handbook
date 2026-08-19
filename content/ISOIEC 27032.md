@@ -1,4 +1,8 @@
 ---
+title: "ISOIEC 27032"
+---
+
+---
 aliases:
   - ISO/IEC 27032
 ---

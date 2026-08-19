@@ -1,4 +1,8 @@
 ---
+title: "Smishing (SMS Phishing)"
+---
+
+---
 aliases:
   - Smishing
   - SMS Phishing

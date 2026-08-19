@@ -1,4 +1,8 @@
 ---
+title: "ISOIEC 27018"
+---
+
+---
 aliases:
   - ISO/IEC 27018
 ---

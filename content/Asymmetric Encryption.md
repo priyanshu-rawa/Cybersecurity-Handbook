@@ -1,4 +1,8 @@
 ---
+title: "Asymmetric Encryption"
+---
+
+---
 aliases:
   - Public-Key Cryptography
   - public key cryptography

@@ -1,3 +1,7 @@
+---
+title: "Encryption in Network Security"
+---
+
 up:: [[Network Security]]
 # Encryption in [[Network Security]]
 

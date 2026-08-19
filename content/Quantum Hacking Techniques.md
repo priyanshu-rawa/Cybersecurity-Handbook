@@ -1,3 +1,7 @@
+---
+title: "Quantum Hacking Techniques"
+---
+
 up:: [[Quantum Cryptography]]
 # Quantum Hacking Techniques
 

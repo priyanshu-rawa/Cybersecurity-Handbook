@@ -1,4 +1,8 @@
 ---
+title: "Intrusion Prevention Systems"
+---
+
+---
 aliases:
   - IPS
 ---

@@ -1,3 +1,7 @@
+---
+title: "How to Implement a SIEM System"
+---
+
 up:: [[Threat Detection & Response Labs]]
 ### **Implement a SIEM System**
 

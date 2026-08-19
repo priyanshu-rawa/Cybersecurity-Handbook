@@ -1,4 +1,8 @@
 ---
+title: "Banner Grabbing"
+---
+
+---
 aliases:
   - Banner Grab
 ---

@@ -1,3 +1,7 @@
+---
+title: "Ethical and Legal Considerations"
+---
+
 up:: [[Cybersecurity Fundamentals]]
 # Ethical and Legal Considerations
 

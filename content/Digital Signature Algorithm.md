@@ -1,4 +1,8 @@
 ---
+title: "Digital Signature Algorithm"
+---
+
+---
 aliases:
   - DSA
 ---

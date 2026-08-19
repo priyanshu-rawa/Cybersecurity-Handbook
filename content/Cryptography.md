@@ -1,4 +1,8 @@
 ---
+title: "Cryptography"
+---
+
+---
 aliases: []
 ---
 up:: [[Introduction to Cryptography]]

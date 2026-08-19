@@ -1,4 +1,8 @@
 ---
+title: "zk SNARKs"
+---
+
+---
 aliases:
   - zk SNARKs
   - Zero-Knowledge Succinct Non-Interactive Argument of Knowledge

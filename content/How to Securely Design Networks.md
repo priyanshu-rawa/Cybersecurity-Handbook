@@ -1,3 +1,7 @@
+---
+title: "How to Securely Design Networks"
+---
+
 up:: [[Network & Systems Security Labs]]
 ### Project: Secure Network Design
 

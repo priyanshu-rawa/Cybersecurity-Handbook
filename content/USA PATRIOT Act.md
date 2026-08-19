@@ -1,4 +1,8 @@
 ---
+title: "USA PATRIOT Act"
+---
+
+---
 aliases:
   - PATRIOT Act
 ---

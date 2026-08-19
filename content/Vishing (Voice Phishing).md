@@ -1,4 +1,8 @@
 ---
+title: "Vishing (Voice Phishing)"
+---
+
+---
 aliases:
   - Vishing
   - Voice Phishing

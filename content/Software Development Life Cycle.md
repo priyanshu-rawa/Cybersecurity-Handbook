@@ -1,4 +1,8 @@
 ---
+title: "Software Development Life Cycle"
+---
+
+---
 aliases:
   - SDLC
 ---

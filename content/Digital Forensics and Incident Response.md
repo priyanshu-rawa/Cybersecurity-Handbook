@@ -1,3 +1,7 @@
+---
+title: "Digital Forensics and Incident Response"
+---
+
 up:: [[01 Cybersecurity Mastery]]
 # Digital Forensics and Incident Response (DFIR)
 

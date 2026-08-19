@@ -1,4 +1,8 @@
 ---
+title: "APIs"
+---
+
+---
 aliases:
   - API
   - Application Programming Interfaces

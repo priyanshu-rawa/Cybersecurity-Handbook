@@ -1,3 +1,7 @@
+---
+title: "Memory Forensics"
+---
+
 up:: [[Digital Forensics and Incident Response]]
 # Memory Forensics
 

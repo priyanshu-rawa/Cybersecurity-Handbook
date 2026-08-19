@@ -1,3 +1,7 @@
+---
+title: "How to Secure Wireless Networks"
+---
+
 up:: [[Network & Systems Security Labs]]
 ### Project: Configuring WPA3 Security for Your Wi-Fi Network
 

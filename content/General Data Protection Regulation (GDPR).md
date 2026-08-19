@@ -1,4 +1,8 @@
 ---
+title: "General Data Protection Regulation (GDPR)"
+---
+
+---
 aliases:
   - GDPR
   - General Data Protection Regulation

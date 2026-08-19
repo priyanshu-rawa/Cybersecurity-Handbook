@@ -1,4 +1,8 @@
 ---
+title: "Quantum Bit"
+---
+
+---
 aliases:
   - Qubit
 ---

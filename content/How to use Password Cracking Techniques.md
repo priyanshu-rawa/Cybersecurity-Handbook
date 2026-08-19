@@ -1,3 +1,7 @@
+---
+title: "How to use Password Cracking Techniques"
+---
+
 up:: [[Offensive Security Labs]]
 # **Password Cracking Techniques**
 

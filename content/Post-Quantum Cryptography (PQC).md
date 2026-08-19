@@ -1,4 +1,8 @@
 ---
+title: "Post Quantum Cryptography (PQC)"
+---
+
+---
 aliases:
   - PQC
   - post quantum cryptography

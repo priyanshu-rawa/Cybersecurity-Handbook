@@ -42,7 +42,7 @@
     "@floating-ui/dom": "^1.7.4",
     "@myriaddreamin/rehype-typst": "^0.6.0",
     "@napi-rs/simple-git": "0.1.22",
-    "@quartz-community/utils": "github:quartz-community/utils",
+    "@quartz-community/utils": "^0.1.1",
     "ansi-truncate": "^1.4.0",
     "async-mutex": "^0.5.0",
     "chokidar": "^5.0.0",
@@ -59,6 +59,7 @@
     "preact-render-to-string": "^6.6.5",
     "pretty-bytes": "^7.1.0",
     "pretty-time": "^1.1.0",
+    "quartz": "^0.0.1",
     "remark-parse": "^11.0.0",
     "remark-rehype": "^11.1.2",
     "rfdc": "^1.4.1",
@@ -86,5 +87,8 @@
     "prettier": "^3.8.1",
     "tsx": "^4.21.0",
     "typescript": "^5.9.3"
+  },
+  "allowScripts": {
+    "github:quartz-community/utils#9da5e8de5b2a2a33dc7c15168282058217ff3e3f": true
   }
 }

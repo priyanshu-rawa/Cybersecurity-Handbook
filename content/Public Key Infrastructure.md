@@ -1,4 +1,8 @@
 ---
+title: "Public Key Infrastructure"
+---
+
+---
 aliases:
   - PKI
 ---

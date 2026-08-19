@@ -1,4 +1,8 @@
 ---
+title: "Pegasus"
+---
+
+---
 aliases:
   - PEGASUS (Israeli Spyware)
   - PEGASUS

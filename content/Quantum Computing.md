@@ -1,4 +1,8 @@
 ---
+title: "Quantum Computing"
+---
+
+---
 aliases:
   - quantum computer
   - quantum computers

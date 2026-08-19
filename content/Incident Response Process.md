@@ -1,3 +1,7 @@
+---
+title: "Incident Response Process"
+---
+
 up:: [[Digital Forensics and Incident Response]]
 # Incident Response Process
 

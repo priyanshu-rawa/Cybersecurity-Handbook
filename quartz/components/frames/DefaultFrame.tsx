@@ -19,7 +19,7 @@ export const DefaultFrame: PageFrame = {
     afterBody,
     left,
     right,
-    footer: Footer,
+    footer,
   }: PageFrameProps) {
     return (
       <>
@@ -54,7 +54,9 @@ export const DefaultFrame: PageFrame = {
             <BodyComponent {...componentData} />
           ))}
         </div>
-        <Footer {...componentData} />
+        {footer.map((FooterComponent) => (
+          <FooterComponent {...componentData} />
+        ))}
       </>
     )
   },

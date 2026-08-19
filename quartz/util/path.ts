@@ -1,32 +1,4 @@
-// ============================================
-// Path utilities – using local fallback
-// ============================================
-
-import {
-  isFilePath,
-  isFullSlug,
-  isSimpleSlug,
-  isRelativeURL,
-  isAbsoluteURL,
-  getFullSlug,
-  slugifyFilePath,
-  simplifySlug,
-  joinSegments,
-  endsWith,
-  trimSuffix,
-  stripSlashes,
-  getFileExtension,
-  isFolderPath,
-  getAllSegmentPrefixes,
-  pathToRoot,
-  resolveRelative,
-  splitAnchor,
-  slugTag,
-  transformInternalLink,
-  transformLink,
-  normalizeHastElement,
-} from "./community-utils"
-
+// Re-export shared path utilities from @quartz-community/utils
 export {
   isFilePath,
   isFullSlug,
@@ -50,7 +22,7 @@ export {
   transformInternalLink,
   transformLink,
   normalizeHastElement,
-}
+} from "@quartz-community/utils"
 
 export type {
   FilePath,
@@ -58,13 +30,14 @@ export type {
   SimpleSlug,
   RelativeURL,
   TransformOptions,
-} from "./community-utils"
+} from "@quartz-community/utils"
 
 // --- v5-specific exports below ---
 
 export const QUARTZ = "quartz"
 
 // from micromorph/src/utils.ts
+// https://github.com/natemoo-re/micromorph/blob/main/src/utils.ts#L5
 const _rebaseHtmlElement = (el: Element, attr: string, newBase: string | URL) => {
   const rebased = new URL(el.getAttribute(attr)!, newBase)
   el.setAttribute(attr, rebased.pathname + rebased.hash)

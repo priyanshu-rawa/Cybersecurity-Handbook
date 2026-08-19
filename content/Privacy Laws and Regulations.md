@@ -1,3 +1,7 @@
+---
+title: "Privacy Laws and Regulations"
+---
+
 up:: [[Cybersecurity Ethics and Privacy]]
 # Privacy Laws and Regulations
 

@@ -1,3 +1,7 @@
+---
+title: "How to Prevent Cross Site Scripting (XSS)"
+---
+
 up:: [[Application & Software Security Labs]]
 ## Prevent Cross-Site Scripting (XSS)
 

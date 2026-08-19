@@ -1,4 +1,8 @@
 ---
+title: "Private Key"
+---
+
+---
 aliases:
   - private key encryption
   - private key cryptography

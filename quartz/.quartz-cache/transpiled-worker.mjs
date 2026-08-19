@@ -1,7 +1,5 @@
 var __defProp = Object.defineProperty;
-var __getOwnPropDesc = Object.getOwnPropertyDescriptor;
 var __getOwnPropNames = Object.getOwnPropertyNames;
-var __hasOwnProp = Object.prototype.hasOwnProperty;
 var __name = (target, value) => __defProp(target, "name", { value, configurable: true });
 var __esm = (fn, res) => function __init() {
   return fn && (res = (0, fn[__getOwnPropNames(fn)[0]])(fn = 0)), res;
@@ -10,37 +8,6 @@ var __export = (target, all) => {
   for (var name in all)
     __defProp(target, name, { get: all[name], enumerable: true });
 };
-var __copyProps = (to, from, except, desc) => {
-  if (from && typeof from === "object" || typeof from === "function") {
-    for (let key of __getOwnPropNames(from))
-      if (!__hasOwnProp.call(to, key) && key !== except)
-        __defProp(to, key, { get: () => from[key], enumerable: !(desc = __getOwnPropDesc(from, key)) || desc.enumerable });
-  }
-  return to;
-};
-var __toCommonJS = (mod) => __copyProps(__defProp({}, "__esModule", { value: true }), mod);
-
-// quartz/components/scripts/lenis.inline.ts
-var lenis_inline_default;
-var init_lenis_inline = __esm({
-  "quartz/components/scripts/lenis.inline.ts"() {
-    lenis_inline_default = "";
-  }
-});
-
-// quartz/components/Lenis.tsx
-var Lenis, Lenis_default;
-var init_Lenis = __esm({
-  "quartz/components/Lenis.tsx"() {
-    "use strict";
-    init_lenis_inline();
-    Lenis = /* @__PURE__ */ __name(() => {
-      return null;
-    }, "Lenis");
-    Lenis.afterDOMLoaded = lenis_inline_default;
-    Lenis_default = /* @__PURE__ */ __name((() => Lenis), "default");
-  }
-});
 
 // quartz/plugins/loader/gitLoader.ts
 import fs from "fs";
@@ -85,7 +52,8 @@ function parsePluginSource(source) {
       repo: expanded.repo,
       ref: ref || expanded.ref || void 0,
       subdir,
-      local: expanded.local
+      local: expanded.local,
+      npmPackage: expanded.npmPackage
     };
   }
   if (isLocalSource(source)) {
@@ -116,6 +84,9 @@ function parsePluginSource(source) {
     const [url, ref] = source.split("#");
     const name = extractRepoName(url);
     return { name, repo: url, ref: ref || void 0 };
+  }
+  if (typeof source === "string" && source.startsWith("@") && source.includes("/") && !source.includes(":")) {
+    return { name: source, repo: "", npmPackage: true };
   }
   const parts = source.split("/");
   if (parts.length === 2) {
@@ -629,7 +600,7 @@ var init_gitLoader = __esm({
       "zlib"
     ]);
     SINGLETON_EXTERNALS = ["preact", "@jackyzha0/quartz", "vfile", "unified"];
-    SHARED_SCOPES = ["@quartz-community/"];
+    SHARED_SCOPES = ["@quartz-community/", "@quartz-themes/"];
     _sharedExternalsCache = null;
     __name(getSharedExternals, "getSharedExternals");
     __name(isAllowedExternal, "isAllowedExternal");
@@ -708,6 +679,12 @@ var init_registry = __esm({
           }
         }
         return results;
+      }
+      /** @internal For testing only — resets all registry state. */
+      clear() {
+        this.components.clear();
+        this.instanceCache.clear();
+        this.optionOverrides.clear();
       }
       findCachedInstance(constructor) {
         const ctorId = constructor.__cacheId;
@@ -889,6 +866,179 @@ var init_conditions = __esm({
     };
     customConditions = /* @__PURE__ */ new Map();
     __name(getCondition, "getCondition");
+  }
+});
+
+// quartz/util/resources.tsx
+import { randomUUID } from "crypto";
+import { jsx } from "preact/jsx-runtime";
+function JSResourceToScriptElement(resource, preserve) {
+  const scriptType = resource.moduleType ?? "application/javascript";
+  const spaPreserve = preserve ?? resource.spaPreserve;
+  if (resource.contentType === "external") {
+    return /* @__PURE__ */ jsx("script", { src: resource.src, type: scriptType, "data-persist": spaPreserve }, resource.src);
+  } else {
+    const content = resource.script;
+    return /* @__PURE__ */ jsx(
+      "script",
+      {
+        type: scriptType,
+        "data-persist": spaPreserve,
+        dangerouslySetInnerHTML: { __html: content }
+      },
+      randomUUID()
+    );
+  }
+}
+function CSSResourceToStyleElement(resource, preserve) {
+  const spaPreserve = preserve ?? resource.spaPreserve;
+  if (resource.inline ?? false) {
+    return /* @__PURE__ */ jsx("style", { dangerouslySetInnerHTML: { __html: resource.content } });
+  } else {
+    return /* @__PURE__ */ jsx(
+      "link",
+      {
+        href: resource.content,
+        rel: "stylesheet",
+        type: "text/css",
+        "data-persist": spaPreserve
+      },
+      resource.content
+    );
+  }
+}
+function normalizeResource(resource) {
+  if (!resource) return [];
+  if (Array.isArray(resource)) return resource;
+  return [resource];
+}
+function concatenateResources(...resources) {
+  return resources.filter((resource) => resource !== void 0).flat();
+}
+var init_resources = __esm({
+  "quartz/util/resources.tsx"() {
+    "use strict";
+    __name(JSResourceToScriptElement, "JSResourceToScriptElement");
+    __name(CSSResourceToStyleElement, "CSSResourceToStyleElement");
+    __name(normalizeResource, "normalizeResource");
+    __name(concatenateResources, "concatenateResources");
+  }
+});
+
+// quartz/util/lang.ts
+import { capitalize, classNames } from "@quartz-community/utils";
+var init_lang = __esm({
+  "quartz/util/lang.ts"() {
+    "use strict";
+  }
+});
+
+// quartz/components/Flex.tsx
+import { jsx as jsx2 } from "preact/jsx-runtime";
+var Flex_default;
+var init_Flex = __esm({
+  "quartz/components/Flex.tsx"() {
+    "use strict";
+    init_resources();
+    init_lang();
+    Flex_default = /* @__PURE__ */ __name(((config2) => {
+      const Flex = /* @__PURE__ */ __name((props) => {
+        const direction = config2.direction ?? "row";
+        const wrap = config2.wrap ?? "nowrap";
+        const gap = config2.gap ?? "1rem";
+        return /* @__PURE__ */ jsx2(
+          "div",
+          {
+            class: classNames(props.displayClass, "flex-component"),
+            style: `flex-direction: ${direction}; flex-wrap: ${wrap}; gap: ${gap};`,
+            children: config2.components.map((c) => {
+              const grow = c.grow ? 1 : 0;
+              const shrink = c.shrink ?? true ? 1 : 0;
+              const basis = c.basis ?? "auto";
+              const order = c.order ?? 0;
+              const align = c.align ?? "center";
+              const justify = c.justify ?? "center";
+              return /* @__PURE__ */ jsx2(
+                "div",
+                {
+                  style: `flex-grow: ${grow}; flex-shrink: ${shrink}; flex-basis: ${basis}; order: ${order}; align-self: ${align}; justify-self: ${justify};`,
+                  children: /* @__PURE__ */ jsx2(c.Component, { ...props })
+                }
+              );
+            })
+          }
+        );
+      }, "Flex");
+      Flex.afterDOMLoaded = concatenateResources(
+        ...config2.components.map((c) => c.Component.afterDOMLoaded)
+      );
+      Flex.beforeDOMLoaded = concatenateResources(
+        ...config2.components.map((c) => c.Component.beforeDOMLoaded)
+      );
+      Flex.css = concatenateResources(...config2.components.map((c) => c.Component.css));
+      return Flex;
+    }), "default");
+  }
+});
+
+// quartz/components/MobileOnly.tsx
+import { jsx as jsx3 } from "preact/jsx-runtime";
+var MobileOnly_default;
+var init_MobileOnly = __esm({
+  "quartz/components/MobileOnly.tsx"() {
+    "use strict";
+    MobileOnly_default = /* @__PURE__ */ __name(((component) => {
+      const Component = component;
+      const MobileOnly = /* @__PURE__ */ __name((props) => {
+        return /* @__PURE__ */ jsx3("div", { class: "mobile-only", children: /* @__PURE__ */ jsx3(Component, { ...props }) });
+      }, "MobileOnly");
+      MobileOnly.displayName = component.displayName;
+      MobileOnly.afterDOMLoaded = component?.afterDOMLoaded;
+      MobileOnly.beforeDOMLoaded = component?.beforeDOMLoaded;
+      MobileOnly.css = component?.css;
+      return MobileOnly;
+    }), "default");
+  }
+});
+
+// quartz/components/DesktopOnly.tsx
+import { jsx as jsx4 } from "preact/jsx-runtime";
+var DesktopOnly_default;
+var init_DesktopOnly = __esm({
+  "quartz/components/DesktopOnly.tsx"() {
+    "use strict";
+    DesktopOnly_default = /* @__PURE__ */ __name(((component) => {
+      const Component = component;
+      const DesktopOnly = /* @__PURE__ */ __name((props) => {
+        return /* @__PURE__ */ jsx4("div", { class: "desktop-only", children: /* @__PURE__ */ jsx4(Component, { ...props }) });
+      }, "DesktopOnly");
+      DesktopOnly.displayName = component.displayName;
+      DesktopOnly.afterDOMLoaded = component?.afterDOMLoaded;
+      DesktopOnly.beforeDOMLoaded = component?.beforeDOMLoaded;
+      DesktopOnly.css = component?.css;
+      return DesktopOnly;
+    }), "default");
+  }
+});
+
+// quartz/components/ConditionalRender.tsx
+import { jsx as jsx5 } from "preact/jsx-runtime";
+var ConditionalRender_default;
+var init_ConditionalRender = __esm({
+  "quartz/components/ConditionalRender.tsx"() {
+    "use strict";
+    ConditionalRender_default = /* @__PURE__ */ __name(((config2) => {
+      const ConditionalRender = /* @__PURE__ */ __name((props) => {
+        if (config2.condition(props)) {
+          return /* @__PURE__ */ jsx5(config2.component, { ...props });
+        }
+        return null;
+      }, "ConditionalRender");
+      ConditionalRender.afterDOMLoaded = config2.component.afterDOMLoaded;
+      ConditionalRender.beforeDOMLoaded = config2.component.beforeDOMLoaded;
+      ConditionalRender.css = config2.component.css;
+      return ConditionalRender;
+    }), "default");
   }
 });
 
@@ -1095,62 +1245,6 @@ var popover_default;
 var init_popover = __esm({
   "quartz/components/styles/popover.scss"() {
     popover_default = "";
-  }
-});
-
-// quartz/util/resources.tsx
-import { randomUUID } from "crypto";
-import { jsx } from "preact/jsx-runtime";
-function JSResourceToScriptElement(resource, preserve) {
-  const scriptType = resource.moduleType ?? "application/javascript";
-  const spaPreserve = preserve ?? resource.spaPreserve;
-  if (resource.contentType === "external") {
-    return /* @__PURE__ */ jsx("script", { src: resource.src, type: scriptType, "data-persist": spaPreserve }, resource.src);
-  } else {
-    const content = resource.script;
-    return /* @__PURE__ */ jsx(
-      "script",
-      {
-        type: scriptType,
-        "data-persist": spaPreserve,
-        dangerouslySetInnerHTML: { __html: content }
-      },
-      randomUUID()
-    );
-  }
-}
-function CSSResourceToStyleElement(resource, preserve) {
-  const spaPreserve = preserve ?? resource.spaPreserve;
-  if (resource.inline ?? false) {
-    return /* @__PURE__ */ jsx("style", { dangerouslySetInnerHTML: { __html: resource.content } });
-  } else {
-    return /* @__PURE__ */ jsx(
-      "link",
-      {
-        href: resource.content,
-        rel: "stylesheet",
-        type: "text/css",
-        "data-persist": spaPreserve
-      },
-      resource.content
-    );
-  }
-}
-function normalizeResource(resource) {
-  if (!resource) return [];
-  if (Array.isArray(resource)) return resource;
-  return [resource];
-}
-function concatenateResources(...resources) {
-  return resources.filter((resource) => resource !== void 0).flat();
-}
-var init_resources = __esm({
-  "quartz/util/resources.tsx"() {
-    "use strict";
-    __name(JSResourceToScriptElement, "JSResourceToScriptElement");
-    __name(CSSResourceToStyleElement, "CSSResourceToStyleElement");
-    __name(normalizeResource, "normalizeResource");
-    __name(concatenateResources, "concatenateResources");
   }
 });
 
@@ -4805,7 +4899,7 @@ var init_i18n = __esm({
 });
 
 // quartz/components/pages/404.tsx
-import { jsx as jsx2, jsxs } from "preact/jsx-runtime";
+import { jsx as jsx6, jsxs } from "preact/jsx-runtime";
 var NotFound, __default;
 var init__ = __esm({
   "quartz/components/pages/404.tsx"() {
@@ -4815,10 +4909,10 @@ var init__ = __esm({
       const url = new URL(`https://${cfg.baseUrl ?? "example.com"}`);
       const baseDir = ctx.argv.serve ? "/" : url.pathname;
       return /* @__PURE__ */ jsxs("article", { class: "popover-hint", children: [
-        /* @__PURE__ */ jsx2("h1", { children: "404" }),
-        /* @__PURE__ */ jsx2("p", { children: i18n(cfg.locale).pages.error.notFound }),
-        /* @__PURE__ */ jsx2("a", { href: baseDir, children: i18n(cfg.locale).pages.error.home }),
-        /* @__PURE__ */ jsx2(
+        /* @__PURE__ */ jsx6("h1", { children: "404" }),
+        /* @__PURE__ */ jsx6("p", { children: i18n(cfg.locale).pages.error.notFound }),
+        /* @__PURE__ */ jsx6("a", { href: baseDir, children: i18n(cfg.locale).pages.error.home }),
+        /* @__PURE__ */ jsx6(
           "script",
           {
             dangerouslySetInnerHTML: {
@@ -4877,7 +4971,7 @@ var Head_exports = {};
 __export(Head_exports, {
   default: () => Head_default
 });
-import { Fragment, jsx as jsx3, jsxs as jsxs2 } from "preact/jsx-runtime";
+import { Fragment, jsx as jsx7, jsxs as jsxs2 } from "preact/jsx-runtime";
 var Head_default;
 var init_Head = __esm({
   "quartz/components/Head.tsx"() {
@@ -4903,40 +4997,38 @@ var init_Head = __esm({
         const baseDir = fileData.slug === "404" ? path7 : pathToRoot(fileData.slug);
         const iconPath = joinSegments(baseDir, "static/icon.png");
         const socialUrl = fileData.slug === "404" ? url.toString() : joinSegments(url.toString(), fileData.slug);
-        const usesCustomOgImage = ctx.cfg.plugins.emitters.some(
-          (e) => e.name === "CustomOgImagesEmitterName"
-        );
+        const usesCustomOgImage = ctx.cfg.plugins.emitters.some((e) => e.name === "CustomOgImages");
         const ogImageDefaultPath = `https://${cfg.baseUrl}/static/og-image.png`;
         const coreStylesheet = css[0]?.content;
         const coreScript = js.find(
           (r) => r.loadTime === "beforeDOMReady" && r.contentType === "external"
         );
         return /* @__PURE__ */ jsxs2("head", { children: [
-          /* @__PURE__ */ jsx3("title", { children: title }),
-          /* @__PURE__ */ jsx3("meta", { charSet: "utf-8" }),
-          coreStylesheet && /* @__PURE__ */ jsx3("link", { rel: "preload", href: coreStylesheet, as: "style" }),
-          coreScript && coreScript.contentType === "external" && /* @__PURE__ */ jsx3("link", { rel: "preload", href: coreScript.src, as: "script" }),
+          /* @__PURE__ */ jsx7("title", { children: title }),
+          /* @__PURE__ */ jsx7("meta", { charSet: "utf-8" }),
+          coreStylesheet && /* @__PURE__ */ jsx7("link", { rel: "preload", href: coreStylesheet, as: "style" }),
+          coreScript && coreScript.contentType === "external" && /* @__PURE__ */ jsx7("link", { rel: "preload", href: coreScript.src, as: "script" }),
           cfg.theme.cdnCaching && cfg.theme.fontOrigin === "googleFonts" && /* @__PURE__ */ jsxs2(Fragment, { children: [
-            /* @__PURE__ */ jsx3("link", { rel: "preconnect", href: "https://fonts.googleapis.com" }),
-            /* @__PURE__ */ jsx3("link", { rel: "preconnect", href: "https://fonts.gstatic.com" }),
-            /* @__PURE__ */ jsx3("link", { rel: "stylesheet", href: googleFontHref(cfg.theme) }),
-            cfg.theme.typography.title && /* @__PURE__ */ jsx3("link", { rel: "stylesheet", href: googleFontSubsetHref(cfg.theme, cfg.pageTitle) })
+            /* @__PURE__ */ jsx7("link", { rel: "preconnect", href: "https://fonts.googleapis.com" }),
+            /* @__PURE__ */ jsx7("link", { rel: "preconnect", href: "https://fonts.gstatic.com" }),
+            /* @__PURE__ */ jsx7("link", { rel: "stylesheet", href: googleFontHref(cfg.theme) }),
+            cfg.theme.typography.title && /* @__PURE__ */ jsx7("link", { rel: "stylesheet", href: googleFontSubsetHref(cfg.theme, cfg.pageTitle) })
           ] }),
-          /* @__PURE__ */ jsx3("link", { rel: "preconnect", href: "https://cdnjs.cloudflare.com", crossOrigin: "anonymous" }),
-          /* @__PURE__ */ jsx3("meta", { name: "viewport", content: "width=device-width, initial-scale=1.0" }),
-          /* @__PURE__ */ jsx3("meta", { name: "og:site_name", content: cfg.pageTitle }),
-          /* @__PURE__ */ jsx3("meta", { property: "og:title", content: title }),
-          /* @__PURE__ */ jsx3("meta", { property: "og:type", content: "website" }),
-          /* @__PURE__ */ jsx3("meta", { name: "twitter:card", content: "summary_large_image" }),
-          /* @__PURE__ */ jsx3("meta", { name: "twitter:title", content: title }),
-          /* @__PURE__ */ jsx3("meta", { name: "twitter:description", content: description }),
-          /* @__PURE__ */ jsx3("meta", { property: "og:description", content: description }),
-          /* @__PURE__ */ jsx3("meta", { property: "og:image:alt", content: description }),
+          /* @__PURE__ */ jsx7("link", { rel: "preconnect", href: "https://cdnjs.cloudflare.com", crossOrigin: "anonymous" }),
+          /* @__PURE__ */ jsx7("meta", { name: "viewport", content: "width=device-width, initial-scale=1.0" }),
+          /* @__PURE__ */ jsx7("meta", { name: "og:site_name", content: cfg.pageTitle }),
+          /* @__PURE__ */ jsx7("meta", { property: "og:title", content: title }),
+          /* @__PURE__ */ jsx7("meta", { property: "og:type", content: "website" }),
+          /* @__PURE__ */ jsx7("meta", { name: "twitter:card", content: "summary_large_image" }),
+          /* @__PURE__ */ jsx7("meta", { name: "twitter:title", content: title }),
+          /* @__PURE__ */ jsx7("meta", { name: "twitter:description", content: description }),
+          /* @__PURE__ */ jsx7("meta", { property: "og:description", content: description }),
+          /* @__PURE__ */ jsx7("meta", { property: "og:image:alt", content: description }),
           !usesCustomOgImage && /* @__PURE__ */ jsxs2(Fragment, { children: [
-            /* @__PURE__ */ jsx3("meta", { property: "og:image", content: ogImageDefaultPath }),
-            /* @__PURE__ */ jsx3("meta", { property: "og:image:url", content: ogImageDefaultPath }),
-            /* @__PURE__ */ jsx3("meta", { name: "twitter:image", content: ogImageDefaultPath }),
-            /* @__PURE__ */ jsx3(
+            /* @__PURE__ */ jsx7("meta", { property: "og:image", content: ogImageDefaultPath }),
+            /* @__PURE__ */ jsx7("meta", { property: "og:image:url", content: ogImageDefaultPath }),
+            /* @__PURE__ */ jsx7("meta", { name: "twitter:image", content: ogImageDefaultPath }),
+            /* @__PURE__ */ jsx7(
               "meta",
               {
                 property: "og:image:type",
@@ -4945,13 +5037,13 @@ var init_Head = __esm({
             )
           ] }),
           cfg.baseUrl && /* @__PURE__ */ jsxs2(Fragment, { children: [
-            /* @__PURE__ */ jsx3("meta", { property: "twitter:domain", content: cfg.baseUrl }),
-            /* @__PURE__ */ jsx3("meta", { property: "og:url", content: socialUrl }),
-            /* @__PURE__ */ jsx3("meta", { property: "twitter:url", content: socialUrl })
+            /* @__PURE__ */ jsx7("meta", { property: "twitter:domain", content: cfg.baseUrl }),
+            /* @__PURE__ */ jsx7("meta", { property: "og:url", content: socialUrl }),
+            /* @__PURE__ */ jsx7("meta", { property: "twitter:url", content: socialUrl })
           ] }),
-          /* @__PURE__ */ jsx3("link", { rel: "icon", href: iconPath }),
-          /* @__PURE__ */ jsx3("meta", { name: "description", content: description }),
-          /* @__PURE__ */ jsx3("meta", { name: "generator", content: "Quartz" }),
+          /* @__PURE__ */ jsx7("link", { rel: "icon", href: iconPath }),
+          /* @__PURE__ */ jsx7("meta", { name: "description", content: description }),
+          /* @__PURE__ */ jsx7("meta", { name: "generator", content: "Quartz" }),
           css.map((resource) => CSSResourceToStyleElement(resource, true)),
           js.filter((resource) => resource.loadTime === "beforeDOMReady").map((res) => JSResourceToScriptElement(res, true)),
           additionalHead.map((resource) => {
@@ -4968,145 +5060,12 @@ var init_Head = __esm({
   }
 });
 
-// quartz/util/lang.ts
-import { capitalize, classNames } from "@quartz-community/utils";
-var init_lang = __esm({
-  "quartz/util/lang.ts"() {
-    "use strict";
-  }
-});
-
 // quartz/components/Spacer.tsx
-import { jsx as jsx4 } from "preact/jsx-runtime";
+import { jsx as jsx8 } from "preact/jsx-runtime";
 var init_Spacer = __esm({
   "quartz/components/Spacer.tsx"() {
     "use strict";
     init_lang();
-  }
-});
-
-// quartz/components/DesktopOnly.tsx
-var DesktopOnly_exports = {};
-__export(DesktopOnly_exports, {
-  default: () => DesktopOnly_default
-});
-import { jsx as jsx5 } from "preact/jsx-runtime";
-var DesktopOnly_default;
-var init_DesktopOnly = __esm({
-  "quartz/components/DesktopOnly.tsx"() {
-    "use strict";
-    DesktopOnly_default = /* @__PURE__ */ __name(((component) => {
-      const Component = component;
-      const DesktopOnly = /* @__PURE__ */ __name((props) => {
-        return /* @__PURE__ */ jsx5("div", { class: "desktop-only", children: /* @__PURE__ */ jsx5(Component, { ...props }) });
-      }, "DesktopOnly");
-      DesktopOnly.displayName = component.displayName;
-      DesktopOnly.afterDOMLoaded = component?.afterDOMLoaded;
-      DesktopOnly.beforeDOMLoaded = component?.beforeDOMLoaded;
-      DesktopOnly.css = component?.css;
-      return DesktopOnly;
-    }), "default");
-  }
-});
-
-// quartz/components/MobileOnly.tsx
-var MobileOnly_exports = {};
-__export(MobileOnly_exports, {
-  default: () => MobileOnly_default
-});
-import { jsx as jsx6 } from "preact/jsx-runtime";
-var MobileOnly_default;
-var init_MobileOnly = __esm({
-  "quartz/components/MobileOnly.tsx"() {
-    "use strict";
-    MobileOnly_default = /* @__PURE__ */ __name(((component) => {
-      const Component = component;
-      const MobileOnly = /* @__PURE__ */ __name((props) => {
-        return /* @__PURE__ */ jsx6("div", { class: "mobile-only", children: /* @__PURE__ */ jsx6(Component, { ...props }) });
-      }, "MobileOnly");
-      MobileOnly.displayName = component.displayName;
-      MobileOnly.afterDOMLoaded = component?.afterDOMLoaded;
-      MobileOnly.beforeDOMLoaded = component?.beforeDOMLoaded;
-      MobileOnly.css = component?.css;
-      return MobileOnly;
-    }), "default");
-  }
-});
-
-// quartz/components/Flex.tsx
-var Flex_exports = {};
-__export(Flex_exports, {
-  default: () => Flex_default
-});
-import { jsx as jsx7 } from "preact/jsx-runtime";
-var Flex_default;
-var init_Flex = __esm({
-  "quartz/components/Flex.tsx"() {
-    "use strict";
-    init_resources();
-    init_lang();
-    Flex_default = /* @__PURE__ */ __name(((config2) => {
-      const Flex = /* @__PURE__ */ __name((props) => {
-        const direction = config2.direction ?? "row";
-        const wrap = config2.wrap ?? "nowrap";
-        const gap = config2.gap ?? "1rem";
-        return /* @__PURE__ */ jsx7(
-          "div",
-          {
-            class: classNames(props.displayClass, "flex-component"),
-            style: `flex-direction: ${direction}; flex-wrap: ${wrap}; gap: ${gap};`,
-            children: config2.components.map((c) => {
-              const grow = c.grow ? 1 : 0;
-              const shrink = c.shrink ?? true ? 1 : 0;
-              const basis = c.basis ?? "auto";
-              const order = c.order ?? 0;
-              const align = c.align ?? "center";
-              const justify = c.justify ?? "center";
-              return /* @__PURE__ */ jsx7(
-                "div",
-                {
-                  style: `flex-grow: ${grow}; flex-shrink: ${shrink}; flex-basis: ${basis}; order: ${order}; align-self: ${align}; justify-self: ${justify};`,
-                  children: /* @__PURE__ */ jsx7(c.Component, { ...props })
-                }
-              );
-            })
-          }
-        );
-      }, "Flex");
-      Flex.afterDOMLoaded = concatenateResources(
-        ...config2.components.map((c) => c.Component.afterDOMLoaded)
-      );
-      Flex.beforeDOMLoaded = concatenateResources(
-        ...config2.components.map((c) => c.Component.beforeDOMLoaded)
-      );
-      Flex.css = concatenateResources(...config2.components.map((c) => c.Component.css));
-      return Flex;
-    }), "default");
-  }
-});
-
-// quartz/components/ConditionalRender.tsx
-var ConditionalRender_exports = {};
-__export(ConditionalRender_exports, {
-  default: () => ConditionalRender_default
-});
-import { jsx as jsx8 } from "preact/jsx-runtime";
-var ConditionalRender_default;
-var init_ConditionalRender = __esm({
-  "quartz/components/ConditionalRender.tsx"() {
-    "use strict";
-    ConditionalRender_default = /* @__PURE__ */ __name(((config2) => {
-      const ConditionalRender = /* @__PURE__ */ __name((props) => {
-        if (config2.condition(props)) {
-          return /* @__PURE__ */ jsx8(config2.component, { ...props });
-        }
-        return null;
-      }, "ConditionalRender");
-      ConditionalRender.afterDOMLoaded = config2.component.afterDOMLoaded;
-      ConditionalRender.beforeDOMLoaded = config2.component.beforeDOMLoaded;
-      ConditionalRender.css = config2.component.css;
-      return ConditionalRender;
-    }), "default");
   }
 });
 
@@ -5254,7 +5213,7 @@ var init_DefaultFrame = __esm({
         afterBody,
         left,
         right,
-        footer: Footer
+        footer
       }) {
         return /* @__PURE__ */ jsxs3(Fragment2, { children: [
           /* @__PURE__ */ jsx11("div", { class: "left sidebar", children: left.map((BodyComponent) => /* @__PURE__ */ jsx11(BodyComponent, { ...componentData })) }),
@@ -5268,7 +5227,7 @@ var init_DefaultFrame = __esm({
             /* @__PURE__ */ jsx11("div", { class: "page-footer", children: afterBody.map((BodyComponent) => /* @__PURE__ */ jsx11(BodyComponent, { ...componentData })) })
           ] }),
           /* @__PURE__ */ jsx11("div", { class: "right sidebar", children: right.map((BodyComponent) => /* @__PURE__ */ jsx11(BodyComponent, { ...componentData })) }),
-          /* @__PURE__ */ jsx11(Footer, { ...componentData })
+          footer.map((FooterComponent) => /* @__PURE__ */ jsx11(FooterComponent, { ...componentData }))
         ] });
       }
     };
@@ -5291,7 +5250,7 @@ var init_FullWidthFrame = __esm({
         beforeBody,
         pageBody: Content,
         afterBody,
-        footer: Footer
+        footer
       }) {
         return /* @__PURE__ */ jsxs4(Fragment3, { children: [
           /* @__PURE__ */ jsxs4("div", { class: "center full-width", children: [
@@ -5303,7 +5262,7 @@ var init_FullWidthFrame = __esm({
             /* @__PURE__ */ jsx12("hr", {}),
             /* @__PURE__ */ jsx12("div", { class: "page-footer", children: afterBody.map((BodyComponent) => /* @__PURE__ */ jsx12(BodyComponent, { ...componentData })) })
           ] }),
-          /* @__PURE__ */ jsx12(Footer, { ...componentData })
+          footer.map((FooterComponent) => /* @__PURE__ */ jsx12(FooterComponent, { ...componentData }))
         ] });
       }
     };
@@ -5318,10 +5277,10 @@ var init_MinimalFrame = __esm({
     "use strict";
     MinimalFrame = {
       name: "minimal",
-      render({ componentData, pageBody: Content, footer: Footer }) {
+      render({ componentData, pageBody: Content, footer }) {
         return /* @__PURE__ */ jsxs5(Fragment4, { children: [
           /* @__PURE__ */ jsx13("div", { class: "center minimal", children: /* @__PURE__ */ jsx13(Content, { ...componentData }) }),
-          /* @__PURE__ */ jsx13(Footer, { ...componentData })
+          footer.map((FooterComponent) => /* @__PURE__ */ jsx13(FooterComponent, { ...componentData }))
         ] });
       }
     };
@@ -5615,7 +5574,7 @@ function renderPage(cfg, slug, componentData, components, pageResources2, treeTr
     afterBody,
     left,
     right,
-    footer: Footer,
+    footer,
     frame: frameName
   } = components;
   const Body2 = Body_default();
@@ -5637,7 +5596,7 @@ function renderPage(cfg, slug, componentData, components, pageResources2, treeTr
           afterBody,
           left,
           right,
-          footer: Footer
+          footer
         })
       ] }) })
     ] }),
@@ -5842,7 +5801,7 @@ function resolveLayout(pageType, sharedDefaults, byPageType) {
     afterBody: overrides.afterBody ?? sharedDefaults.afterBody ?? [],
     left: overrides.left ?? sharedDefaults.left ?? [],
     right: overrides.right ?? sharedDefaults.right ?? [],
-    footer: overrides.footer ?? sharedDefaults.footer,
+    footer: overrides.footer ?? sharedDefaults.footer ?? [],
     frame
   };
 }
@@ -5858,7 +5817,7 @@ function collectComponents(pageTypes, sharedDefaults, byPageType) {
       ...layout2.afterBody,
       ...layout2.left,
       ...layout2.right,
-      layout2.footer
+      ...layout2.footer
     ];
     for (const c of all) {
       if (c) seen.add(c);
@@ -6517,6 +6476,7 @@ import fs5 from "fs";
 import path5 from "path";
 import YAML from "yaml";
 import { styleText as styleText4 } from "util";
+import { fileURLToPath } from "node:url";
 function resolveConfigPath() {
   if (fs5.existsSync(CONFIG_YAML_PATH)) return CONFIG_YAML_PATH;
   if (fs5.existsSync(LEGACY_PLUGINS_JSON_PATH)) return LEGACY_PLUGINS_JSON_PATH;
@@ -6653,8 +6613,13 @@ async function resolvePluginManifest(source) {
 async function readManifestFromPackageJson(source) {
   try {
     const gitSpec = parsePluginSource(source);
-    const pluginDir = path5.join(process.cwd(), ".quartz", "plugins", gitSpec.name);
-    const pkgPath = path5.join(pluginDir, "package.json");
+    let pkgPath;
+    if (gitSpec.npmPackage) {
+      pkgPath = fileURLToPath(import.meta.resolve(`${gitSpec.name}/package.json`));
+    } else {
+      const pluginDir = path5.join(process.cwd(), ".quartz", "plugins", gitSpec.name);
+      pkgPath = path5.join(pluginDir, "package.json");
+    }
     if (!fs5.existsSync(pkgPath)) return null;
     const pkg = JSON.parse(fs5.readFileSync(pkgPath, "utf-8"));
     if (!pkg.quartz) return null;
@@ -6699,6 +6664,9 @@ async function loadQuartzConfig(configOverrides) {
   for (const entry of enabledEntries) {
     try {
       const gitSpec = parsePluginSource(entry.source);
+      if (gitSpec.npmPackage) {
+        continue;
+      }
       const result = await installPlugin(gitSpec, { verbose: false });
       if (result.nativeDeps.size > 0) {
         allNativeDeps.set(gitSpec.name, result.nativeDeps);
@@ -6828,14 +6796,20 @@ async function loadQuartzConfig(configOverrides) {
     const instances = [];
     for (const { entry, manifest } of items) {
       try {
-        const gitSpec = parsePluginSource(entry.source);
-        const entryPoint = getPluginEntryPoint(gitSpec.name);
-        const module = await import(toFileUrl(entryPoint));
+        const spec = parsePluginSource(entry.source);
+        let module;
+        if (spec.npmPackage) {
+          module = await import(spec.name);
+        } else {
+          const entryPoint = getPluginEntryPoint(spec.name);
+          module = await import(toFileUrl(entryPoint));
+        }
+        const pluginName = spec.npmPackage ? spec.name : spec.name;
         if (manifest?.components && Object.keys(manifest.components).length > 0) {
-          await loadComponentsFromPackage(gitSpec.name, manifest);
+          await loadComponentsFromPackage(pluginName, manifest);
         }
         if (manifest?.frames && Object.keys(manifest.frames).length > 0) {
-          await loadFramesFromPackage(gitSpec.name, manifest);
+          await loadFramesFromPackage(pluginName, manifest);
         }
         const factory = findFactory(module, expectedCategory);
         if (!factory) {
@@ -6844,7 +6818,7 @@ async function loadQuartzConfig(configOverrides) {
           );
           continue;
         }
-        const pluginOverrides = componentRegistry.getOptionOverrides(gitSpec.name);
+        const pluginOverrides = componentRegistry.getOptionOverrides(spec.name);
         const options2 = { ...manifest?.defaultOptions, ...entry.options, ...pluginOverrides };
         const instance = factory(Object.keys(options2).length > 0 ? options2 : void 0);
         if (!instance || typeof instance !== "object") {
@@ -6963,7 +6937,7 @@ async function loadQuartzLayout(layoutOverrides) {
     const oldLayout = await init_quartz().then(() => quartz_exports);
     return oldLayout.layout;
   }
-  const enabledWithLayout = json.plugins.filter((e) => e.enabled && e.layout);
+  const enabledWithLayout = json.plugins.filter((e) => e.enabled);
   const layoutConfig = json.layout ?? {};
   const defaultLayout = buildLayoutForEntries(enabledWithLayout, layoutConfig);
   const byPageType = {};
@@ -6996,35 +6970,14 @@ async function loadQuartzLayout(layoutOverrides) {
   }
   const HeadModule = await Promise.resolve().then(() => (init_Head(), Head_exports));
   const head = HeadModule.default();
-  const footerEntry = json.plugins.find(
-    (e) => e.enabled && extractPluginName(e.source) === "footer"
-  );
-  let footer;
-  if (footerEntry) {
-    const footerReg = componentRegistry.get("footer") ?? componentRegistry.get("Footer");
-    if (footerReg) {
-      if (typeof footerReg.component === "function" && !("displayName" in footerReg.component)) {
-        const footerOverrides = componentRegistry.getOptionOverrides("footer");
-        const opts = { ...footerEntry.options, ...footerOverrides };
-        footer = componentRegistry.instantiate(
-          footerReg.component,
-          Object.keys(opts).length > 0 ? opts : void 0
-        );
-      } else {
-        footer = footerReg.component;
-      }
-    }
-  }
   defaultLayout.head = head;
   defaultLayout.header = defaultLayout.header ?? [];
-  if (footer) {
-    defaultLayout.footer = footer;
-  }
+  defaultLayout.footer = defaultLayout.footer ?? [];
   for (const pageType of Object.keys(byPageType)) {
     const pt = byPageType[pageType];
     if (!pt.head) pt.head = head;
-    if (!pt.header) pt.header = [];
-    if (footer && !pt.footer) pt.footer = footer;
+    if (!pt.header) pt.header = defaultLayout.header;
+    if (!pt.footer) pt.footer = defaultLayout.footer;
   }
   const mergedDefaults = { ...defaultLayout, ...layoutOverrides?.defaults };
   const mergedByPageType = { ...byPageType };
@@ -7037,10 +6990,12 @@ async function loadQuartzLayout(layoutOverrides) {
 }
 function buildLayoutForEntries(entries, layoutConfig) {
   const positions = {
+    header: [],
     left: [],
     right: [],
     beforeBody: [],
-    afterBody: []
+    afterBody: [],
+    footer: []
   };
   for (const entry of entries) {
     if (!entry.layout) continue;
@@ -7083,6 +7038,37 @@ function buildLayoutForEntries(entries, layoutConfig) {
         groupOptions: layout2.groupOptions
       });
     }
+  }
+  for (const entry of entries) {
+    if (!entry.enabled || entry.layout) continue;
+    const name = extractPluginName(entry.source);
+    const registered = componentRegistry.get(name) ?? componentRegistry.get(`${formatSourceDisplay(entry.source)}/${name}`);
+    const pascalName = name.split("-").map((s) => s.charAt(0).toUpperCase() + s.slice(1)).join("");
+    const reg = registered ?? componentRegistry.get(pascalName);
+    if (!reg) continue;
+    const layoutDefaults = reg.manifest;
+    const defaultPosition = layoutDefaults?.defaultPosition;
+    if (!defaultPosition) continue;
+    const posArray = positions[defaultPosition];
+    if (!posArray) {
+      continue;
+    }
+    let component;
+    if (typeof reg.component === "function" && !("displayName" in reg.component)) {
+      const tsOverrides = componentRegistry.getOptionOverrides(name);
+      const opts = { ...entry.options, ...tsOverrides };
+      const optsArg = Object.keys(opts).length > 0 ? opts : void 0;
+      component = componentRegistry.instantiate(
+        reg.component,
+        optsArg
+      );
+    } else {
+      component = reg.component;
+    }
+    posArray.push({
+      component,
+      priority: layoutDefaults?.defaultPriority ?? 50
+    });
   }
   const result = {};
   for (const [position, items] of Object.entries(positions)) {
@@ -7130,9 +7116,7 @@ function resolveGroups(items, groups) {
         align: m.groupOptions?.align,
         justify: m.groupOptions?.justify
       }));
-      const FlexModule = (init_Flex(), __toCommonJS(Flex_exports));
-      const Flex = FlexModule.default;
-      const flexComponent = Flex({
+      const flexComponent = Flex_default({
         components: flexComponents,
         direction: groupConfig.direction ?? "row",
         wrap: groupConfig.wrap,
@@ -7148,11 +7132,9 @@ function resolveGroups(items, groups) {
 }
 function applyDisplayWrapper(component, display) {
   if (display === "mobile-only") {
-    const MobileOnly = (init_MobileOnly(), __toCommonJS(MobileOnly_exports)).default;
-    return MobileOnly(component);
+    return MobileOnly_default(component);
   } else {
-    const DesktopOnly = (init_DesktopOnly(), __toCommonJS(DesktopOnly_exports)).default;
-    return DesktopOnly(component);
+    return DesktopOnly_default(component);
   }
 }
 function applyConditionWrapper(component, conditionName) {
@@ -7163,8 +7145,7 @@ function applyConditionWrapper(component, conditionName) {
     );
     return component;
   }
-  const ConditionalRender = (init_ConditionalRender(), __toCommonJS(ConditionalRender_exports)).default;
-  return ConditionalRender({
+  return ConditionalRender_default({
     component,
     condition: predicate
   });
@@ -7178,6 +7159,10 @@ var init_config_loader = __esm({
     init_frameLoader();
     init_registry();
     init_conditions();
+    init_Flex();
+    init_MobileOnly();
+    init_DesktopOnly();
+    init_ConditionalRender();
     CONFIG_YAML_PATH = path5.join(process.cwd(), "quartz.config.yaml");
     DEFAULT_CONFIG_YAML_PATH = path5.join(process.cwd(), "quartz.config.default.yaml");
     LEGACY_PLUGINS_JSON_PATH = path5.join(process.cwd(), "quartz.plugins.json");
@@ -7213,13 +7198,14 @@ var config, quartz_default, layout;
 var init_quartz = __esm({
   async "quartz.ts"() {
     "use strict";
-    init_Lenis();
     init_config_loader();
     config = await loadQuartzConfig();
     quartz_default = config;
     layout = await loadQuartzLayout({
       defaults: {
-        afterBody: [Lenis_default()]
+        afterBody: [],
+        right: []
+        // <-- removes backlinks and TOC if they were there
       }
     });
   }
@@ -7364,13 +7350,13 @@ __name(createMarkdownParser, "createMarkdownParser");
 
 // quartz/util/sourcemap.ts
 import fs6 from "fs";
-import { fileURLToPath } from "url";
+import { fileURLToPath as fileURLToPath2 } from "url";
 var options = {
   // source map hack to get around query param
   // import cache busting
   retrieveSourceMap(source) {
     if (source.includes(".quartz-cache")) {
-      let realSource = fileURLToPath(source.split("?", 2)[0] + ".map");
+      let realSource = fileURLToPath2(source.split("?", 2)[0] + ".map");
       return {
         map: fs6.readFileSync(realSource, "utf8")
       };

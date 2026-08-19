@@ -1,3 +1,7 @@
+---
+title: "01_Linux_Enumeration_Deep_Dive"
+---
+
 # Linux Enumeration Deep Dive
 
 > **Privilege Escalation Handbook** — File 01  

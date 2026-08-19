@@ -1,4 +1,8 @@
 ---
+title: "ISOIEC 19772"
+---
+
+---
 aliases:
   - ISO/IEC 19772
 ---

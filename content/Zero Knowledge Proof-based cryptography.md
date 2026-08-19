@@ -1,4 +1,8 @@
 ---
+title: "Zero Knowledge Proof based cryptography"
+---
+
+---
 aliases:
   - zK Proof-based cryptography
 ---

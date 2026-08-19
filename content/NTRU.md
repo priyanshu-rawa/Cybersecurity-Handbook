@@ -1,4 +1,8 @@
 ---
+title: "NTRU"
+---
+
+---
 aliases:
   - Nth Degree Truncated Polynomial Ring Units
 ---

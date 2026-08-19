@@ -1,4 +1,8 @@
 ---
+title: "Data Encryption Standard"
+---
+
+---
 aliases:
   - DES
 ---

@@ -1,4 +1,8 @@
 ---
+title: "Wi Fi Protected Access II (WPA2)"
+---
+
+---
 aliases:
   - Wi-Fi Protected Access II
   - WPA2

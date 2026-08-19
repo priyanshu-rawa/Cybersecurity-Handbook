@@ -1,3 +1,7 @@
+---
+title: "How to Do SQL Injection Testing & Mitigation"
+---
+
 up:: [[Application & Software Security Labs]]
 🚧This lab is currently under construction 🚧
 ## SQL Injection Testing and Mitigation

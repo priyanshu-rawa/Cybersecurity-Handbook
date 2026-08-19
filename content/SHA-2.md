@@ -1,4 +1,8 @@
 ---
+title: "SHA 2"
+---
+
+---
 aliases:
   - Secure Hash Algorithm 2
 ---

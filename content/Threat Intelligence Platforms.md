@@ -1,4 +1,8 @@
 ---
+title: "Threat Intelligence Platforms"
+---
+
+---
 aliases:
   - TIP
 ---

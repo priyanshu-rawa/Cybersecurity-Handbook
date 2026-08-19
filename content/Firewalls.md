@@ -1,4 +1,8 @@
 ---
+title: "Firewalls"
+---
+
+---
 aliases:
   - firewall
 ---

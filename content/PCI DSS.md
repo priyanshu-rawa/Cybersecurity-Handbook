@@ -1,4 +1,8 @@
 ---
+title: "PCI DSS"
+---
+
+---
 aliases:
   - Payment Card Industry Data Security Standard
 ---

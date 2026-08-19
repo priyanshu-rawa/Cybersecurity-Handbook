@@ -2,6 +2,7 @@ import fs from "fs"
 import path from "path"
 import YAML from "yaml"
 import { styleText } from "util"
+import { fileURLToPath } from "node:url"
 import { QuartzConfig, GlobalConfiguration, FullPageLayout } from "../../cfg"
 import { QuartzComponent, QuartzComponentConstructor } from "../../components/types"
 import { PluginTypes } from "../types"
@@ -26,6 +27,10 @@ import { loadComponentsFromPackage } from "./componentLoader"
 import { loadFramesFromPackage } from "./frameLoader"
 import { componentRegistry } from "../../components/registry"
 import { getCondition } from "./conditions"
+import Flex from "../../components/Flex"
+import MobileOnly from "../../components/MobileOnly"
+import DesktopOnly from "../../components/DesktopOnly"
+import ConditionalRender from "../../components/ConditionalRender"
 
 const CONFIG_YAML_PATH = path.join(process.cwd(), "quartz.config.yaml")
 const DEFAULT_CONFIG_YAML_PATH = path.join(process.cwd(), "quartz.config.default.yaml")
@@ -200,8 +205,13 @@ async function resolvePluginManifest(source: PluginSource): Promise<PluginManife
 async function readManifestFromPackageJson(source: PluginSource): Promise<PluginManifest | null> {
   try {
     const gitSpec = parsePluginSource(source)
-    const pluginDir = path.join(process.cwd(), ".quartz", "plugins", gitSpec.name)
-    const pkgPath = path.join(pluginDir, "package.json")
+    let pkgPath: string
+    if (gitSpec.npmPackage) {
+      pkgPath = fileURLToPath(import.meta.resolve(`${gitSpec.name}/package.json`))
+    } else {
+      const pluginDir = path.join(process.cwd(), ".quartz", "plugins", gitSpec.name)
+      pkgPath = path.join(pluginDir, "package.json")
+    }
     if (!fs.existsSync(pkgPath)) return null
 
     const pkg = JSON.parse(fs.readFileSync(pkgPath, "utf-8"))
@@ -259,6 +269,9 @@ export async function loadQuartzConfig(
   for (const entry of enabledEntries) {
     try {
       const gitSpec = parsePluginSource(entry.source)
+      if (gitSpec.npmPackage) {
+        continue
+      }
       const result = await installPlugin(gitSpec, { verbose: false })
       if (result.nativeDeps.size > 0) {
         allNativeDeps.set(gitSpec.name, result.nativeDeps)
@@ -423,14 +436,20 @@ export async function loadQuartzConfig(
     const instances = []
     for (const { entry, manifest } of items) {
       try {
-        const gitSpec = parsePluginSource(entry.source)
-        const entryPoint = getPluginEntryPoint(gitSpec.name)
-        const module = await import(toFileUrl(entryPoint))
+        const spec = parsePluginSource(entry.source)
+        let module
+        if (spec.npmPackage) {
+          module = await import(spec.name)
+        } else {
+          const entryPoint = getPluginEntryPoint(spec.name)
+          module = await import(toFileUrl(entryPoint))
+        }
+        const pluginName = spec.npmPackage ? spec.name : spec.name
         if (manifest?.components && Object.keys(manifest.components).length > 0) {
-          await loadComponentsFromPackage(gitSpec.name, manifest)
+          await loadComponentsFromPackage(pluginName, manifest)
         }
         if (manifest?.frames && Object.keys(manifest.frames).length > 0) {
-          await loadFramesFromPackage(gitSpec.name, manifest)
+          await loadFramesFromPackage(pluginName, manifest)
         }
 
         const factory = findFactory(module, expectedCategory)
@@ -442,7 +461,7 @@ export async function loadQuartzConfig(
           )
           continue
         }
-        const pluginOverrides = componentRegistry.getOptionOverrides(gitSpec.name)
+        const pluginOverrides = componentRegistry.getOptionOverrides(spec.name)
         const options = { ...manifest?.defaultOptions, ...entry.options, ...pluginOverrides }
         const instance = factory(Object.keys(options).length > 0 ? options : undefined)
         if (!instance || typeof instance !== "object") {
@@ -628,7 +647,7 @@ export async function loadQuartzLayout(layoutOverrides?: {
     return oldLayout.layout
   }
 
-  const enabledWithLayout = json.plugins.filter((e) => e.enabled && e.layout)
+  const enabledWithLayout = json.plugins.filter((e) => e.enabled)
   const layoutConfig = json.layout ?? {}
 
   // Build default layout for all page types
@@ -656,7 +675,7 @@ export async function loadQuartzLayout(layoutOverrides?: {
           if (Array.isArray(components) && components.length === 0) {
             const key = pos as keyof Pick<
               FullPageLayout,
-              "left" | "right" | "beforeBody" | "afterBody"
+              "header" | "left" | "right" | "beforeBody" | "afterBody" | "footer"
             >
             if (key in ptLayout) {
               ;(ptLayout as Record<string, unknown>)[key] = []
@@ -674,46 +693,20 @@ export async function loadQuartzLayout(layoutOverrides?: {
     }
   }
 
-  // Add Head (built-in) and Footer (plugin)
   const HeadModule = await import("../../components/Head")
   const head = HeadModule.default()
-
-  // Find footer from component registry (loaded during plugin instantiation)
-  const footerEntry = json.plugins.find(
-    (e) => e.enabled && extractPluginName(e.source) === "footer",
-  )
-  let footer: QuartzComponent | undefined
-  if (footerEntry) {
-    // Try registry lookup: plugin name ("footer") or export name ("Footer")
-    const footerReg = componentRegistry.get("footer") ?? componentRegistry.get("Footer")
-    if (footerReg) {
-      if (typeof footerReg.component === "function" && !("displayName" in footerReg.component)) {
-        // It's a constructor — use registry cache for consistent instances
-        const footerOverrides = componentRegistry.getOptionOverrides("footer")
-        const opts = { ...footerEntry.options, ...footerOverrides }
-        footer = componentRegistry.instantiate(
-          footerReg.component as QuartzComponentConstructor,
-          Object.keys(opts).length > 0 ? opts : undefined,
-        )
-      } else {
-        footer = footerReg.component as QuartzComponent
-      }
-    }
-  }
 
   // Apply structural defaults
   defaultLayout.head = head
   defaultLayout.header = defaultLayout.header ?? []
-  if (footer) {
-    defaultLayout.footer = footer
-  }
+  defaultLayout.footer = defaultLayout.footer ?? []
 
   // Ensure all byPageType entries inherit structural slots
   for (const pageType of Object.keys(byPageType)) {
     const pt = byPageType[pageType]
     if (!pt.head) pt.head = head
-    if (!pt.header) pt.header = []
-    if (footer && !pt.footer) pt.footer = footer
+    if (!pt.header) pt.header = defaultLayout.header
+    if (!pt.footer) pt.footer = defaultLayout.footer
   }
 
   const mergedDefaults = { ...defaultLayout, ...layoutOverrides?.defaults }
@@ -727,7 +720,8 @@ export async function loadQuartzLayout(layoutOverrides?: {
   return { defaults: mergedDefaults, byPageType: mergedByPageType }
 }
 
-function buildLayoutForEntries(
+/** @internal Exported for testing only. */
+export function buildLayoutForEntries(
   entries: PluginJsonEntry[],
   layoutConfig: LayoutConfig,
 ): Partial<FullPageLayout> {
@@ -740,10 +734,12 @@ function buildLayoutForEntries(
       groupOptions?: PluginLayoutDeclaration["groupOptions"]
     }[]
   > = {
+    header: [],
     left: [],
     right: [],
     beforeBody: [],
     afterBody: [],
+    footer: [],
   }
 
   for (const entry of entries) {
@@ -812,6 +808,48 @@ function buildLayoutForEntries(
     }
   }
 
+  for (const entry of entries) {
+    if (!entry.enabled || entry.layout) continue
+
+    const name = extractPluginName(entry.source)
+    const registered =
+      componentRegistry.get(name) ??
+      componentRegistry.get(`${formatSourceDisplay(entry.source)}/${name}`)
+    const pascalName = name
+      .split("-")
+      .map((s) => s.charAt(0).toUpperCase() + s.slice(1))
+      .join("")
+    const reg = registered ?? componentRegistry.get(pascalName)
+    if (!reg) continue
+
+    const layoutDefaults = reg.manifest
+    const defaultPosition = layoutDefaults?.defaultPosition
+    if (!defaultPosition) continue
+
+    const posArray = positions[defaultPosition]
+    if (!posArray) {
+      continue
+    }
+
+    let component: QuartzComponent
+    if (typeof reg.component === "function" && !("displayName" in reg.component)) {
+      const tsOverrides = componentRegistry.getOptionOverrides(name)
+      const opts = { ...entry.options, ...tsOverrides }
+      const optsArg = Object.keys(opts).length > 0 ? opts : undefined
+      component = componentRegistry.instantiate(
+        reg.component as QuartzComponentConstructor,
+        optsArg,
+      )
+    } else {
+      component = reg.component as QuartzComponent
+    }
+
+    posArray.push({
+      component,
+      priority: layoutDefaults?.defaultPriority ?? 50,
+    })
+  }
+
   // Sort by priority and resolve groups
   const result: Partial<FullPageLayout> = {}
 
@@ -821,7 +859,7 @@ function buildLayoutForEntries(
     const resolved = resolveGroups(items, layoutConfig.groups ?? {})
     const key = position as keyof Pick<
       FullPageLayout,
-      "left" | "right" | "beforeBody" | "afterBody"
+      "header" | "left" | "right" | "beforeBody" | "afterBody" | "footer"
     >
     ;(result as Record<string, QuartzComponent[]>)[key] = resolved
   }
@@ -829,7 +867,8 @@ function buildLayoutForEntries(
   return result
 }
 
-function resolveGroups(
+/** @internal Exported for testing only. */
+export function resolveGroups(
   items: {
     component: QuartzComponent
     priority: number
@@ -890,9 +929,6 @@ function resolveGroups(
         justify: m.groupOptions?.justify,
       }))
 
-      // Dynamically import Flex to avoid circular dependencies
-      const FlexModule = require("../../components/Flex")
-      const Flex = FlexModule.default as Function
       const flexComponent = Flex({
         components: flexComponents,
         direction: groupConfig.direction ?? "row",
@@ -917,10 +953,8 @@ function applyDisplayWrapper(
   display: "mobile-only" | "desktop-only",
 ): QuartzComponent {
   if (display === "mobile-only") {
-    const MobileOnly = require("../../components/MobileOnly").default as Function
     return MobileOnly(component) as QuartzComponent
   } else {
-    const DesktopOnly = require("../../components/DesktopOnly").default as Function
     return DesktopOnly(component) as QuartzComponent
   }
 }
@@ -935,7 +969,6 @@ function applyConditionWrapper(component: QuartzComponent, conditionName: string
     return component
   }
 
-  const ConditionalRender = require("../../components/ConditionalRender").default as Function
   return ConditionalRender({
     component,
     condition: predicate,

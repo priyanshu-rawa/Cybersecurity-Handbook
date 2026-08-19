@@ -1,3 +1,7 @@
+---
+title: "Risk Management"
+---
+
 up:: [[Cybersecurity Fundamentals]]
 # Risk Management
 

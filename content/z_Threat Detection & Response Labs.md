@@ -1,3 +1,7 @@
+---
+title: "z_Threat Detection & Response Labs"
+---
+
 1. [[How to Set Up a Home Lab]]
 2. [[How to Conduct Traffic Analysis with Wireshark]]
 3. [[How to Implement an IDS-IPS]]

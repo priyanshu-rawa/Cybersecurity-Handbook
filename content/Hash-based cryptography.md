@@ -1,3 +1,7 @@
+---
+title: "Hash based cryptography"
+---
+
 up:: [[Post-Quantum Cryptography (PQC)]]
 # Hash-based Cryptography 
 

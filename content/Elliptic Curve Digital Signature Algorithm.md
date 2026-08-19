@@ -1,4 +1,8 @@
 ---
+title: "Elliptic Curve Digital Signature Algorithm"
+---
+
+---
 aliases:
   - ECDSA
 ---

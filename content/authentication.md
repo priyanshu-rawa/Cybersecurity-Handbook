@@ -1,3 +1,7 @@
+---
+title: "authentication"
+---
+
 up:: [[CIA Triad]]
 # Authentication (Cybersecurity)
 

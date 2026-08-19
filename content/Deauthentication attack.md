@@ -1,4 +1,8 @@
 ---
+title: "Deauthentication attack"
+---
+
+---
 aliases:
   - Deauthentication attacks
 ---

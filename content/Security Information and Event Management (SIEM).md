@@ -1,4 +1,8 @@
 ---
+title: "Security Information and Event Management (SIEM)"
+---
+
+---
 aliases:
   - SIEM
   - Security Information and Event Management

@@ -1,3 +1,7 @@
+---
+title: "z_GRC and Advisory Labs"
+---
+
 1. [[How to Conduct a Risk Assessment]]
 2. [[How to Create a Security Awareness Training Program]]
 3. [[How to Perform a Compliance Audit]]

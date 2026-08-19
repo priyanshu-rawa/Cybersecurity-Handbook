@@ -1,4 +1,8 @@
 ---
+title: "SHA 1"
+---
+
+---
 aliases:
   - Secure Hash Algorithm 1
 ---

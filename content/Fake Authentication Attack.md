@@ -1,4 +1,8 @@
 ---
+title: "Fake Authentication Attack"
+---
+
+---
 aliases:
   - Fake Authentication
   - Fake auth

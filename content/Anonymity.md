@@ -1,4 +1,8 @@
 ---
+title: "Anonymity"
+---
+
+---
 aliases:
   - anon
   - anonymous

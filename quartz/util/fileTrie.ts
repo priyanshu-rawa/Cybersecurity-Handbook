@@ -1,4 +1,4 @@
-import { ContentDetails } from "../../.quartz/plugins"
+import type { ContentDetails } from "@quartz-community/content-index"
 import { FullSlug, joinSegments } from "./path"
 
 interface FileTrieData {

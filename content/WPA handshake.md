@@ -1,4 +1,8 @@
 ---
+title: "WPA handshake"
+---
+
+---
 aliases:
   - handshake
 ---

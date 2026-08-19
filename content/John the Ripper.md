@@ -1,4 +1,8 @@
 ---
+title: "John the Ripper"
+---
+
+---
 aliases:
   - John-the-Ripper
 ---

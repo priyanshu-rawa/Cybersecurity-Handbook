@@ -1,3 +1,7 @@
+---
+title: "Counter surveillance"
+---
+
 up:: [[Surveillance and Counter-Surveillance]]
 # Counter-Surveillance
 

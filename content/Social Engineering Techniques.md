@@ -1,4 +1,8 @@
 ---
+title: "Social Engineering Techniques"
+---
+
+---
 aliases:
   - social engineering
 ---

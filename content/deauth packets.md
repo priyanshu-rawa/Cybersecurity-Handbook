@@ -1,4 +1,8 @@
 ---
+title: "deauth packets"
+---
+
+---
 aliases:
   - Deauthentication Packets
 ---

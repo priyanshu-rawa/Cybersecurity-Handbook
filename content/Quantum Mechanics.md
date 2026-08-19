@@ -1,4 +1,8 @@
 ---
+title: "Quantum Mechanics"
+---
+
+---
 aliases:
   - QM
 ---

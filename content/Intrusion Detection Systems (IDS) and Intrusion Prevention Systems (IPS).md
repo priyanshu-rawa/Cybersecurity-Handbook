@@ -1,3 +1,7 @@
+---
+title: "Intrusion Detection Systems (IDS) and Intrusion Prevention Systems (IPS)"
+---
+
 up:: [[Network Security]]
 # [[Intrusion Detection Systems]] ([[Intrusion Detection Systems|IDS]]) and [[Intrusion Prevention Systems]] ([[Intrusion Prevention Systems|IPS]])
 

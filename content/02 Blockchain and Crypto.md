@@ -1,3 +1,7 @@
+---
+title: "02 Blockchain and Crypto"
+---
+
 up:: [[00 Home MOC]]
 ### 1. Blockchain Fundamentals
 

@@ -40,7 +40,7 @@ async function launchTui() {
   if (!existsSync(tuiPath)) {
     console.error(
       "TUI plugin not installed. Install with:\n" +
-        "  npx quartz plugin add github:quartz-community/tui\n",
+        "  npx quartz plugin add @quartz-community/tui\n",
     )
     process.exit(1)
   }

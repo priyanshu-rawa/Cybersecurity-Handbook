@@ -1,3 +1,7 @@
+---
+title: "Emerging Technologies in IAM"
+---
+
 up:: [[Identity and Access Management]]
 # Emerging Technologies in IAM (Identity and Access Management)
 

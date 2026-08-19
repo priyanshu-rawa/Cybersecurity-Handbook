@@ -1,3 +1,7 @@
+---
+title: "Mobile Security Tools"
+---
+
 up:: [[Cybersecurity Tools and Technologies]]
 # Mobile Security Tools
 

@@ -22,8 +22,8 @@ export interface PageFrameProps {
   left: QuartzComponent[]
   /** Right sidebar components */
   right: QuartzComponent[]
-  /** Footer component */
-  footer: QuartzComponent
+  /** Footer components */
+  footer: QuartzComponent[]
 }
 
 /**

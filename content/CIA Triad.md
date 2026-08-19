@@ -1,3 +1,7 @@
+---
+title: "CIA Triad"
+---
+
 up:: [[Security Principles]]
 # CIA Triad
 

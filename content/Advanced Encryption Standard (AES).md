@@ -1,4 +1,8 @@
 ---
+title: "Advanced Encryption Standard (AES)"
+---
+
+---
 aliases:
   - AES
   - Advanced Encryption Standard

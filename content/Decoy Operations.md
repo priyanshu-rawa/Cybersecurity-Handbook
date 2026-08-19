@@ -1,3 +1,7 @@
+---
+title: "Decoy Operations"
+---
+
 up:: [[Dark Web]]
 # Decoy Operations
 

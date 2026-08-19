@@ -1,3 +1,7 @@
+---
+title: "Social Media Account Search"
+---
+
 up:: [[OSINT]]
 # Social Media Account Search
 

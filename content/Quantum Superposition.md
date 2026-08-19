@@ -1,4 +1,8 @@
 ---
+title: "Quantum Superposition"
+---
+
+---
 aliases:
   - superposition
 ---

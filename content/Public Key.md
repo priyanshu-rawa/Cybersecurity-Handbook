@@ -1,4 +1,8 @@
 ---
+title: "Public Key"
+---
+
+---
 aliases:
   - public key encryption
   - public key cryptography

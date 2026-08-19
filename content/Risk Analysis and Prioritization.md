@@ -1,3 +1,7 @@
+---
+title: "Risk Analysis and Prioritization"
+---
+
 up:: [[Threat Intelligence and Vulnerability Management]]
 
 # Risk Analysis and Prioritization

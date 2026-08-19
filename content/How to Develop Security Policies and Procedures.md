@@ -1,3 +1,7 @@
+---
+title: "How to Develop Security Policies and Procedures"
+---
+
 up:: [[GRC and Advisory Labs]]
 ### Cybersecurity Lab: Developing Home Network Security Policies and Procedures
 

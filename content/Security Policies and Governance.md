@@ -1,3 +1,7 @@
+---
+title: "Security Policies and Governance"
+---
+
 up:: [[Cybersecurity Fundamentals]]
 # Security Policies and Governance
 

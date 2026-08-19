@@ -1,3 +1,7 @@
+---
+title: "Website Hacking"
+---
+
 up:: [[Ethical Hacking]]
 # Website Hacking
 

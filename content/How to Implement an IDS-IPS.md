@@ -1,3 +1,7 @@
+---
+title: "How to Implement an IDS IPS"
+---
+
 up:: [[Network & Systems Security Labs]], [[Threat Detection & Response Labs]]
 ### Project: Implementing an IDS/IPS with Snort
 

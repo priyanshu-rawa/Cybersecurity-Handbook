@@ -1,4 +1,8 @@
 ---
+title: "NIST Special Publication 800 56B"
+---
+
+---
 aliases:
   - NIST SP 800-56B
   - SP 800-56B

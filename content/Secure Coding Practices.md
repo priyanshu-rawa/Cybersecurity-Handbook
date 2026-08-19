@@ -1,3 +1,7 @@
+---
+title: "Secure Coding Practices"
+---
+
 up:: [[Application Security]]
 # Secure Coding Practices
 

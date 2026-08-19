@@ -1,3 +1,7 @@
+---
+title: "Web Application Security"
+---
+
 up:: [[Application Security]]
 # Web Application Security
 

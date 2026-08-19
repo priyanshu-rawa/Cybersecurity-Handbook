@@ -1,4 +1,8 @@
 ---
+title: "Virtual Private Networks"
+---
+
+---
 aliases:
   - VPNs
   - VPN

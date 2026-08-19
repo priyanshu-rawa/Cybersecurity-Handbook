@@ -1,4 +1,8 @@
 ---
+title: "Closest Vector Problem (CVP)"
+---
+
+---
 aliases:
   - Closest Vector Problem
   - CVP

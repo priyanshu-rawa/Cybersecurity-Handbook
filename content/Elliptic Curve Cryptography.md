@@ -1,4 +1,8 @@
 ---
+title: "Elliptic Curve Cryptography"
+---
+
+---
 aliases:
   - ECC
   - Elliptic Curve

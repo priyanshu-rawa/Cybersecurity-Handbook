@@ -1,3 +1,7 @@
+---
+title: "How to Conduct a Risk Assessment"
+---
+
 up:: [[GRC and Advisory Labs]]
 ### Cybersecurity Project: Conducting a Risk Assessment on Personal Devices and Networks
 

@@ -1,4 +1,8 @@
 ---
+title: "Key Decapsulation"
+---
+
+---
 aliases:
   - decapsulation
   - key decapsulation

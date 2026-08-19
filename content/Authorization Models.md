@@ -1,3 +1,7 @@
+---
+title: "Authorization Models"
+---
+
 up:: [[Identity and Access Management]]
 
 # Authorization Models

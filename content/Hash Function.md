@@ -1,4 +1,8 @@
 ---
+title: "Hash Function"
+---
+
+---
 aliases:
   - Hash Functions
   - Cryptographic Hash Function

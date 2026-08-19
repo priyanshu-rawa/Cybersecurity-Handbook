@@ -1,3 +1,7 @@
+---
+title: "Wifite"
+---
+
 up:: [[WPA and WPA2 Cracking]]
 # Wifite
 

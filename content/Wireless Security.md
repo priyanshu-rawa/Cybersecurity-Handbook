@@ -1,3 +1,7 @@
+---
+title: "Wireless Security"
+---
+
 up:: [[Network Security]]
 # Wireless Security
 

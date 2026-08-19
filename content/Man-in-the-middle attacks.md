@@ -1,4 +1,8 @@
 ---
+title: "Man in the middle attacks"
+---
+
+---
 aliases:
   - MITM
 ---

@@ -1,3 +1,7 @@
+---
+title: "How to Conduct a Data Privacy Assessment"
+---
+
 up:: [[GRC and Advisory Labs]]
 ### Cybersecurity Lab: Conducting a Data Privacy Assessment
 

@@ -1,3 +1,7 @@
+---
+title: "Unethical Hacking"
+---
+
 up:: [[Legal and Ethical Implications of Hacking]]
 # Unethical Hacking
 

@@ -1,4 +1,8 @@
 ---
+title: "Discretionary Access Control (DAC)"
+---
+
+---
 aliases:
   - Discretionary Access Control
   - DAC

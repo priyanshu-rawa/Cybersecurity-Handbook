@@ -1,3 +1,7 @@
+---
+title: "Blockchain and Cryptography"
+---
+
 up:: [[Cryptology]]
 # Blockchain and Cryptography]
 

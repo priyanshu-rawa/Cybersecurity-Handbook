@@ -1,3 +1,7 @@
+---
+title: "Ethical Hacking Fundamentals"
+---
+
 up:: [[Hacking]]
 # Ethical Hacking Fundamentals
 

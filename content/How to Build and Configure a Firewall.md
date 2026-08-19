@@ -1,3 +1,7 @@
+---
+title: "How to Build and Configure a Firewall"
+---
+
 up:: [[Network & Systems Security Labs]]
 
 Here's a beginner-friendly guide to building and configuring a firewall on an Ubuntu system using UFW (Uncomplicated Firewall). This will provide extra tips, explanations, and troubleshooting guidance to help you confidently secure your system.

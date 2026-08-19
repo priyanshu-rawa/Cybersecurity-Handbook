@@ -1,4 +1,8 @@
 ---
+title: "Quantum Algorithm"
+---
+
+---
 aliases:
   - Quantum algorithms
 ---

@@ -1,3 +1,7 @@
+---
+title: "How to Set Up a Home Lab"
+---
+
 ### Guide: Installing VirtualBox and Setting Up Ubuntu
 
 In this guide, you'll learn how to install VirtualBox on your computer, create a virtual machine (VM) for Ubuntu, and set it up. **VirtualBox** is a free tool that allows you to create virtual machines, which are like running a separate computer within your existing one. **Ubuntu** is a popular version of the Linux operating system that’s great for learning about Linux and cybersecurity.

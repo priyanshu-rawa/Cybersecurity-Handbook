@@ -1,3 +1,7 @@
+---
+title: "05 Tech Career Advancement & Lifestyle"
+---
+
 up:: [[00 Home MOC]]
 ### 1. **Navigating Tech Careers**
 

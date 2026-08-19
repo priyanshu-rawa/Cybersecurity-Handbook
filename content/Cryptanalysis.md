@@ -1,3 +1,7 @@
+---
+title: "Cryptanalysis"
+---
+
 up:: [[Cryptology]]
 # Cryptanalysis
 

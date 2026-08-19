@@ -1,4 +1,8 @@
 ---
+title: "Supersingular Isogeny Diffie Hellman"
+---
+
+---
 aliases:
   - Supersingular Isogeny Diffie-Hellman
   - SIDH

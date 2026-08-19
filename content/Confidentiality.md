@@ -1,3 +1,7 @@
+---
+title: "Confidentiality"
+---
+
 up:: [[CIA Triad]]
 # Confidentiality (Cybersecurity)
 

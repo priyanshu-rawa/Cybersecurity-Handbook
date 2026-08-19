@@ -1,3 +1,7 @@
+---
+title: "Baiting"
+---
+
 up:: [[Social Engineering Techniques|social engineering]]
 # Baiting
 

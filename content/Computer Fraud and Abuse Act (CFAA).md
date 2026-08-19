@@ -1,4 +1,8 @@
 ---
+title: "Computer Fraud and Abuse Act (CFAA)"
+---
+
+---
 aliases:
   - CFAA
   - Computer Fraud and Abuse Act

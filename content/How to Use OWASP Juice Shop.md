@@ -1,3 +1,7 @@
+---
+title: "How to Use OWASP Juice Shop"
+---
+
 up:: [[Application & Software Security Labs]]
 ## Penetration Testing with OWASP Juice Shop
 

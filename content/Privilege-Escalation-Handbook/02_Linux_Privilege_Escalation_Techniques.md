@@ -1,3 +1,7 @@
+---
+title: "02_Linux_Privilege_Escalation_Techniques"
+---
+
 # Linux Privilege Escalation Techniques
 
 > **Privilege Escalation Handbook** — File 02  

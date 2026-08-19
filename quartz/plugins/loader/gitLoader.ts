@@ -4,6 +4,7 @@ import { execSync } from "child_process"
 import git from "isomorphic-git"
 import http from "isomorphic-git/http/node"
 import { styleText } from "util"
+import { fileURLToPath } from "node:url"
 import { pathToFileURL } from "url"
 import { PluginSource } from "./types"
 
@@ -31,6 +32,8 @@ export interface GitPluginSpec {
   subdir?: string
   /** Whether this is a local path source */
   local?: boolean
+  /** Whether this is an npm package (installed in node_modules) */
+  npmPackage?: boolean
 }
 
 export type PluginInstallSource = string | GitPluginSpec
@@ -87,6 +90,7 @@ export function parsePluginSource(source: PluginSource): GitPluginSpec {
       ref: ref || expanded.ref || undefined,
       subdir,
       local: expanded.local,
+      npmPackage: expanded.npmPackage,
     }
   }
 
@@ -127,6 +131,16 @@ export function parsePluginSource(source: PluginSource): GitPluginSpec {
     const [url, ref] = source.split("#")
     const name = extractRepoName(url)
     return { name, repo: url, ref: ref || undefined }
+  }
+
+  // Handle npm scoped packages (e.g. @quartz-community/syntax-highlighting)
+  if (
+    typeof source === "string" &&
+    source.startsWith("@") &&
+    source.includes("/") &&
+    !source.includes(":")
+  ) {
+    return { name: source, repo: "", npmPackage: true }
   }
 
   // Assume it's a plain repo name and try github
@@ -795,7 +809,7 @@ const SINGLETON_EXTERNALS = ["preact", "@jackyzha0/quartz", "vfile", "unified"]
  * Scope prefixes whose packages are always treated as shared externals.
  * Plugins under these scopes are co-installed siblings, not bundled deps.
  */
-const SHARED_SCOPES = ["@quartz-community/"]
+const SHARED_SCOPES = ["@quartz-community/", "@quartz-themes/"]
 
 /**
  * Build the full shared externals list by combining:
@@ -903,9 +917,11 @@ export function validatePluginExternals(
   }
 }
 
-export async function regeneratePluginIndex(options: { verbose?: boolean } = {}): Promise<void> {
+export async function regeneratePluginIndex(
+  options: { verbose?: boolean; npmPackages?: string[] } = {},
+): Promise<void> {
   if (!fs.existsSync(PLUGINS_CACHE_DIR)) {
-    return
+    fs.mkdirSync(PLUGINS_CACHE_DIR, { recursive: true })
   }
 
   const pluginDirs = fs.readdirSync(PLUGINS_CACHE_DIR).filter((name) => {
@@ -914,10 +930,12 @@ export async function regeneratePluginIndex(options: { verbose?: boolean } = {})
   })
 
   // Phase 1: Collect all exports per plugin, detect conflicts
+  // importPath maps plugin key → the import specifier used in generated index.ts
   const pluginExports = new Map<
     string,
     { overridable: string[]; passthrough: string[]; types: string[] }
   >()
+  const importPath = new Map<string, string>()
   const nameCount = new Map<string, number>()
 
   for (const pluginName of pluginDirs) {
@@ -933,14 +951,94 @@ export async function regeneratePluginIndex(options: { verbose?: boolean } = {})
 
     const dtsContent = fs.readFileSync(distIndex, "utf-8")
     const exportedNames = parseExportsFromDts(dtsContent)
-    const named = exportedNames.filter((e) => !e.startsWith("type "))
-    const types = exportedNames.filter((e) => e.startsWith("type ")).map((e) => e.slice(5))
+    const dtsTypes = exportedNames.filter((e) => e.startsWith("type ")).map((e) => e.slice(5))
+    const dtsNamed = exportedNames.filter((e) => !e.startsWith("type "))
+
+    const jsIndex = path.join(pluginDir, "dist", "index.js")
+    let jsExports = new Set<string>()
+    if (fs.existsSync(jsIndex)) {
+      const jsContent = fs.readFileSync(jsIndex, "utf-8")
+      const jsExportMatches = jsContent.matchAll(/export\s*{\s*([^}]+)\s*}/g)
+      for (const m of jsExportMatches) {
+        for (const n of m[1].split(",")) {
+          const clean = n
+            .trim()
+            .split(/\s+as\s+/)
+            .pop()
+            ?.trim()
+          if (clean) jsExports.add(clean)
+        }
+      }
+    }
+
+    const named = jsExports.size > 0 ? dtsNamed.filter((n) => jsExports.has(n)) : dtsNamed
+    const extraTypes = jsExports.size > 0 ? dtsNamed.filter((n) => !jsExports.has(n)) : []
+    const types = [...dtsTypes, ...extraTypes]
 
     const overridable = named.filter((n) => isOverridableExport(n, dtsContent))
     const passthrough = named.filter((n) => !isOverridableExport(n, dtsContent))
 
     if (overridable.length > 0 || passthrough.length > 0 || types.length > 0) {
       pluginExports.set(pluginName, { overridable, passthrough, types })
+      importPath.set(pluginName, `./${pluginName}`)
+      for (const n of [...overridable, ...passthrough]) {
+        nameCount.set(n, (nameCount.get(n) ?? 0) + 1)
+      }
+    }
+  }
+
+  for (const npmPkg of options.npmPackages ?? []) {
+    let distIndex: string | undefined
+    try {
+      const pkgJsonPath = fileURLToPath(import.meta.resolve(`${npmPkg}/package.json`))
+      distIndex = path.join(path.dirname(pkgJsonPath), "dist", "index.d.ts")
+    } catch {
+      if (options.verbose) {
+        console.log(styleText("yellow", `⚠`), `Skipping npm package ${npmPkg}: not found`)
+      }
+      continue
+    }
+
+    if (!distIndex || !fs.existsSync(distIndex)) {
+      if (options.verbose) {
+        console.log(styleText("yellow", `⚠`), `Skipping npm package ${npmPkg}: no dist/index.d.ts`)
+      }
+      continue
+    }
+
+    const dtsContent = fs.readFileSync(distIndex, "utf-8")
+    const exportedNames = parseExportsFromDts(dtsContent)
+    const dtsTypes = exportedNames.filter((e) => e.startsWith("type ")).map((e) => e.slice(5))
+    const dtsNamed = exportedNames.filter((e) => !e.startsWith("type "))
+
+    const jsIndex = path.join(path.dirname(distIndex), "index.js")
+    let jsExports = new Set<string>()
+    if (fs.existsSync(jsIndex)) {
+      const jsContent = fs.readFileSync(jsIndex, "utf-8")
+      const jsExportMatches = jsContent.matchAll(/export\s*{\s*([^}]+)\s*}/g)
+      for (const m of jsExportMatches) {
+        for (const n of m[1].split(",")) {
+          const clean = n
+            .trim()
+            .split(/\s+as\s+/)
+            .pop()
+            ?.trim()
+          if (clean) jsExports.add(clean)
+        }
+      }
+    }
+
+    const named = jsExports.size > 0 ? dtsNamed.filter((n) => jsExports.has(n)) : dtsNamed
+    const extraTypes = jsExports.size > 0 ? dtsNamed.filter((n) => !jsExports.has(n)) : []
+    const types = [...dtsTypes, ...extraTypes]
+
+    const overridable = named.filter((n) => isOverridableExport(n, dtsContent))
+    const passthrough = named.filter((n) => !isOverridableExport(n, dtsContent))
+
+    const key = npmPkg.replace(/^@/, "").replace(/\//g, "__")
+    if (overridable.length > 0 || passthrough.length > 0 || types.length > 0) {
+      pluginExports.set(key, { overridable, passthrough, types })
+      importPath.set(key, npmPkg)
       for (const n of [...overridable, ...passthrough]) {
         nameCount.set(n, (nameCount.get(n) ?? 0) + 1)
       }
@@ -953,19 +1051,17 @@ export async function regeneratePluginIndex(options: { verbose?: boolean } = {})
   lines.push(`import { componentRegistry } from "../../quartz/components/registry"`)
   lines.push("")
 
-  // Type re-exports
-  for (const [pluginName, { types }] of pluginExports) {
+  for (const [pluginKey, { types }] of pluginExports) {
     if (types.length > 0) {
-      lines.push(`export type { ${types.join(", ")} } from "./${pluginName}"`)
+      lines.push(`export type { ${types.join(", ")} } from "${importPath.get(pluginKey)}"`)
     }
   }
 
-  // Direct re-exports for non-overridable values (constants, utility functions, etc.)
-  for (const [pluginName, { passthrough }] of pluginExports) {
+  for (const [pluginKey, { passthrough }] of pluginExports) {
     if (passthrough.length === 0) continue
     const unique = passthrough.filter((n) => (nameCount.get(n) ?? 0) === 1)
     if (unique.length > 0) {
-      lines.push(`export { ${unique.join(", ")} } from "./${pluginName}"`)
+      lines.push(`export { ${unique.join(", ")} } from "${importPath.get(pluginKey)}"`)
     }
   }
   lines.push("")

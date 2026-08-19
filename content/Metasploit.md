@@ -1,3 +1,7 @@
+---
+title: "Metasploit"
+---
+
 up:: [[Hacking Toolkit]]
 # Metasploit
 

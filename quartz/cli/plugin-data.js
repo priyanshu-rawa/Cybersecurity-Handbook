@@ -190,6 +190,11 @@ export function parseGitSource(source) {
       typeof source === "object" && source.name ? source.name : path.basename(parsed, ".git")
     return { name, url: parsed, ref, subdir }
   }
+  // Handle npm scoped packages
+  if (typeof url === "string" && url.startsWith("@") && url.includes("/") && !url.includes(":")) {
+    const name = typeof source === "object" && source.name ? source.name : url
+    return { name, url: "", npmPackage: true, subdir }
+  }
   throw new Error(`Cannot parse plugin source: ${formatSource(source)}`)
 }
 

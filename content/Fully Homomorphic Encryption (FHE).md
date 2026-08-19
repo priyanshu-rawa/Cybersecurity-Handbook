@@ -1,4 +1,8 @@
 ---
+title: "Fully Homomorphic Encryption (FHE)"
+---
+
+---
 aliases:
   - FHE
   - Full Homomorphic Encryption

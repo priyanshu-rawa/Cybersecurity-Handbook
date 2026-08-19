@@ -1,4 +1,8 @@
 ---
+title: "Privacy Enhancing Technologies"
+---
+
+---
 aliases:
   - PETs
   - PET

@@ -1,3 +1,7 @@
+---
+title: "Symmetric vs. Asymmetric Encryption"
+---
+
 up:: [[Cryptology]]
 # Symmetric vs. [[Asymmetric Encryption]]
 

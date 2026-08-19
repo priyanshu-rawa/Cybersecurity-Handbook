@@ -1,4 +1,8 @@
 ---
+title: "SIKE"
+---
+
+---
 aliases:
   - Supersingular Isogeny Key Encapsulation
   - Supersingular Isogeny Key Encapsulation (SIKE)

@@ -1,3 +1,7 @@
+---
+title: "Data Poisoning"
+---
+
 up:: [[Threat Hunting]]
 # Data Poisoning
 

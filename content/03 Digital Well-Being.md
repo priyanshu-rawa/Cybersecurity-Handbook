@@ -1,3 +1,7 @@
+---
+title: "03 Digital Well Being"
+---
+
 up:: [[00 Home MOC]]
 
 ### 1. **Technology for Mental Health and Emotional Well-being**

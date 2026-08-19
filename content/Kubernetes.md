@@ -1,4 +1,8 @@
 ---
+title: "Kubernetes"
+---
+
+---
 aliases:
   - K8s
 ---

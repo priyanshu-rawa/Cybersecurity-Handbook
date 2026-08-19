@@ -1,4 +1,8 @@
 ---
+title: "Lattice based cryptography"
+---
+
+---
 aliases:
   - lattice based cryptography
   - lattice-based cryptographic algorithm

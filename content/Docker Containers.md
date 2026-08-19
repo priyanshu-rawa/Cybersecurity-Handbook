@@ -1,3 +1,7 @@
+---
+title: "Docker Containers"
+---
+
 # Docker Containers
 
 Docker containers are a foundational concept in the field of software development, primarily used for deploying and running applications. A Docker container encapsulates an application with all its dependencies, binaries, and libraries in a self-sufficient runtime environment. This ensures that the application runs uniformly and consistently across different computing environments, mitigating the "it works on my machine" syndrome. Containers are lightweight, portable, and provide a layer of isolation between applications, making them an ideal choice for microservices architectures and cloud-native applications.

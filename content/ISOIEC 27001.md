@@ -1,4 +1,8 @@
 ---
+title: "ISOIEC 27001"
+---
+
+---
 aliases:
   - ISO/IEC 27001
 ---

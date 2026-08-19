@@ -1,4 +1,8 @@
 ---
+title: "Hacktivists"
+---
+
+---
 aliases:
   - hacktivist
   - hacktivism

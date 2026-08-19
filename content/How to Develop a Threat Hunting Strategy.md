@@ -1,3 +1,7 @@
+---
+title: "How to Develop a Threat Hunting Strategy"
+---
+
 up:: [[Threat Detection & Response Labs]]
 ### **Develop a Threat Hunting Strategy**
 

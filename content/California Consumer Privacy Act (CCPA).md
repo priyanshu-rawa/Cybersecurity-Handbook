@@ -1,4 +1,8 @@
 ---
+title: "California Consumer Privacy Act (CCPA)"
+---
+
+---
 aliases:
   - California Consumer Privacy Act
   - CCPA

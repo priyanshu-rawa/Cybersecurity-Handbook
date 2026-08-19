@@ -24,6 +24,7 @@ Object.defineProperty(exports, '__esModule', { value: true });
  * @property {AsyncIterableIterator<Uint8Array>} [body] - An async iterator of Uint8Arrays that make up the body of POST requests
  * @property {ProgressCallback} [onProgress] - Reserved for future use (emitting `GitProgressEvent`s)
  * @property {object} [signal] - Reserved for future use (canceling a request)
+ * @property {Object} [fetchOptions={}] - Additional options to pass to fetch (Web) or simple-get (Node)
  */
 
 /**
@@ -139,24 +140,29 @@ async function request({
   url,
   method = 'GET',
   headers = {},
+  fetchOptions = {},
   body,
 }) {
   // streaming uploads aren't possible yet in the browser
   if (body) {
+    // @ts-expect-error
     body = await collect(body);
   }
-  const res = await fetch(url, { method, headers, body });
+  const res = await fetch(url, { ...fetchOptions, method, headers, body });
   const iter =
+    // @ts-expect-error
     res.body && res.body.getReader
       ? fromStream(res.body)
       : [new Uint8Array(await res.arrayBuffer())];
   // convert Header object to ordinary JSON
   headers = {};
+  // @ts-expect-error
   for (const [key, value] of res.headers.entries()) {
     headers[key] = value;
   }
   return {
     url: res.url,
+    // @ts-expect-error
     method: res.method,
     statusCode: res.status,
     statusMessage: res.statusText,

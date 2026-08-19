@@ -1,4 +1,8 @@
 ---
+title: "Symmetric Cryptography"
+---
+
+---
 aliases:
   - symmetric-key encryption
   - Symmetric encryption

@@ -1,3 +1,7 @@
+---
+title: "06_Modern_Cloud_and_Container_Privilege_Escalation"
+---
+
 # Modern Cloud and Container Privilege Escalation
 
 > **Privilege Escalation Handbook** — File 06  

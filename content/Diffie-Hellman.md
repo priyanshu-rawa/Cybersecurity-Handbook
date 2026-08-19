@@ -1,3 +1,7 @@
+---
+title: "Diffie Hellman"
+---
+
 ## Overview
 
 Diffie-Hellman is a cryptographic method introduced by Whitfield Diffie and Martin Hellman in 1976. It allows two parties to independently generate a shared secret over an insecure channel. This shared secret can then be used for encrypted communication.

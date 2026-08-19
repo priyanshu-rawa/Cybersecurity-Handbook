@@ -1,3 +1,7 @@
+---
+title: "Cryptography in Applications"
+---
+
 up:: [[Cryptology]]
 # Cryptography in Applications
 

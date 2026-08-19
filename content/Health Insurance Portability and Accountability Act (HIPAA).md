@@ -1,4 +1,8 @@
 ---
+title: "Health Insurance Portability and Accountability Act (HIPAA)"
+---
+
+---
 aliases:
   - Health Insurance Portability and Accountability Act
   - HIPAA

@@ -1,4 +1,8 @@
 ---
+title: "Picnic"
+---
+
+---
 aliases:
 ---
 up:: [[Post-Quantum Cryptography (PQC)]] 

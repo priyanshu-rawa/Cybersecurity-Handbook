@@ -1,3 +1,7 @@
+---
+title: "Dependency Management"
+---
+
 up:: [[Application Security]]
 # Dependency Management
 

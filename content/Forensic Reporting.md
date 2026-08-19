@@ -1,3 +1,7 @@
+---
+title: "Forensic Reporting"
+---
+
 up:: [[Digital Forensics and Incident Response]]
 # Forensic Reporting
 

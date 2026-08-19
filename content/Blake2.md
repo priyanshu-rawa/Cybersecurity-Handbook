@@ -1,3 +1,7 @@
+---
+title: "Blake2"
+---
+
 ## Overview
 
 Blake2 is a cryptographic [[hash function]] that is faster at hashing than [[MD5]], [[SHA-1]], and [[SHA-2]], while retaining a high-security level. It is often viewed as a successor to the Blake [[algorithm]] and comes in two main flavors: [[BLAKE2b]] (optimized for 64-bit platforms) and BLAKE2s (optimized for 8- to 32-bit platforms).

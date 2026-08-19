@@ -1,4 +1,8 @@
 ---
+title: "Quantum Entanglement"
+---
+
+---
 aliases:
   - entanglement
 ---

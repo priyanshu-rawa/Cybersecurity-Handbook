@@ -1,4 +1,8 @@
 ---
+title: "ISOIEC 27002"
+---
+
+---
 aliases:
   - ISO/IEC 27002
 ---

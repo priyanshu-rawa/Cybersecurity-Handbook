@@ -1,3 +1,7 @@
+---
+title: "Availability"
+---
+
 up:: [[CIA Triad]]
 # Availability (Cybersecurity)
 

@@ -1,3 +1,7 @@
+---
+title: "Quantum Cryptography"
+---
+
 up::[[Cryptology]]
 # Quantum Cryptography
 

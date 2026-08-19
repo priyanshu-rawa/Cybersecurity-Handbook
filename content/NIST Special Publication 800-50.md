@@ -1,4 +1,8 @@
 ---
+title: "NIST Special Publication 800 50"
+---
+
+---
 aliases:
   - NIST SP 800-50
 ---

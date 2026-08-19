@@ -1,3 +1,7 @@
+---
+title: "Google Dorking"
+---
+
 up:: [[OSINT]]
 # Google Dorking
 

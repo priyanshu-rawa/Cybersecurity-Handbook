@@ -1,3 +1,7 @@
+---
+title: "Introduction to Cryptography"
+---
+
 up:: [[Cryptology]]
 # Introduction to Cryptography
 

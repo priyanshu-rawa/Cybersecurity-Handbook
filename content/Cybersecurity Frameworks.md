@@ -1,3 +1,7 @@
+---
+title: "Cybersecurity Frameworks"
+---
+
 up:: [[Cybersecurity Fundamentals]]
 # Cybersecurity Frameworks
 

@@ -1,3 +1,7 @@
+---
+title: "Kali Linux"
+---
+
 up:: [[Hacking Toolkit]]
 # Kali Linux
 

@@ -1,4 +1,8 @@
 ---
+title: "Attribute Based Access Control (ABAC)"
+---
+
+---
 aliases:
   - ABAC
 ---

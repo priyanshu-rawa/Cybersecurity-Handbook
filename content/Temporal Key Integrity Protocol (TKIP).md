@@ -1,4 +1,8 @@
 ---
+title: "Temporal Key Integrity Protocol (TKIP)"
+---
+
+---
 aliases:
   - Temporal Key Integrity Protocol
   - TKIP

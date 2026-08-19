@@ -1,4 +1,8 @@
 ---
+title: "Tails"
+---
+
+---
 aliases:
   - The Amnesic Incognito Live System
 ---

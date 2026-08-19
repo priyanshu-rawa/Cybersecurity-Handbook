@@ -1,4 +1,8 @@
 ---
+title: "Shortest Vector Problem (SVP)"
+---
+
+---
 aliases:
   - Shortest Vector Problem
   - SVP

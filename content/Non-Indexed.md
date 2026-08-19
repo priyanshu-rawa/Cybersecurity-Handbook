@@ -1,4 +1,8 @@
 ---
+title: "Non Indexed"
+---
+
+---
 aliases:
   - non-indexing
   - non-index

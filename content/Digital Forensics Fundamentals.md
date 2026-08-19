@@ -1,3 +1,7 @@
+---
+title: "Digital Forensics Fundamentals"
+---
+
 up::[[Digital Forensics and Incident Response]]
 # Digital Forensics Fundamentals
 

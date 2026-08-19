@@ -1,4 +1,8 @@
 ---
+title: "OSINT"
+---
+
+---
 aliases:
   - Open Source Intelligence
   - open source intelligence

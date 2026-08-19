@@ -1,4 +1,8 @@
 ---
+title: "Role Based Access Control (RBAC)"
+---
+
+---
 aliases:
   - RBAC
   - Role Based Access Control

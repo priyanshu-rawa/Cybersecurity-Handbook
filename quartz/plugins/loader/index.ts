@@ -99,11 +99,7 @@ function extractPluginFactory(
   module: unknown,
   type: "transformer" | "filter" | "emitter" | "pageType",
 ):
-  | QuartzTransformerPlugin
-  | QuartzFilterPlugin
-  | QuartzEmitterPlugin
-  | QuartzPageTypePlugin
-  | null {
+  QuartzTransformerPlugin | QuartzFilterPlugin | QuartzEmitterPlugin | QuartzPageTypePlugin | null {
   if (!module || typeof module !== "object") return null
 
   const mod = module as Record<string, unknown>
@@ -112,10 +108,7 @@ function extractPluginFactory(
 
   if (typeof factory === "function") {
     return factory as
-      | QuartzTransformerPlugin
-      | QuartzFilterPlugin
-      | QuartzEmitterPlugin
-      | QuartzPageTypePlugin
+      QuartzTransformerPlugin | QuartzFilterPlugin | QuartzEmitterPlugin | QuartzPageTypePlugin
   }
 
   return null

@@ -1,4 +1,8 @@
 ---
+title: "Pretty Good Privacy (PGP)"
+---
+
+---
 aliases:
   - Pretty Good Privacy
   - PGP

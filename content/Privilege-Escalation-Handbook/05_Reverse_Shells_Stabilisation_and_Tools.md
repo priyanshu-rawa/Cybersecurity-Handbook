@@ -1,3 +1,7 @@
+---
+title: "05_Reverse_Shells_Stabilisation_and_Tools"
+---
+
 # Reverse Shells, Stabilisation, and Tools
 
 > **Privilege Escalation Handbook** — File 05  

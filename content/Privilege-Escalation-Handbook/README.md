@@ -1,3 +1,7 @@
+---
+title: "README"
+---
+
 # Privilege Escalation Handbook
 
 Professional-grade reference notes for **authorized** penetration testers, red teamers, and security analysts.

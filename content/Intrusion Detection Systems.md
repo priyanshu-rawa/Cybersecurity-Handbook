@@ -1,4 +1,8 @@
 ---
+title: "Intrusion Detection Systems"
+---
+
+---
 aliases:
   - IDS
   - Intrusion Detection System

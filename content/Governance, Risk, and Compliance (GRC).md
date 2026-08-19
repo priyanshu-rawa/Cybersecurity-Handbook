@@ -1,4 +1,8 @@
 ---
+title: "Governance, Risk, and Compliance (GRC)"
+---
+
+---
 aliases:
   - Governance, Risk, and Compliance
   - GRC

@@ -1,4 +1,8 @@
 ---
+title: "wordlists for password cracking"
+---
+
+---
 aliases:
   - Wordlists
   - wordlist

@@ -1,3 +1,7 @@
+---
+title: "Mimikatz"
+---
+
 up:: [[Hacking Toolkit]]
 # Mimikatz
 

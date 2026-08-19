@@ -1,4 +1,8 @@
 ---
+title: "BIKE"
+---
+
+---
 aliases:
   - Bit Flipping Key Encapsulation
   - Bit Flipping Key Encapsulation (BIKE)

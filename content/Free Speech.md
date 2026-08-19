@@ -1,4 +1,8 @@
 ---
+title: "Free Speech"
+---
+
+---
 aliases:
   - First Amendment Rights
   - First Amendment Right

@@ -22,6 +22,7 @@ import get from 'simple-get';
  * @property {AsyncIterableIterator<Uint8Array>} [body] - An async iterator of Uint8Arrays that make up the body of POST requests
  * @property {ProgressCallback} [onProgress] - Reserved for future use (emitting `GitProgressEvent`s)
  * @property {object} [signal] - Reserved for future use (canceling a request)
+ * @property {Object} [fetchOptions={}] - Additional options to pass to fetch (Web) or simple-get (Node)
  */
 
 /**
@@ -88,6 +89,7 @@ async function forAwait(iterable, cb) {
 }
 
 function asyncIteratorToStream(iter) {
+  // @ts-expect-error: readable-stream has PassThrough at runtime, types mismatch
   const { PassThrough } = require('readable-stream');
   const stream = new PassThrough();
   setTimeout(async () => {
@@ -188,10 +190,12 @@ async function request({
   method = 'GET',
   headers = {},
   agent,
+  fetchOptions = {},
   body,
 }) {
   // If we can, we should send it as a single buffer so it sets a Content-Length header.
   if (body && Array.isArray(body)) {
+    // @ts-expect-error
     body = Buffer.from(await collect(body));
   } else if (body) {
     body = asyncIteratorToStream(body);
@@ -199,6 +203,7 @@ async function request({
   return new Promise((resolve, reject) => {
     get(
       {
+        ...fetchOptions,
         url,
         method,
         headers,

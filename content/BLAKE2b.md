@@ -1,3 +1,7 @@
+---
+title: "BLAKE2b"
+---
+
 ## Overview
 
 **BLAKE2b** is a [[cryptographic hash function]] that is faster than [[MD5]], [[SHA-1]], and [[SHA-2]], while being as secure as the latest standard [[SHA-3]]. It is an improved version of the original BLAKE [[hash function]], designed to provide high-speed hashing for modern processors.

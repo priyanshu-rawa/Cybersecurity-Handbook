@@ -1,4 +1,8 @@
 ---
+title: "Wi Fi Protected Access (WPA)"
+---
+
+---
 aliases:
   - Wi-Fi Protected Access
   - WPA

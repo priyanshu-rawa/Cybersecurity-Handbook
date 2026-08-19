@@ -1,3 +1,7 @@
+---
+title: "WEP Cracking"
+---
+
 up:: [[Wired Equivalent Privacy (WEP)]]
 # WEP Cracking
 

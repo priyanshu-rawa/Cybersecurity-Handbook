@@ -1,4 +1,8 @@
 ---
+title: "Proxy Servers"
+---
+
+---
 aliases:
   - proxy server
 ---

@@ -1,3 +1,7 @@
+---
+title: "Cobalt Strike"
+---
+
 up:: [[Hacking Toolkit]]
 # Cobalt Strike
 

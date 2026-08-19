@@ -1,7 +1,7 @@
 import fs from "fs"
 import path from "path"
 import os from "os"
-import { exec as execCb } from "child_process"
+import { exec as execCb, execSync } from "child_process"
 import { styleText, promisify } from "util"
 import {
   readPluginsJson,
@@ -1190,6 +1190,15 @@ export async function handlePluginAdd(
   for (const source of sources) {
     try {
       const parsed = parseGitSource(source)
+      if (parsed.npmPackage) {
+        const name = nameOverride ?? parsed.name
+        console.log(styleText("cyan", `→ Installing ${name} from npm...`))
+        execSync(`npm install ${parsed.name}`, { cwd: process.cwd(), stdio: "inherit" })
+        const configSource = nameOverride ? { repo: parsed.name, name: nameOverride } : parsed.name
+        const pluginDir = path.join(process.cwd(), "node_modules", ...parsed.name.split("/"))
+        addedPlugins.push({ name, pluginDir, source: parsed.name, configSource })
+        continue
+      }
       const name = nameOverride ?? parsed.name
       const url = parsed.url
       const ref = parsed.ref

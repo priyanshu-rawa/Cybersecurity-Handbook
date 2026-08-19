@@ -1,25 +1,28 @@
 import {
+	ambiguousMinimalCodePoint,
+	ambiguousMaximumCodePoint,
 	ambiguousRanges,
+
+	fullwidthMinimalCodePoint,
+	fullwidthMaximumCodePoint,
 	fullwidthRanges,
+
+	halfwidthMinimalCodePoint,
+	halfwidthMaximumCodePoint,
 	halfwidthRanges,
+
+	narrowMinimalCodePoint,
+	narrowMaximumCodePoint,
 	narrowRanges,
+
+	wideMinimalCodePoint,
+	wideMaximumCodePoint,
 	wideRanges,
 } from './lookup-data.js';
 import {isInRange} from './utilities.js';
 
-const minimumAmbiguousCodePoint = ambiguousRanges[0];
-const maximumAmbiguousCodePoint = ambiguousRanges.at(-1);
-const minimumFullWidthCodePoint = fullwidthRanges[0];
-const maximumFullWidthCodePoint = fullwidthRanges.at(-1);
-const minimumHalfWidthCodePoint = halfwidthRanges[0];
-const maximumHalfWidthCodePoint = halfwidthRanges.at(-1);
-const minimumNarrowCodePoint = narrowRanges[0];
-const maximumNarrowCodePoint = narrowRanges.at(-1);
-const minimumWideCodePoint = wideRanges[0];
-const maximumWideCodePoint = wideRanges.at(-1);
-
 const commonCjkCodePoint = 0x4E_00;
-const [wideFastPathStart, wideFastPathEnd] = findWideFastPathRange(wideRanges);
+const [wideFastPathStart, wideFastPathEnd] = /* #__PURE__ */ findWideFastPathRange(wideRanges);
 
 // Use a hot-path range so common `isWide` calls can skip binary search.
 // The range containing U+4E00 covers common CJK ideographs;
@@ -50,8 +53,8 @@ function findWideFastPathRange(ranges) {
 
 export const isAmbiguous = codePoint => {
 	if (
-		codePoint < minimumAmbiguousCodePoint
-		|| codePoint > maximumAmbiguousCodePoint
+		codePoint < ambiguousMinimalCodePoint
+		|| codePoint > ambiguousMaximumCodePoint
 	) {
 		return false;
 	}
@@ -61,8 +64,8 @@ export const isAmbiguous = codePoint => {
 
 export const isFullWidth = codePoint => {
 	if (
-		codePoint < minimumFullWidthCodePoint
-		|| codePoint > maximumFullWidthCodePoint
+		codePoint < fullwidthMinimalCodePoint
+		|| codePoint > fullwidthMaximumCodePoint
 	) {
 		return false;
 	}
@@ -72,8 +75,8 @@ export const isFullWidth = codePoint => {
 
 const isHalfWidth = codePoint => {
 	if (
-		codePoint < minimumHalfWidthCodePoint
-		|| codePoint > maximumHalfWidthCodePoint
+		codePoint < halfwidthMinimalCodePoint
+		|| codePoint > halfwidthMaximumCodePoint
 	) {
 		return false;
 	}
@@ -83,8 +86,8 @@ const isHalfWidth = codePoint => {
 
 const isNarrow = codePoint => {
 	if (
-		codePoint < minimumNarrowCodePoint
-		|| codePoint > maximumNarrowCodePoint
+		codePoint < narrowMinimalCodePoint
+		|| codePoint > narrowMaximumCodePoint
 	) {
 		return false;
 	}
@@ -101,8 +104,8 @@ export const isWide = codePoint => {
 	}
 
 	if (
-		codePoint < minimumWideCodePoint
-		|| codePoint > maximumWideCodePoint
+		codePoint < wideMinimalCodePoint
+		|| codePoint > wideMaximumCodePoint
 	) {
 		return false;
 	}

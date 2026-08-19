@@ -1,3 +1,7 @@
+---
+title: "Diversion Theft"
+---
+
 up:: [[Social Engineering Techniques|social engineering]]
 # Diversion Theft
 

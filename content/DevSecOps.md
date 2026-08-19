@@ -1,4 +1,8 @@
 ---
+title: "DevSecOps"
+---
+
+---
 aliases:
   - Development Security Operations
 ---

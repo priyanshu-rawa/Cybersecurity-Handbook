@@ -1,3 +1,7 @@
+---
+title: "Secure Network Architecture"
+---
+
 up::[[Network Security]]
 # Secure Network Architecture
 

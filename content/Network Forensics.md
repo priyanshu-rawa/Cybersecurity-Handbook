@@ -1,3 +1,7 @@
+---
+title: "Network Forensics"
+---
+
 up:: [[Digital Forensics and Incident Response]]
 # Network Forensics
 

@@ -1,3 +1,7 @@
+---
+title: "01 Cybersecurity Mastery"
+---
+
 
 
 #### 1. **[[Cybersecurity Fundamentals]]**

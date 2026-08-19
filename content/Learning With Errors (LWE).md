@@ -1,4 +1,8 @@
 ---
+title: "Learning With Errors (LWE)"
+---
+
+---
 aliases:
   - LWE
   - Learning With Errors

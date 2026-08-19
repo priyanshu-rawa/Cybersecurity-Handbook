@@ -1,4 +1,8 @@
 ---
+title: "One Way Hash Functions"
+---
+
+---
 aliases:
   - one-way hash functions
 ---

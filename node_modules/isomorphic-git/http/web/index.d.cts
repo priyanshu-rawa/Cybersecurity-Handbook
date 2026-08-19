@@ -37,6 +37,10 @@ export type GitHttpRequest = {
      * - Reserved for future use (canceling a request)
      */
     signal?: object;
+    /**
+     * - Additional options to pass to fetch (Web) or simple-get (Node)
+     */
+    fetchOptions?: any;
 };
 export type GitHttpResponse = {
     /**
@@ -79,4 +83,4 @@ declare namespace index {
  * @param {GitHttpRequest} request
  * @returns {Promise<GitHttpResponse>}
  */
-export function request({ onProgress, url, method, headers, body, }: GitHttpRequest): Promise<GitHttpResponse>;
+export function request({ onProgress, url, method, headers, fetchOptions, body, }: GitHttpRequest): Promise<GitHttpResponse>;

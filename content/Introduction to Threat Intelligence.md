@@ -1,3 +1,7 @@
+---
+title: "Introduction to Threat Intelligence"
+---
+
 up:: [[Threat Intelligence and Vulnerability Management]]
   
 # Introduction to Threat Intelligence

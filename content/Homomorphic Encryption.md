@@ -1,3 +1,7 @@
+---
+title: "Homomorphic Encryption"
+---
+
 ## Overview
 
 **Homomorphic Encryption** is a form of encryption that allows computations to be carried out on ciphertexts, producing an encrypted result. When decrypted, the result matches the result of the operations as if they were performed on the plaintext.

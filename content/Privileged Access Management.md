@@ -1,4 +1,8 @@
 ---
+title: "Privileged Access Management"
+---
+
+---
 aliases:
   - PAM
 ---

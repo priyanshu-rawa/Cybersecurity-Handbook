@@ -40,10 +40,9 @@ export class FileSystem {
      * Make a directory (or series of nested directories) without throwing an error if it already exists.
      *
      * @param {string} filepath - The path to the directory.
-     * @param {boolean} [_selfCall=false] - Internal flag to prevent infinite recursion.
      * @returns {Promise<void>}
      */
-    mkdir(filepath: string, _selfCall?: boolean): Promise<void>;
+    mkdir(filepath: string): Promise<void>;
     /**
      * Delete a file without throwing an error if it is already deleted.
      *

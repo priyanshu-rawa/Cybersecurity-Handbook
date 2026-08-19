@@ -1,4 +1,8 @@
 ---
+title: "Distributed Denial of Service (DDoS)"
+---
+
+---
 aliases:
   - Distributed Denial of Service
   - DDoS

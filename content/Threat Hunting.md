@@ -1,3 +1,7 @@
+---
+title: "Threat Hunting"
+---
+
 up:: [[Threat Intelligence and Vulnerability Management]]
 # Threat Hunting
 

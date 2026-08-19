@@ -1,4 +1,8 @@
 ---
+title: "Zero knowledge Proofs"
+---
+
+---
 aliases:
   - ZKP
   - Zero Knowledge Proof

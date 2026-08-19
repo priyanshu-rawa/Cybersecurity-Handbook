@@ -1,4 +1,8 @@
 ---
+title: "Wifi Bands"
+---
+
+---
 aliases:
   - Wi-Fi Bands
   - wifi band

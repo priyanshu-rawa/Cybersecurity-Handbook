@@ -1,3 +1,7 @@
+---
+title: "How to Simulate Social Engineering Attacks"
+---
+
 up:: [[Offensive Security Labs]]
 # **Simulate Social Engineering Attacks: Phishing Simulation**
 

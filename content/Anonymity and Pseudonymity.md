@@ -1,3 +1,7 @@
+---
+title: "Anonymity and Pseudonymity"
+---
+
 up:: [[Cybersecurity Ethics and Privacy]]
 # Anonymity and Pseudonymity
 

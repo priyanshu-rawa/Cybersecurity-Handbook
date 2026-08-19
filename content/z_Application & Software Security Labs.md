@@ -1,3 +1,7 @@
+---
+title: "z_Application & Software Security Labs"
+---
+
 1. [[How to Set Up a Home Lab]]
 2. [[How to Conduct a Secure Code Review]]
 3. [[How to Do Web Application Security Testing]]

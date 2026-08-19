@@ -1,4 +1,8 @@
 ---
+title: "Incident Response Plan (IRP)"
+---
+
+---
 aliases:
   - Incident Response Plans (IRP)
   - IRP

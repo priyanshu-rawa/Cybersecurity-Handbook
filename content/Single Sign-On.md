@@ -1,4 +1,8 @@
 ---
+title: "Single Sign On"
+---
+
+---
 aliases:
   - SSO
   - Single Sign On

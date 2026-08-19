@@ -1,4 +1,8 @@
 ---
+title: "Red Teaming"
+---
+
+---
 aliases:
   - Red Team
   - Red Teams

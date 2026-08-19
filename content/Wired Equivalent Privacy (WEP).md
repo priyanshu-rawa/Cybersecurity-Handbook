@@ -1,4 +1,8 @@
 ---
+title: "Wired Equivalent Privacy (WEP)"
+---
+
+---
 aliases:
   - WEP
   - Wired Equivalent Privacy

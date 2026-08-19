@@ -1,4 +1,8 @@
 ---
+title: "Isogenies"
+---
+
+---
 aliases:
   - Isogeny
 ---

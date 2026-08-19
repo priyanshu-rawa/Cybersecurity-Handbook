@@ -1,4 +1,8 @@
 ---
+title: "Decentralized Ledgers"
+---
+
+---
 alias: ledger, distributed ledger, ledgers
 ---
 up:: [[Blockchain Technology]]

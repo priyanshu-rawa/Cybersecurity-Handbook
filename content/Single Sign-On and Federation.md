@@ -1,3 +1,7 @@
+---
+title: "Single Sign On and Federation"
+---
+
 up:: [[Identity and Access Management]]
 # Single Sign-On and Federation
 

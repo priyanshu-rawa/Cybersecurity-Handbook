@@ -1,3 +1,7 @@
+---
+title: "Low Level Languages"
+---
+
 up:: [[01 Cybersecurity Mastery]]
 # Low-Level Languages
 

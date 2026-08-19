@@ -1,4 +1,8 @@
 ---
+title: "Cyber attack Chain"
+---
+
+---
 aliases:
   - Kill List
   - cyber attack chain

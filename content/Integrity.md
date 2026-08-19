@@ -1,3 +1,7 @@
+---
+title: "Integrity"
+---
+
 up:: [[CIA Triad]]
 # Integrity (Cybersecurity)
 

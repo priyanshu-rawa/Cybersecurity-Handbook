@@ -1,3 +1,7 @@
+---
+title: "Consumer Privacy Rights"
+---
+
 up:: [[Cybersecurity Ethics and Privacy]]
 # Consumer Privacy Rights
 

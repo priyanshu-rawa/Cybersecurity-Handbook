@@ -1,4 +1,8 @@
 ---
+title: "Non deterministic Polynomial time (NP)"
+---
+
+---
 aliases:
   - NP
   - Non-deterministic Polynomial-time

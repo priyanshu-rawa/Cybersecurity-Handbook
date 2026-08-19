@@ -1,4 +1,8 @@
 ---
+title: "Multivariate polynomial cryptography"
+---
+
+---
 aliases:
   - MPC
 ---

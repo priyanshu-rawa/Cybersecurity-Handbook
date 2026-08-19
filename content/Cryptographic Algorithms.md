@@ -1,3 +1,7 @@
+---
+title: "Cryptographic Algorithms"
+---
+
 up:: [[Cryptology]]
 # Cryptographic Algorithms
 

@@ -1,3 +1,7 @@
+---
+title: "How to Create a Security Awareness Training Program"
+---
+
 up:: [[GRC and Advisory Labs]]
 ### Lab: Creating a Security Awareness Training Program
 

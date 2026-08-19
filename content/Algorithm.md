@@ -1,4 +1,8 @@
 ---
+title: "Algorithm"
+---
+
+---
 aliases:
   - algorithms
 ---

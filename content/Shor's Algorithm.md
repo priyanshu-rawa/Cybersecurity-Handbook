@@ -1,4 +1,8 @@
 ---
+title: "Shor's Algorithm"
+---
+
+---
 aliases:
   - Shors Algorithm
 ---

@@ -1,3 +1,7 @@
+---
+title: "Linux Commands"
+---
+
 up:: [[Kali Linux]]
 
 # Linux Commands

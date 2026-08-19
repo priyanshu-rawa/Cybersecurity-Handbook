@@ -1,3 +1,7 @@
+---
+title: "Cybersecurity Tools and Technologies"
+---
+
 up:: [[01 Cybersecurity Mastery]]
 # Cybersecurity Tools and Technologies
 

@@ -1,4 +1,8 @@
 ---
+title: "Blockchain Technology"
+---
+
+---
 aliases:
   - Blockchain
   - blockchain

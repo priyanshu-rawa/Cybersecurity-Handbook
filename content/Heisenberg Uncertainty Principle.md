@@ -1,4 +1,8 @@
 ---
+title: "Heisenberg Uncertainty Principle"
+---
+
+---
 aliases:
   - Uncertainty principle
 ---
