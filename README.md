@@ -63,7 +63,7 @@
 
 ## 👀 Preview
 
-## 🖼️ What It Looks Like
+##  What It Looks Like
 
 <p align="center">
   <picture>
@@ -88,7 +88,7 @@
 
 ---
 
-### 🧼 Homepage
+###  Homepage
 
 <p align="center">
   <img src="assets/images/Homepage.png" alt="Homepage" width="600">
@@ -98,7 +98,7 @@
 
 ---
 
-### 🕸️ Interactive Knowledge Graph
+###  Interactive Knowledge Graph
 
 <p align="center">
   <img src="assets/images/graph-view.png" alt="Interactive Graph" width="600">
@@ -108,7 +108,7 @@
 
 ---
 
-### 📖 Reader Mode
+###  Reader Mode
 
 <p align="center">
   <img src="assets/images/reader-mode.png" alt="Reader Mode" width="600">
@@ -118,7 +118,7 @@
 
 ---
 
-### 🎨 Dark Mode (Catppuccin Mocha)
+###  Dark Mode (Catppuccin Mocha)
 
 <p align="center">
   <img src="assets/images/catppuccin-dark-mode.png" alt="Dark Mode" width="600">
@@ -128,7 +128,7 @@
 
 ---
 
-### 📲 Mobile View
+###  Mobile View
 
 <p align="center">
   <img src="assets/images/Phone-view.jpeg" alt="Mobile View" width="300">
@@ -138,7 +138,7 @@
 
 ---
 
-## 💡 Why This Exists
+##  Why This Exists
 
 The world of cybersecurity moves fast. New vulnerabilities, tools, and best practices emerge daily. Yet, most resources are scattered across forums, blogs, and paid courses — inaccessible to many who need them most.
 
@@ -153,7 +153,7 @@ Whether you're preparing for your first security certification, defending a corp
 
 ---
 
-## 🔥 Key Features
+##  Key Features
 
 - 📚 **400+ Comprehensive Notes** — From OSINT to cryptography to cloud security
 - 🕸️ **Interactive Knowledge Graph** — See how topics connect visually
@@ -282,7 +282,7 @@ Each topic aims to answer not only *what* something does, but also *how* it work
 
 ---
 
-## 📈  Roadmap
+##   Roadmap
 
 Planned improvements include:
 
@@ -341,7 +341,7 @@ We welcome contributions of all kinds — from fixing a single typo to adding an
 
 ---
 
-### 🚀 How to Contribute (Step-by-Step)
+###  How to Contribute (Step-by-Step)
 
 | Step | Action |
 |------|--------|
@@ -356,7 +356,7 @@ We welcome contributions of all kinds — from fixing a single typo to adding an
 
 ---
 
-### 📋 Contribution Guidelines
+###  Contribution Guidelines
 
 | Aspect | Guideline |
 |--------|-----------|
@@ -381,7 +381,7 @@ We welcome contributions of all kinds — from fixing a single typo to adding an
 
 ---
 
-### 🧭 Where to Put Your Files
+###  Where to Put Your Files
 
 | File Type | Location |
 |-----------|----------|
@@ -410,7 +410,6 @@ We welcome contributions of all kinds — from fixing a single typo to adding an
 ---
 
 ## ☕ Support & Sponsorship
-## 💎 Support This Project
 
 This handbook is — and will always be — **completely free and open-source**. If it has helped you in any way, here are some meaningful ways you can support the project:
 
@@ -432,7 +431,7 @@ This handbook is — and will always be — **completely free and open-source**.
 
 ---
 
-### 🙏 How You Can Contribute
+### How You Can Contribute
 
 | Area | What You Can Do |
 |------|-----------------|
@@ -444,7 +443,7 @@ This handbook is — and will always be — **completely free and open-source**.
 
 ---
 
-### 💬 Say Thanks
+###  Say Thanks
 
 A simple "thank you" or "this helped me" goes a long way. If this handbook made a difference in your learning journey, I'd love to hear about it.
 
@@ -452,7 +451,7 @@ A simple "thank you" or "this helped me" goes a long way. If this handbook made 
 
 ---
 
-### 🚀 Spread the Word
+###  Spread the Word
 
 The best way to support this project is to share it with others who might find it useful.
 
@@ -462,7 +461,7 @@ The best way to support this project is to share it with others who might find i
 
 ---
 
-### 🌱 Join the Community
+###  Join the Community
 
 - 🐙 **Star on GitHub**: https://github.com/priyanshu-rawa/Cybersecurity-Handbook
 - 📖 **Visit the live site**: https://cybersecurity-handbook-lake.vercel.app
@@ -478,7 +477,7 @@ The best way to support this project is to share it with others who might find i
 
 ---
 
-## 📄 License
+##  License
 
 This project is licensed under the **MIT License** — see the [LICENSE](LICENSE) file for details.
 
