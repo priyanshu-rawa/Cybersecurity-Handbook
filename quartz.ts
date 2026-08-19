@@ -1,4 +1,4 @@
-// import Lenis from "./quartz/components/Lenis"
+import Lenis from "./quartz/components/Lenis"
 import { loadQuartzConfig, loadQuartzLayout } from "./quartz/plugins/loader/config-loader"
 
 const config = await loadQuartzConfig()
