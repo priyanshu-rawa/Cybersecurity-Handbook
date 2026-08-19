@@ -9,6 +9,36 @@ var __export = (target, all) => {
     __defProp(target, name, { get: all[name], enumerable: true });
 };
 
+// quartz/components/Lenis.tsx
+import { useEffect } from "preact/hooks";
+import Lenis from "@studio-freight/lenis";
+function LenisProvider() {
+  useEffect(() => {
+    const lenis = new Lenis({
+      duration: 1.2,
+      easing: /* @__PURE__ */ __name((t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), "easing"),
+      smoothWheel: true,
+      wheelMultiplier: 1,
+      touchMultiplier: 2
+    });
+    function raf(time) {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    }
+    __name(raf, "raf");
+    requestAnimationFrame(raf);
+    return () => lenis.destroy();
+  }, []);
+  return null;
+}
+var init_Lenis = __esm({
+  "quartz/components/Lenis.tsx"() {
+    "use strict";
+    __name(LenisProvider, "LenisProvider");
+    LenisProvider.afterDOMLoaded = true;
+  }
+});
+
 // quartz/plugins/loader/gitLoader.ts
 import fs from "fs";
 import path from "path";
@@ -7198,14 +7228,16 @@ var config, quartz_default, layout;
 var init_quartz = __esm({
   async "quartz.ts"() {
     "use strict";
+    init_Lenis();
     init_config_loader();
     config = await loadQuartzConfig();
     quartz_default = config;
     layout = await loadQuartzLayout({
       defaults: {
-        afterBody: [],
+        afterBody: [LenisProvider],
+        // ✅ Lenis component added here
         right: []
-        // <-- removes backlinks and TOC if they were there
+        // removes backlinks and TOC
       }
     });
   }
