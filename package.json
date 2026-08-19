@@ -43,6 +43,7 @@
     "@myriaddreamin/rehype-typst": "^0.6.0",
     "@napi-rs/simple-git": "0.1.22",
     "@quartz-community/utils": "^0.1.1",
+    "@studio-freight/lenis": "^1.0.42",
     "ansi-truncate": "^1.4.0",
     "async-mutex": "^0.5.0",
     "chokidar": "^5.0.0",
