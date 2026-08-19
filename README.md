@@ -375,35 +375,32 @@ We welcome contributions of all kinds — from fixing a single typo to adding an
 
 ## ☕ Support & Sponsorship
 
-This handbook is — and will always be — **completely free and open-source**. If it has helped you in any way, here are some meaningful ways you can support the project:
+This handbook is — and will always be — **completely free and open source**.  
+If it's helped you in any way, here are some simple ways to give back.
 
-> **"Open source is built by people who care. Every contribution, no matter how small, makes a difference."**
+> *"Open source is built by people who care. Every contribution — no matter how small — makes a difference."*
 
----
-
-### 🌟 How You Can Support
+### How You Can Support
 
 | Way | What It Does | Why It Helps |
 |-----|--------------|--------------|
-| ⭐ **Star the repo** | Click the star button at the top | Helps others discover the handbook |
-| 🔗 **Share the handbook** | Post it on LinkedIn, Twitter, Reddit, Discord | Brings more learners to the community |
-| 📝 **Contribute content** | Add new topics, fix typos, improve explanations | Makes the handbook better for everyone |
-| 💬 **Give feedback** | Open an issue or start a discussion | Helps me understand what to improve next |
-| 👥 **Tell a friend** | Share with someone learning cybersecurity | Grows the community organically |
-| 🐛 **Report bugs** | Let me know if something is broken | Keeps the handbook accurate and reliable |
-| 📖 **Use it daily** | Reference it in your learning or work | The best support is using it! |
-
----
+| ⭐ **Star the repo** | Adds a star to the project on GitHub | Increases visibility and discoverability |
+| 🔗 **Share the handbook** | Post it on LinkedIn, Twitter, Reddit, Discord | Drives organic growth of the community |
+| 📝 **Contribute content** | Add new topics, fix typos, sharpen explanations | Makes the content better for everyone |
+| 💬 **Give feedback** | Open an issue or start a discussion | Guides future improvements and priorities |
+| 👥 **Tell a friend** | Share with someone learning cybersecurity | Expands the network of learners and practitioners |
+| 🐛 **Report bugs** | Let me know if something is broken or unclear | Keeps the handbook accurate and reliable |
+| 📖 **Use it daily** | Reference it in your learning or work | The best support is using it |
 
 ### How You Can Contribute
 
 | Area | What You Can Do |
 |------|-----------------|
-| 📝 **Content** | Add new topics, fix errors, improve explanations |
-| 🎨 **Design** | Suggest improvements to layout, visuals, diagrams |
-| 🔧 **Code** | Improve the Quartz setup, fix bugs, add features |
-| 📖 **Documentation** | Improve clarity, formatting, cross-references |
-| 💬 **Community** | Help others in issues/discussions, spread the word |
+| 📝 **Content** | Add new notes, correct errors, improve explanations |
+| 🎨 **Design** | Suggest layout improvements, better visuals, diagrams |
+| 🔧 **Code** | Improve the Quartz setup, fix bugs, add plugins or features |
+| 📖 **Documentation** | Improve clarity, formatting, internal links, and cross-references |
+| 💬 **Community** | Help others in issues and discussions, share the project widely |
 
 ---
 
@@ -415,25 +412,25 @@ A simple "thank you" or "this helped me" goes a long way. If this handbook made 
 
 ---
 
-###  Spread the Word
+### Spread the Word
 
 The best way to support this project is to share it with others who might find it useful.
 
-**Copy this and share it:**
+Copy this and share it:
 
 > *"I found this free Cybersecurity Handbook with 400+ notes, built with Obsidian + Quartz. Check it out: https://github.com/priyanshu-rawa/Cybersecurity-Handbook"*
 
 ---
 
-###  Join the Community
+### Join the Community
 
-- 🐙 **Star on GitHub**: https://github.com/priyanshu-rawa/Cybersecurity-Handbook
-- 📖 **Visit the live site**: https://cybersecurity-handbook-lake.vercel.app
-- 💬 **Start a discussion**: Open an issue or start a conversation
+- **Star on GitHub**: https://github.com/priyanshu-rawa/Cybersecurity-Handbook
+- **Visit the live site**: https://cybersecurity-handbook-lake.vercel.app
+- **Start a discussion**: Open an issue or start a conversation
 
 ---
 
-**Thank you for being part of this journey. Every star, share, and contribution matters. ❤️**
+Thank you for being part of this journey. Every star, share, and contribution matters.
 
 [![Star](https://img.shields.io/github/stars/priyanshu-rawa/Cybersecurity-Handbook?style=for-the-badge&logo=github)](https://github.com/priyanshu-rawa/Cybersecurity-Handbook)
 [![Share](https://img.shields.io/badge/Share-🔗-4D6BFE?style=for-the-badge)](https://github.com/priyanshu-rawa/Cybersecurity-Handbook)
@@ -449,26 +446,26 @@ You are free to use, modify, distribute, and even commercialize this work, as lo
 
 ---
 
-## ⭐ Star, Fork, Share
+## Star, Fork, Share
 
 If you find this handbook useful:
 
-- ⭐ **Star** the repo to show your appreciation.
-- 🍴 **Fork** it to customize or contribute.
-- 📢 **Share** it with your network — on Twitter, LinkedIn, or your favorite cybersecurity community.
+- **Star** the repository to show your appreciation and increase visibility.
+- **Fork** it to customize or contribute back.
+- **Share** it with your network — on Twitter, LinkedIn, or any cybersecurity community.
 
-Every star and share helps someone discover this resource.
+Every star, fork, and share helps someone discover this resource.
 
 ---
 
 <div align="center">
 
-**📚 Cybersecurity Handbook**
+**Cybersecurity Handbook**
 
-*A continuously evolving cybersecurity knowledge base built through documentation, experimentation, and practical learning.*
+*A continuously evolving knowledge base built through documentation, experimentation, and practical learning.*
 
-**Always Learning · Always Documenting · Always Improving**
+Always Learning · Always Documenting · Always Improving
 
 </div>
 
-**If this helped you, drop a ⭐ – it motivates me to keep building.**
+If this helped you, drop a star — it keeps me motivated to build more.
