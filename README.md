@@ -268,56 +268,25 @@ Here's what I'm planning to work on next:
 - [ ] Practical lab environments
 
 ---
-
 ## Contributing
 
-I welcome contributions of all kinds — from fixing a typo to adding an entire new topic. Every contribution, no matter how small, helps make this handbook better for everyone.
+I welcome contributions of all kinds — from fixing a typo to adding an entire new topic. First time contributing to open source? No worries — I'll guide you through it.
 
-First time contributing to open source? No worries — I'll guide you through it.
-
-### How to Contribute
+### Quick Steps
 
 1. **Fork** the repository
-
-2. **Create a feature branch**:
-
-   ```bash
-   git checkout -b feature/your-feature-name
-   ```
-3. **Make your changes** and commit:
-   ```bash
-   git commit -m "Add: New section on ransomware defense strategies"
-   ```
-4. **Push to your fork**:
-   ```bash
-   git push origin feature/your-feature-name
-   ```
+2. **Create a branch**: `git checkout -b feature/your-feature-name`
+3. **Make your changes** and commit: `git commit -m "Add: brief description"`
+4. **Push to your fork**: `git push origin feature/your-feature-name`
 5. **Open a Pull Request** against the `main` branch
 
-We welcome contributions of all kinds — from fixing a single typo to adding an entire new topic. Every contribution, no matter how small, helps make this handbook better for everyone.
+### Ways to Help
 
-> **💡 First time contributing to open source?** No worries! I'll guide you through it.
-
----
-
-## Contributing
-
-I genuinely appreciate any help — whether it's fixing a typo, adding a new topic, or improving the design.
-
-Here's how you can get involved:
-
-### Ways to Contribute
-
-**Content** – Add new topics, fix errors, improve explanations, add practical examples.
-
-**Design** – Improve visuals, add diagrams, enhance layout.
-
-**Code** – Fix bugs, improve the Quartz setup, add features.
-
-**Documentation** – Improve clarity, fix formatting, add cross-references.
-
-**Community** – Report issues, suggest improvements, help others.
----
+- **Content** – Add new topics, fix errors, improve explanations
+- **Design** – Improve visuals, add diagrams, enhance layout
+- **Code** – Fix bugs, improve the Quartz setup, add features
+- **Documentation** – Improve clarity, formatting, cross-references
+- **Community** – Report issues, suggest improvements, help others
 
 ---
 
@@ -338,30 +307,34 @@ Here's how you can get involved:
 
 ### Guidelines
 
-Content – Write in clear, accessible English. Include practical examples and real-world scenarios.
+**Content** – Write in clear, accessible English. Include practical examples and real-world scenarios.
 
-Formatting – Use proper Markdown headings (##, ###). Keep code blocks with language specifiers (e.g., ```bash, ```python).
+**Formatting** – Use proper Markdown headings (`##`, `###`). Keep code blocks with language specifiers (e.g., ` ```bash`, ` ```python`).
 
-Images – Store in assets/images/. Use descriptive, lowercase filenames (e.g., network-osi-model.png).
+**Images** – Store in `assets/images/`. Use descriptive, lowercase filenames (e.g., `network-osi-model.png`).
 
-Style – Follow the existing visual tone. No markdown errors. Keep it concise and practical.
+**Style** – Follow the existing visual tone. No markdown errors. Keep it concise and practical.
 
-Scope – If you're unsure where to place a topic, open an issue first — we'll discuss the best location.
+**Scope** – If you're unsure where to place a topic, open an issue first — we'll discuss the best location.
+
+---
+
+### Where You Can Contribute
+
+**New Topics** – Missing a subject? Add it! Check the coverage section to avoid duplicates.
+
+**Corrections** – Found an error or outdated info? Fix it.
+
+**Improvements** – Think something can be explained better? Reword it.
+
+**Labs & Exercises** – Practical walkthroughs and hands-on exercises.
+
+**Diagrams** – Visual explanations of complex concepts.
+
+**Links & References** – Add relevant external resources.
 
 ---
 
-###  Where You Can Contribute
-
-| Type | Description |
-|------|-------------|
-| 📚 **New Topics** | Missing a subject? Add it! Check the coverage section to avoid duplicates. |
-| 🛠️ **Corrections** | Found an error or outdated info? Fix it! |
-| 💡 **Improvements** | Think something can be explained better? Reword it! |
-| 🧪 **Labs & Exercises** | Practical walkthroughs and hands-on exercises. |
-| 📊 **Diagrams** | Visual explanations of complex concepts. |
-| 🔗 **Links & References** | Add relevant external resources. |
-
----
 
 ###  Where to Put Files
 Cybersecurity notes → content/ (in the relevant category folder)
@@ -372,17 +345,6 @@ Diagrams → assets/diagrams/
 
 Labs → content/ (in the relevant lab folder)
 
----
-
-###  Need Help?
-
-Open an Issue – Create a new issue — I'll respond as soon as possible.
-
-Start a Discussion – Use the Discussions tab to share ideas, ask questions, or suggest improvements.
-
-Contribution Guide – See CONTRIBUTING.md for contribution guidelines.
-
-Code of Conduct – Please read the Code of Conduct before contributing.
 
 ---
 
