@@ -323,20 +323,6 @@ I welcome contributions of all kinds — from fixing a typo to adding an entire 
 
 ---
 
-### Guidelines
-
-**Content** – Write in clear, accessible English. Include practical examples and real-world scenarios.
-
-**Formatting** – Use proper Markdown headings (`##`, `###`). Keep code blocks with language specifiers (e.g., ` ```bash`, ` ```python`).
-
-**Images** – Store in `assets/images/`. Use descriptive, lowercase filenames (e.g., `network-osi-model.png`).
-
-**Style** – Follow the existing visual tone. No markdown errors. Keep it concise and practical.
-
-**Scope** – If you're unsure where to place a topic, open an issue first — we'll discuss the best location.
-
----
-
 ### Where You Can Contribute
 
 **New Topics** – Missing a subject? Add it! Check the coverage section to avoid duplicates.
