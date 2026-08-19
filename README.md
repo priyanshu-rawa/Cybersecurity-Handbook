@@ -137,6 +137,24 @@
 *Fully responsive — access from any device, anywhere.*
 
 ---
+## Why I Built This
+
+I've been in the same place you probably are right now — reading through forums, watching YouTube tutorials, trying to piece together what actually matters in cybersecurity.
+
+Most resources I found were either:
+
+- Too shallow — just a list of tools with no explanation of why they work.
+- Too scattered — good content spread across 20 different blogs and paid courses.
+- Too expensive — not everyone can afford a $500 course just to get started.
+
+So I started writing my own notes. Notes that actually explain *how things work*, not just what commands to run. Over time, those notes grew into this handbook.
+
+I'm not a guru. I don't have all the answers. But I do believe that **anyone can learn this stuff** if it's explained clearly and practically.
+
+If this handbook saves you even one late-night Google rabbit hole, it was worth the effort.
+
+**You're not alone in this. Let's learn together.**
+
 
 ## Why This Exists
 
