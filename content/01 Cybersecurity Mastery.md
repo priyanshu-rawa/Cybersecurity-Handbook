@@ -1,9 +1,3 @@
----
-title: "01 Cybersecurity Mastery"
----
-
-
-
 #### 1. **[[Cybersecurity Fundamentals]]**
 
 - **Objective:** Introduce the basic concepts, including understanding threats, vulnerabilities, and the critical role of cybersecurity.
