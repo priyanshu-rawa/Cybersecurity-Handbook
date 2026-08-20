@@ -12,13 +12,13 @@
 
 <p align="center">
   <a href="https://cybersecurity-handbook-lake.vercel.app">
-    <img src="https://img.shields.io/badge/🌐_Live_Website-Visit-4D6BFE?style=for-the-badge" alt="Live Website">
+    <img src="https://img.shields.io/badge/Live_Website-Visit-4D6BFE?style=for-the-badge" alt="Live Website">
   </a>
-  <a href="#-getting-started">
-    <img src="https://img.shields.io/badge/🚀_Getting_Started-Guide-success?style=for-the-badge" alt="Getting Started">
+  <a href="#getting-started">
+    <img src="https://img.shields.io/badge/Getting_Started-Guide-success?style=for-the-badge" alt="Getting Started">
   </a>
-  <a href="#-contributing">
-    <img src="https://img.shields.io/badge/🤝_Contributions-Welcome-orange?style=for-the-badge" alt="Contributions">
+  <a href="#contributing">
+    <img src="https://img.shields.io/badge/Contributions-Welcome-orange?style=for-the-badge" alt="Contributions">
   </a>
 </p>
 
@@ -29,7 +29,7 @@
   <img src="https://img.shields.io/github/issues/priyanshu-rawa/Cybersecurity-Handbook?style=flat-square" alt="Issues">
   <img src="https://img.shields.io/github/last-commit/priyanshu-rawa/Cybersecurity-Handbook?style=flat-square" alt="Last Commit">
   <img src="https://img.shields.io/github/license/priyanshu-rawa/Cybersecurity-Handbook?style=flat-square" alt="License">
-  <img src="https://img.shields.io/badge/Built%20With-Quartz-7C3AED?style=flat-square" alt="Quartz">
+  <img src="https://img.shields.io/badge/Built_With-Quartz-7C3AED?style=flat-square" alt="Quartz">
   <img src="https://img.shields.io/badge/Docs-Markdown-000000?style=flat-square&logo=markdown" alt="Markdown">
 </p>
 
@@ -61,9 +61,9 @@
 
 ---
 
-## 👀 Preview
+## Preview
 
-##  What It Looks Like
+## What It Looks Like
 
 <p align="center">
   <picture>
@@ -81,14 +81,14 @@
 </p>
 
 <p align="center">
-  <strong>🧼 Clean Homepage</strong> &nbsp;&nbsp;|&nbsp;&nbsp;
-  <strong>🕸️ Interactive Graph</strong> &nbsp;&nbsp;|&nbsp;&nbsp;
-  <strong>📖 Reader Mode</strong>
+  <strong>Clean Homepage</strong> &nbsp;&nbsp;|&nbsp;&nbsp;
+  <strong>Interactive Graph</strong> &nbsp;&nbsp;|&nbsp;&nbsp;
+  <strong>Reader Mode</strong>
 </p>
 
 ---
 
-###  Homepage
+### Homepage
 
 <p align="center">
   <img src="assets/images/Homepage.png" alt="Homepage" width="600">
@@ -98,7 +98,7 @@
 
 ---
 
-###  Interactive Knowledge Graph
+### Interactive Knowledge Graph
 
 <p align="center">
   <img src="assets/images/graph-view.png" alt="Interactive Graph" width="600">
@@ -108,7 +108,7 @@
 
 ---
 
-###  Reader Mode
+### Reader Mode
 
 <p align="center">
   <img src="assets/images/reader-mode.png" alt="Reader Mode" width="600">
@@ -118,7 +118,7 @@
 
 ---
 
-###  Dark Mode (Catppuccin Mocha)
+### Dark Mode (Catppuccin Mocha)
 
 <p align="center">
   <img src="assets/images/catppuccin-dark-mode.png" alt="Dark Mode" width="600">
@@ -128,7 +128,7 @@
 
 ---
 
-###  Mobile View
+### Mobile View
 
 <p align="center">
   <img src="assets/images/Phone-view-v2.jpeg" alt="Mobile View" width="300">
@@ -137,6 +137,7 @@
 *Fully responsive — access from any device, anywhere.*
 
 ---
+
 ## Why I Built This
 
 I've been in the same place you probably are right now — reading through forums, watching YouTube tutorials, trying to piece together what actually matters in cybersecurity.
@@ -157,12 +158,11 @@ If this handbook saves you even one late-night Google rabbit hole, it was worth 
 
 ---
 
-
 ## What This Handbook Offers
 
-This is a free, open‑source collection of cybersecurity notes.
+This is a free, open-source collection of cybersecurity notes.
 
-It's built with Quartz — so you can search through everything instantly, see how topics connect visually, and navigate easily. The content covers real‑world threats, tools, and defense strategies, and it's maintained by people who work in the field.
+It's built with Quartz — so you can search through everything instantly, see how topics connect visually, and navigate easily. The content covers real-world threats, tools, and defense strategies, and it's maintained by people who work in the field.
 
 No ads. No paywalls. Just clear explanations of how things work.
 
@@ -174,13 +174,13 @@ There's a lot here — over 400 notes covering OSINT, cryptography, cloud securi
 
 You can search through everything instantly. See how topics connect visually with the knowledge graph. Read in dark mode or light mode, on your phone or your laptop.
 
-And everything is built around first‑principles learning.
+And everything is built around first-principles learning.
 
 No fluff. No filler. Just the information you actually need.
 
 ---
 
-## 📦 Quick Start
+## Quick Start
 
 Get the handbook running locally in under 2 minutes.
 
@@ -191,17 +191,12 @@ Get the handbook running locally in under 2 minutes.
 
 ### Installation & Run
 
-#### **Linux/macOS (bash/zsh)**
+**Linux/macOS (bash/zsh)**
 
 ```bash
-# Clone the repository
 git clone https://github.com/priyanshu-rawa/Cybersecurity-Handbook.git
 cd Cybersecurity-Handbook
-
-# Install dependencies
 npm install
-
-# Start the development server
 npm run quartz:dev
 ```
 
@@ -307,7 +302,7 @@ Labs → content/ (in the relevant lab folder)
 
 ---
 
-##  Support & Sponsorship
+###  Support & Sponsorship
 
 This handbook is — and will always be — **completely free and open source**.  
 If it's helped you in any way, here are some simple ways to give back.
