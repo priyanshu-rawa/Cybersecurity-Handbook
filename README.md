@@ -155,34 +155,28 @@ If this handbook saves you even one late-night Google rabbit hole, it was worth 
 
 **You're not alone in this. Let's learn together.**
 
+---
 
-## Why This Exists
 
-Cybersecurity moves fast. New vulnerabilities, tools, and best practices show up every day. But most learning material is scattered across forums, blogs, and paid courses — hard to find, hard to trust, and often behind a paywall.
+## What This Handbook Offers
 
-This handbook tries to do things differently.
+This is a free, open‑source collection of cybersecurity notes.
 
-| What it offers | Details |
-|----------------|---------|
-| **Open and free** | No paywalls, no ads. Just knowledge you can access anytime. |
-| **Interactive** | Built with Quartz — full‑text search, knowledge graphs, and deep linking. |
-| **Community driven** | Written and maintained by people who actually work in the field. |
-| **Practical and current** | Covers real‑world threats, tools, and defense strategies that matter today. |
+It's built with Quartz — so you can search through everything instantly, see how topics connect visually, and navigate easily. The content covers real‑world threats, tools, and defense strategies, and it's maintained by people who work in the field.
 
-Whether you're studying for your first certification, defending a corporate network, or just curious about how things work — this handbook is for you.
+No ads. No paywalls. Just clear explanations of how things work.
 
 ---
 
 ## Key Features
 
-| Feature | Description |
-|---------|-------------|
-| **400+ Notes** | Covers everything from OSINT and cryptography to cloud security |
-| **Knowledge Graph** | Visual connections between topics — helps you see how concepts relate |
-| **Full-Text Search** | Find what you need instantly, no digging through pages |
-| **Dark & Light Mode** | Read comfortably in any environment, day or night |
-| **Mobile Friendly** | Works on any device — phone, tablet, or desktop |
-| **First‑Principles Learning** | Focuses on understanding the *why*, not just the *how* |
+There's a lot here — over 400 notes covering OSINT, cryptography, cloud security, and everything in between.
+
+You can search through everything instantly. See how topics connect visually with the knowledge graph. Read in dark mode or light mode, on your phone or your laptop.
+
+And everything is built around first‑principles learning.
+
+No fluff. No filler. Just the information you actually need.
 
 ---
 
@@ -254,38 +248,16 @@ npm run quartz:serve
 
 ---
 
-##  Philosophy
+## Philosophy
 
-Cybersecurity is fundamentally built on understanding systems.
+Understanding the technology is the foundation of everything else.
 
-Without a solid grasp of operating systems, networking, protocols, authentication, memory, processes, and application architecture, tools become little more than buttons to press.
+This handbook explains operating systems, networking, protocols, memory, authentication, and processes – how they work and what they do. Every topic focuses on clear definitions and practical explanations.
 
-This handbook is built around one principle:
-
-> **Understand the technology before learning how to secure or exploit it.**
-
-Each topic aims to answer not only *what* something does, but also *how* it works internally and *why* it behaves that way.
+Because if you understand what's happening under the hood, everything else follows.
 
 ---
 
-## Roadmap
-
-Here's what I'm planning to work on next:
-
-- [ ] Expanded Linux internals documentation
-- [ ] Windows internals series
-- [ ] Networking deep dives
-- [ ] Active Directory attack and defense labs
-- [ ] SOC investigation playbooks
-- [ ] Detection engineering content
-- [ ] Malware analysis workflows
-- [ ] Reverse engineering notes
-- [ ] Cloud security documentation
-- [ ] Interactive diagrams
-- [ ] Architecture illustrations
-- [ ] Practical lab environments
-
----
 ## Contributing
 
 I welcome contributions of all kinds — from fixing a typo to adding an entire new topic. First time contributing to open source? No worries — I'll guide you through it.
@@ -322,23 +294,6 @@ I welcome contributions of all kinds — from fixing a typo to adding an entire 
 | 8 | **Open a Pull Request** — go to the original repo and click "Compare & pull request" |
 
 ---
-
-### Where You Can Contribute
-
-**New Topics** – Missing a subject? Add it! Check the coverage section to avoid duplicates.
-
-**Corrections** – Found an error or outdated info? Fix it.
-
-**Improvements** – Think something can be explained better? Reword it.
-
-**Labs & Exercises** – Practical walkthroughs and hands-on exercises.
-
-**Diagrams** – Visual explanations of complex concepts.
-
-**Links & References** – Add relevant external resources.
-
----
-
 
 ###  Where to Put Files
 Cybersecurity notes → content/ (in the relevant category folder)
