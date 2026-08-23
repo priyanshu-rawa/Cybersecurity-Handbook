@@ -41,11 +41,11 @@
 
 <table>
 <tr>
-<th>📚 Notes</th>
-<th>🧪 Labs</th>
-<th>🔍 Search</th>
-<th>⚡ Performance</th>
-<th>🤝 Community</th>
+<th> Notes</th>
+<th> Labs</th>
+<th> Search</th>
+<th> Performance</th>
+<th> Community</th>
 </tr>
 
 <tr>
