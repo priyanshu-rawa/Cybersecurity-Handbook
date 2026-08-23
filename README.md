@@ -1,3 +1,13 @@
+<div align="center">
+
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:0F2027,50:2C5364,100:4D6BFE&height=200&section=header&text=Cybersecurity%20Handbook&fontSize=48&fontColor=ffffff&fontAlignY=38&desc=Learn.%20Defend.%20Master%20the%20Craft.&descAlignY=58&descSize=18&animation=fadeIn" width="100%"/>
+
+<a href="https://cybersecurity-handbook-lake.vercel.app">
+  <img src="https://readme-typing-svg.demolab.com/?lines=Open-source+Cybersecurity+Knowledge+Base;400%2B+Notes+%C2%B7+Labs+%C2%B7+Interactive+Graph;Built+by+the+Community%2C+for+the+Community;From+First+Principles+to+Advanced+Concepts&font=Fira+Code&center=true&width=650&height=45&color=4D6BFE&vCenter=true&size=22&pause=1800" alt="Typing SVG" />
+</a>
+
+</div>
+
 <h1 align="center">📚 Cybersecurity Handbook</h1>
 
 <p align="center">
@@ -12,52 +22,89 @@
 
 <p align="center">
   <a href="https://cybersecurity-handbook-lake.vercel.app">
-    <img src="https://img.shields.io/badge/Live_Website-Visit-4D6BFE?style=for-the-badge" alt="Live Website">
+    <img src="https://img.shields.io/badge/🌐_Live_Website-Visit_Now-4D6BFE?style=for-the-badge&labelColor=0D1117" alt="Live Website">
   </a>
-  <a href="#getting-started">
-    <img src="https://img.shields.io/badge/Getting_Started-Guide-success?style=for-the-badge" alt="Getting Started">
+  <a href="#-quick-start">
+    <img src="https://img.shields.io/badge/🚀_Getting_Started-Guide-2EA44F?style=for-the-badge&labelColor=0D1117" alt="Getting Started">
   </a>
-  <a href="#contributing">
-    <img src="https://img.shields.io/badge/Contributions-Welcome-orange?style=for-the-badge" alt="Contributions">
+  <a href="#-contributing">
+    <img src="https://img.shields.io/badge/🤝_Contributions-Welcome-FF8C00?style=for-the-badge&labelColor=0D1117" alt="Contributions">
   </a>
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/github/stars/priyanshu-rawa/Cybersecurity-Handbook?style=flat-square&logo=github" alt="Stars">
-  <img src="https://img.shields.io/github/forks/priyanshu-rawa/Cybersecurity-Handbook?style=flat-square&logo=github" alt="Forks">
-  <img src="https://img.shields.io/github/contributors/priyanshu-rawa/Cybersecurity-Handbook?style=flat-square" alt="Contributors">
-  <img src="https://img.shields.io/github/issues/priyanshu-rawa/Cybersecurity-Handbook?style=flat-square" alt="Issues">
-  <img src="https://img.shields.io/github/last-commit/priyanshu-rawa/Cybersecurity-Handbook?style=flat-square" alt="Last Commit">
-  <img src="https://img.shields.io/github/license/priyanshu-rawa/Cybersecurity-Handbook?style=flat-square" alt="License">
-  <img src="https://img.shields.io/badge/Built_With-Quartz-7C3AED?style=flat-square" alt="Quartz">
-  <img src="https://img.shields.io/badge/Docs-Markdown-000000?style=flat-square&logo=markdown" alt="Markdown">
+  <img src="https://img.shields.io/github/stars/priyanshu-rawa/Cybersecurity-Handbook?style=for-the-badge&logo=github&color=F5C518&labelColor=0D1117" alt="Stars">
+  <img src="https://img.shields.io/github/forks/priyanshu-rawa/Cybersecurity-Handbook?style=for-the-badge&logo=github&color=4D6BFE&labelColor=0D1117" alt="Forks">
+  <img src="https://img.shields.io/github/contributors/priyanshu-rawa/Cybersecurity-Handbook?style=for-the-badge&color=2EA44F&labelColor=0D1117" alt="Contributors">
 </p>
 
----
+<p align="center">
+  <img src="https://img.shields.io/github/issues/priyanshu-rawa/Cybersecurity-Handbook?style=flat-square&logo=github&color=red&labelColor=0D1117" alt="Issues">
+  <img src="https://img.shields.io/github/last-commit/priyanshu-rawa/Cybersecurity-Handbook?style=flat-square&logo=git&color=orange&labelColor=0D1117" alt="Last Commit">
+  <img src="https://img.shields.io/github/license/priyanshu-rawa/Cybersecurity-Handbook?style=flat-square&color=blueviolet&labelColor=0D1117" alt="License">
+  <img src="https://img.shields.io/badge/Built_With-Quartz-7C3AED?style=flat-square&labelColor=0D1117" alt="Quartz">
+  <img src="https://img.shields.io/badge/Docs-Markdown-000000?style=flat-square&logo=markdown&labelColor=0D1117" alt="Markdown">
+  <img src="https://img.shields.io/badge/PRs-Welcome-brightgreen?style=flat-square&logo=git&labelColor=0D1117" alt="PRs Welcome">
+  <img src="https://visitor-badge.laobi.icu/badge?page_id=priyanshu-rawa.Cybersecurity-Handbook&style=flat-square&color=4D6BFE" alt="Visitors">
+</p>
 
-> **Learn cybersecurity with clarity — from fundamentals to advanced concepts, all in one searchable, open-source handbook.**
+<p align="center">
+  <img src="https://img.shields.io/badge/Linux-FCC624?style=flat-square&logo=linux&logoColor=black" alt="Linux">
+  <img src="https://img.shields.io/badge/Windows-0078D6?style=flat-square&logo=windows&logoColor=white" alt="Windows">
+  <img src="https://img.shields.io/badge/Docker-2496ED?style=flat-square&logo=docker&logoColor=white" alt="Docker">
+  <img src="https://img.shields.io/badge/Kubernetes-326CE5?style=flat-square&logo=kubernetes&logoColor=white" alt="Kubernetes">
+  <img src="https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white" alt="Python">
+  <img src="https://img.shields.io/badge/Node.js-339933?style=flat-square&logo=node.js&logoColor=white" alt="Node.js">
+  <img src="https://img.shields.io/badge/Vercel-000000?style=flat-square&logo=vercel&logoColor=white" alt="Vercel">
+</p>
+
+<img src="https://capsule-render.vercel.app/api?type=rect&color=0:4D6BFE,100:7C3AED&height=3&width=1000" width="100%"/>
+
+<blockquote align="center">
+  <b>Learn cybersecurity with clarity — from fundamentals to advanced concepts, all in one searchable, open-source handbook.</b>
+</blockquote>
 
 <div align="center">
 
 <table>
 <tr>
-<th> Notes</th>
-<th> Labs</th>
-<th> Search</th>
-<th> Performance</th>
-<th> Community</th>
+<th>📝 Notes</th>
+<th>🧪 Labs</th>
+<th>🔍 Search</th>
+<th>⚡ Performance</th>
+<th>👥 Community</th>
 </tr>
-
 <tr>
-<td>Continuously Growing</td>
-<td>Hands-on Learning</td>
-<td>Lightning Fast</td>
-<td>Powered by Quartz</td>
-<td>Open Source</td>
+<td align="center">Continuously Growing</td>
+<td align="center">Hands-on Learning</td>
+<td align="center">Lightning Fast</td>
+<td align="center">Powered by Quartz</td>
+<td align="center">Open Source</td>
 </tr>
 </table>
 
 </div>
+
+<img src="https://capsule-render.vercel.app/api?type=rect&color=0:4D6BFE,100:7C3AED&height=3&width=1000" width="100%"/>
+
+<details>
+<summary><b>📑 Table of Contents</b></summary>
+<br>
+
+- [🖼️ Preview](#preview)
+- [💡 Why I Built This](#why-i-built-this)
+- [🎯 What This Handbook Offers](#what-this-handbook-offers)
+- [✨ Key Features](#key-features)
+- [⚡ Quick Start](#quick-start)
+- [📖 What's Covered](#-📖-whats-covered)
+- [🧠 Philosophy](#philosophy)
+- [🤝 Contributing](#-contributing)
+- [💖 Support & Sponsorship](#-support--sponsorship)
+- [🙌 Say Thanks](#-say-thanks)
+- [📄 License](#-license)
+- [⭐ Star, Fork, Share](#-star-fork-share)
+
+</details>
 
 ---
 
@@ -88,7 +135,7 @@
 
 ---
 
-### Homepage
+### 🏠 Homepage
 
 <p align="center">
   <img src="assets/images/Homepage.png" alt="Homepage" width="600">
@@ -98,7 +145,7 @@
 
 ---
 
-### Interactive Knowledge Graph
+### 🕸️ Interactive Knowledge Graph
 
 <p align="center">
   <img src="assets/images/graph-view.png" alt="Interactive Graph" width="600">
@@ -108,7 +155,7 @@
 
 ---
 
-### Reader Mode
+### 📖 Reader Mode
 
 <p align="center">
   <img src="assets/images/reader-mode.png" alt="Reader Mode" width="600">
@@ -118,7 +165,7 @@
 
 ---
 
-### Dark Mode (Catppuccin Mocha)
+### 🌙 Dark Mode (Catppuccin Mocha)
 
 <p align="center">
   <img src="assets/images/catppuccin-dark-mode.png" alt="Dark Mode" width="600">
@@ -128,7 +175,7 @@
 
 ---
 
-### Mobile View
+### 📱 Mobile View
 
 <p align="center">
   <img src="assets/images/Phone-view-v2.jpeg" alt="Mobile View" width="300">
@@ -136,7 +183,7 @@
 
 *Fully responsive — access from any device, anywhere.*
 
----
+<img src="https://capsule-render.vercel.app/api?type=rect&color=0:7C3AED,100:4D6BFE&height=3&width=1000" width="100%"/>
 
 ## Why I Built This
 
@@ -178,7 +225,7 @@ And everything is built around first-principles learning.
 
 No fluff. No filler. Just the information you actually need.
 
----
+<img src="https://capsule-render.vercel.app/api?type=rect&color=0:4D6BFE,100:7C3AED&height=3&width=1000" width="100%"/>
 
 ## Quick Start
 
@@ -226,22 +273,21 @@ npm run quartz:serve
 
 ---
 
-
 ##  📖 What's Covered
 
-**Operating Systems** – Linux, Windows, networking basics like TCP/IP, DNS, VPNs, and firewalls.
+> **🖥️ Operating Systems** – Linux, Windows, networking basics like TCP/IP, DNS, VPNs, and firewalls.
 
-**Offensive Security** – OWASP Top 10, SQL injection, XSS, scanning, exploitation, and post‑exploitation.
+> **⚔️ Offensive Security** – OWASP Top 10, SQL injection, XSS, scanning, exploitation, and post‑exploitation.
 
-**Defensive Security** – SOC, incident response, SIEM, log analysis, threat hunting, and digital forensics.
+> **🛡️ Defensive Security** – SOC, incident response, SIEM, log analysis, threat hunting, and digital forensics.
 
-**Cloud & Infrastructure** – AWS, Azure, GCP, Zero Trust, Docker, Kubernetes, DevSecOps, and IAM.
+> **☁️ Cloud & Infrastructure** – AWS, Azure, GCP, Zero Trust, Docker, Kubernetes, DevSecOps, and IAM.
 
-**Programming & Automation** – Python, Bash, PowerShell, scripting, CI/CD, and Git.
+> **💻 Programming & Automation** – Python, Bash, PowerShell, scripting, CI/CD, and Git.
 
-**Cryptography** – Symmetric and asymmetric encryption, AES, RSA, hashing (SHA‑256, MD5), PKI, TLS, and certificates.
+> **🔐 Cryptography** – Symmetric and asymmetric encryption, AES, RSA, hashing (SHA‑256, MD5), PKI, TLS, and certificates.
 
----
+<img src="https://capsule-render.vercel.app/api?type=rect&color=0:7C3AED,100:4D6BFE&height=3&width=1000" width="100%"/>
 
 ## Philosophy
 
@@ -267,18 +313,18 @@ I welcome contributions of all kinds — from fixing a typo to adding an entire 
 
 ### Ways to Help
 
-- **Content** – Add new topics, fix errors, improve explanations
-- **Design** – Improve visuals, add diagrams, enhance layout
-- **Code** – Fix bugs, improve the Quartz setup, add features
-- **Documentation** – Improve clarity, formatting, cross-references
-- **Community** – Report issues, suggest improvements, help others
+- 📝 **Content** – Add new topics, fix errors, improve explanations
+- 🎨 **Design** – Improve visuals, add diagrams, enhance layout
+- 💻 **Code** – Fix bugs, improve the Quartz setup, add features
+- 📚 **Documentation** – Improve clarity, formatting, cross-references
+- 👥 **Community** – Report issues, suggest improvements, help others
 
 ---
 
 ###  Quick Guide
 
 | Step | Action |
-|------|--------|
+|:---:|------|
 | 1 | **Fork** the repository — click the "Fork" button at the top right |
 | 2 | **Clone** your fork locally: `git clone https://github.com/your-username/Cybersecurity-Handbook.git` |
 | 3 | **Create a branch** for your changes: `git checkout -b feature/your-feature-name` |
@@ -291,39 +337,35 @@ I welcome contributions of all kinds — from fixing a typo to adding an entire 
 ---
 
 ###  Where to Put Files
-Cybersecurity notes → content/ (in the relevant category folder)
 
-Images → assets/images/
+| Type | Location |
+|------|----------|
+| 📝 Cybersecurity notes | `content/` (in the relevant category folder) |
+| 🖼️ Images | `assets/images/` |
+| 📊 Diagrams | `assets/diagrams/` |
+| 🧪 Labs | `content/` (in the relevant lab folder) |
 
-Diagrams → assets/diagrams/
-
-Labs → content/ (in the relevant lab folder)
-
-
----
+<img src="https://capsule-render.vercel.app/api?type=rect&color=0:4D6BFE,100:7C3AED&height=3&width=1000" width="100%"/>
 
 ###  Support & Sponsorship
 
-This handbook is — and will always be — **completely free and open source**.  
+This handbook is — and will always be — **completely free and open source**.
+
 If it's helped you in any way, here are some simple ways to give back.
 
 > *"Open source is built by people who care. Every contribution — no matter how small — makes a difference."*
 
 ##  How You Can Support
 
-Star the repo – Adds a star to the project on GitHub. Increases visibility and discoverability.
-
-Share the handbook – Post it on LinkedIn, Twitter, Reddit, Discord. Drives organic growth of the community.
-
-Contribute content – Add new topics, fix typos, sharpen explanations. Makes the content better for everyone.
-
-Give feedback – Open an issue or start a discussion. Guides future improvements and priorities.
-
-Tell a friend – Share with someone learning cybersecurity. Expands the network of learners and practitioners.
-
-Report bugs – Let me know if something is broken or unclear. Keeps the handbook accurate and reliable.
-
-Use it daily – Reference it in your learning or work. The best support is using it.
+| | |
+|---|---|
+| ⭐ **Star the repo** | Adds a star to the project on GitHub. Increases visibility and discoverability. |
+| 📢 **Share the handbook** | Post it on LinkedIn, Twitter, Reddit, Discord. Drives organic growth of the community. |
+| 🖊️ **Contribute content** | Add new topics, fix typos, sharpen explanations. Makes the content better for everyone. |
+| 💬 **Give feedback** | Open an issue or start a discussion. Guides future improvements and priorities. |
+| 🤝 **Tell a friend** | Share with someone learning cybersecurity. Expands the network of learners and practitioners. |
+| 🐛 **Report bugs** | Let me know if something is broken or unclear. Keeps the handbook accurate and reliable. |
+| 📖 **Use it daily** | Reference it in your learning or work. The best support is using it. |
 
 ---
 
@@ -353,11 +395,28 @@ Copy this and share it:
 
 ---
 
+<div align="center">
+
+### ⭐ Star History
+
+<a href="https://star-history.com/#priyanshu-rawa/Cybersecurity-Handbook&Date">
+  <img src="https://api.star-history.com/svg?repos=priyanshu-rawa/Cybersecurity-Handbook&type=Date" alt="Star History Chart" width="600">
+</a>
+
+</div>
+
+---
+
 Thank you for being part of this journey. Every star, share, and contribution matters.
 
-[![Star](https://img.shields.io/github/stars/priyanshu-rawa/Cybersecurity-Handbook?style=for-the-badge&logo=github)](https://github.com/priyanshu-rawa/Cybersecurity-Handbook)
-[![Share](https://img.shields.io/badge/Share-🔗-4D6BFE?style=for-the-badge)](https://github.com/priyanshu-rawa/Cybersecurity-Handbook)
-
+<p align="center">
+  <a href="https://github.com/priyanshu-rawa/Cybersecurity-Handbook">
+    <img src="https://img.shields.io/github/stars/priyanshu-rawa/Cybersecurity-Handbook?style=for-the-badge&logo=github&color=F5C518&labelColor=0D1117" alt="Star">
+  </a>
+  <a href="https://github.com/priyanshu-rawa/Cybersecurity-Handbook">
+    <img src="https://img.shields.io/badge/Share-🔗-4D6BFE?style=for-the-badge&labelColor=0D1117" alt="Share">
+  </a>
+</p>
 
 ---
 
@@ -379,7 +438,7 @@ If you find this handbook useful:
 
 Every star, fork, and share helps someone discover this resource.
 
----
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:4D6BFE,50:2C5364,100:0F2027&height=150&section=footer" width="100%"/>
 
 <div align="center">
 
@@ -387,8 +446,8 @@ Every star, fork, and share helps someone discover this resource.
 
 *A continuously evolving knowledge base built through documentation, experimentation, and practical learning.*
 
-Always Learning · Always Documenting · Always Improving
+**Always Learning · Always Documenting · Always Improving**
 
 </div>
 
-If this helped you, drop a star — it keeps me motivated to build more.
+<p align="center">If this helped you, drop a star — it keeps me motivated to build more. ⭐</p>
