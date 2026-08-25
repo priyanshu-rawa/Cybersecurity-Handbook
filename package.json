@@ -38,10 +38,10 @@
     "quartz": "./quartz/bootstrap-cli.mjs"
   },
   "dependencies": {
-    "@clack/prompts": "^0.11.0",
+    "@clack/prompts": "^1.7.0",
     "@floating-ui/dom": "^1.7.4",
-    "@myriaddreamin/rehype-typst": "^0.6.0",
-    "@napi-rs/simple-git": "0.1.22",
+    "@myriaddreamin/rehype-typst": "^0.7.0",
+    "@napi-rs/simple-git": "1.1.0",
     "@quartz-community/utils": "^0.1.1",
     "@studio-freight/lenis": "^1.0.42",
     "ansi-truncate": "^1.4.0",
@@ -49,9 +49,9 @@
     "chokidar": "^5.0.0",
     "esbuild-sass-plugin": "^3.6.0",
     "github-slugger": "^2.0.0",
-    "globby": "^16.1.0",
+    "globby": "^16.2.4",
     "hast-util-to-jsx-runtime": "^2.3.6",
-    "isomorphic-git": "^1.36.3",
+    "isomorphic-git": "^1.41.8",
     "lenis": "^1.0.0",
     "lightningcss": "^1.31.1",
     "micromorph": "^0.4.5",
@@ -65,7 +65,7 @@
     "remark-rehype": "^11.1.2",
     "rfdc": "^1.4.1",
     "serve-handler": "^6.1.6",
-    "sharp": "^0.34.5",
+    "sharp": "^0.35.3",
     "source-map-support": "^0.5.21",
     "to-vfile": "^8.0.0",
     "unified": "^11.0.5",
@@ -79,15 +79,15 @@
   "devDependencies": {
     "@quartz-community/types": "github:quartz-community/types",
     "@types/hast": "^3.0.4",
-    "@types/node": "^25.0.10",
+    "@types/node": "^26.2.0",
     "@types/pretty-time": "^1.1.5",
     "@types/source-map-support": "^0.5.10",
     "@types/ws": "^8.18.1",
     "@types/yargs": "^17.0.35",
-    "esbuild": "^0.27.2",
+    "esbuild": "^0.28.2",
     "prettier": "^3.8.1",
     "tsx": "^4.21.0",
-    "typescript": "^5.9.3"
+    "typescript": "^7.0.2"
   },
   "allowScripts": {
     "github:quartz-community/utils#9da5e8de5b2a2a33dc7c15168282058217ff3e3f": true
