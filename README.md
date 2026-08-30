@@ -422,7 +422,7 @@ Thank you for being part of this journey. Every star, share, and contribution ma
 
 ##  License
 
-This project is licensed under the **MIT License** — see the [LICENSE](LICENSE) file for details.
+This project is licensed under the **MIT License** — see the [LICENSE](LICENSE.txt) file for details.
 
 You are free to use, modify, distribute, and even commercialize this work, as long as you retain the copyright notice. We encourage you to contribute back improvements!
 
