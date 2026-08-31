@@ -1,7 +1,7 @@
 <div align="center">
 
 <a href="https://readme-typing-svg.demolab.com/">
-  <img src="https://readme-typing-svg.demolab.com/?lines=Understand+the+System%2C+Not+Just+the+Tool;400%2B+Notes+%C2%B7+First+Principles+%C2%B7+Community+Driven;New%3A+Full+Privilege+Escalation+Handbook&font=Fira+Code&center=true&width=600&height=40&color=4D6BFE&vCenter=true&size=18&pause=2200" alt="tagline" />
+  <img src="https://readme-typing-svg.demolab.com/?lines=Understand+the+System%2C+Not+Just+the+Tool;400%2B+Notes+%C2%B7+First+Principles+%C2%B7+Community+Driven;New%3A+Full+Privilege+Escalation+Handbook;New%3A+AI+Security+Module&font=Fira+Code&center=true&width=600&height=40&color=4D6BFE&vCenter=true&size=18&pause=2200" alt="tagline" />
 </a>
 
 <p>
@@ -16,7 +16,8 @@
 ## 📖 Cybersecurity Handbook
 
 > [!tip] New
-> A complete Privilege Escalation Handbook has been added. You'll find the full folder on the left in the Explorer.
+> A complete **Privilege Escalation** Handbook has been added.
+> A complete **AI Security Module** is now live – attacks, controls, and red teaming across 22 notes.
 
 A structured collection of notes on cybersecurity — written to explain how systems actually work, not just which tools to run.
 
