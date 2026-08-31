@@ -97,7 +97,6 @@
 - [✨ Key Features](#key-features)
 - [⚡ Quick Start](#quick-start)
 - [📖 What's Covered](#-📖-whats-covered)
-- [🧠 Philosophy](#philosophy)
 - [🤝 Contributing](#-contributing)
 - [💖 Support & Sponsorship](#-support--sponsorship)
 - [🙌 Say Thanks](#-say-thanks)
@@ -289,15 +288,6 @@ npm run quartz:serve
 
 <img src="https://capsule-render.vercel.app/api?type=rect&color=0:7C3AED,100:4D6BFE&height=3&width=1000" width="100%"/>
 
-## Philosophy
-
-Understanding the technology is the foundation of everything else.
-
-This handbook explains operating systems, networking, protocols, memory, authentication, and processes – how they work and what they do. Every topic focuses on clear definitions and practical explanations.
-
-Because if you understand what's happening under the hood, everything else follows.
-
----
 
 ## Contributing
 
