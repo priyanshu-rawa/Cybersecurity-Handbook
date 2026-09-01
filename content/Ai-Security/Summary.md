@@ -1,9 +1,3 @@
----
-tags: [ai-security, summary, moc]
-created: 2025-01-01
-status: permanent
----
-
 # AI Security — Summary & Map
 
 ## The five attack categories

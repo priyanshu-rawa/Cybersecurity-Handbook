@@ -1,9 +1,3 @@
----
-tags: [ai-security, human-factors, overreliance]
-created: 2025-01-01
-status: permanent
----
-
 # AI Overreliance
 
 ## The weird one in the list

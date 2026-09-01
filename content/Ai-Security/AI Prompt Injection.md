@@ -1,9 +1,3 @@
----
-tags: [ai-security, attacks, prompt-injection]
-created: 2025-01-01
-status: permanent
----
-
 # AI Prompt Injection
 
 ## What is it?

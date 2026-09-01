@@ -1,9 +1,3 @@
----
-tags: [ai-security, controls, content-filtering]
-created: 2025-01-01
-status: permanent
----
-
 # Content Filters
 
 ## What they are

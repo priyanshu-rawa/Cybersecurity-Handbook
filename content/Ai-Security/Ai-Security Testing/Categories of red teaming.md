@@ -1,9 +1,3 @@
----
-tags: [ai-security, testing, red-teaming]
-created: 2025-01-01
-status: permanent
----
-
 # Categories of AI Red Teaming
 
 ## Three flavors

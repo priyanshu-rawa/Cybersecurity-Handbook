@@ -1,9 +1,3 @@
----
-tags: [ai-security, architecture]
-created: 2025-01-01
-status: permanent
----
-
 # AI Character Layers (Architecture)
 
 ## The three-layer mental model

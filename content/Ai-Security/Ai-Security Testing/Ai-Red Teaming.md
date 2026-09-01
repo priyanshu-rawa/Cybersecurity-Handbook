@@ -1,9 +1,3 @@
----
-tags: [ai-security, testing, red-teaming]
-created: 2025-01-01
-status: permanent
----
-
 # AI Red Teaming
 
 ## What red teaming is

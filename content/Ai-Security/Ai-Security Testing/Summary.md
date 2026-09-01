@@ -1,9 +1,3 @@
----
-tags: [ai-security, testing, summary]
-created: 2025-01-01
-status: permanent
----
-
 # AI Security Testing — Summary
 
 ## What to take away

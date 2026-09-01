@@ -1,9 +1,3 @@
----
-tags: [ai-security, controls, supply-chain, open-source]
-created: 2025-01-01
-status: permanent
----
-
 # Open-Source AI Libraries — Supply Chain Security
 
 ## Why AI OSS libraries are a special case

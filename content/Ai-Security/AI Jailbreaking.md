@@ -1,9 +1,3 @@
----
-tags: [ai-security, attacks, jailbreaking]
-created: 2025-01-01
-status: permanent
----
-
 # AI Jailbreaking
 
 ## What is it?

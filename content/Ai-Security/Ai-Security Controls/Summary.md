@@ -1,9 +1,3 @@
----
-tags: [ai-security, controls, summary]
-created: 2025-01-01
-status: permanent
----
-
 # AI Security Controls — Summary
 
 ## What you should be able to do after this section

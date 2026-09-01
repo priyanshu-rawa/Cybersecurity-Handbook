@@ -1,9 +1,3 @@
----
-tags: [ai-security, testing, red-teaming]
-created: 2025-01-01
-status: permanent
----
-
 # AI Security Testing — Introduction
 
 ## The gap this fills

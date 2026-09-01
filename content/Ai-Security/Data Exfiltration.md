@@ -1,9 +1,3 @@
----
-tags: [ai-security, attacks, data-exfiltration]
-created: 2025-01-01
-status: permanent
----
-
 # Data Exfiltration in AI Systems
 
 ## What's different about AI exfiltration

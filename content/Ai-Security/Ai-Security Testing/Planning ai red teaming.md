@@ -1,9 +1,3 @@
----
-tags: [ai-security, testing, red-teaming, planning]
-created: 2025-01-01
-status: permanent
----
-
 # Planning an AI Red Teaming Exercise
 
 ## Three goals to keep in mind

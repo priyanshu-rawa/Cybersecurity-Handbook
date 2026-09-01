@@ -1,9 +1,3 @@
----
-tags: [ai-security, controls, data-security, access-control]
-created: 2025-01-01
-status: permanent
----
-
 # Implement Data Security
 
 ## The core principle

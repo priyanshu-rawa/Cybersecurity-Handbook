@@ -1,9 +1,3 @@
----
-tags: [ai-security, controls, monitoring, detection]
-created: 2025-01-01
-status: permanent
----
-
 # Monitor & Detect AI-Specific Threats
 
 ## Why traditional monitoring misses AI attacks

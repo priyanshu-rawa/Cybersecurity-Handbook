@@ -1,9 +1,3 @@
----
-tags: [ai-security, fundamentals]
-created: 2025-01-01
-status: permanent
----
-
 # Basics of AI Security
 
 ## What even is AI Security?

@@ -1,9 +1,3 @@
----
-tags: [ai-security, controls, grounding, RAG]
-created: 2025-01-01
-status: permanent
----
-
 # Grounding AI Systems
 
 ## What is grounding?

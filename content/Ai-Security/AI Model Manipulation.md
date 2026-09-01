@@ -1,9 +1,3 @@
----
-tags: [ai-security, attacks, model-manipulation, data-poisoning]
-created: 2025-01-01
-status: permanent
----
-
 # AI Model Manipulation
 
 ## What makes this different from other attacks

@@ -1,9 +1,3 @@
----
-tags: [ai-security, controls, metaprompts, system-prompts]
-created: 2025-01-01
-status: permanent
----
-
 # Metaprompts (System Prompts)
 
 ## What is a metaprompt?
