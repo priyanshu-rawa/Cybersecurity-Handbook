@@ -13,7 +13,7 @@
 
 </div>
 
-## 📖 Cybersecurity Handbook
+## 📓 Cybersecurity Handbook
 
 > [!tip] New
 > A complete **Privilege Escalation** Handbook has been added.
