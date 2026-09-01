@@ -179,7 +179,7 @@ If you find errors, outdated information, or missing context, feel free to open 
 
 ---
 
-## 🛠️ Built with
+##  Built with
 
 <p>
   <img src="https://img.shields.io/badge/Obsidian-483699?style=flat-square&logo=obsidian&logoColor=white" alt="Obsidian">
@@ -204,7 +204,7 @@ Free and open. That won't change.
 
 ---
 
-## ✨ Core idea
+##  Core idea
 
 > [!abstract] Core Idea
 > Learn deeply.
