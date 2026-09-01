@@ -115,10 +115,9 @@ This isn't just an ordinary project; it's a leap towards a more private and dece
 
 The integration of ZKPs into Ethereum is a bold step towards a future where blockchain technology is not only more secure and efficient but also more private and versatile. This development is a call to action for developers, investors, and users to embrace and explore the possibilities opened up by this groundbreaking technology. As we stand at the threshold of this new era, the community's engagement, experimentation, and innovation will be key in realizing the full potential of ZKPs in reshaping the blockchain landscape.
 
-Stay Curious,
+Stay Curious
 
-
-Addie LaMarr
+Priyanshu
 
 
 

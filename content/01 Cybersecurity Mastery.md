@@ -157,16 +157,6 @@
 8. **[[Privacy-Enhancing Technologies]]:** Technologies designed to enhance user privacy.
 9. **[[Ethics in AI and Machine Learning]]:** Ethical considerations in AI/ML applications in cybersecurity.
 
-# A Note From Addie
-
-![[Pasted image 20240514203209.png]]
-## Let's Connect
-
-If you're ready to take control of your cybersecurity career, you're going to love what I've built.
-
-**[Cyber Zero to Hero](https://addie-clark.mykajabi.com/zero-to-cyber-hero-waitlist-discount)** is the course I created after hundreds of people asked the same thing: _"Where do I even start?"_ It's a full system for breaking into cybersecurity—without the burnout, the bootcamp debt, or the gatekeeping. You'll pick your perfect niche, build your own second brain to organize everything you learn, and gain real-world experience through home labs that actually match what employers want. Just a clear path forward in the age of AI.
-
-Want to go even deeper? The **[Cyber Resistance Club](https://addie-clark.mykajabi.com/offers/ezpjgaN5/checkout)** is where I publish everything I _can't_ say freely online—radical deep dives on surveillance, digital power, and privacy threats that no one else is talking about.
 
 Your future in cyber doesn't start with a job post—it starts with your momentum.  
 Let's build it.

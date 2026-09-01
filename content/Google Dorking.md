@@ -38,20 +38,7 @@ Sensitive information or insecure web assets unintentionally indexed by search e
 ### Google Dorks for OSINT
 
 Operators are useful additions to Google search terms that will help retrieve specific results that might be of use in an investigation.
-
-| Operator  | Example                         | Description                                               |
-| --------- | ------------------------------- | --------------------------------------------------------- |
-| OR        | Emily OR Olivia                 | Returns results with at least one keyword                 |
-| AND       | Sophia AND Olivia               | Returns results with all keywords                         |
-| “X”       | “Addie LaMarr YouTube Channel”  | Returns results with exact order and combination of terms |
-| site:     | Olivia site:Facebook.com        | Returns results only from designated site                 |
-| -         | Olivia -site:Facebook.com       | Excludes results including the phrase following -         |
-| *         | Username*com                    | Can match any group of words, useful for content matching |
-| filetype: | “Sophia Olivia” filetype:pdf    | Only returns results of the designated file type          |
-| cache:    | cache:facebook.com              | Searches Google’s cache for a previous page version       |
-| inurl     | inurl: resume “sophia olivia”   | Searches for terms in URL                                 |
-| intext    | intext: resume “sophia olivia”  | Searches for terms in text                                |
-| intitle   | intitle: resume “sophia olivia” | Searches for terms in title                               |
+                            |
 
 ### Helpful Tips
 

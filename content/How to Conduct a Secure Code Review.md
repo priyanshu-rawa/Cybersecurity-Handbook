@@ -73,7 +73,7 @@ To run and review the app, you’ll need to set up a development environment.
 
       @app.route('/')
       def home():
-          return 'Welcome to Addies Lair of Secure Code Mastery!'
+          return 'Welcome to Priyanshu Lair of Secure Code Mastery!'
 
       @app.route('/login', methods=['GET', 'POST'])
       def login():
