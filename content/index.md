@@ -24,7 +24,7 @@ A structured collection of notes on cybersecurity — written to explain how sys
 Built for people who want real understanding: students, self-learners, SOC analysts, and those moving toward more technical roles.
 
 <p>
-  <a href="#-coverage"><img src="https://img.shields.io/badge/📚_Explore_Coverage-↓-4D6BFE?style=for-the-badge&labelColor=0D1117" alt="Explore Coverage"></a>
+  <a href="#-coverage"><img src="https://img.shields.io/badge/_Explore_Coverage-↓-4D6BFE?style=for-the-badge&labelColor=0D1117" alt="Explore Coverage"></a>
   <a href="https://github.com/priyanshu-rawa"><img src="https://img.shields.io/badge/🐙_GitHub-Follow-181717?style=for-the-badge&logo=github&labelColor=0D1117" alt="GitHub"></a>
 </p>
 
@@ -34,11 +34,11 @@ Built for people who want real understanding: students, self-learners, SOC analy
 
 <table>
 <tr>
-<th>📝 Notes</th>
-<th>🧪 Labs</th>
-<th>🔍 Search</th>
-<th>⚡ Performance</th>
-<th>👥 Community</th>
+<th> Notes</th>
+<th> Labs</th>
+<th> Search</th>
+<th> Performance</th>
+<th> Community</th>
 </tr>
 <tr>
 <td align="center">Continuously Growing</td>
@@ -65,7 +65,7 @@ This handbook is my attempt to document topics properly — starting from first 
 
 ---
 
-## 🧭 Approach
+##  Approach
 
 > [!quote] Bruce Schneier
 > "Security is not a product, but a process."
@@ -82,27 +82,27 @@ This is slower than most tutorials. It is also more useful in the long run.
 
 ---
 
-## 🎯 Who this is for
+##  Who this is for
 
 <table>
 <tr>
 <td width="33%" valign="top">
 
-**🌱 Beginners**
+** Beginners**
 
 Clear explanations of fundamentals without assuming too much prior knowledge. Good starting point if you are still building your base in networking, authentication, and core security concepts.
 
 </td>
 <td width="33%" valign="top">
 
-**⚙️ Intermediate learners**
+** Intermediate learners**
 
 Deeper material on protocols, wireless security, web application security, identity management, and practical offensive and defensive techniques.
 
 </td>
 <td width="34%" valign="top">
 
-**🔥 Advanced readers**
+** Advanced readers**
 
 More technical sections including the new Privilege Escalation Handbook (Linux, Windows, cloud and containers), post-quantum cryptography, detection concepts, and system internals.
 
@@ -112,55 +112,55 @@ More technical sections including the new Privilege Escalation Handbook (Linux, 
 
 <img src="https://capsule-render.vercel.app/api?type=rect&color=0:7C3AED,100:4D6BFE&height=3&width=1000" width="100%"/>
 
-## 📚 Coverage
+##  Coverage
 
-### 🧱 Core Fundamentals
+### Core Fundamentals
 
 CIA Triad, risk management, security principles, common frameworks (NIST, ISO), ethics and legal considerations.
 
 > [!tip] Tip
 > Spend real time on the fundamentals. Most advanced techniques are just applications of these ideas under pressure.
 
-### 🌐 Network & Protocol Security
+### Network & Protocol Security
 
 TCP/IP, ARP, DNS, firewalls, VPNs, wireless security (including practical work with the Aircrack-ng suite).
 
 > [!note] Note (2026)
 > Vulnerability exploitation continues to be a major initial access vector. Strong protocol knowledge remains one of the highest-leverage skills you can develop.
 
-### 🖥️ Application & API Security
+### Application & API Security
 
 OWASP concepts, secure coding practices, API security, and common web vulnerabilities.
 
-### 🔑 Identity & Access Management
+### Identity & Access Management
 
 Authentication mechanisms, MFA, RBAC/ABAC, Kerberos, privileged access management.
 
 > [!warning] Current reality
 > Identity-related issues still appear in a very high percentage of real incidents. Understanding authentication and authorization deeply is no longer optional.
 
-### 🔐 Cryptography
+### Cryptography
 
 Symmetric and asymmetric encryption, hashing, PKI, TLS, and post-quantum algorithms (including CRYSTALS-Kyber, Dilithium, and related schemes).
 
 > [!tip] Tip
 > "Harvest now, decrypt later" is already a practical concern. Having a working mental model of post-quantum cryptography is becoming increasingly useful.
 
-### ⚔️ Offensive Security
+### Offensive Security
 
 Reconnaissance, web attacks, wireless attacks, Active Directory techniques, privilege escalation, and reverse engineering fundamentals.
 
-### 🛡️ Defensive Security
+### Defensive Security
 
 Detection engineering, threat hunting, incident response, digital forensics, SIEM concepts, and malware analysis basics.
 
-### ☁️ Cloud & Infrastructure
+### Cloud & Infrastructure
 
 AWS, Azure, GCP security concepts, container security (Docker/Kubernetes), and DevSecOps practices.
 
 <img src="https://capsule-render.vercel.app/api?type=rect&color=0:4D6BFE,100:7C3AED&height=3&width=1000" width="100%"/>
 
-## 🗺️ Learning path suggestion
+## Learning path suggestion
 
 1. Build a solid base in fundamentals and networking
 2. Move into identity, cryptography, and application security
@@ -194,7 +194,7 @@ If you find errors, outdated information, or missing context, feel free to open 
 
 ---
 
-## 👤 About the author
+## ✍️ About the author
 
 I'm **Priyanshu Rawat**, a self-taught learner documenting what I study in cybersecurity.
 
