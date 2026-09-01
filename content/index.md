@@ -61,25 +61,23 @@ Either it's too high-level and vague, or it's just a list of tools and commands 
 
 I wanted something in between.
 
-This handbook is my attempt to document topics properly — starting from first principles, then moving into practical use, attack techniques, and defensive approaches. The goal is simple: build understanding that still holds up after the tools change.
-
+This handbook is my attempt to document topics properly: start from first principles, then move into practical use, attack techniques, and defensive approaches. The goal is simple: build understanding that still holds up after the tools change.
 ---
 
-##  Approach
+## Approach
 
 > [!quote] Bruce Schneier
 > "Security is not a product, but a process."
 
-Every topic is written with the same general structure:
+Every topic follows the same structure:
 
-- Start with the core idea
-- Explain how it works internally
-- Show real-world context
-- Cover how it can be attacked
-- Cover how it can be detected or defended
+- The core idea first
+- How it actually works internally
+- Where you'd run into it in the real world
+- How it can be attacked
+- How it can be detected or defended
 
-This is slower than most tutorials. It is also more useful in the long run.
-
+It's slower than most tutorials, but it holds up better once the tools change.
 ---
 
 ##  Who this is for
@@ -115,48 +113,40 @@ More technical sections including the new Privilege Escalation Handbook (Linux, 
 ##  Coverage
 
 ### Core Fundamentals
-
-CIA Triad, risk management, security principles, common frameworks (NIST, ISO), ethics and legal considerations.
+The CIA triad, risk management, core security principles, the frameworks everyone eventually runs into (NIST, ISO), and the ethical and legal side of the field.
 
 > [!tip] Tip
-> Spend real time on the fundamentals. Most advanced techniques are just applications of these ideas under pressure.
+> Spend real time here. Most advanced techniques are just these same ideas applied under pressure.
 
 ### Network & Protocol Security
-
-TCP/IP, ARP, DNS, firewalls, VPNs, wireless security (including practical work with the Aircrack-ng suite).
+TCP/IP, ARP, DNS, firewalls, VPNs, and wireless security, including hands-on work with the Aircrack-ng suite.
 
 > [!note] Note (2026)
-> Vulnerability exploitation continues to be a major initial access vector. Strong protocol knowledge remains one of the highest-leverage skills you can develop.
+> Exploiting known vulnerabilities is still one of the most common ways attackers get in. Solid protocol knowledge is one of the highest-leverage skills you can build.
 
 ### Application & API Security
-
-OWASP concepts, secure coding practices, API security, and common web vulnerabilities.
+OWASP concepts, secure coding practices, API security, and the web vulnerabilities that keep showing up.
 
 ### Identity & Access Management
-
-Authentication mechanisms, MFA, RBAC/ABAC, Kerberos, privileged access management.
+Authentication, MFA, RBAC and ABAC, Kerberos, and privileged access management.
 
 > [!warning] Current reality
-> Identity-related issues still appear in a very high percentage of real incidents. Understanding authentication and authorization deeply is no longer optional.
+> A large share of real incidents trace back to an identity problem. Understanding authentication and authorization properly isn't optional anymore.
 
 ### Cryptography
-
-Symmetric and asymmetric encryption, hashing, PKI, TLS, and post-quantum algorithms (including CRYSTALS-Kyber, Dilithium, and related schemes).
+Symmetric and asymmetric encryption, hashing, PKI, TLS, and post-quantum algorithms like CRYSTALS-Kyber and Dilithium.
 
 > [!tip] Tip
-> "Harvest now, decrypt later" is already a practical concern. Having a working mental model of post-quantum cryptography is becoming increasingly useful.
+> "Harvest now, decrypt later" is already a real concern, not a theoretical one. It's worth building a working mental model of post-quantum cryptography now.
 
 ### Offensive Security
-
-Reconnaissance, web attacks, wireless attacks, Active Directory techniques, privilege escalation, and reverse engineering fundamentals.
+Reconnaissance, web attacks, wireless attacks, Active Directory techniques, privilege escalation, and the fundamentals of reverse engineering.
 
 ### Defensive Security
-
-Detection engineering, threat hunting, incident response, digital forensics, SIEM concepts, and malware analysis basics.
+Detection engineering, threat hunting, incident response, digital forensics, SIEM concepts, and the basics of malware analysis.
 
 ### Cloud & Infrastructure
-
-AWS, Azure, GCP security concepts, container security (Docker/Kubernetes), and DevSecOps practices.
+AWS, Azure, and GCP security, container security with Docker and Kubernetes, and DevSecOps practices.
 
 <img src="https://capsule-render.vercel.app/api?type=rect&color=0:4D6BFE,100:7C3AED&height=3&width=1000" width="100%"/>
 
@@ -165,18 +155,15 @@ AWS, Azure, GCP security concepts, container security (Docker/Kubernetes), and D
 1. Build a solid base in fundamentals and networking
 2. Move into identity, cryptography, and application security
 3. Study both offensive techniques and defensive detection
-4. Go deeper into areas that match your interests (privilege escalation, cloud, forensics, etc.)
+4. Go deeper wherever your interests take you, privilege escalation, cloud, forensics, whatever pulls you in
 
-You do not need to read everything in order. Use the structure as a map, not a rigid curriculum.
-
+You don't need to read everything in order. Think of this as a map you can jump around on, not a course you have to finish start to finish.
 ---
 
 ## 🌱 A living project
+This handbook keeps growing as I study new topics or go back and improve older notes. Two of the more complete, practical sections right now are the Privilege Escalation handbook and the newer AI Security module, covering AI-specific attacks, controls, and red teaming across its notes.
 
-This handbook continues to grow. New notes are added as I study new topics or improve existing ones. The Privilege Escalation section is currently one of the more complete and practical parts of the project.
-
-If you find errors, outdated information, or missing context, feel free to open an issue or submit a pull request. Contributions are welcome.
-
+Found an error, something outdated, or a gap? Open an issue or send a pull request. Contributions are welcome.
 ---
 
 ##  Built with
@@ -204,23 +191,26 @@ Free and open. That won't change.
 
 ---
 
-##  Core idea
-
+## Core Idea
 > [!abstract] Core Idea
 > Learn deeply.
 > Build deliberately.
 > Document everything.
 > Share knowledge.
 
----
+Stay curious,
+Priyanshu
 
+Continue from where you left off.
+
+---
 <img src="https://capsule-render.vercel.app/api?type=waving&color=0:4D6BFE,50:2C5364,100:0F2027&height=130&section=footer" width="100%"/>
 
 <div align="center">
 
 **Cybersecurity Handbook**
 
-Maintained by [Priyanshu Rawat](https://github.com/priyanshu-rawa)
+Written and maintained by [Priyanshu Rawat](https://github.com/priyanshu-rawa)
 
 Built with Obsidian + Quartz
 
