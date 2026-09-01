@@ -86,21 +86,21 @@ It's slower than most tutorials, but it holds up better once the tools change.
 <tr>
 <td width="33%" valign="top">
 
-** Beginners**
+**Beginners**
 
 Clear explanations of fundamentals without assuming too much prior knowledge. Good starting point if you are still building your base in networking, authentication, and core security concepts.
 
 </td>
 <td width="33%" valign="top">
 
-** Intermediate learners**
+**Intermediate learners**
 
 Deeper material on protocols, wireless security, web application security, identity management, and practical offensive and defensive techniques.
 
 </td>
 <td width="34%" valign="top">
 
-** Advanced readers**
+**Advanced readers**
 
 More technical sections including the new Privilege Escalation Handbook (Linux, Windows, cloud and containers), post-quantum cryptography, detection concepts, and system internals.
 
