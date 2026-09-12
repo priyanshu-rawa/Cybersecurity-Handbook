@@ -1,2 +1,9 @@
 node_modules/
-.env.local
+.env
+.env.*
+*.pem
+*.key
+id_rsa
+id_ed25519
+*.pfx
+credentials.json
