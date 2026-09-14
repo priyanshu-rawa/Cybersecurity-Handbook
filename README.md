@@ -289,5 +289,8 @@ MIT License — see [LICENSE](LICENSE.txt) for details. Use, modify, distribute,
 **Cybersecurity Handbook** — a knowledge base built through documentation, experimentation, and practical learning.
 
 *If this helped you, a star keeps me motivated to keep building.* ⭐
+Also check out CyberTimeline — 35 real cyberattacks across five decades, in an interactive timeline.
+
+</div>
 
 </div>
